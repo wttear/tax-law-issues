@@ -72,7 +72,7 @@
 - Create: `.gitignore`
 - Create: `.tax-law-issues-public`
 
-- [ ] 새 디렉터리에서 `git init -b main`을 실행하고 marker 내용이 `tax-law-issues-public-v1`인지 확인한다. 공개 stage 대상은 `.tax-law-issues-public`, `PRODUCT.md`, `README.md`, `DESIGN.md`, `content/`, `scripts/`, `src/`, `tests/`, `docs/`로 제한한다.
+- [x] 새 디렉터리에서 `git init -b main`을 실행하고 marker 내용이 `tax-law-issues-public-v1`인지 확인한다. 공개 stage 대상은 `.tax-law-issues-public`, `PRODUCT.md`, `README.md`, `DESIGN.md`, `content/`, `scripts/`, `src/`, `tests/`, `docs/`로 제한한다.
 - [ ] GitHub CLI 인증 상태를 확인한 뒤 사용자 계정의 새 public repository를 만들고 origin을 연결한다. 인증 토큰이나 납세자 자료를 파일·명령·출력에 남기지 않는다.
 - [ ] `docs/` 번들을 commit·push하고 Pages source가 `main:/docs`인지 확인한다. remote main SHA와 게시 build commit이 같고 Pages status가 `built`일 때만 공개 URL을 전달한다.
-- [ ] 인증이 만료되거나 Pages 빌드가 실패하면 로컬 사이트와 기존 `tax-study` 사이트를 보존하고, 공개 URL이 게시됐다고 말하지 않는다. 사용자에게 필요한 재인증 명령만 안내한다.
+- [x] 인증이 만료되거나 Pages 빌드가 실패하면 로컬 사이트와 기존 `tax-study` 사이트를 보존하고, 공개 URL이 게시됐다고 말하지 않는다. 사용자에게 필요한 재인증 명령만 안내한다.
