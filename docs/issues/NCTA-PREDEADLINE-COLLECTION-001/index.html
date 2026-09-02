@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="확정일·징수위험 발생일·고지일·압류일을 시간순으로 놓았을 때 국세징수법 제9조의 납기 전 징수와 제31조 제2항의 보전압류를 어떻게 구별하고, 고지액 또는 예상세액과 압류재산 범위를 어떤 절차기록으로 검증할 것인가?">
+  <title>납기 전 징수와 보전압류 · 세법 쟁점 대장</title>
+  <link rel="stylesheet" href="../../styles.css">
+  
+</head>
+<body>
+<!--
+DIRECTION CONTRACT
+THESIS: 법령 원문에서 출발해 쟁점·증빙·판례의 판단 경계를 한 화면의 읽기 순서로 만든다.
+OWN-WORLD: 기존 사건배당부의 석재·종이·잉크·공식 파랑·규선 언어를 법률별 대장으로 확장한다.
+STORY: 법률 선택 → 쟁점 한 행 → 답을 보기 전 질문 → 원문 → 초보자 해설 → 판단 지도 → 증빙 → 판례 → 필요 시 회계.
+FIRST VIEWPORT: 첫 화면에서 다섯 법률과 50개 쟁점의 위치를 보고, 검색 없이도 어느 행을 열지 결정한다.
+FORM: 직각 대장 행, 얇은 규선, 짧은 라벨, 한 열 모바일 읽기 흐름을 사용한다.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md.
+-->
+<a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
+<header class="site-header"><div class="site-header__inner"><a class="wordmark" href="../../"><span class="wordmark__mark">TAX</span><span>쟁점 대장</span></a><a class="header-back" href="../../">전체 대장으로</a></div></header>
+<main id="main-content" class="page page--reader">
+  <nav class="breadcrumb" aria-label="현재 위치"><a href="../../">쟁점 대장</a><span aria-hidden="true">/</span><a href="../../#law-NCTA">국세징수법</a><span aria-hidden="true">/</span><span>02</span></nav>
+  <header class="reader-heading">
+    <h1>납기 전 징수와 보전압류</h1>
+    <p class="reader-context">NCTA · 쟁점 02 / 10 · 입문</p>
+    <p class="reader-lead">법령 원문과 사실·증빙·판례의 연결로 읽는 자유열람 쟁점입니다.</p>
+    <ul class="reader-meta"><li>30분 읽기</li><li>법령 2개 연결</li><li>판례 2건 직접 연결</li></ul>
+  </header>
+
+  <section class="prompt-band" aria-labelledby="prompt-title">
+    <h2 id="prompt-title"><span class="heading-sequence">답을 보기 전</span>먼저 이 질문에 답해 보세요</h2>
+    <p class="prompt-question">확정일·징수위험 발생일·고지일·압류일을 시간순으로 놓았을 때 국세징수법 제9조의 납기 전 징수와 제31조 제2항의 보전압류를 어떻게 구별하고, 고지액 또는 예상세액과 압류재산 범위를 어떤 절차기록으로 검증할 것인가?</p>
+    <p class="prompt-caption">결론을 바꿀 날짜·당사자·거래흐름·증빙을 한 줄로 적은 뒤 아래 원문을 여세요.</p>
+  </section>
+
+  <nav class="reader-index" aria-label="이 쟁점 안에서 이동"><a href="#law-source">법령 원문</a><a href="#beginner">초보자 해설</a><a href="#map">판단 지도</a><a href="#example">합성 사례</a><a href="#audit">증빙 실습</a><a href="#precedents">관련 판례</a><a href="#sources">출처</a></nav>
+
+  <section class="reader-block reader-block--law" id="law-source" aria-labelledby="law-source-title">
+    <h2 id="law-source-title"><span class="heading-sequence">01 / 기준점</span>법령 원문과 기준일</h2>
+    <p class="block-lead">현재 스냅샷의 시행 중 버전을 먼저 보여 줍니다. 과거 거래는 판례 카드와 사건 당시 법령을 분리해 대조합니다.</p>
+    <div class="article-stack"><details class="article-record" open>
+  <summary><span>제9조</span><strong>납부기한 전 징수</strong><em>현행 · 시행 2026-06-02</em></summary>
+  <div class="article-record__body">
+    <p class="source-label">국가법령정보센터 원문</p>
+    <div class="law-source-text">제9조(납부기한 전 징수)<br>① 관할 세무서장은 납세자에게 다음 각 호의 어느 하나에 해당하는 사유가 있는 경우 납부기한 전이라도 이미 납세의무가 확정된 국세를 징수할 수 있다.<br>1. 국세, 지방세 또는 공과금의 체납으로 강제징수 또는 체납처분이 시작된 경우<br>2. 「민사집행법」에 따른 강제집행 및 담보권 실행 등을 위한 경매가 시작되거나 「채무자 회생 및 파산에 관한 법률」에 따른 파산선고를 받은 경우<br>3. 「어음법」 및 「수표법」에 따른 어음교환소에서 거래정지처분을 받은 경우<br>4. 법인이 해산한 경우<br>5. 국세를 포탈(逋脫)하려는 행위가 있다고 인정되는 경우<br>6. 납세관리인을 정하지 아니하고 국내에 주소 또는 거소를 두지 아니하게 된 경우<br>② 관할 세무서장은 제1항에 따라 납부기한 전에 국세를 징수하려는 경우 당초의 납부기한보다 단축된 기한을 정하여 납세자에게 납부고지를 하여야 한다.</div>
+    <p class="source-link"><a href="https://www.law.go.kr/법령/국세징수법/제9조" rel="noopener noreferrer">공식 조문 열기</a></p>
+  </div>
+</details><details class="article-record" open>
+  <summary><span>제31조</span><strong>압류의 요건 등</strong><em>현행 · 시행 2026-06-02</em></summary>
+  <div class="article-record__body">
+    <p class="source-label">국가법령정보센터 원문</p>
+    <div class="law-source-text">제31조(압류의 요건 등)<br>① 관할 세무서장은 다음 각 호의 어느 하나에 해당하는 경우 납세자의 재산을 압류한다.<br>1. 납세자가 제10조에 따른 독촉을 받고 독촉장에서 정한 기한까지 국세를 완납하지 아니한 경우<br>2. 납세자가 제9조제2항에 따라 납부고지를 받고 단축된 기한까지 국세를 완납하지 아니한 경우<br>② 관할 세무서장은 납세자에게 제9조제1항 각 호의 어느 하나에 해당하는 사유가 있어 국세가 확정된 후 그 국세를 징수할 수 없다고 인정할 때에는 국세로 확정되리라고 추정되는 금액의 한도에서 납세자의 재산을 압류할 수 있다.<br>③ 관할 세무서장은 제2항에 따라 재산을 압류하려는 경우 미리 지방국세청장의 승인을 받아야 하고, 압류 후에는 납세자에게 문서로 그 압류 사실을 통지하여야 한다.<br>④ 관할 세무서장은 제2항에 따라 재산을 압류한 경우 다음 각 호의 어느 하나에 해당하면 즉시 압류를 해제하여야 한다. &lt;개정 2021.12.21&gt;<br>1. 납세자가 납세담보를 제공하고 압류 해제를 요구한 경우<br>2. 압류를 한 날부터 3개월(국세 확정을 위하여 실시한 세무조사가 「국세기본법」 제81조의8제4항에 따라 중지된 경우에 그 중지 기간은 빼고 계산한다)이 지날 때까지 압류에 따라 징수하려는 국세를 확정하지 아니한 경우<br>⑤ 관할 세무서장은 제2항에 따라 압류를 한 후 압류에 따라 징수하려는 국세를 확정한 경우 압류한 재산이 다음 각 호의 어느 하나에 해당하고 납세자의 신청이 있으면 압류한 재산의 한도에서 확정된 국세를 징수한 것으로 볼 수 있다.<br>1. 금전<br>2. 납부기한 내 추심 가능한 예금 또는 유가증권</div>
+    <p class="source-link"><a href="https://www.law.go.kr/법령/국세징수법/제31조" rel="noopener noreferrer">공식 조문 열기</a></p>
+  </div>
+</details></div>
+    <div class="related-reference"><p class="source-label">시행령·시행규칙 및 연결 조문</p><p class="quiet">이 스냅샷에 전문이 포함된 조문은 위 원문으로, 나머지 연결은 공식 법령 페이지에서 사건 시점의 버전을 확인합니다.</p><ul class="source-list"><li><span>국세징수법 제9조</span> <a href="https://www.law.go.kr/법령/국세징수법" rel="noopener noreferrer">공식 법령 연결</a></li><li><span>국세징수법 제31조</span> <a href="https://www.law.go.kr/법령/국세징수법" rel="noopener noreferrer">공식 법령 연결</a></li></ul></div>
+  </section>
+
+  <section class="reader-block reader-block--beginner" id="beginner" aria-labelledby="beginner-title">
+    <h2 id="beginner-title"><span class="heading-sequence">02 / 쉽게 말하면</span>초보자 해설</h2>
+    <div class="beginner-callout"><p>납기 전 징수는 이미 확정된 국세에 징수 위험이 생겼을 때 원래 납부기한보다 앞당겨 걷는 절차이고, 보전압류는 국세가 아직 확정되기 전 장래 징수가 어려워질 우려가 있을 때 예상세액 범위의 재산을 미리 보전하는 절차다. 따라서 확정세액이 있는지부터 확인해야 두 제도를 바꾸어 쓰지 않는다.</p></div>
+    <section class="lesson-section" id="concept" aria-labelledby="concept-title">
+<h2 id="concept-title">1. 오늘의 목표와 30초 쉬운 설명 — 2분</h2>
+<section class="learning-block learning-block--easy" aria-labelledby="concept-heading-1">
+<p class="learning-block__label">쉬운 설명</p>
+<h3 id="concept-heading-1">30초 쉬운 설명</h3>
+<p>납기 전 징수는 이미 확정된 국세의 납부기한을 위험 때문에 앞당기는 제도다. 보전압류는 아직 국세가 확정되기 전이라도 확정 뒤 거둘 수 없을 우려가 있을 때 예상세액 범위에서 재산을 보전하는 제도다. 두 제도의 시간축을 바꾸어 쓰면 안 된다.</p>
+</section>
+<section class="learning-block learning-block--objectives" aria-labelledby="concept-heading-2">
+<p class="learning-block__label">오늘의 목표</p>
+<h3 id="concept-heading-2">오늘 할 수 있어야 하는 것</h3>
+<ul>
+<li>제9조 납기 전 징수와 제31조 제2항 보전압류를 구별한다.</li>
+<li>확정일·위험사실 발생일·고지일·압류일을 배열한다.</li>
+<li>납기전징수고지서·보전압류조서·재산조사서의 증명대상을 구분한다.</li>
+</ul>
+</section>
+<section class="learning-block learning-block--prompt" aria-labelledby="concept-heading-3">
+<p class="learning-block__label">먼저 판단하기</p>
+<h3 id="concept-heading-3">시작 전 판단</h3>
+<p>세액이 아직 조사 중인데 대표자가 유일한 부동산을 매도하려 한다면 납기 전 징수와 보전압류 중 무엇을 먼저 검토할까?</p>
+</section>
+</section>
+  </section>
+
+  <section class="reader-block reader-block--map" id="map" aria-labelledby="map-title">
+    <h2 id="map-title"><span class="heading-sequence">03 / 판단 구조</span>법령과 쟁점의 판단 지도</h2>
+    <div class="table-wrap"><table class="decision-table"><thead><tr><th>조문 연결</th><th>이 단계에서 볼 것</th></tr></thead><tbody><tr><td data-label="조문">국세징수법 제9조</td><td data-label="규칙">제9조는 이미 확정된 국세에 법정 징수위험이 생긴 경우 납부기한을 앞당겨 징수하는 절차이므로 확정세액, 위험사실, 새 납부기한과 고지 도달을 함께 확인한다.</td></tr><tr><td data-label="조문">국세징수법 제31조</td><td data-label="규칙">제31조 제1항의 일반 압류와 달리 제2항의 보전압류는 국세 확정 전 구체적인 징수 불능 우려가 있을 때 예상세액 범위에서 재산을 보전하며, 과세처분이나 세액 확정을 대신하지 않는다.</td></tr></tbody></table></div>
+    <section class="lesson-section" id="legal-structure" aria-labelledby="legal-structure-title">
+<h2 id="legal-structure-title">2. 핵심 용어와 법적 판단지도 — 4분</h2>
+<section class="learning-block learning-block--glossary" aria-labelledby="legal-structure-heading-1">
+<p class="learning-block__label">핵심 용어</p>
+<h3 id="legal-structure-heading-1">핵심 용어</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>용어</th>
+<th>쉬운 뜻</th>
+<th>확인점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="용어">납기 전 징수</td>
+<td data-label="쉬운 뜻">확정된 세금의 납부기한을 법정 위험 때문에 앞당겨 징수</td>
+<td data-label="확인점">확정세액과 제9조 사유가 필요하다.</td>
+</tr>
+<tr>
+<td data-label="용어">보전압류</td>
+<td data-label="쉬운 뜻">확정 전 세금의 장래 징수를 위해 재산 처분을 제한</td>
+<td data-label="확인점">제31조 제2항 요건·예상세액 한도를 본다.</td>
+</tr>
+<tr>
+<td data-label="용어">예상세액</td>
+<td data-label="쉬운 뜻">보전할 수 있는 범위를 정하는 계산액</td>
+<td data-label="확인점">조사결의와 산출근거를 대사한다.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="learning-block learning-block--decision-map" aria-labelledby="legal-structure-heading-2">
+<p class="learning-block__label">판단지도</p>
+<h3 id="legal-structure-heading-2">법적 판단지도</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>결정적 사실</th>
+<th>우선 증빙</th>
+<th>판단</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="단계">확정 여부</td>
+<td data-label="결정적 사실">국세가 이미 확정됐는가</td>
+<td data-label="우선 증빙">신고서·결정결의</td>
+<td data-label="판단">두 제도를 먼저 분기한다.</td>
+</tr>
+<tr>
+<td data-label="단계">징수 위험</td>
+<td data-label="결정적 사실">재산 도피·폐업 등 법정 위험이 있는가</td>
+<td data-label="우선 증빙">등기변동·매매계약·폐업자료</td>
+<td data-label="판단">단순 추측인지 구체적 위험인지 본다.</td>
+</tr>
+<tr>
+<td data-label="단계">처분 범위</td>
+<td data-label="결정적 사실">고지액 또는 예상세액을 넘지 않는가</td>
+<td data-label="우선 증빙">납기전징수고지서·보전압류조서</td>
+<td data-label="판단">과도한 보전을 막는다.</td>
+</tr>
+<tr>
+<td data-label="단계">후속 절차</td>
+<td data-label="결정적 사실">확정·고지 뒤 일반 압류로 이어졌는가</td>
+<td data-label="우선 증빙">경정결의·압류전환 기록</td>
+<td data-label="판단">임시 보전과 최종 징수를 구분한다.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<h3 id="legal-structure-heading-3">적용 범위와 경계</h3>
+<p>제9조는 확정된 국세의 납기 전 징수이고, 제31조 제1항은 일반 압류, 제2항은 확정 전 보전압류다. 보전압류가 과세처분 자체를 대신하거나 예상세액을 확정하는 것은 아니다.</p>
+</section>
+  </section>
+
+  <section class="reader-block reader-block--example" id="example" aria-labelledby="example-title">
+    <h2 id="example-title"><span class="heading-sequence">04 / 사실에 대입하기</span>합성 사례와 결론의 이동</h2>
+    <p class="synthetic-note">아래 사례는 학습을 위한 합성 사실입니다. 실제 사건이나 공식 판례의 사실로 읽지 마세요.</p>
+    <section class="lesson-section" id="worked-example" aria-labelledby="worked-example-title">
+<h2 id="worked-example-title">3. 완성된 쉬운 예제 — 4분</h2>
+<h3 id="worked-example-heading-1">사실</h3>
+<p>비식별 가상 사례다. E법인의 법인세 8천만 원은 2026년 8월 10일 경정으로 확정되었고 원래 납부기한은 8월 31일이다. 8월 12일 해산등기가 접수되고 창고 매각계약이 확인되었다. 세무서장은 제9조 사유를 적은 납기전징수고지서를 8월 14일 송달했다.</p>
+<section class="learning-block learning-block--prompt" aria-labelledby="worked-example-heading-2">
+<p class="learning-block__label">먼저 설명하기</p>
+<h3 id="worked-example-heading-2">자기설명</h3>
+<p>세액 확정이 위험사실보다 앞선다는 점과 새 납부기한·고지 도달을 설명한다.</p>
+</section>
+<details class="reveal-block reveal-block--model-explanation">
+<summary>모범 판단 과정 펼치기</summary>
+<div class="reveal-block__body">
+<section class="learning-block learning-block--worked-reasoning" aria-labelledby="worked-example-heading-3">
+<p class="learning-block__label">전문가 판단 과정</p>
+<h3 id="worked-example-heading-3">전문가 판단 과정</h3>
+<p>8월 10일 세액이 이미 확정된 뒤 해산과 핵심재산 매각이라는 구체적 위험이 생겼으므로 제9조 납기 전 징수의 시간구조에 맞는다. 고지서에는 법정사유와 앞당긴 납부기한이 특정되어야 하며, 이 사례를 확정 전 보전압류라고 부르면 안 된다.</p>
+</section>
+</div>
+</details>
+</section>
+  </section>
+
+  <section class="reader-block reader-block--audit" id="audit" aria-labelledby="audit-title">
+    <h2 id="audit-title"><span class="heading-sequence">05 / 조사·증빙</span>세무조사 증빙 실습</h2>
+    <div class="audit-summary">
+  <div><p class="mini-label">조사 가설</p><p>경정결의 전 조사예상세액 1억 2천만 원이 산출된 날 F법인이 가족회사에 토지를 넘기는 계약을 체결했으므로 구체적인 재산처분 위험이 있어 제31조 제2항의 보전압류가 필요했다.</p></div>
+  <div><p class="mini-label">반대 가설</p><p>가족회사 거래가 시가거래이고 대금이 추적 가능한 국내 예금으로 보존되었거나 3억 원 토지 전부를 묶지 않고도 예상세액 1억 2천만 원을 보전할 수 있으므로 위험 또는 압류범위의 상당성이 부족하다.</p></div>
+  <div><p class="mini-label">먼저 확인할 자료</p><ul class="evidence-list"><li>경정결의 전 단계와 결재시각을 확인할 조사결의안·경정결의</li><li>예상세액 1억 2천만 원의 과세표준 산출근거와 예상세액 계산서</li><li>가족회사 양도의 계약시각·대가·통상거래성을 확인할 매매계약·이사회 의사록·금융흐름</li><li>재산처분 위험의 구체성을 확인할 재산조사서·등기신청·국내 예금 보존기록</li><li>압류대상과 범위를 확인할 보전압류조서·감정자료·다른 재산 목록·일부해제 검토기록</li><li>확정 뒤 후속 절차를 확인할 납기전징수고지서·경정결의·압류전환 기록</li></ul></div>
+</div>
+    <section class="lesson-section" id="audit-evidence" aria-labelledby="audit-evidence-title">
+<h2 id="audit-evidence-title">4. 세무조사 증빙 실습 — 8분</h2>
+<h3 id="audit-evidence-heading-1">결론을 가린 사건</h3>
+<p>비식별 F법인은 조사예상세액 1억 2천만 원이 산출된 날 가족회사에 토지를 넘기는 계약을 체결했다. 아직 경정결의는 없고, 같은 날 3억 원 상당 토지에 보전압류가 접수되었다. 결론은 가린다.</p>
+<section class="learning-block learning-block--hypotheses" aria-labelledby="audit-evidence-heading-2">
+<p class="learning-block__label">경쟁 가설</p>
+<h3 id="audit-evidence-heading-2">경쟁 가설</h3>
+<ul>
+<li>징수 가설: 과세관청은 확정 전이라도 징수 불능 우려가 구체적이어서 예상세액 범위의 보전압류가 필요했다고 본다.</li>
+<li>납세자 가설: 납세자는 내부 예상만 있고 위험사실이나 금액한도 심사가 부족해 보전압류가 과도하다고 본다.</li>
+</ul>
+</section>
+<h3 id="audit-evidence-heading-3">증빙 판단표</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>법적 요건</th>
+<th>주장 사실</th>
+<th>확인 자료</th>
+<th>지지하는 실제 가설</th>
+<th>신뢰도·공백</th>
+<th>추가 확인</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="법적 요건">확정 전 단계</td>
+<td data-label="주장 사실">경정결의 전 예상세액 1억 2천만 원이다</td>
+<td data-label="확인 자료">조사결의안·예상세액 계산서</td>
+<td data-label="지지하는 실제 가설">보전압류 분류 가설</td>
+<td data-label="신뢰도·공백">결재시각은 명확하나 계산의 정확성은 별도다</td>
+<td data-label="추가 확인">과세표준 산출근거를 재계산한다</td>
+</tr>
+<tr>
+<td data-label="법적 요건">징수 위험</td>
+<td data-label="주장 사실">가족회사에 토지를 급히 양도하려 했다</td>
+<td data-label="확인 자료">재산조사서·매매계약·등기신청</td>
+<td data-label="지지하는 실제 가설">재산도피 위험 가설</td>
+<td data-label="신뢰도·공백">계약은 강하지만 실제 대가·통상거래성은 공백이다</td>
+<td data-label="추가 확인">금융흐름과 이사회 의사록을 본다</td>
+</tr>
+<tr>
+<td data-label="법적 요건">범위 제한</td>
+<td data-label="주장 사실">예상세액보다 큰 토지 전부를 묶었다</td>
+<td data-label="확인 자료">보전압류조서·감정자료</td>
+<td data-label="지지하는 실제 가설">과도한 보전 가설</td>
+<td data-label="신뢰도·공백">자산가액과 분할 가능성이 핵심이다</td>
+<td data-label="추가 확인">다른 재산과 일부해제 가능성을 검토한다</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>절차 단계</th>
+<th>담당 주체</th>
+<th>서류</th>
+<th>기한</th>
+<th>조사·불복상 확인점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="절차 단계">위험확인→보전→확정</td>
+<td data-label="담당 주체">조사팀과 징수담당자</td>
+<td data-label="서류">재산조사서·보전압류조서·대조용 납기전징수고지서·경정결의</td>
+<td data-label="기한">확정 전과 확정 후를 구획</td>
+<td data-label="조사·불복상 확인점">예상세액 한도와 후속 고지를 연결한다</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section class="learning-block learning-block--prompt" aria-labelledby="audit-evidence-heading-4">
+<p class="learning-block__label">먼저 판단하기</p>
+<h3 id="audit-evidence-heading-4">학습자 잠정 결론</h3>
+<p>가족회사 거래의 실제 대가와 토지 일부만으로 보전 가능한지 확인한 뒤 잠정결론을 쓴다.</p>
+</section>
+<details class="reveal-block reveal-block--feedback">
+<summary>전문가 피드백 펼치기</summary>
+<div class="reveal-block__body">
+<h3 id="audit-evidence-heading-5">전문가 피드백</h3>
+<p>경정 전이므로 제9조 납기 전 징수가 아니라 제31조 제2항 보전압류 문제다. 구체적 처분 위험은 보이지만 예상세액과 재산가액의 차이, 분할 가능성을 심사해야 한다.</p>
+</div>
+</details>
+</section>
+  </section>
+
+  <section class="reader-block reader-block--precedent" id="precedents" aria-labelledby="precedents-title">
+    <h2 id="precedents-title"><span class="heading-sequence">06 / 경계선</span>관련 중요 판례</h2>
+    <ol class="precedent-ledger"><li class="precedent-row">
+  <div class="precedent-row__head"><span class="case-number">2010두19713</span><span>대법원 · 2012-10-11</span></div>
+  <h3>관련 판례</h3>
+  <p>공식 판결문에서 판시내용을 확인하세요.</p>
+  
+  <p class="source-link"><a href="https://www.law.go.kr/LSW/precInfoP.do?precSeq=165914" rel="noopener noreferrer">공식 판결문 열기</a></p>
+</li><li class="precedent-row">
+  <div class="precedent-row__head"><span class="case-number">2010두19713</span><span>대법원 · 2012-10-11</span></div>
+  <h3>과세전적부심사 청구 당시에는 납기 전 징수사유가 없었으나 청구 후 적법한 압류로 그 사유가 발생한 경우, 결정 전 과세유보 원칙의 예외가 되는지와 법정 결정기간 경과의 영향이 문제 된 사건이다.</h3>
+  <p>대법원은 과세전적부심사 청구 후라도 납기 전 징수사유가 발생하면 과세관청은 심사결정 전에 과세처분을 할 수 있고, 청구일부터 30일의 결정·통지기간을 넘겨 결정을 하지 않던 중 그 사유가 발생한 경우에도 달리 볼 수 없다고 판시하여 원심을 파기환송하였다.</p>
+  
+  <p class="source-link"><a href="https://www.law.go.kr/LSW/precInfoP.do?precSeq=165914" rel="noopener noreferrer">공식 판결문 열기</a></p>
+</li></ol>
+    <section class="lesson-section" id="precedent" aria-labelledby="precedent-title">
+<h2 id="precedent-title">6. 중요 판례 예측과 해설 — 5분</h2>
+<h3 id="precedent-heading-1">판례를 먼저 쉽게</h3>
+<p>연결된 특정 판결은 없다. 현행 제9조와 제31조의 서로 다른 시간경계를 적용한다.</p>
+<section class="learning-block learning-block--prompt" aria-labelledby="precedent-heading-2">
+<p class="learning-block__label">먼저 예측하기</p>
+<h3 id="precedent-heading-2">결론 전 예측</h3>
+<p>가족회사 매매대금 전액이 시가대로 즉시 지급되었고 국내 예금으로 남았다는 사실이 나오면 위험 판단은 어떻게 달라질까?</p>
+</section>
+<details class="reveal-block reveal-block--precedent">
+<summary>판례 결론과 이유 펼치기</summary>
+<div class="reveal-block__body">
+<h3 id="precedent-heading-3">법원 결론과 이유</h3>
+<p>개별 판결 주문은 없다. 시가대금이 추적 가능한 국내 예금으로 남아 있다면 재산도피 위험의 설득력이 약해져 보전압류 필요성을 다시 판단해야 한다.</p>
+<h3 id="precedent-heading-4">구별 사실과 한계</h3>
+<p>위험이 약해지는 것과 예상세액 산정이 옳은지는 별도 문제이고, 이후 경정처분의 적법성도 독립적으로 다툰다.</p>
+<h3 id="precedent-heading-5">후속 상태</h3>
+<p>기준일 현재 현행 제9조와 제31조를 사용했다.</p>
+</div>
+</details>
+</section>
+  </section>
+
+  
+
+  <section class="reader-block reader-block--recall" id="recall" aria-labelledby="recall-title">
+    <h2 id="recall-title"><span class="heading-sequence">07 / 다시 말하기</span>오늘의 회상</h2>
+    <p class="block-lead">시험 답안처럼 외우기보다, 이 쟁점의 요건·결론을 바꾸는 사실·확인자료를 자신의 말로 다시 설명합니다.</p>
+    <section class="lesson-section" id="recall" aria-labelledby="recall-title">
+<h2 id="recall-title">7. 변형사례와 오늘의 회상 — 4분</h2>
+<section class="learning-block learning-block--transfer" aria-labelledby="recall-heading-1">
+<p class="learning-block__label">새 사실에 적용하기</p>
+<h3 id="recall-heading-1">변형사례</h3>
+<p>매매대금 전액이 시가대로 지급되어 국내 예금에 보존되고 다른 처분행위도 없었다. 징수 불능 위험의 핵심 근거가 약해지므로 결론은 보전압류 필요성을 부정하는 방향으로 바뀐다.</p>
+</section>
+<h3 id="recall-heading-2">오늘의 회상 3문항</h3>
+<ol>
+<li class="recall-question">법리 구분: 납기 전 징수와 보전압류는 확정시점을 기준으로 어떻게 나뉘는가?</li>
+<li class="recall-question">증빙 선택: 납기전징수고지서·보전압류조서·재산조사서는 각각 무엇을 입증하는가?</li>
+<li class="recall-question">새 사실 전이: 시가대금이 국내에 보존되면 위험과 결론은 어떻게 변하는가?</li>
+</ol>
+<section class="learning-block learning-block--confidence" aria-labelledby="recall-heading-3">
+<p class="learning-block__label">확신도 점검</p>
+<h3 id="recall-heading-3">확신도</h3>
+<p>각 답에 0·1·2를 표시하고 확정일을 잘못 짚었으면 판단지도로 돌아간다.</p>
+</section>
+<details class="reveal-block reveal-block--answer-key">
+<summary>답안 핵심요소 펼치기</summary>
+<div class="reveal-block__body">
+<h3 id="recall-heading-4">답안 핵심요소</h3>
+<ul>
+<li>법리 구분: 확정세액의 납부기한을 앞당기는 제9조와 확정 전 예상세액을 보전하는 제31조 제2항은 시간·효과가 서로 다르다.</li>
+<li>증빙 선택: 납기전징수고지서는 확정세액과 새 기한, 보전압류조서는 대상·범위, 재산조사서는 구체적 징수위험을 증명한다.</li>
+<li>새 사실 전이: 정상 대가가 국내에 보존되면 재산도피 가설이 약해져 보전압류 필요성을 부정하는 방향으로 결론이 바뀐다.</li>
+</ul>
+</div>
+</details>
+</section>
+  </section>
+
+  <section class="reader-block reader-block--sources" id="sources" aria-labelledby="sources-title">
+  <h2 id="sources-title"><span class="heading-sequence">검증 메모</span>출처와 기준일</h2>
+  <p>법령 원문은 각 조문의 공식 링크에서, 학습 설명은 공개된 원자료 원고에서 가져왔습니다. 사건 당시 법령이 현행법과 다르면 판례 카드의 적용법 메모를 우선 확인하세요.</p>
+  <dl class="provenance-list"><div><dt>법령 자료 기준일</dt><dd>원자료 기록에 따름</dd></div><div><dt>학습 원고</dt><dd><code>lessons/material-ncta-predeadline-collection-001.md</code></dd></div><div><dt>판례 자료 수</dt><dd>2건 직접 연결</dd></div></dl>
+  <ul class="source-list"><li>제9조 <a href="https://www.law.go.kr/법령/국세징수법/제9조" rel="noopener noreferrer">공식 원문</a></li><li>제31조 <a href="https://www.law.go.kr/법령/국세징수법/제31조" rel="noopener noreferrer">공식 원문</a></li></ul>
+</section>
+
+  <nav class="issue-pager" aria-label="같은 법률의 다음 쟁점">
+    <div><span class="pager-label">이전 쟁점</span><a href="../NCTA-DELINQUENCY-001/">납부고지·납부기한·독촉·강제징수 단계</a></div>
+    <div class="pager-next"><span class="pager-label">다음 쟁점</span><a href="../NCTA-SECONDARY-LIABILITY-001/">제2차 납세의무의 성립요건과 범위</a></div>
+  </nav>
+</main>
+<footer class="site-footer"><div><strong>세법 쟁점 대장</strong><span>이 페이지에는 로그인·진도 잠금·학습 완료 버튼이 없습니다. 필요한 곳부터 자유롭게 읽으세요.</span></div></footer>
+</body>
+</html>

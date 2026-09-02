@@ -1,0 +1,1405 @@
+{
+  "schema_version": 1,
+  "generated_as_of": "2026-09-03",
+  "precedents": [
+    {
+      "precedent_id": "latest:2026두30542:2026-08-13",
+      "case_number": "2026두30542",
+      "decision_date": "2026-08-13",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": null,
+      "holding_summary": null,
+      "significance": null,
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.scourt.go.kr/sjudge/1787793813825_102333.pdf",
+      "source_as_of": null,
+      "source_provenance": [
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "case:2026두30542",
+      "case_number": "2026두30542",
+      "decision_date": "2026-08-13",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": "과세전적부심사 기회를 부여하지 않은 당초 처분이 취소된 뒤 하자를 보완한 재처분의 허용 범위, 세무조사 결과 통지기한 위반의 효력, 과세전적부심사 결정 전 처분 유보의무가 문제 된 사건이다.",
+      "holding_summary": "대법원은 과세전적부심사 기회를 주지 않은 당초 처분을 취소한 뒤 절차상 하자를 보완하여 재처분하는 것은 원칙적으로 허용되고, 조사결과 통지기한을 위반한 처분은 원칙적으로 위법하며, 과세전적부심사 청구가 있으면 결정 시점까지 처분을 유보해야 한다고 판시하였다. 다만 이 사건에서는 지연된 재통지 뒤에도 납세자가 실제로 과세전적부심사를 청구·행사하고 그 결정 후 재처분이 이루어진 특별한 사정이 있어 재처분을 적법하다고 보아 상고를 기각하였다.",
+      "significance": "조사종결 뒤 통지·전적부심사·재처분의 시간을 하나의 절차 사슬로 대사해야 하며, 하자 보완 가능성과 별개로 각 통지기한과 처분 유보기간을 독립 검토해야 한다.",
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.scourt.go.kr/sjudge/1787793813825_102333.pdf",
+      "source_as_of": "2026-08-29",
+      "source_provenance": [
+        "data/latest-precedents.json"
+      ]
+    },
+    {
+      "precedent_id": "latest:2022두42020:2026-08-12",
+      "case_number": "2022두42020",
+      "decision_date": "2026-08-12",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": null,
+      "holding_summary": null,
+      "significance": null,
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.scourt.go.kr/sjudge/1787278654868_111734.pdf",
+      "source_as_of": null,
+      "source_provenance": [
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "case:2022두42020",
+      "case_number": "2022두42020",
+      "decision_date": "2026-08-12",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": "분식회계에 기초한 성과급의 손금성, 약정 미수이자의 익금 귀속, 실제 업무가 확인되지 않은 고문료의 손금성, 특수관계 자회사 설계용역비에 대한 부당행위계산 부인의 증명 정도와 세무조사결과통지·소득금액변동통지 사이 소득종류 불일치의 절차상 하자가 함께 문제 된 사건이다.",
+      "holding_summary": "대법원은 분식회계에 기초해 지급한 성과급은 손금에 산입할 수 없고, 고문료는 구체적으로 수행한 업무 활동 내용이 확인되지 않아 손금 요건을 갖추었다고 보기 어려우며, 약정일에 발생한 미수이자는 2015 사업연도 익금에 산입되고, 특수관계 자회사 설계용역비에 대한 부당행위계산 부인은 과세관청의 증명이 부족하다고 보아 상고를 기각하였다. 또한 세무조사결과통지에는 고문료 소득종류가 상여로, 후행 소득금액변동통지에는 기타소득으로 달리 기재되었어도 납세법인이 실제 기타소득 처분을 충분히 인식하고 과세전적부심사로 다투는 데 별다른 어려움이나 불이익이 없었다면 그 불일치만으로 소득금액변동통지에 절차상 하자가 있다고 볼 수 없다고 판단하였다.",
+      "significance": "하나의 조사에서 여러 회계·세무조정 쟁점이 발견되어도 비용의 업무관련성, 수익 귀속시기, 특수관계 거래의 정상가격과 증명책임을 섞지 않고 별도 workpaper로 구성하고, 세무조사결과통지와 소득금액변동통지 두 통지의 소득종류·금액·송달일과 실제 방어기회를 별도 대사해야 함을 보여준다.",
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.scourt.go.kr/sjudge/1787278654868_111734.pdf",
+      "source_as_of": "2026-08-29",
+      "source_provenance": [
+        "data/latest-precedents.json"
+      ]
+    },
+    {
+      "precedent_id": "latest:2026두30158:2026-05-14",
+      "case_number": "2026두30158",
+      "decision_date": "2026-05-14",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": null,
+      "holding_summary": null,
+      "significance": null,
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.scourt.go.kr/sjudge/1779239194331_100634.pdf",
+      "source_as_of": null,
+      "source_provenance": [
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "case:2026두30158",
+      "case_number": "2026두30158",
+      "decision_date": "2026-05-14",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": "대부중개수수료 법정 상한을 초과하여 지급한 금액이 법인의 손금에 산입될 수 있는지가 문제 된 사건이다.",
+      "holding_summary": "대법원은 법정 상한을 초과한 대부중개수수료는 사회질서에 위반하여 지출된 비용으로서 손금에 산입할 수 없다는 취지로 상고를 기각하였다.",
+      "significance": "비용이 실제 지급되고 수익과 관련되어 보여도 강행규정 위반과 사회질서 침해의 성격을 별도로 검토해야 함을 보여준다.",
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.scourt.go.kr/sjudge/1779239194331_100634.pdf",
+      "source_as_of": "2026-08-29",
+      "source_provenance": [
+        "data/latest-precedents.json"
+      ]
+    },
+    {
+      "precedent_id": "SC-2025DU36013-2026-04-30",
+      "case_number": "2025두36013",
+      "decision_date": "2026-04-30",
+      "court": "대법원",
+      "title": "법인세부과처분등취소",
+      "issue_summary": null,
+      "holding_summary": "법령이 금지하는 무자격자 또는 타 보험대리점 소속 설계사에게 지급한 모집 대가는 위법행위로 얻은 수익에 직접 대응하는 비용으로 볼 수 없고 통상적인 비용도 아니어서 법인세법 제19조 제2항의 손금 요건을 충족하지 않는다고 보았다.",
+      "significance": "회계상 비용 지급과 세법상 손금은 같지 않으며, 위법한 지급의 직접 대응성·통상성·수익 관련성을 거래 상대방 자격과 계약 구조까지 확인해 판단해야 함을 보여 준 최신 판결이다.",
+      "distinguishing_facts": [
+        "보험대리점인 원고는 2015년부터 2019년까지 모집 자격이 없거나 다른 보험대리점에 소속된 사람들에게 합계 2,658,021,870원을 지급했다.",
+        "보험업법은 모집 자격이 없는 사람의 보험모집과 타 보험대리점 소속 설계사에 대한 모집 위탁을 제한했다.",
+        "원고는 쟁점 지급액이 보험계약 모집으로 얻은 수입에 대응하는 비용이라고 주장했으나 과세관청은 손금불산입했다."
+      ],
+      "disposition_summary": "상고를 모두 기각한다. 상고비용은 원고가 부담한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=620413",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "latest:2025두34763:2026-04-30",
+      "case_number": "2025두34763",
+      "decision_date": "2026-04-30",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": null,
+      "holding_summary": null,
+      "significance": null,
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.scourt.go.kr/sjudge/1778492213462_183653.pdf",
+      "source_as_of": null,
+      "source_provenance": [
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "case:2025두34763",
+      "case_number": "2025두34763",
+      "decision_date": "2026-04-30",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": "출자전환으로 발행한 주식의 발행가액 중 시가 초과액에 관한 익금불산입 제외 규정이 회생기업이나 부실기업에만 적용되는지가 문제 된 사건이다.",
+      "holding_summary": "대법원은 해당 익금불산입 제외 규정의 적용대상을 회생기업 또는 부실기업으로 한정할 수 없다는 취지로 상고를 기각하였다.",
+      "significance": "출자전환의 정책적 배경만으로 법문에 없는 적용대상 제한을 더하지 말고 발행가액·시가·채무소멸액을 직접 대사해야 한다.",
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.scourt.go.kr/sjudge/1778492213462_183653.pdf",
+      "source_as_of": "2026-08-29",
+      "source_provenance": [
+        "data/latest-precedents.json"
+      ]
+    },
+    {
+      "precedent_id": "latest:2025다210837:2026-04-30",
+      "case_number": "2025다210837",
+      "decision_date": "2026-04-30",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": null,
+      "holding_summary": null,
+      "significance": null,
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.scourt.go.kr/sjudge/1778491333352_182213.pdf",
+      "source_as_of": null,
+      "source_provenance": [
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "case:2025다210837",
+      "case_number": "2025다210837",
+      "decision_date": "2026-04-30",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": "중복 세무조사에 기초한 과세·조세범칙조사 통고처분·소득금액변동통지의 효력과 납부한 벌금상당액의 부당이득 반환이 문제 된 사건이다.",
+      "holding_summary": "대법원은 중복 세무조사에 기한 과세는 자료 의존 여부와 무관하게 원칙적으로 위법하고, 그 하자가 있는 조세범칙조사 통고처분의 효력도 부정되며 납부한 벌금상당액의 반환을 구할 수 있고, 과세전적부심사 기회 없이 한 소득금액변동통지는 예외가 없으면 원칙적으로 무효라는 취지로 상고를 기각하였다.",
+      "significance": "선행·후행 조사의 실질을 먼저 비교하고, 그 절차상 하자가 과세처분·통고처분·소득금액변동통지로 어떻게 전이되는지를 처분별로 나누어 검토하게 한다.",
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.scourt.go.kr/sjudge/1778491333352_182213.pdf",
+      "source_as_of": "2026-08-29",
+      "source_provenance": [
+        "data/latest-precedents.json"
+      ]
+    },
+    {
+      "precedent_id": "latest:2025두35626:2026-04-16",
+      "case_number": "2025두35626",
+      "decision_date": "2026-04-16",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": null,
+      "holding_summary": null,
+      "significance": null,
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.scourt.go.kr/sjudge/1776737056102_110416.pdf",
+      "source_as_of": null,
+      "source_provenance": [
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "case:2025두35626",
+      "case_number": "2025두35626",
+      "decision_date": "2026-04-16",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": "예식 관련 꽃장식 공급이 재화 공급인지 용역 공급인지, 다른 예식용역의 주된 공급에 부수되는지 독립된 공급인지가 문제 된 사건이다.",
+      "holding_summary": "대법원은 꽃장식 공급이 재화가 아니라 부가가치세 과세대상인 용역의 공급이고, 설령 꽃의 소유권이 이전되더라도 계약과 대가가 일괄되고 독립적으로 이루어지지 않아 주된 결혼예식용역에 부수되는 공급이라고 보아 상고를 기각하였다.",
+      "significance": "품목 명칭보다 계약과 실제 이행을 기준으로 공급 유형과 복합공급 관계를 판단하고 세금계산서·신고 결과를 대사하게 한다.",
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.scourt.go.kr/sjudge/1776737056102_110416.pdf",
+      "source_as_of": "2026-08-29",
+      "source_provenance": [
+        "data/latest-precedents.json"
+      ]
+    },
+    {
+      "precedent_id": "latest:2025두34726:2026-02-12",
+      "case_number": "2025두34726",
+      "decision_date": "2026-02-12",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": null,
+      "holding_summary": null,
+      "significance": null,
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.scourt.go.kr/sjudge/1771813421635_112341.pdf",
+      "source_as_of": null,
+      "source_provenance": [
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "case:2025두34726",
+      "case_number": "2025두34726",
+      "decision_date": "2026-02-12",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": "법인 단계에서 감면된 소득과 관련된 배당에 대한 배당세액공제 제외를 어느 사업연도를 기준으로 판단하는지가 문제 된 사건이다.",
+      "holding_summary": "대법원은 배당세액공제 제외 여부는 이익배당의 기준이 되는 사업연도에 감면을 받은 법인의 배당인지에 따라 판단한다는 취지로 상고를 기각하였다.",
+      "significance": "배당 지급연도나 과거 감면이익의 실제 재원을 추적하지 않고, 이익배당 기준 사업연도에 법인이 감면규정을 적용받았는지 여부와 제외비율을 대사하게 한다.",
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.scourt.go.kr/sjudge/1771813421635_112341.pdf",
+      "source_as_of": "2026-08-29",
+      "source_provenance": [
+        "data/latest-precedents.json"
+      ]
+    },
+    {
+      "precedent_id": "latest:2025두34254:2025-12-04",
+      "case_number": "2025두34254",
+      "decision_date": "2025-12-04",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": null,
+      "holding_summary": null,
+      "significance": null,
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.scourt.go.kr/sjudge/1765430391637_141951.pdf",
+      "source_as_of": null,
+      "source_provenance": [
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "case:2025두34254",
+      "case_number": "2025두34254",
+      "decision_date": "2025-12-04",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": "과세예고통지와 같은 날 과세처분을 하여 납세자의 과세전적부심사 기회를 침해한 하자가 처분의 무효사유인지와, 감면세액 추징의 부과제척기간 기산일이 문제 된 사건이다.",
+      "holding_summary": "대법원은 과세예고와 같은 날 처분하여 과세전적부심사 기회를 침해한 하자가 중대하고 명백하여 처분이 무효라고 보았다. 또한 구 국세기본법 시행령 제12조의3 제2항 제3호의 ‘징수할 수 있는 사유가 발생한 날’은 2017년 7월 5일 수도권 재이전일이 아니라 과세관청이 징수절차에 나아갈 수 있는 2017 사업연도 신고기한 다음 날인 2018년 4월 1일이라고 판시하여 상고를 기각하였다.",
+      "significance": "2026두30542의 하자 보완 재처분 법리와 함께 최초 처분의 무효와 적법한 재처분을 구분하고, 감면조건 위반일과 추징세액의 부과제척기간 기산일을 동일시하지 않게 한다.",
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.scourt.go.kr/sjudge/1765430391637_141951.pdf",
+      "source_as_of": "2026-08-29",
+      "source_provenance": [
+        "data/latest-precedents.json"
+      ]
+    },
+    {
+      "precedent_id": "SC-2025DU33121-2025-09-25",
+      "case_number": "2025두33121",
+      "decision_date": "2025-09-25",
+      "court": "대법원",
+      "title": "2차납세의무자지정및납세고지처분취소",
+      "issue_summary": null,
+      "holding_summary": "회생절차가 진행되는 동안 채무자의 업무수행권과 재산 관리처분권에 포함되는 채무자가 보유한 주식에 관한 주주권이 관리인에게 전속하므로, 채무자가 그 권리를 실질적으로 행사할 수 있는 지위에 있다고 일반적으로 볼 수 없고 회생절차 폐지는 그 효과를 소급시키지 않는다고 보았다.",
+      "significance": "주식 보유비율만으로 과점주주 책임을 확정하지 말고 납세의무 성립일에 회생절차와 관리인이 실제 권리행사를 제한했는지를 확인해야 함을 보여 준다.",
+      "distinguishing_facts": [
+        "원고 법인은 체납법인의 주식 전부를 보유했고, 원고에 대한 회생절차는 2019년 2월 13일 신청되어 2019년 3월 18일 개시되었다.",
+        "쟁점 법인세 납세의무는 원고에 대한 회생절차 중인 2019년 12월 31일 성립했고 회생계획 인가 전인 2020년 3월 11일 절차가 폐지되었다.",
+        "과세관청은 체납법인에 2019 사업연도 법인세 717,120,660원을 경정ㆍ고지했으나 납부되지 않자 2023년 7월 31일 원고를 제2차 납세의무자로 지정하여 749,391,070원을 납부고지했다."
+      ],
+      "disposition_summary": "상고를 기각하고 상고비용은 피고가 부담한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=609567",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "case:2025두33121",
+      "case_number": "2025두33121",
+      "decision_date": "2025-09-25",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": "회생절차 진행 중 과점주주가 주주권을 실질적으로 행사할 지위에 있어 제2차 납세의무를 부담하는지가 문제 된 사건이다.",
+      "holding_summary": "대법원은 회생절차 중 과점주주는 원칙적으로 주주권을 실질적으로 행사할 지위에 있지 않으므로 제2차 납세의무가 부정된다는 취지로 상고를 기각하였다.",
+      "significance": "주주명부와 지분율만으로 과점주주 책임을 확정하지 않고 회생절차·관리인 권한·실제 주주권 행사 가능성을 납세의무 성립일 기준으로 확인하게 한다.",
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.scourt.go.kr/sjudge/1760488777538_093937.pdf",
+      "source_as_of": "2026-08-29",
+      "source_provenance": [
+        "data/latest-precedents.json"
+      ]
+    },
+    {
+      "precedent_id": "SC-2023DU41314-2025-05-29",
+      "case_number": "2023두41314",
+      "decision_date": "2025-05-29",
+      "court": "대법원",
+      "title": "부가가치세부과처분등취소청구(제3자 명의와 실제 거래주체)",
+      "issue_summary": null,
+      "holding_summary": "제3자의 위임 아래 그 등록을 이용한 거래와 실제 운영자가 형식적 명의만 빌린 하나의 사업을 구별하고, 등록 동기·사업내용·자금관리·명의자 관여·세원포착 곤란을 종합해 실제 세금계산서 주체를 신중히 판단해야 한다고 판시했다.",
+      "significance": "2025년 판결이 제시한 명의위장 두 유형을 공급자·세금계산서·환급 체인 분석의 공통 프레임으로 사용한다.",
+      "distinguishing_facts": [
+        "2011년 제1기부터 2017년 제2기까지 자회사 명의 거래와 세금계산서가 문제되었다.",
+        "명의 이용, 내부거래, 자금관리와 독립 사업 수행 여부가 서로 충돌했다."
+      ],
+      "disposition_summary": "원심판결의 피고 원주세무서장 패소 부분 중 일부 부가가치세·세금계산서미발급가산세·법인세·부가가치세 가산세 처분 부분을 파기환송하고, 원고들의 상고와 피고 성북세무서장의 상고를 기각했다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=606533",
+      "source_as_of": "2026-08-28",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2022DU49984-2024-12-26",
+      "case_number": "2022두49984, 49991",
+      "decision_date": "2024-12-26",
+      "court": "대법원",
+      "title": "부가가치세부과처분취소·부가가치세부과처분취소(위약금의 대가성)",
+      "issue_summary": null,
+      "holding_summary": "이동통신사 공급 단말기의 위약금은 단축급부로서 공급대가에 포함되지만, 제조사 유통 단말기는 이동통신사가 공급자가 아니고 공급자 지위의 계약인수도 인정되지 않아 그 위약금을 이동통신사의 재화 공급가액에 포함할 수 없다고 판시했다.",
+      "significance": "위약금 계정명에서 멈추지 않고 어떤 공급의 반대급부인지 계약과 산식으로 추적하게 한다.",
+      "distinguishing_facts": [
+        "2012년 제1기부터 2016년 제2기까지 약정 중도해지 위약금이 문제되었다.",
+        "이동통신사 공급 단말기와 제조사 유통 단말기는 대리점의 매입경로와 공급자가 달랐다."
+      ],
+      "disposition_summary": "원심판결을 파기하고 사건을 수원고등법원에 환송했다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=599783",
+      "source_as_of": "2026-08-28",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2018DU33005-2023-05-18",
+      "case_number": "2018두33005",
+      "decision_date": "2023-05-18",
+      "court": "대법원",
+      "title": "법인세등부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "특수관계 회사의 상표 사용료 거래가 경제적 합리성을 결여했는지는 상표권의 법적·계약상 귀속뿐 아니라 상표 가치 형성에 수행한 기능, 사용한 자산, 부담한 위험과 각 당사자의 기여를 종합해 판단해야 한다. 이 사건 상표권 무상사용에는 경제적 합리성이 없어 법인세 부당행위계산 부인이 가능하다고 보았다.",
+      "significance": "계열사 상표권 거래를 조사할 때 등록원부와 감정가액만 보지 않고 기능·자산·위험 및 가치 창출 기여를 회사별 증빙과 연결해야 함을 제시한다.",
+      "distinguishing_facts": [
+        "원고의 자회사는 2007년부터 2011년까지 원고가 등록한 상표의 일부 또는 유사 상표를 문화사업·방송교육사업 등에 사용하고 제3자로부터 상호사용료를 받았지만 원고에게 사용료를 지급하지 않았다.",
+        "과세관청은 최초 상표권 사용료 3,541,998,489원을 익금산입했다가 원심 감정인의 시가 감정가액 1,583,739,000원으로 감액경정했다.",
+        "상표의 등록 명의와 사용관계 외에도 브랜드 가치 형성에 각 회사가 수행한 광고·품질관리 등 기능과 비용 부담이 쟁점이 되었다."
+      ],
+      "disposition_summary": "원심판결 중 2009년 제1기 부가가치세(가산세 포함) 부과처분 부분을 파기하고, 이 부분 사건을 서울고등법원에 환송한다. 원고의 나머지 상고를 기각한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=234783",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2019DU60226-2022-05-26",
+      "case_number": "2019두60226",
+      "decision_date": "2022-05-26",
+      "court": "대법원",
+      "title": "조세부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "영어조합법인의 출자자는 상법상 주주 또는 유한책임사원에 해당하지 않고, 농어업경영체법 제16조 제8항에 따라 영어조합법인에는 민법상 조합 규정이 준용되므로, 2016년 납세의무와 2017년 납부통지에 적용된 구 국세기본법 제39조 제2호의 제2차 납세의무를 부담하지 않는다고 보았다.",
+      "significance": "2016년 납세의무에 적용된 구 제39조 제2호의 주주·유한책임사원 개념을 상법상 개념대로 엄격히 해석한 판결이다. 법률 제20611호가 2025년 1월 1일부터 현행 제39조 제3호에 영농·영어조합법인의 과점조합원 특칙을 신설했으므로, 이 판결의 결론을 현행법 사안에 그대로 옮길 수 없다.",
+      "distinguishing_facts": [
+        "체납자는 농어업경영체 육성 및 지원에 관한 법률에 따라 설립된 영어조합법인이었다.",
+        "원고 부부는 그 영어조합법인에 각각 51%와 44%를 출자했다.",
+        "영어조합법인이 2016년 제1기 부가가치세와 2016 사업연도 법인세를 체납하자 과세관청은 2017년 11월 30일과 12월 27일 원고들에게 납부통지를 했다."
+      ],
+      "disposition_summary": "상고를 모두 기각하고 상고비용은 피고가 부담한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=231813",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2021DU33371-2021-12-30",
+      "case_number": "2021두33371",
+      "decision_date": "2021-12-30",
+      "court": "대법원",
+      "title": "부가가치세등부과처분취소(부정행위와 장기 제척기간)",
+      "issue_summary": null,
+      "holding_summary": "허위 매입세금계산서의 부가가치세 장기 제척기간에는 국가 조세수입 감소 인식이 필요하지만, 법인세에서는 허위 장부 등 적극적 은닉의도가 더해지면 부정행위가 될 수 있다고 보았다.",
+      "significance": "같은 허위거래라도 세목별 조세수입 감소 인식과 적극적 은닉 사실을 따로 심리해야 함을 보여 준다.",
+      "distinguishing_facts": [
+        "거래회사들은 세금계산서의 매출세액을 신고·납부하고 경정청구도 하지 않았다.",
+        "원고는 담합 이익 분배를 실제 거래처럼 가장해 허위 회계장부를 작성했다.",
+        "같은 거래라도 부가가치세와 법인세의 포탈 구조 및 인식 사실이 달랐다."
+      ],
+      "disposition_summary": "법인세 일부를 파기환송하고 나머지 상고를 기각했다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=231601",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "important:2020두53699:2021-04-08",
+      "case_number": "2020두53699",
+      "decision_date": "2021-04-08",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": null,
+      "holding_summary": null,
+      "significance": null,
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=226843",
+      "source_as_of": null,
+      "source_provenance": [
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2017DU38959-2021-02-18",
+      "case_number": "2017두38959",
+      "decision_date": "2021-02-18",
+      "court": "대법원 전원합의체",
+      "title": "법인세등부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "납세자가 업무를 맡겨 행위영역 확장의 이익을 얻는 사용인 등의 부정행위도 원칙적으로 납세자의 부정행위에 포함되지만 상당한 주의·감독을 다한 경우는 제외된다. 비대표 종업원이 법인의 이익에 반하는 배임 범행을 하고 법인이 이를 쉽게 알 수 없었던 사안에서는 부당과소신고가산세 중과는 허용되지 않지만, 상당한 관리·감독을 다하지 못했다면 장기 부과제척기간은 적용된다고 보았다.",
+      "significance": "사용인의 배임적 부정행위가 장기 부과제척기간과 부당과소신고가산세에서 서로 다르게 평가될 수 있음을 전원합의체가 밝힌 대표 판결이다.",
+      "distinguishing_facts": [
+        "VAN 사업 법인의 본부장·전무와 팀장 등은 거래 상대방과 공모하여 허위 내부품의서와 허위 세금계산서를 만들고 약 20억 원을 편취했다.",
+        "종업원들의 행위는 법인을 피해자로 한 업무상배임 등 범행이었고 형사 유죄판결이 확정되었다.",
+        "2005년부터 2010년까지 법인 소득이 누락되어 2013년 11월 1일 경정되었으며, 10년의 부과제척기간과 부당과소신고가산세가 함께 문제 되었다."
+      ],
+      "disposition_summary": "원심판결 중 2005년 제1기 내지 2008년 제1기 각 부가가치세 부분을 파기하여 제1심판결을 취소하고 이 부분 소를 각하하며, 2005 사업연도 내지 2010 사업연도 각 법인세 가운데 부당과소신고가산세 부분을 파기하여 이 부분 사건을 서울고등법원에 환송하고, 원고와 피고의 나머지 상고를 모두 기각한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=216691",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2017DU35165-2020-12-10",
+      "case_number": "2017두35165",
+      "decision_date": "2020-12-10",
+      "court": "대법원",
+      "title": "법인세등부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "법인이 대표이사가 독립된 금융기관과 체결한 주식매수 약정상의 의무를 이행하며 주식을 취득한 거래는 그 체결 경위, 법인이 부담하던 사업상 위험, 금융기관과의 관계와 거래 당시 사정을 종합해 경제적 합리성을 판단해야 하며, 단순히 평가액보다 높은 가격이라는 이유만으로 부당행위계산 부인 대상이라고 단정할 수 없다고 보았다.",
+      "significance": "고가 거래의 경제적 합리성은 평가액 차이만이 아니라 거래 상대방의 독립성, 사전 약정, 사업상 필요와 위험 회피 효과를 거래 당시 관점에서 함께 심리해야 함을 보여 준다.",
+      "distinguishing_facts": [
+        "대표이사는 2009. 7. 27. 특수관계인이 아닌 신한캐피탈과 주식 20만 주, 매수가 40억 원, 연 복리 13% 조건의 풋옵션 약정을 체결했다.",
+        "원고는 2010. 11. 23. 대표이사의 매수의무를 대신 이행하여 주식 20만 주를 1주당 23,518원, 합계 4,703,600,000원에 취득했고 나중에 약 33억 원의 양도차익을 얻었다.",
+        "과세관청은 시가 1주당 20,000원을 넘는 703,600,000원을 부인했으나 거래 상대방은 독립된 금융기관이었고 거래 당시 기업공개 가능성과 미래가치가 함께 문제 되었다."
+      ],
+      "disposition_summary": "원심판결을 파기하고, 사건을 부산고등법원에 환송한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=226625",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2016DU62726-2019-08-30",
+      "case_number": "2016두62726",
+      "decision_date": "2019-08-30",
+      "court": "대법원",
+      "title": "부가가치세부과처분취소(명의와 공급받는 자 등록번호)",
+      "issue_summary": null,
+      "holding_summary": "등록번호가 실제 공급받는 사업자의 등록번호로 기능한다면 성명·명칭이 실제 사업자와 다르다는 사정만으로 사실과 다른 세금계산서라고 단정할 수 없다고 판시했다.",
+      "significance": "명의만 보지 않고 등록번호가 어떤 실제 사업을 식별하고 과세행정에 어떤 영향을 주었는지 확인하게 한다.",
+      "distinguishing_facts": [
+        "2008년 제1기부터 2013년 제1기까지 직원 명의 사업장 거래가 문제되었다.",
+        "실제 법인이 계산과 책임으로 가맹점을 운영하고 그 등록번호로 신고했다."
+      ],
+      "disposition_summary": "원심판결을 파기하고 사건을 서울고등법원에 환송했다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=225473",
+      "source_as_of": "2026-08-28",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2018DU36110-2019-05-16",
+      "case_number": "2018두36110",
+      "decision_date": "2019-05-16",
+      "court": "대법원",
+      "title": "법인세등부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "국세기본법 제39조 제2호의 과점주주는 체납법인의 주주 또는 유한책임사원이어야 하므로, 체납법인의 주식을 소유한 법인의 주주라는 이유만으로 체납법인의 제2차 납세의무를 부담하지 않는다고 보았다.",
+      "significance": "법인격 단계와 직접 주주권 행사 가능성을 건너뛰지 않는 엄격한 제2차 납세의무 판단을 요구한다.",
+      "distinguishing_facts": [
+        "유엔아이라이프는 체납법인 동안종합개발 주식 82.19%를 보유했다.",
+        "원고는 유엔아이라이프의 주식 전부를 소유했지만 동안종합개발의 직접 주주는 아니었다.",
+        "상위 법인의 지배주주 지위와 체납법인의 주주 또는 유한책임사원 지위는 구별되었다."
+      ],
+      "disposition_summary": "상고를 기각하고 상고비용은 피고가 부담한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=207480",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2018DU60847-2019-03-14",
+      "case_number": "2018두60847",
+      "decision_date": "2019-03-14",
+      "court": "대법원",
+      "title": "종합소득세부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "국내 주소는 객관적 생활관계로 판단하되, 국내법상 한일 양국 거주자이면 조세조약의 항구적 주거와 중대한 이해관계 중심을 순차 적용해야 한다. 단순히 국내 소유 아파트와 주민등록이 있다는 이유만으로 한국의 항구적 주거를 우선해 정할 수 없다고 보았다.",
+      "significance": "주택 소유·주민등록·체류일수 중 하나만으로 끝내지 않고 실제 이용 가능한 주거와 가족·직업·일상생활을 확인한 다음 조세조약 순서를 적용해야 함을 보여 준다.",
+      "distinguishing_facts": [
+        "원고는 2012년부터 2014년까지 일본 프로축구단에서 활동하며 구단이 제공한 주거에서 가족과 생활했다.",
+        "2014년 일본 연봉을 국내 종합소득으로 신고했다가 거주자 여부와 외국납부세액공제·추계소득금액이 다투어졌다.",
+        "국내에는 원고 소유 아파트와 주민등록이 있었지만 국내 방문은 주로 국가대표 경기 목적이었고 일상생활 기반은 일본에 형성되어 있었다."
+      ],
+      "disposition_summary": "원심판결을 파기하고, 사건을 부산고등법원에 환송한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=206146",
+      "source_as_of": "2026-08-28",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2016DU39573-2018-10-25",
+      "case_number": "2016두39573",
+      "decision_date": "2018-10-25",
+      "court": "대법원",
+      "title": "법인세등부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "특수관계인에게 자금을 차입하면서 정당한 이유 없이 시장금리와 법정 기준금리를 크게 웃도는 이율을 적용한 거래는 건전한 사회통념이나 상관행에 비추어 경제적 합리성이 없어 부당행위계산 부인 대상이 된다고 보았다.",
+      "significance": "특수관계인 차입의 약정이자율을 계약서만으로 인정하지 않고 같은 기간의 시장금리, 법정 기준금리, 신용위험과 협상 경위를 비교해 경제적 합리성을 검증해야 함을 보여 준다.",
+      "distinguishing_facts": [
+        "원고는 1999. 12. 3. 주주인 군인공제회로부터 자금을 차입하면서 연 13.06%의 이자를 지급했다.",
+        "쟁점 2009년부터 2012년까지의 비교 시장금리는 최고 5.81% 수준이었고 법정 기준금리도 기간에 따라 8.5% 또는 6.9%였다.",
+        "원고는 고율 약정에 상응하는 특별한 신용위험이나 독립 당사자 간 협상 사정을 충분히 제시하지 못했다."
+      ],
+      "disposition_summary": "상고를 기각한다. 상고비용은 원고가 부담한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=203865",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2018DU35025-2018-06-28",
+      "case_number": "2018두35025",
+      "decision_date": "2018-06-28",
+      "court": "대법원",
+      "title": "종합소득세등부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "과세대상 소득의 명의자와 실질귀속자가 다르면 실질귀속자가 납세의무를 지지만, 취소소송에서 그 괴리라는 과세요건사실의 증명책임도 원칙적으로 과세관청이 부담한다고 보았다.",
+      "significance": "차명 또는 해외법인이라는 외관만으로 개인 귀속을 단정하지 않고, 출자·계좌통제·개인사용·대체 실질주주 가능성을 과세관청이 구체적으로 입증해야 함을 보여 준다.",
+      "distinguishing_facts": [
+        "과세관청은 홍콩 법인 명의의 2006년부터 2010년 소득이 원고에게 실질 귀속되었다고 보아 종합소득세를 부과했다.",
+        "원고가 법인의 경영에 일부 관여한 사정은 있었으나 설립자금 500,000달러를 출자하거나 법인소득을 개인적으로 유용했다는 자료가 부족했다.",
+        "원고가 아닌 제3자가 실질주주일 가능성을 배제할 수 없어 과세관청의 귀속 주장이 증명되지 않은 것으로 평가되었다."
+      ],
+      "disposition_summary": "상고를 기각한다. 상고비용은 피고가 부담한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=198843",
+      "source_as_of": "2026-08-28",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2017DU55329-2018-01-25",
+      "case_number": "2017두55329",
+      "decision_date": "2018-01-25",
+      "court": "대법원",
+      "title": "부가가치세부과처분취소(국고보조금과 공통매입세액)",
+      "issue_summary": null,
+      "holding_summary": "비과세 용역의 대가가 아닌 국고보조금은 과세표준에서 제외되고, 이를 공급가액처럼 분모에 넣어 공통매입세액을 안분할 수 없으므로 다른 합리적 방법을 선택해야 한다고 판시했다.",
+      "significance": "보조금의 대가성 판단과 공통매입 안분 분모 선택을 분리한다.",
+      "distinguishing_facts": [
+        "2008년 공익서비스비용 보상계약과 2008년 제2기 신고가 대상이었다.",
+        "철도이용자 대가와 국가의 재정상 원조가 서로 다른 자금흐름이었다."
+      ],
+      "disposition_summary": "원심판결을 파기하고 사건을 서울고등법원에 환송했다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=193334",
+      "source_as_of": "2026-08-28",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2016DU55421-2017-12-13",
+      "case_number": "2016두55421",
+      "decision_date": "2017-12-13",
+      "court": "대법원",
+      "title": "양도소득세부과처분취소(금지된 재조사의 효력)",
+      "issue_summary": null,
+      "holding_summary": "허용사유 없는 같은 세목·과세기간 재조사에 기한 처분은 원칙적으로 그 자체가 위법하고 재조사 자료를 배제해도 같은 처분이 가능하다는 사정만으로 달라지지 않는다고 보았다.",
+      "significance": "중복세무조사 금지 위반을 처분 효력과 연결하고 위법수집자료 배제만으로 치유되지 않음을 명확히 했다.",
+      "distinguishing_facts": [
+        "최초 조사에서 공사비 필요경비를 인정하고 조사를 종결했다.",
+        "업무감사 지시 뒤 조사공무원이 다시 현장을 방문해 진술서와 장부를 받았다.",
+        "재조사는 법에 열거된 예외사유에 해당하지 않았다."
+      ],
+      "disposition_summary": "원심판결을 파기하고 사건을 서울고등법원에 환송했다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=186499",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2017DU42255-2017-10-26",
+      "case_number": "2017두42255",
+      "decision_date": "2017-10-26",
+      "court": "대법원",
+      "title": "양도소득세부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "양도소득세 조사 전 금융회사에 금융거래정보를 세 차례 요구했더라도 납세자에게 질문하거나 검사하지 않은 과세자료 수집이면 곧바로 세무조사가 아니며, 국세기본법과 금융실명법상 정보요구의 적법성은 별도로 심사해야 한다고 보았다.",
+      "significance": "금융회사에 대한 자료요구와 납세자를 상대로 한 질문·검사를 구별하고, 국세기본법과 금융실명법 요건을 각각 확인하게 한다.",
+      "distinguishing_facts": [
+        "원고는 2013년 부동산을 양도했고 과세관청은 2014년 9월 25일 양도소득세 조사 사전통지를 했다.",
+        "과세관청은 2014. 9. 30.부터 2014. 10. 15.까지 3회 금융회사 지점들에 금융거래정보를 요구하면서 사용 목적을 상속세 조사라고 잘못 적었다.",
+        "금융회사에 대한 요구는 금융실명거래 및 비밀보장에 관한 법률에 따른 서면요구였고, 원고에 대한 실제 세무조사는 2014년 10월 10일 시작되었다."
+      ],
+      "disposition_summary": "상고를 기각하고 상고비용은 원고가 부담한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=195420",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2017DU36588-2017-09-07",
+      "case_number": "2017두36588",
+      "decision_date": "2017-09-07",
+      "court": "대법원",
+      "title": "법인세부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "결산조정 대손금은 일반 원칙상 법령이 정한 회수불능 요건을 충족하여 손금으로 계상한 사업연도에 귀속한다. 다만 이 판결은 피합병법인의 채권이 합병등기일 전에 객관적으로 회수불능해진 사안에서, 합병으로 법인이 소멸하는 합병 특칙을 적용하여 결산상 미계상이어도 피합병법인의 최종 사업연도 손금으로 인정했다.",
+      "significance": "회수불능의 객관적 확정일, 결산상 대손 계상, 합병으로 소멸하는 법인의 최종 사업연도라는 세 시점을 분리해 대손금 귀속을 검토해야 함을 보여 준다.",
+      "distinguishing_facts": [
+        "피합병법인이 보유한 채권은 채무자의 사업 폐지 등으로 합병등기일 전에 회수불능 상태가 객관적으로 확정되었다.",
+        "피합병법인은 합병등기일이 속하는 사업연도 결산에서 쟁점 채권을 대손금으로 계상하지 않았다.",
+        "원고는 합병 후 쟁점 대손금을 피합병법인의 최종 사업연도 손금에 산입하여 법인세 감액을 구했다."
+      ],
+      "disposition_summary": "상고를 기각한다. 상고비용은 원고가 부담한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=185616",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2016DU41781-2017-07-18",
+      "case_number": "2016두41781",
+      "decision_date": "2017-07-18",
+      "court": "대법원",
+      "title": "종합부동산세등부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "회생계획에 분할신설회사가 분할되는 회사의 조세채무에 관한 제2차 납세의무까지 승계한다는 취지가 객관적으로 나타나면, 그 기초가 되는 과점주주 지위와 책임도 회생계획에 따라 승계될 수 있다고 보았다.",
+      "significance": "회생계획의 문언과 구조를 객관적으로 읽어 제2차 납세의무의 기초 지위까지 승계되는지를 판단해야 함을 보여 준다.",
+      "distinguishing_facts": [
+        "주된 납세의무의 성립일은 2010년 6월 1일이었다.",
+        "분할 전 회사는 프로젝트금융투자회사 주식 80.46%를 보유했다.",
+        "회생계획에 따른 회사분할 뒤 제2차 납세의무의 기초인 과점주주 지위와 책임의 승계 여부가 다투어졌다."
+      ],
+      "disposition_summary": "상고를 기각하고 상고비용은 원고가 부담한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=185419",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2017DU36885-2017-07-11",
+      "case_number": "2017두36885",
+      "decision_date": "2017-07-11",
+      "court": "대법원",
+      "title": "종합소득세부과처분취소(가산세 정당한 사유 인정)",
+      "issue_summary": null,
+      "holding_summary": "세법 해석상 견해가 대립하고 과세관청도 확실한 견해를 갖지 못하는 등 의무해태를 비난하기 어려운 합리적 사정이 있으면 가산세를 부과할 수 없다고 보았다.",
+      "significance": "단순 법률 오인과 구별되는 정당한 사유를 해석 대립, 행정의 태도, 의무이행 기대 가능성으로 구체화했다.",
+      "distinguishing_facts": [
+        "파산관재인 보수의 사업소득 해당 여부에 명시적 판단과 일관된 해석이 없었다.",
+        "납세자는 2002년 이후 계속 기타소득으로 신고했다.",
+        "과세관청은 2011년 해명자료를 요구한 뒤에도 2015년까지 후속 처분을 하지 않았다."
+      ],
+      "disposition_summary": "원심판결 중 가산세 부분을 파기환송하고 나머지 상고를 기각했다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=185371",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2017DU30214-2017-04-26",
+      "case_number": "2017두30214",
+      "decision_date": "2017-04-26",
+      "court": "대법원",
+      "title": "종합소득세부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "금품이 용역 보수의 성격과 사례금 성격을 함께 가지더라도 역무 내용, 수수 동기와 목적, 금액 규모, 당사자 관계를 종합해 전체적으로 용역대가 범주를 벗어나면 기타소득 중 사례금으로 분류할 수 있다고 보았다.",
+      "significance": "위약금·배상금·사례금·영업권처럼 같은 지급액도 지급 원인과 대가 범위를 먼저 특정해야 하며, 분류가 달라지면 필요경비와 원천징수·신고 경로도 함께 달라진다는 점을 보여 준다.",
+      "distinguishing_facts": [
+        "원고는 약 1년 3개월 동안 최대주주의 형사재판 연락, 자료 수집, 구치소·병원생활 지원을 맡았다.",
+        "석방 후 주식을 양수받기로 했다가 민사소송을 거쳐 2013년 1월 30일 30억 원과 6월 28일 45억 원을 받았다.",
+        "합계 75억 원은 제공한 역무의 객관적 가치보다 지나치게 컸고 오랜 친분관계가 지급에 더 큰 영향을 준 것으로 평가되었다."
+      ],
+      "disposition_summary": "상고를 기각한다. 상고비용은 원고가 부담한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=184749",
+      "source_as_of": "2026-08-28",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2014DU8360-2017-03-16",
+      "case_number": "2014두8360",
+      "decision_date": "2017-03-16",
+      "court": "대법원",
+      "title": "부가가치세및종합소득세부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "명칭과 무관하게 질문·검사권 행사로 납세자가 응답하고 자료를 제출할 의무를 부담해 영업과 사생활의 평온을 침해한다면 세무조사에 해당할 수 있다고 보았다.",
+      "significance": "현장확인의 실질을 접촉 방식, 의무 부담, 자료 요구 강도로 판정하는 기준을 제시했다.",
+      "distinguishing_facts": [
+        "조사공무원 5명이 2008년 12월 18일부터 26일까지 9일간 사업장을 방문했다.",
+        "대표자 등에게 질문하고 장부·서류, 컴퓨터 하드디스크, 메모와 계좌자료 및 확인서를 요구·확보했다.",
+        "2005년 제1기부터 2008년 제1기까지의 부가가치세 등을 확인한 뒤 2009년 2월 2일부터 같은 세목·과세기간에 다시 조사했다."
+      ],
+      "disposition_summary": "원심판결 중 원고 패소 부분을 파기하고, 이 부분 사건을 서울고등법원에 환송한다.",
+      "official_source_url": "https://www.scourt.go.kr/sjudge/1491806446556_154046.pdf",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2016DU37584-2016-08-17",
+      "case_number": "2016두37584",
+      "decision_date": "2016-08-17",
+      "court": "대법원",
+      "title": "종합소득세부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "국내 주소는 가족·자산·직업 등 생활관계의 객관적 사실로 판단하며, 국내법상 양국 거주자가 되면 조세조약의 항구적 주거와 중대한 이해관계 중심 기준을 순서대로 적용한다. 사건에서는 인적·경제적 관계가 대한민국에 더 밀접하다고 보았다.",
+      "significance": "체류일수 하나가 아니라 가족, 주거, 자산, 송금, 의사결정 장소를 묶어 국내법상 거주성을 판단해야 한다. 또한 2007년·2008년은 국내법을, 2009년·2010년은 발효·적용개시를 통과한 한·사우디 협약 제4조의 tie-breaker를 별도 검토해야 함을 보여 준다.",
+      "distinguishing_facts": [
+        "원고는 2007년부터 2010년까지 배우자와 국내 주민등록을 유지하며 연평균 188일 국내에 체류했다.",
+        "사우디에는 유형자산이 없고 국내에는 다수 부동산과 가족의 생활기반이 있었으며 소득 대부분을 국내로 송금했다.",
+        "사우디 법인의 중요한 사업상 의사결정 중 상당 부분이 국내에서 이루어졌다."
+      ],
+      "disposition_summary": "상고를 기각한다. 상고비용은 원고가 부담한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=184026",
+      "source_as_of": "2026-08-28",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2016DU35335-2016-07-14",
+      "case_number": "2016두35335",
+      "decision_date": "2016-07-14",
+      "court": "대법원",
+      "title": "부가가치세부과처분취소(명의위장 공급자와 선의·무과실)",
+      "issue_summary": null,
+      "holding_summary": "실제 공급자와 세금계산서상 공급자가 다른 경우 매입자가 명의위장 사실을 알지 못했고 알지 못한 데 과실도 없다는 특별한 사정을 입증해야 공제를 주장할 수 있다고 보았다.",
+      "significance": "사업자등록 확인만으로 끝내지 않고 거래 규모·품목 위험에 맞는 주의조치를 증거화하게 한다.",
+      "distinguishing_facts": [
+        "2010년 제1기부터 2012년 제2기까지 고철 매입 세금계산서의 공급자 명의가 실제와 달랐다.",
+        "거래처 확인·운송·계좌 자료가 선의·무과실을 뒷받침하는지가 다투어졌다."
+      ],
+      "disposition_summary": "부당과소신고가산세 부분을 일부 파기자판하여 원고 항소를 기각하고, 원고의 상고와 피고의 나머지 상고를 기각했다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=183433",
+      "source_as_of": "2026-08-28",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2013DU19615-2015-12-23",
+      "case_number": "2013두19615",
+      "decision_date": "2015-12-23",
+      "court": "대법원",
+      "title": "부가가치세경정거부처분취소(이동통신 단말기 보조금 에누리)",
+      "issue_summary": null,
+      "holding_summary": "단말기 보조금이 공급조건에 따라 통상의 공급가액에서 직접 공제되는 에누리액이면 공급 이후 정산되더라도 부가가치세 과세표준에서 제외된다고 판시했다.",
+      "significance": "지급 명칭이나 시점보다 공급조건과 대가의 직접 감액 관계를 보게 한다.",
+      "distinguishing_facts": [
+        "2006. 3. 24. 이후 이동통신 단말기 보조금 거래가 문제되었다.",
+        "가입자 할인조건과 통신사의 대리점 사후보전이 결합되었다."
+      ],
+      "disposition_summary": "원심판결을 파기하고 사건을 서울고등법원에 환송했다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=192657",
+      "source_as_of": "2026-08-28",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2013DU25399-2015-11-26",
+      "case_number": "2013두25399",
+      "decision_date": "2015-11-26",
+      "court": "대법원",
+      "title": "종합소득세부과처분등취소",
+      "issue_summary": null,
+      "holding_summary": "대법원은 현지 시설·직원·독립적 의사결정이 없는 회사가 라부안 기지회사에 해당한다고 보고, 해당 회사 명의 소득이 원고들에게 직접 귀속한다고 판단했다. 원고 1이 계좌와 자산관리를 주도한 구체적 사실도 이 판단의 근거였다.",
+      "significance": "대법원이 라부안 기지회사와 원고들의 직접귀속을 판단한 다음, 환송범위를 원고 1의 국내 거주자 여부, 소득금액의 존재·금액, 소득세법 또는 국제조세조정법상 나머지 과세요건, 원고 1이 직접 얻은 국외근로소득과 국내배당소득으로 한정했다.",
+      "distinguishing_facts": [
+        "원고들은 2000년 말레이시아 라부안에 투자지주회사를 설립하고 지분 83%와 17%를 보유했다.",
+        "현지 회사에는 특별한 물적 시설이나 직원이 없었고 홍콩 회사가 업무를 대행했으며 주요 의사결정절차도 제대로 이루어지지 않았다.",
+        "원고 1이 회사 계좌와 자산관리를 주도했고 신뢰할 만한 회계장부가 없었으나 원심은 일부 소득 귀속을 달리 판단했다."
+      ],
+      "disposition_summary": "원심판결을 파기하고, 사건을 서울고등법원에 환송한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=180271",
+      "source_as_of": "2026-08-28",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "important:2010두19713:2012-10-11",
+      "case_number": "2010두19713",
+      "decision_date": "2012-10-11",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": null,
+      "holding_summary": null,
+      "significance": null,
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=165914",
+      "source_as_of": null,
+      "source_provenance": [
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "case:2010두19713",
+      "case_number": "2010두19713",
+      "decision_date": "2012-10-11",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": "과세전적부심사 청구 당시에는 납기 전 징수사유가 없었으나 청구 후 적법한 압류로 그 사유가 발생한 경우, 결정 전 과세유보 원칙의 예외가 되는지와 법정 결정기간 경과의 영향이 문제 된 사건이다.",
+      "holding_summary": "대법원은 과세전적부심사 청구 후라도 납기 전 징수사유가 발생하면 과세관청은 심사결정 전에 과세처분을 할 수 있고, 청구일부터 30일의 결정·통지기간을 넘겨 결정을 하지 않던 중 그 사유가 발생한 경우에도 달리 볼 수 없다고 판시하여 원심을 파기환송하였다.",
+      "significance": "과세전적부심사 접수일만으로 처분 유보기간을 고정하지 않고 청구 후 발생한 체납·압류와 각 처분일을 한 타임라인에서 대조하게 한다. 국세기본법의 사전구제 절차와 국세징수법의 조기 보전 요건을 연결하는 직접 기출 판례다.",
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=165914",
+      "source_as_of": "2026-08-29",
+      "source_provenance": [
+        "data/exam-important-precedents.json"
+      ]
+    },
+    {
+      "precedent_id": "SC-2010DU12552-2012-07-26",
+      "case_number": "2010두12552",
+      "decision_date": "2012-07-26",
+      "court": "대법원",
+      "title": "부가가치세부과처분등취소(사업 관련 매입세액)",
+      "issue_summary": null,
+      "holding_summary": "매입세액의 사업 관련성은 지출 목적과 지출 경위, 사업 내용에 비추어 그 지출의 객관적 필요성을 개별 판단한다고 판시했다.",
+      "significance": "비용 계정명보다 지출 목적·실제 사용·사업 필요성을 증거로 연결하는 기준을 제공한다.",
+      "distinguishing_facts": [
+        "시장정비사업자는 2006. 8. 7. 컨설팅계약을 체결했다.",
+        "2007. 1. 5. 용역대금 25억 원을 지급했고 사업구역 토지 보유회사의 인수가 필요했다."
+      ],
+      "disposition_summary": "원심판결 중 원고 패소 부분을 파기하고 이 부분 사건을 서울고등법원에 환송했으며, 피고의 상고를 기각했다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=193757",
+      "source_as_of": "2026-08-28",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2009DU5510-2012-04-13",
+      "case_number": "2009두5510",
+      "decision_date": "2012-04-13",
+      "court": "대법원",
+      "title": "소득금액변동통지처분취소",
+      "issue_summary": null,
+      "holding_summary": "법인이 법인세 과세표준을 신고하면서 배당·상여·기타소득으로 자진 소득처분한 금액은 신고기일에 상대방에게 지급한 것으로 의제되어 원천징수 소득세 납세의무가 성립·확정된다. 그 뒤 과세관청이 일부 처분액을 늘리고 다른 처분액을 줄여 전체 소득처분금액이 감소했다면 그 소득금액변동통지는 법인에 법률상 불이익을 주지 않으므로 법인은 취소를 구할 소의 이익이 없다고 보았다.",
+      "significance": "소득처분 경정은 개별 증가항목만 떼어 보지 않고 전체 처분금액의 증감과 법인의 원천징수 부담을 비교해 법률상 불이익과 소의 이익을 판단해야 함을 보여 준다.",
+      "distinguishing_facts": [
+        "원고는 2005. 4. 8. 2003 사업연도 법인세를 수정신고하면서 주주·임원·종업원 단기채권 6,512,792,610원을 익금산입하고 대표이사 상여로 자진 소득처분했다.",
+        "과세관청은 2006. 3. 7. 토지·건물 취득비용으로 확인된 5,408,417,702원을 기존 처분액에서 차감하고 새로 확인된 임대수입 누락액 32,451,611원을 가산했다.",
+        "경정 결과 사외유출·대표이사 상여는 1,136,826,519원으로 감소했고, 이 통지는 원고에게 법률상 불이익을 주지 않아 취소를 구할 소의 이익이 문제 되었다."
+      ],
+      "disposition_summary": "상고를 기각한다. 상고비용은 원고가 부담한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=162591",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2008DU12986-2011-05-13",
+      "case_number": "2008두12986",
+      "decision_date": "2011-05-13",
+      "court": "대법원",
+      "title": "부가가치세부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "지방공기업이 지방자치단체로부터 받은 시설관리비·인건비·경비·대행사업비는 사업장폐기물 처리용역의 대가로서 부가가치세 과세표준에 포함되고, 적법한 세금계산서를 받지 않은 데 정당한 사유가 없다고 보았다.",
+      "significance": "지방공기업의 폐기물 처리 대행비가 과세 용역의 대가인지와 적격 세금계산서 미수취 가산세의 정당한 사유를 함께 판정한 사례다.",
+      "distinguishing_facts": [
+        "원고는 대전광역시가 설립한 지방공기업으로 폐기물처리시설의 운영·관리를 대행했다.",
+        "대전광역시가 지급한 시설관리비·인건비·경비·대행사업비는 사업장폐기물 처리용역의 대가였다.",
+        "원고는 적법한 세금계산서가 아니라 계산서를 받아 매입세액을 공제할 수 없었고, 의무 위반에 정당한 사유도 인정되지 않았다."
+      ],
+      "disposition_summary": "상고를 기각하고 상고비용은 원고가 부담한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=159920",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2007DU4896-2009-05-14",
+      "case_number": "2007두4896",
+      "decision_date": "2009-05-14",
+      "court": "대법원",
+      "title": "부가가치세부과처분취소(다수 사업장 공급받는 자와 공통매입)",
+      "issue_summary": null,
+      "holding_summary": "다수 사업장 중 공급받는 사업장은 계약·대금지급·용역 목적과 사업장 관계를 종합하여 정하고, 공통매입세액은 실지귀속 후 관련 과세·면세사업 공급가액만으로 안분한다고 판시했다.",
+      "significance": "사업장 명칭 하나가 아니라 계약과 자금, 효익을 함께 추적하게 하는 실제 공급받는 자 기준이다.",
+      "distinguishing_facts": [
+        "총괄 사업장 명의로 계약을 체결하고 대금을 지급했다.",
+        "용역은 다른 사업장과 관련되었으나 계약 경위와 사업장 관계를 함께 보았다."
+      ],
+      "disposition_summary": "피고의 상고를 기각했다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=134345",
+      "source_as_of": "2026-08-28",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SAC-2008GUHAP14548-2008-11-26",
+      "case_number": "2008구합14548",
+      "decision_date": "2008-11-26",
+      "court": "서울행정법원",
+      "title": "종합소득세부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "독립된 자격의 강연대가가 사업소득인지 기타소득인지는 명칭이 아니라 직업활동의 내용, 기간, 횟수, 태양, 상대방, 수익 목적과 계속·반복성을 전후 사정과 함께 사회통념에 따라 판단한다고 보았다. 서울행정법원 하급심 사례이므로 대법원 확립 법리로 표시하지 않는다.",
+      "significance": "지급명세서나 계약서에 적힌 강연료라는 이름보다 거래 빈도와 활동 구조를 먼저 보는 소득구분 사례다. 다만 하급심이라는 심급과 항소 표기를 학습자료에서 항상 함께 보여 줘야 한다.",
+      "distinguishing_facts": [
+        "원고는 2005년 대학교 겸임교수 근로소득 6,800,000원 외에 여러 업체에서 강연료를 받았다.",
+        "64개 업체에 105회 강연하고 총 114,225,318원을 받았으며 1993년부터 2006년까지 강연활동을 계속했다.",
+        "지급자별로 사업소득 또는 기타소득으로 서로 다르게 원천징수되어 지급명세의 명칭과 실제 활동이 어긋났다."
+      ],
+      "disposition_summary": "원고의 청구를 기각한다. 소송비용은 원고가 부담한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=124836",
+      "source_as_of": "2026-08-28",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2006DU8068-2008-09-25",
+      "case_number": "2006두8068",
+      "decision_date": "2008-09-25",
+      "court": "대법원",
+      "title": "증여세등부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "남편의 자금으로 아내 명의의 부동산을 취득한 경우에는 증여가 추정되므로, 명의신탁이라는 사정은 납세자가 증명해야 한다. 세무조사 과정에서 작성한 사실확인서는 강요나 내용 미비 등 특별한 사정이 없다면 증거가치를 쉽게 부인할 수 없다고 보았다.",
+      "significance": "배우자 취득자금의 증여 추정과 명의신탁 반증의 관계, 조사 확인서의 증거가치를 함께 보여 준다.",
+      "distinguishing_facts": [
+        "원고는 남편이 제공한 자금으로 원고 명의 부동산을 취득했다.",
+        "원고는 부동산이 남편의 명의신탁 재산이라고 주장했으나 이를 증명할 책임을 다하지 못했다.",
+        "세무조사 때 원고가 세무대리인의 검토를 거쳐 증여일·가액·증여자·사용처를 적은 사실확인서에 서명했다."
+      ],
+      "disposition_summary": "상고를 기각하고 상고비용은 원고가 부담한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=64778",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2005DA11848-2007-12-14",
+      "case_number": "2005다11848",
+      "decision_date": "2007-12-14",
+      "court": "대법원",
+      "title": "배당이의",
+      "issue_summary": null,
+      "holding_summary": "공매대금이 여러 조세채권 전부를 충족하지 못할 때 압류선착주의가 적용되는 범위를 먼저 정하고, 동일 과세관청의 여러 조세채권 사이 배분은 특별한 불이익이 없는 한 민법상 법정충당 순서를 당연히 따라야 하는 것은 아니라고 보았다.",
+      "significance": "배분계산에서 압류선착주의로 경합 집단을 먼저 확정한 뒤 실제 배분액과 체납세액별 충당을 구분해야 함을 보여 준다.",
+      "distinguishing_facts": [
+        "춘천시 소재 세 필지에 증여세 체납을 원인으로 한 압류와 담보권 및 다른 조세채권이 경합했다.",
+        "양도소득세의 법정기일은 1999년 8월 10일이었고 공매와 민사집행절차의 배당금이 여러 조세채권 전액에 부족했다.",
+        "과세관청은 배분받은 금액을 여러 체납세액에 나누어 충당했고 원고는 그 순서를 다투었다."
+      ],
+      "disposition_summary": "상고를 기각한다. 상고비용은 원고가 부담한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=193646",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2006DA66753-2007-06-29",
+      "case_number": "2006다66753",
+      "decision_date": "2007-06-29",
+      "court": "대법원",
+      "title": "사해행위취소",
+      "issue_summary": null,
+      "holding_summary": "사해행위 전에 아직 채권이 성립하지 않았더라도 채권성립의 기초가 되는 법률관계가 이미 있고 가까운 장래의 채권 발생에 고도의 개연성이 있으며 실제로 가까운 장래에 그 개연성이 현실화되었다면 채권자취소권의 피보전채권이 될 수 있다고 보았다. 이 사건에서는 양도소득세 가산세와 사실심 변론종결 때까지의 가산금ㆍ중가산금도 그 범위에 포함된다고 판단했다.",
+      "significance": "사해행위 당시 아직 확정되지 않은 조세채권도 기초 법률관계ㆍ고도의 개연성ㆍ가까운 장래의 현실화라는 세 요건을 모두 사실과 증빙으로 입증하면 피보전채권이 될 수 있음을 보여 준다.",
+      "distinguishing_facts": [
+        "채무자는 피고와 증여계약을 하기 직전에 자신이 소유한 부동산을 양도하여 양도소득세와 가산세 채권 성립의 기초가 되는 법률관계를 만들었다.",
+        "증여계약 후 채무자에게 별다른 재산이 없었다.",
+        "채무자는 양도소득과세표준 예정신고, 확정신고 및 확정신고 자진납부를 전혀 이행하지 않았고 이후 실제로 가산세 채권이 성립했다."
+      ],
+      "disposition_summary": "원심판결 중 원고 패소 부분을 파기하고 그 부분을 서울고등법원에 환송했다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=68783",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2004DU8422-2006-04-28",
+      "case_number": "2004두8422",
+      "decision_date": "2006-04-28",
+      "court": "대법원",
+      "title": "부가가치세부과처분취소등(사업양도와 건물매매 구분)",
+      "issue_summary": null,
+      "holding_summary": "사업양도는 물적·인적 시설과 권리의무를 포괄 이전하여 사업 동일성을 유지하고 경영주체만 교체하는 것이며, 건물만 특정한 매매는 이에 해당하지 않는다고 판시했다.",
+      "significance": "계약 제목보다 자산·인력·계약·채무·고객관계가 유기적으로 이전되어 독립 사업이 계속되는지를 묻게 한다.",
+      "distinguishing_facts": [
+        "매수인은 임대차관계 일부와 근저당채무를 인수했다.",
+        "실질적으로 임대사업 전체보다 그 사업에 쓰이던 건물을 특정하여 거래한 것으로 판단되었다."
+      ],
+      "disposition_summary": "원심판결을 파기하고 사건을 대전고등법원에 환송했다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=193981",
+      "source_as_of": "2026-08-28",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2003DU797-2005-05-26",
+      "case_number": "2003두797",
+      "decision_date": "2005-05-26",
+      "court": "대법원",
+      "title": "법인세등부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "법인세법상 권리확정주의에서 소득의 원인이 되는 권리가 확정되었다고 하려면 법률상 권리 성립만으로는 부족하고 소득 실현 가능성이 상당히 높은 정도로 성숙·확정되어야 한다. 이자채권이 이미 성숙한 뒤 채무자의 무자력 때문에 회수할 수 없게 된 사정은 원칙적으로 대손의 문제라고 보았다.",
+      "significance": "익금 귀속시기 판단과 사후 대손 판단을 구분하고, 채권의 법률상 성립·담보·채무자 자력으로 실현 가능성의 성숙 정도를 심리해야 함을 보여 준 판결이다.",
+      "distinguishing_facts": [
+        "원고는 1990. 12. 19. 토지 매매 가계약을 체결하고 1991. 12. 31. 매매대금과 잔대금을 확정 정산했다.",
+        "확정 잔대금에는 1992. 1. 1.부터 연 18%의 지연이자가 발생하고 1992. 4. 30.을 완제기일로 정했으며, 매매대금채권과 이자채권을 담보하기 위한 근저당권과 지상권을 취득했다.",
+        "과세관청은 약정에 따라 발생한 미수이자를 각 사업연도 익금에 산입했고 원심은 채무자의 자력과 담보가치 등을 들어 이를 부정했다."
+      ],
+      "disposition_summary": "원심판결을 파기하고 사건을 서울고등법원에 환송한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=193789",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2002DU5771-2004-11-18",
+      "case_number": "2002두5771",
+      "decision_date": "2004-11-18",
+      "court": "대법원 전원합의체",
+      "title": "부가가치세부과처분취소(과세기간 경과 후 소급작성 세금계산서)",
+      "issue_summary": null,
+      "holding_summary": "과세기간이 지난 뒤 작성일자를 실제 공급시기로 소급한 세금계산서는 필요적 기재사항이 사실과 다른 세금계산서여서 원칙적으로 매입세액을 공제할 수 없다고 판시했다.",
+      "significance": "거래 실재만이 아니라 세금계산서 실제 작성일·공급시기·과세기간을 함께 검증해야 한다는 기준을 세웠다.",
+      "distinguishing_facts": [
+        "1998년 공급분을 1999. 4. 10.경 작성하면서 공급시기로 소급했다.",
+        "1998년 제1기·제2기 무자료 석유 거래가 세무조사에서 발견되었다."
+      ],
+      "disposition_summary": "원심판결을 파기하고 사건을 서울고등법원에 환송했다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=126714",
+      "source_as_of": "2026-08-28",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "important:2003구합28801:2004-06-24",
+      "case_number": "2003구합28801",
+      "decision_date": "2004-06-24",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": null,
+      "holding_summary": null,
+      "significance": null,
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=78601",
+      "source_as_of": null,
+      "source_provenance": [
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "case:2003구합28801",
+      "case_number": "2003구합28801",
+      "decision_date": "2004-06-24",
+      "court": "서울행정법원",
+      "title": null,
+      "issue_summary": "법인이 주식발행초과금 등을 자본전입하면서 자기주식 몫의 무상주를 배정하지 않아 다른 주주가 종전 지분비율을 초과하여 무상주를 받은 경우 그 초과 주식가액을 의제배당으로 볼 수 있는지가 문제 된 사건이다.",
+      "holding_summary": "서울행정법원은 자기주식 취득 제한 때문에 자기주식 몫의 무상주를 배정하지 못한 경우에도 다른 주주가 초과 배정받은 주식가액은 법인 재산이 주주에게 이전된 것과 같은 경제적 결과를 낳으므로 구 법인세법 제16조 제1항 제3호와 구 소득세법 제17조 제2항 제5호의 의제배당에 해당한다고 판단하였다.",
+      "significance": "자본전입 재원이 원칙적으로 의제배당 제외 대상인지와 별개로 자기주식 몫 미배정으로 다른 주주의 지분이 증가했는지를 다시 검토하게 한다. 초과 배정액의 주주별 귀속과 원천징수·소득처분 자료를 연결하는 직접 기출 판례다.",
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=78601",
+      "source_as_of": "2026-08-29",
+      "source_provenance": [
+        "data/exam-important-precedents.json"
+      ]
+    },
+    {
+      "precedent_id": "SC-2002DU12786-2003-12-12",
+      "case_number": "2002두12786",
+      "decision_date": "2003-12-12",
+      "court": "대법원",
+      "title": "종합소득세부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "신고 오류·탈루가 있고 실제 수입을 포착하는 객관적인 방법이면 금융계좌 입금액 조사도 적법한 실지조사다. 실지조사로 매출누락을 발견했을 때 별도의 대응 필요경비는 납세자가 입증해야 하며 그 공제를 위해 전체 소득을 추계로 바꿀 수는 없다고 보았다.",
+      "significance": "개인계좌나 플랫폼 입금자료는 곧바로 전액 매출이라는 뜻이 아니라 객관적 대사 출발점이며, 비매출 입금과 추가 대응경비를 별도의 증거 문제로 나누어야 함을 보여 준다.",
+      "distinguishing_facts": [
+        "과세관청은 1998년 사업자의 예금계좌를 조사해 본인이 인정한 70,000,000원 외에 50,960,157원을 더 확인했다.",
+        "매출누락 합계 120,960,157원이 총수입금액에 더해졌고 계좌의 실제 입금액 자체는 납세자도 인정했다.",
+        "계좌 입금액 중 부가가치세를 제외해 반기별 매출액과 연간 총수입금액을 재구성할 수 있었다."
+      ],
+      "disposition_summary": "원심판결을 파기하고, 사건을 서울고등법원에 환송한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=67169",
+      "source_as_of": "2026-08-28",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-2001DU9103-2002-11-26",
+      "case_number": "2001두9103",
+      "decision_date": "2002-11-26",
+      "court": "대법원",
+      "title": "법인세부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "신의성실 원칙을 적용하려면 공적 견해표명, 납세자의 무귀책 신뢰, 그 신뢰에 따른 행위, 반대처분에 따른 이익 침해가 필요하다. 시행규칙 개정 예정 보도자료는 기한 내 시행을 약속한 공적 견해로 보기 어렵고, 양도 전에 실제 시행 여부를 확인하지 않은 납세자에게 귀책사유가 있다고 보았다.",
+      "significance": "개정 예정 보도자료와 실제 시행 법령을 구별하고, 공적 견해표명과 무귀책 신뢰를 구체적 시행 확인 가능성에 따라 판단한 신의성실 원칙의 대표적 부정 사례다.",
+      "distinguishing_facts": [
+        "재정경제부는 1998. 6. 9. 구조조정 부동산을 비업무용 부동산에서 제외하는 시행규칙을 6월 말경 공포·시행할 예정이라는 보도자료를 냈다.",
+        "납세자는 시행규칙이 실제 공포·시행되기 전에 토지를 양도했고, 개정 규정은 1998. 8. 22. 시행되었다.",
+        "보도자료는 개정 방향과 예정 일정을 알린 것이며 납세자는 양도 전에 실제 공포·시행 여부를 확인하지 않았다."
+      ],
+      "disposition_summary": "원심판결을 파기하고 사건을 대전고등법원에 환송한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=82168",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "important:98두12055:2000-11-10",
+      "case_number": "98두12055",
+      "decision_date": "2000-11-10",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": null,
+      "holding_summary": null,
+      "significance": null,
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=191034",
+      "source_as_of": null,
+      "source_provenance": [
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "case:98두12055",
+      "case_number": "98두12055",
+      "decision_date": "2000-11-10",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": "특수관계 계열사로부터 장래 수익 가능성이 희박한 자산을 매입한 행위가 부당행위계산 부인의 대상인 무수익자산 매입인지와, 부인 후 매입대금을 어떤 방식으로 세무처리할지가 문제 된 사건이다.",
+      "holding_summary": "대법원은 무수익자산을 법인의 수익 창출에 기여하지 못하거나 수익과 관련이 없고 장래 운용수익 가능성도 희박한 자산이라고 보았다. 그러한 자산의 매입을 부인하면 매입대금 상당액을 특수관계인에게 대여한 것으로 보아 당시 시행령상 인정이자를 익금산입하는 것이 타당하다고 판시하였다.",
+      "significance": "단순한 저수익 자산과 사업상 필요·수익 가능성이 없는 무수익자산을 구별하고, 거래를 부인한 뒤에도 매입대금이라는 자금제공 효과를 별도로 과세조정하게 한다. 특수관계 거래의 경제적 합리성, 인정이자와 관련 차입금 지급이자 조정을 연결하는 직접 기출 판례다.",
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=191034",
+      "source_as_of": "2026-08-29",
+      "source_provenance": [
+        "data/exam-important-precedents.json"
+      ]
+    },
+    {
+      "precedent_id": "SC-1997DA12037-1998-09-08",
+      "case_number": "97다12037",
+      "decision_date": "1998-09-08",
+      "court": "대법원",
+      "title": "배당이의의소",
+      "issue_summary": null,
+      "holding_summary": "원천징수하는 이자소득세의 법정기일은 지급 시이고, 당시 원천징수의무 불이행 가산세는 부과고지로 확정되므로 납세고지서 발송일이며, 구 국세징수법상 가산금은 납부기한 경과로 법률상 당연히 발생하므로 그 납부기한을 기준으로 담보권과 우선순위를 비교한다고 보았다.",
+      "significance": "같은 고지서에 적힌 금액도 본세·가산세·가산금별 법정기일이 달라질 수 있어 배분 전에 세목과 법률상 성립방식을 분해해야 함을 보여 준다.",
+      "distinguishing_facts": [
+        "쟁점 근저당권의 설정등기일과 원천징수 이자소득세·가산세·가산금의 각 법정기일이 달랐다.",
+        "원천징수 이자소득세는 소득금액 지급과 동시에 납세의무가 확정되는 구조였다.",
+        "당시 원천징수의무 불이행 가산세는 별도의 부과고지로 확정되었고 가산금은 납부기한 경과로 발생했다."
+      ],
+      "disposition_summary": "상고를 기각하고 상고비용은 피고가 부담한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=116989",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "important:96누14333:1997-11-28",
+      "case_number": "96누14333",
+      "decision_date": "1997-11-28",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": null,
+      "holding_summary": null,
+      "significance": null,
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=116100",
+      "source_as_of": null,
+      "source_provenance": [
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "case:96누14333",
+      "case_number": "96누14333",
+      "decision_date": "1997-11-28",
+      "court": "대법원",
+      "title": null,
+      "issue_summary": "부당행위계산 부인의 효과가 해당 사업연도 소득금액·세액에 영향을 미치지 않을 때 그 조정사유만 독립하여 다툴 수 있는지와, 업무에 직접 사용하지 않은 기계장치가 당시 규정상 업무무관자산인지가 문제 된 사건이다.",
+      "holding_summary": "대법원은 조세소송의 대상은 정당세액의 존부이므로 부당행위계산 부인이 해당 사업연도 소득금액에 영향을 미치지 않으면 그 연도에는 조정사유만 독립하여 다툴 수 없고 효과가 나타나는 사업연도에 다투어야 한다고 판시하였다. 또한 사건 당시 구 시행규칙 아래에서는 업무에 직접 사용하지 않은 기계장치를 비업무용 부동산과 유사한 업무무관자산으로 판단하고 상고를 기각하였다.",
+      "significance": "익금·손금 동액 조정처럼 세액효과가 없는 세무조정의 불복시기와 자산의 업무관련성 판단을 분리하게 한다. 현행 업무무관자산은 시행령 열거구조이므로 구법의 유사자산 판시를 단순 미사용 기계장치 전부에 확장해서는 안 되며, 무수익자산 매입대금의 인정이자는 98두12055 법리와 구별해야 한다.",
+      "distinguishing_facts": [],
+      "disposition_summary": null,
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=116100",
+      "source_as_of": "2026-08-29",
+      "source_provenance": [
+        "data/exam-important-precedents.json"
+      ]
+    },
+    {
+      "precedent_id": "SC-1996NU8192-1997-09-26",
+      "case_number": "96누8192",
+      "decision_date": "1997-09-26",
+      "court": "대법원",
+      "title": "종합소득세부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "허위 세금계산서의 거래 상대방과 용도가 상당히 부정된 때에는 실제 지출을 주장하는 납세자가 자료를 제시할 필요가 있다. 장부 일부가 허위여도 나머지로 소득을 계산할 수 있으면 실지조사해야 하고, 공동사업 소득은 달리 정한 약정이 없으면 출자지분에 따른 손익분배비율로 나눈다고 보았다.",
+      "significance": "허위 증빙 하나를 이유로 장부 전체를 버리지 않고 부분별 신뢰성을 평가하며, 공동사업 단계에서는 다시 손익분배 약정과 출자지분을 분리해 계산해야 함을 보여 준다.",
+      "distinguishing_facts": [
+        "1988년 원재료비 중 28,616,000원과 31,199,000원 합계 59,815,000원의 세금계산서가 자료상 명의로 확인되었다.",
+        "일부 허위 부분을 제외한 장부와 증빙은 사실에 부합하여 전체 소득을 계산할 수 있었다.",
+        "두 사람이 회사를 공동으로 경영했으며 별도의 손익분배 약정이 확인되지 않아 출자지분에 따른 분배가 문제 되었다."
+      ],
+      "disposition_summary": "상고를 기각한다. 상고비용은 원고의 부담으로 한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=196860",
+      "source_as_of": "2026-08-28",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-1993NU18945-1993-12-28",
+      "case_number": "93누18945",
+      "decision_date": "1993-12-28",
+      "court": "대법원",
+      "title": "상속세등부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "세무공무원이 과세관청 보유 자료를 확인한 뒤 상속세 신고가 필요 없다고 안내하고 그 자료를 교부하여, 납세자가 귀책사유 없이 이를 믿고 신고하지 않았다면 그 견해에 반하여 불리한 평가방법을 적용하는 것은 신의성실 원칙상 허용되지 않는다고 보았다.",
+      "significance": "과세관청 보유 자료를 실제 확인한 세무공무원의 구체적 안내, 납세자의 무귀책 신뢰와 신고 생략, 이후 불리한 평가라는 연속 사실에서 신의성실 원칙을 인정한 사례다.",
+      "distinguishing_facts": [
+        "피상속인은 1990년 12월 23일 사망했고 상속인들은 1991년 6월 17일경 상속세 신고를 문의하러 세무서를 방문했다.",
+        "세무공무원은 세무서가 보관한 상속개시자료전 겸 전산수록 자산·소득 명세표에 과거 증여 내용까지 기재된 것을 확인하고 신고할 필요가 없다고 안내했다.",
+        "상속인들은 교부받은 명세표와 안내를 믿고 신고하지 않았고, 과세관청은 1992년 1월 6일 미신고를 이유로 더 불리한 개정 평가방법을 적용했다."
+      ],
+      "disposition_summary": "상고를 기각하고 상고비용은 피고의 부담으로 한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=200743",
+      "source_as_of": "2026-08-27",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-1989NU2851-1990-02-13",
+      "case_number": "89누2851",
+      "decision_date": "1990-02-13",
+      "court": "대법원",
+      "title": "종합소득세등부과처분취소",
+      "issue_summary": null,
+      "holding_summary": "필요경비액도 원칙적으로 과세관청이 입증하지만, 납세자가 소득을 얻기 위해 통상적으로 필요한 경비와 경험칙상 이례적인 특별경비를 구별하여 후자는 납세자에게 입증의 필요가 돌아갈 수 있다고 보았다. 당시 서면심리 결정의 경정 범위에 관한 별도 구법 판단도 포함한다.",
+      "significance": "필요경비라는 한 묶음 안에서도 통상성, 이례성, 증거 접근성을 나누어 입증구조를 설계해야 하며, 판결의 구법상 서면심리 결론을 현행 경정 제한으로 일반화해서는 안 된다는 점을 함께 보여 준다.",
+      "distinguishing_facts": [
+        "서적도매업자는 1986년 귀속 종합소득세를 세무사 조정계산서와 함께 신고하여 서면심리로 결정받았다.",
+        "과세관청은 나중의 실지조사에서 전표 등 증빙이 없는 경비 19,849,900원과 복리후생비·잡비 500,390원을 부인했다.",
+        "매출누락 501,300원은 처음부터 신고소득에서 빠졌지만 필요경비 과다계상 부분은 당시 서면심리 경정 제한과 구별되었다."
+      ],
+      "disposition_summary": "원심판결을 파기하고, 사건을 서울고등법원에 환송한다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=148713",
+      "source_as_of": "2026-08-28",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    },
+    {
+      "precedent_id": "SC-1986NU753-1987-04-14",
+      "case_number": "86누753",
+      "decision_date": "1987-04-14",
+      "court": "대법원",
+      "title": "부가가치세부과처분취소(공통매입세액 실지귀속과 안분)",
+      "issue_summary": null,
+      "holding_summary": "과세·면세사업 겸영 시 먼저 실지귀속을 구분하고, 구분할 수 없는 공통매입세액만 관련 사업부분의 총공급가액 대비 면세공급가액 비율로 안분한다고 판시했다.",
+      "significance": "현행 공통매입세액 판단에서도 실지귀속 우선과 관련 사업부분만의 분모라는 순서를 학습하게 한다.",
+      "distinguishing_facts": [
+        "면세 수산물 판매와 과세 얼음 제조·냉동창고업을 함께 영위했다.",
+        "장부와 증빙에서 공통 사용 매입의 실지귀속이 구분되지 않았다."
+      ],
+      "disposition_summary": "원고의 상고를 기각했다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=103007",
+      "source_as_of": "2026-08-28",
+      "source_provenance": [
+        "curriculum.json/cases",
+        "laws/learning.json/precedents"
+      ]
+    }
+  ]
+}

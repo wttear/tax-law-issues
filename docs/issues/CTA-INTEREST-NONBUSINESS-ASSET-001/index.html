@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="업무무관자산의 실제 용도와 기간을 확정한 뒤 차입금 적수·자산 적수·지급이자 적용순서로 손금불산입액을 어떻게 계산할 것인가?">
+  <title>지급이자 손금불산입과 업무무관자산 · 세법 쟁점 대장</title>
+  <link rel="stylesheet" href="../../styles.css">
+  
+</head>
+<body>
+<!--
+DIRECTION CONTRACT
+THESIS: 법령 원문에서 출발해 쟁점·증빙·판례의 판단 경계를 한 화면의 읽기 순서로 만든다.
+OWN-WORLD: 기존 사건배당부의 석재·종이·잉크·공식 파랑·규선 언어를 법률별 대장으로 확장한다.
+STORY: 법률 선택 → 쟁점 한 행 → 답을 보기 전 질문 → 원문 → 초보자 해설 → 판단 지도 → 증빙 → 판례 → 필요 시 회계.
+FIRST VIEWPORT: 첫 화면에서 다섯 법률과 50개 쟁점의 위치를 보고, 검색 없이도 어느 행을 열지 결정한다.
+FORM: 직각 대장 행, 얇은 규선, 짧은 라벨, 한 열 모바일 읽기 흐름을 사용한다.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md.
+-->
+<a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
+<header class="site-header"><div class="site-header__inner"><a class="wordmark" href="../../"><span class="wordmark__mark">TAX</span><span>쟁점 대장</span></a><a class="header-back" href="../../">전체 대장으로</a></div></header>
+<main id="main-content" class="page page--reader">
+  <nav class="breadcrumb" aria-label="현재 위치"><a href="../../">쟁점 대장</a><span aria-hidden="true">/</span><a href="../../#law-CTA">법인세법</a><span aria-hidden="true">/</span><span>07</span></nav>
+  <header class="reader-heading">
+    <h1>지급이자 손금불산입과 업무무관자산</h1>
+    <p class="reader-context">CTA · 쟁점 07 / 10 · 중급</p>
+    <p class="reader-lead">법령 원문과 사실·증빙·판례의 연결로 읽는 자유열람 쟁점입니다.</p>
+    <ul class="reader-meta"><li>30분 읽기</li><li>법령 1개 연결</li><li>판례 4건 직접 연결</li></ul>
+  </header>
+
+  <section class="prompt-band" aria-labelledby="prompt-title">
+    <h2 id="prompt-title"><span class="heading-sequence">답을 보기 전</span>먼저 이 질문에 답해 보세요</h2>
+    <p class="prompt-question">업무무관자산의 실제 용도와 기간을 확정한 뒤 차입금 적수·자산 적수·지급이자 적용순서로 손금불산입액을 어떻게 계산할 것인가?</p>
+    <p class="prompt-caption">결론을 바꿀 날짜·당사자·거래흐름·증빙을 한 줄로 적은 뒤 아래 원문을 여세요.</p>
+  </section>
+
+  <nav class="reader-index" aria-label="이 쟁점 안에서 이동"><a href="#law-source">법령 원문</a><a href="#beginner">초보자 해설</a><a href="#map">판단 지도</a><a href="#example">합성 사례</a><a href="#audit">증빙 실습</a><a href="#precedents">관련 판례</a><a href="#accounting">회계·조정</a><a href="#sources">출처</a></nav>
+
+  <section class="reader-block reader-block--law" id="law-source" aria-labelledby="law-source-title">
+    <h2 id="law-source-title"><span class="heading-sequence">01 / 기준점</span>법령 원문과 기준일</h2>
+    <p class="block-lead">현재 스냅샷의 시행 중 버전을 먼저 보여 줍니다. 과거 거래는 판례 카드와 사건 당시 법령을 분리해 대조합니다.</p>
+    <div class="article-stack"><details class="article-record" open>
+  <summary><span>제28조</span><strong>지급이자의 손금불산입</strong><em>현행 · 시행 2026-07-01</em></summary>
+  <div class="article-record__body">
+    <p class="source-label">국가법령정보센터 원문</p>
+    <div class="law-source-text">제28조(지급이자의 손금불산입)<br>① 다음 각 호의 차입금의 이자는 내국법인의 각 사업연도의 소득금액을 계산할 때 손금에 산입하지 아니한다. &lt;개정 2010.12.30, 2011.12.31, 2018.12.24&gt;<br>1. 대통령령으로 정하는 채권자가 불분명한 사채의 이자<br>2. 「소득세법」 제16조제1항제1호ㆍ제2호ㆍ제5호 및 제8호에 따른 채권ㆍ증권의 이자ㆍ할인액 또는 차익 중 그 지급받은 자가 불분명한 것으로서 대통령령으로 정하는 것<br>3. 대통령령으로 정하는 건설자금에 충당한 차입금의 이자<br>4. 다음 각 목의 어느 하나에 해당하는 자산을 취득하거나 보유하고 있는 내국법인이 각 사업연도에 지급한 차입금의 이자 중 대통령령으로 정하는 바에 따라 계산한 금액(차입금 중 해당 자산가액에 상당하는 금액의 이자를 한도로 한다)<br>② 건설자금에 충당한 차입금의 이자에서 제1항제3호에 따른 이자를 뺀 금액으로서 대통령령으로 정하는 금액은 내국법인의 각 사업연도의 소득금액을 계산할 때 손금에 산입하지 아니할 수 있다. &lt;신설 2010.12.30, 2018.12.24&gt;<br>③ 제1항 각 호에 따른 차입금의 이자의 손금불산입에 관한 규정이 동시에 적용되는 경우에는 대통령령으로 정하는 순위에 따라 적용한다. &lt;개정 2010.12.30, 2018.12.24&gt;<br>④ 제1항에 따른 차입금 및 차입금의 이자의 범위와 계산 등에 필요한 사항은 대통령령으로 정한다. &lt;개정 2010.12.30, 2018.12.24&gt;</div>
+    <p class="source-link"><a href="https://www.law.go.kr/법령/법인세법/제28조" rel="noopener noreferrer">공식 조문 열기</a></p>
+  </div>
+</details></div>
+    <div class="related-reference"><p class="source-label">시행령·시행규칙 및 연결 조문</p><p class="quiet">이 스냅샷에 전문이 포함된 조문은 위 원문으로, 나머지 연결은 공식 법령 페이지에서 사건 시점의 버전을 확인합니다.</p><ul class="source-list"><li><span>법인세법 제28조</span> <a href="https://www.law.go.kr/법령/법인세법" rel="noopener noreferrer">공식 법령 연결</a></li><li><span>법인세법 시행령 제53조</span> <a href="https://www.law.go.kr/법령/법인세법시행령" rel="noopener noreferrer">공식 법령 연결</a></li></ul></div>
+  </section>
+
+  <section class="reader-block reader-block--beginner" id="beginner" aria-labelledby="beginner-title">
+    <h2 id="beginner-title"><span class="heading-sequence">02 / 쉽게 말하면</span>초보자 해설</h2>
+    <div class="beginner-callout"><p>업무무관자산을 보유하면서 차입금 이자를 지급하면 법정 적수 비율에 대응하는 지급이자를 손금에서 뺄 수 있다. 적수는 금액에 보유일수를 곱한 값이며 자산의 실제 업무사용 판단이 먼저다.</p></div>
+    <section class="lesson-section" id="concept" aria-labelledby="concept-title">
+<h2 id="concept-title">1. 오늘의 목표와 30초 쉬운 설명 — 2분</h2>
+<section class="learning-block learning-block--easy" aria-labelledby="concept-heading-1">
+<p class="learning-block__label">쉬운 설명</p>
+<h3 id="concept-heading-1">30초 쉬운 설명</h3>
+<p>사업에 쓴 차입금의 이자는 원칙적으로 비용이 될 수 있지만, 차입금을 보유하면서 업무와 직접 관련 없는 자산도 보유했다면 그 자산에 대응하는 지급이자는 손금에서 제외될 수 있다. 어느 돈이 어느 자산에 직접 들어갔는지만이 아니라 법령의 적수 계산을 적용한다.</p>
+<p>적수는 금액에 보유일수를 곱한 누적값이다. 하루의 기말잔액만 보거나 업무무관자산 취득가액 전부를 이자로 부인하지 않는다.</p>
+</section>
+<section class="learning-block learning-block--objectives" aria-labelledby="concept-heading-2">
+<p class="learning-block__label">오늘의 목표</p>
+<h3 id="concept-heading-2">오늘 할 수 있어야 하는 것</h3>
+<ul>
+<li>업무무관자산, 차입금, 지급이자의 범위와 계산 순서를 설명한다.</li>
+<li>차입금 적수 73000000과 업무무관자산 적수 18250000으로 부인액 12000을 계산한다.</li>
+<li>차입금원장·자산대장·금융 자료를 법인세법 시행규칙 별지 제26호서식 업무무관부동산등에관련한차입금이자조정명세서와 대사한다.</li>
+</ul>
+</section>
+<section class="learning-block learning-block--prompt" aria-labelledby="concept-heading-3">
+<p class="learning-block__label">먼저 판단하기</p>
+<h3 id="concept-heading-3">시작 전 판단</h3>
+<p>비식별 E법인이 공장운영 대출을 유지하면서 대표 전용 휴양시설도 보유한다. 장부 지급이자 48000 중 얼마를 손금으로 볼지, 자산의 명칭보다 실제 용도와 보유일수에서 시작해 보자.</p>
+</section>
+</section>
+  </section>
+
+  <section class="reader-block reader-block--map" id="map" aria-labelledby="map-title">
+    <h2 id="map-title"><span class="heading-sequence">03 / 판단 구조</span>법령과 쟁점의 판단 지도</h2>
+    <div class="table-wrap"><table class="decision-table"><thead><tr><th>조문 연결</th><th>이 단계에서 볼 것</th></tr></thead><tbody><tr><td data-label="조문">법인세법 제28조</td><td data-label="규칙">업무와 직접 관련 없는 자산에 대응하는 지급이자를 법정 순서와 적수 계산에 따라 손금불산입한다.</td></tr></tbody></table></div>
+    <section class="lesson-section" id="legal-structure" aria-labelledby="legal-structure-title">
+<h2 id="legal-structure-title">2. 핵심 용어와 법적 판단지도 — 4분</h2>
+<section class="learning-block learning-block--glossary" aria-labelledby="legal-structure-heading-1">
+<p class="learning-block__label">핵심 용어</p>
+<h3 id="legal-structure-heading-1">핵심 용어</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>용어</th>
+<th>쉬운 뜻</th>
+<th>법적 의미</th>
+<th>실무상 확인점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="용어">지급이자</td>
+<td data-label="쉬운 뜻">차입 대가로 지급한 금융비용</td>
+<td data-label="법적 의미">법인세법 제28조의 손금불산입 순서 적용</td>
+<td data-label="실무상 확인점">채권자·이율·발생기간</td>
+</tr>
+<tr>
+<td data-label="용어">업무무관자산</td>
+<td data-label="쉬운 뜻">사업에 직접 사용하지 않는 자산</td>
+<td data-label="법적 의미">시행령 제53조 계산의 대응자산</td>
+<td data-label="실무상 확인점">사용부서·수익·출입기록</td>
+</tr>
+<tr>
+<td data-label="용어">차입금 적수</td>
+<td data-label="쉬운 뜻">차입잔액×보유일수 누계</td>
+<td data-label="법적 의미">안분식 분모의 기초</td>
+<td data-label="실무상 확인점">일별 차입금원장</td>
+</tr>
+<tr>
+<td data-label="용어">자산 적수</td>
+<td data-label="쉬운 뜻">업무무관자산가액×보유일수 누계</td>
+<td data-label="법적 의미">안분식 분자의 기초</td>
+<td data-label="실무상 확인점">취득·처분일·자산대장</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="learning-block learning-block--decision-map" aria-labelledby="legal-structure-heading-2">
+<p class="learning-block__label">판단지도</p>
+<h3 id="legal-structure-heading-2">법적 판단지도</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>요건</th>
+<th>결정적 사실</th>
+<th>확인할 증빙</th>
+<th>반대가설</th>
+<th>잠정결론</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="요건">차입 실재</td>
+<td data-label="결정적 사실">연중 200000 잔액</td>
+<td data-label="확인할 증빙">금융·대출계약</td>
+<td data-label="반대가설">일시 상환</td>
+<td data-label="잠정결론">적수 73000000 후보</td>
+</tr>
+<tr>
+<td data-label="요건">자산 용도</td>
+<td data-label="결정적 사실">휴양시설의 대표 전용</td>
+<td data-label="확인할 증빙">자산대장·예약기록</td>
+<td data-label="반대가설">거래처 연수원</td>
+<td data-label="잠정결론">업무무관 여부 확인</td>
+</tr>
+<tr>
+<td data-label="요건">보유기간</td>
+<td data-label="결정적 사실">양쪽 모두 365일</td>
+<td data-label="확인할 증빙">계정별원장·등기</td>
+<td data-label="반대가설">중도 처분</td>
+<td data-label="잠정결론">적수 일수 검증</td>
+</tr>
+<tr>
+<td data-label="요건">계산 순서</td>
+<td data-label="결정적 사실">선순위 부인항목 없음</td>
+<td data-label="확인할 증빙">이자명세·별지 제26호서식</td>
+<td data-label="반대가설">사채이자 혼재</td>
+<td data-label="잠정결론">비율식 적용</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol>
+<li>2026. 7. 1. 시행 법인세법 제28조로 지급이자 손금불산입 대상과 순서를 확인한다.</li>
+<li>2026. 2. 27. 시행 법인세법 시행령 제53조로 업무무관자산 등에 대응하는 지급이자의 적수 계산요소를 확인한다.</li>
+<li>2026. 7. 1. 시행 법인세법 시행규칙 별지 제26호서식 업무무관부동산등에관련한차입금이자조정명세서에 차입금·자산·이자 적수를 반영한다.</li>
+<li>실제 사건에서는 채권자불분명 사채이자, 비실명 채권이자, 건설자금이자 등 적용순서를 먼저 검토한다.</li>
+</ol>
+</section>
+<h3 id="legal-structure-heading-3">적용 범위와 경계</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>상황</th>
+<th>이 자료의 처리</th>
+<th>주의할 경계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="상황">연중 동일 잔액</td>
+<td data-label="이 자료의 처리">잔액×365일</td>
+<td data-label="주의할 경계">월말잔액 평균으로 바꾸지 않음</td>
+</tr>
+<tr>
+<td data-label="상황">선순위 부인 없음</td>
+<td data-label="이 자료의 처리">지급이자 48000 전액을 안분 기초로 사용</td>
+<td data-label="주의할 경계">다른 부인항목이 있으면 기초 재계산</td>
+</tr>
+<tr>
+<td data-label="상황">휴양시설 업무무관 확정</td>
+<td data-label="이 자료의 처리">자산 적수 18250000</td>
+<td data-label="주의할 경계">거래처 연수 실재 시 용도 재판정</td>
+</tr>
+</tbody>
+</table>
+</div>
+<details class="reveal-block reveal-block--deepening">
+<summary>심화 펼치기</summary>
+<div class="reveal-block__body">
+<h4 id="legal-structure-heading-4">심화</h4>
+<p>자금추적표가 유용해도 시행령의 법정 계산을 대체하지 않는다. 반대로 적수식만 맞아도 자산의 업무무관성이 입증된 것은 아니다. 자산별 사용목적 판정과 금액·기간 계산을 두 단계로 나눈다.</p>
+</div>
+</details>
+</section>
+  </section>
+
+  <section class="reader-block reader-block--example" id="example" aria-labelledby="example-title">
+    <h2 id="example-title"><span class="heading-sequence">04 / 사실에 대입하기</span>합성 사례와 결론의 이동</h2>
+    <p class="synthetic-note">아래 사례는 학습을 위한 합성 사실입니다. 실제 사건이나 공식 판례의 사실로 읽지 마세요.</p>
+    <section class="lesson-section" id="worked-example" aria-labelledby="worked-example-title">
+<h2 id="worked-example-title">3. 완성된 쉬운 예제 — 4분</h2>
+<h3 id="worked-example-heading-1">사실</h3>
+<p>E법인의 2026년 차입금은 200000, 지급이자는 48000이다. 대표 가족만 이용한 휴양시설의 세법상 계산가액은 50000이다. 두 잔액은 365일 유지되고 다른 우선 손금불산입 지급이자는 없다.</p>
+<section class="learning-block learning-block--prompt" aria-labelledby="worked-example-heading-2">
+<p class="learning-block__label">먼저 설명하기</p>
+<h3 id="worked-example-heading-2">자기설명</h3>
+<p>적수, 부인비율, 손금불산입, 인정액, 소득처분과 신고서를 순서대로 말해 보자.</p>
+</section>
+<details class="reveal-block reveal-block--model-explanation">
+<summary>모범 판단 과정 펼치기</summary>
+<div class="reveal-block__body">
+<section class="learning-block learning-block--worked-reasoning" aria-labelledby="worked-example-heading-3">
+<p class="learning-block__label">전문가 판단 과정</p>
+<h3 id="worked-example-heading-3">전문가 판단 과정</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>계산요소</th>
+<th>산식</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="계산요소">차입금 적수</td>
+<td data-label="산식">200000×365일</td>
+<td data-label="결과">73000000</td>
+</tr>
+<tr>
+<td data-label="계산요소">업무무관자산 적수</td>
+<td data-label="산식">50000×365일</td>
+<td data-label="결과">18250000</td>
+</tr>
+<tr>
+<td data-label="계산요소">부인비율</td>
+<td data-label="산식">18250000÷73000000</td>
+<td data-label="결과">25퍼센트</td>
+</tr>
+<tr>
+<td data-label="계산요소">손금불산입</td>
+<td data-label="산식">48000×25퍼센트</td>
+<td data-label="결과">12000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>이미 장부에 계상된 금융비용을 자산용도와 적수에서 신고서까지 대사하는 주제다. 분개를 억지로 만들지 않고 대출계약·원장·자산사용 자료를 연결한다.</p>
+<p>장부 지급이자 48000 - 세법상 인정 36000 = 손금불산입 12000이다. 지급이자는 금융기관에 이미 사외유출되었으므로 이 사례에서는 기타사외유출로 관리하고, 업무무관 상태가 나중에 끝나더라도 2026년 부인액이 자동 추인되지 않는 영구적 차이로 본다.</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>원시증빙</th>
+<th>전표·장부</th>
+<th>시산표·재무제표</th>
+<th>신고서·납부자료</th>
+<th>대사 결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="원시증빙">대출계약서·금융거래 이자영수증·시설 예약기록</td>
+<td data-label="전표·장부">지급이자 계정별원장·차입금 보조원장·자산대장</td>
+<td data-label="시산표·재무제표">합계잔액시산표 지급이자 48000과 재무상태표 차입금 200000</td>
+<td data-label="신고서·납부자료">법인세법 시행규칙 별지 제26호서식 업무무관부동산등에관련한차입금이자조정명세서와 별지 제15호서식 소득금액조정합계표</td>
+<td data-label="대사 결과">적수·지급이자 금액을 대사해 인정 36000과 부인 12000 조정 일치 확인</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</details>
+</section>
+  </section>
+
+  <section class="reader-block reader-block--audit" id="audit" aria-labelledby="audit-title">
+    <h2 id="audit-title"><span class="heading-sequence">05 / 조사·증빙</span>세무조사 증빙 실습</h2>
+    <div class="audit-summary">
+  <div><p class="mini-label">조사 가설</p><p>객관적 사업진행 없이 대표 친족이 사용한 토지는 해당 기간 업무무관자산이다.</p></div>
+  <div><p class="mini-label">반대 가설</p><p>인허가·설계·시공사 협의가 계속된 물류거점 예정지로서 사업 준비에 직접 사용되었다.</p></div>
+  <div><p class="mini-label">먼저 확인할 자료</p><ul class="evidence-list"><li>취득 결재·사업계획·관청 인허가 접수와 설계계약</li><li>출입로그·현장사진·임대 및 특수관계자 사용 기록</li><li>은행 일별 차입금원장·지급이자명세·자산 취득·처분일과 별지 제26호서식</li></ul></div>
+</div>
+    <section class="lesson-section" id="audit-evidence" aria-labelledby="audit-evidence-title">
+<h2 id="audit-evidence-title">4. 세무조사 증빙 실습 — 8분</h2>
+<h3 id="audit-evidence-heading-1">결론을 가린 사건</h3>
+<p>비식별 F법인은 비어 있던 토지를 물류거점 예정지라고 주장하며 관련 지급이자를 전액 손금 처리했다. 이사회 의사록에는 개발계획이 있지만 3년간 인허가 신청과 물류계약은 없고, 일부 기간에는 대표 친족의 차량이 토지를 사용했다.</p>
+<section class="learning-block learning-block--hypotheses" aria-labelledby="audit-evidence-heading-2">
+<p class="learning-block__label">경쟁 가설</p>
+<h3 id="audit-evidence-heading-2">경쟁 가설</h3>
+<ul>
+<li>조사 가설: 과세관청은 객관적 사업진행이 없고 특수관계자의 사적 사용이 있어 토지가 업무무관자산이라고 본다.</li>
+<li>납세자 가설: 납세자는 장기 인허가 협의와 주변 토지 매입 때문에 착공이 늦었을 뿐 물류사업 목적이 계속되었다고 본다.</li>
+</ul>
+</section>
+<h3 id="audit-evidence-heading-3">증빙 판단표</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>법적 요건</th>
+<th>주장 사실</th>
+<th>확인 자료</th>
+<th>지지하는 실제 가설</th>
+<th>신뢰도·공백</th>
+<th>추가 확인</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="법적 요건">취득 목적</td>
+<td data-label="주장 사실">물류거점 예정</td>
+<td data-label="확인 자료">이사회 계약서·사업계획</td>
+<td data-label="지지하는 실제 가설">납세자 가설</td>
+<td data-label="신뢰도·공백">결의 후 활동 공백</td>
+<td data-label="추가 확인">결재 원본·예산 집행 확인</td>
+</tr>
+<tr>
+<td data-label="법적 요건">실제 사용</td>
+<td data-label="주장 사실">친족 차량 보관</td>
+<td data-label="확인 자료">자산대장·현장사진</td>
+<td data-label="지지하는 실제 가설">조사 가설</td>
+<td data-label="신뢰도·공백">기간 특정 안 됨</td>
+<td data-label="추가 확인">출입로그·임대료 흐름 확인</td>
+</tr>
+<tr>
+<td data-label="법적 요건">사업 진척</td>
+<td data-label="주장 사실">인허가 협의 주장</td>
+<td data-label="확인 자료">관청 접수증·설계용역</td>
+<td data-label="지지하는 실제 가설">납세자 가설</td>
+<td data-label="신뢰도·공백">신청서 없음</td>
+<td data-label="추가 확인">외부기관 회신 확보</td>
+</tr>
+<tr>
+<td data-label="법적 요건">차입금 기간</td>
+<td data-label="주장 사실">잔액 변동이 잦음</td>
+<td data-label="확인 자료">차입금원장·금융거래</td>
+<td data-label="지지하는 실제 가설">두 가설 공통</td>
+<td data-label="신뢰도·공백">일별잔액 미산출</td>
+<td data-label="추가 확인">은행거래로 적수 재작성</td>
+</tr>
+<tr>
+<td data-label="법적 요건">지급이자 범위</td>
+<td data-label="주장 사실">건설자금이자 혼재 가능</td>
+<td data-label="확인 자료">이자명세·회계전표</td>
+<td data-label="지지하는 실제 가설">조사 가설</td>
+<td data-label="신뢰도·공백">자본화 내역 공백</td>
+<td data-label="추가 확인">자산별 이자배부 검토</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section class="learning-block learning-block--prompt" aria-labelledby="audit-evidence-heading-4">
+<p class="learning-block__label">먼저 판단하기</p>
+<h3 id="audit-evidence-heading-4">학습자 잠정 결론</h3>
+<ul>
+<li>잠정 결론: 토지의 실제 사업사용과 기간을 확정한 뒤 일별 적수를 다시 계산해야 한다.</li>
+<li>결정적 사실: 외부 인허가 활동과 특수관계자 사용기간이다.</li>
+<li>추가로 필요한 증빙: 관청 접수증, 설계계약, 출입기록, 은행 일별잔액, 자본화 명세다.</li>
+</ul>
+</section>
+<details class="reveal-block reveal-block--feedback">
+<summary>전문가 피드백 펼치기</summary>
+<div class="reveal-block__body">
+<h3 id="audit-evidence-heading-5">전문가 피드백</h3>
+<p>사업계획서 한 장과 장기간 방치라는 한 사실만으로 결론을 내리지 않는다. 취득 당시 목적, 이후 객관적 실행, 사용수익자를 시간축으로 정리하고 그 기간만 적수에 반영한다.</p>
+<ul>
+<li>과세 가능: 실행 없는 장기 보유와 특수관계자 사용이 확인된 기간</li>
+<li>추가 확인 필요: 인허가 협의는 있으나 사업일정·예산이 불명한 기간</li>
+<li>과세 곤란: 외부 계약·인허가·공사 준비가 일관되게 확인되는 기간</li>
+</ul>
+</div>
+</details>
+</section>
+  </section>
+
+  <section class="reader-block reader-block--precedent" id="precedents" aria-labelledby="precedents-title">
+    <h2 id="precedents-title"><span class="heading-sequence">06 / 경계선</span>관련 중요 판례</h2>
+    <ol class="precedent-ledger"><li class="precedent-row">
+  <div class="precedent-row__head"><span class="case-number">2016두39573</span><span>대법원 · 2018-10-25</span></div>
+  <h3>법인세등부과처분취소</h3>
+  <p>특수관계인에게 자금을 차입하면서 정당한 이유 없이 시장금리와 법정 기준금리를 크게 웃도는 이율을 적용한 거래는 건전한 사회통념이나 상관행에 비추어 경제적 합리성이 없어 부당행위계산 부인 대상이 된다고 보았다.</p>
+  <ul class="case-facts"><li>원고는 1999. 12. 3. 주주인 군인공제회로부터 자금을 차입하면서 연 13.06%의 이자를 지급했다.</li><li>쟁점 2009년부터 2012년까지의 비교 시장금리는 최고 5.81% 수준이었고 법정 기준금리도 기간에 따라 8.5% 또는 6.9%였다.</li><li>원고는 고율 약정에 상응하는 특별한 신용위험이나 독립 당사자 간 협상 사정을 충분히 제시하지 못했다.</li></ul>
+  <p class="source-link"><a href="https://www.law.go.kr/LSW/precInfoP.do?precSeq=203865" rel="noopener noreferrer">공식 판결문 열기</a></p>
+</li><li class="precedent-row">
+  <div class="precedent-row__head"><span class="case-number">96누14333</span><span>대법원 · 1997-11-28</span></div>
+  <h3>관련 판례</h3>
+  <p>공식 판결문에서 판시내용을 확인하세요.</p>
+  
+  <p class="source-link"><a href="https://www.law.go.kr/LSW/precInfoP.do?precSeq=116100" rel="noopener noreferrer">공식 판결문 열기</a></p>
+</li><li class="precedent-row">
+  <div class="precedent-row__head"><span class="case-number">98두12055</span><span>대법원 · 2000-11-10</span></div>
+  <h3>관련 판례</h3>
+  <p>공식 판결문에서 판시내용을 확인하세요.</p>
+  
+  <p class="source-link"><a href="https://www.law.go.kr/LSW/precInfoP.do?precSeq=191034" rel="noopener noreferrer">공식 판결문 열기</a></p>
+</li><li class="precedent-row">
+  <div class="precedent-row__head"><span class="case-number">96누14333</span><span>대법원 · 1997-11-28</span></div>
+  <h3>부당행위계산 부인의 효과가 해당 사업연도 소득금액·세액에 영향을 미치지 않을 때 그 조정사유만 독립하여 다툴 수 있는지와, 업무에 직접 사용하지 않은 기계장치가 당시 규정상 업무무관자산인지가 문제 된 사건이다.</h3>
+  <p>대법원은 조세소송의 대상은 정당세액의 존부이므로 부당행위계산 부인이 해당 사업연도 소득금액에 영향을 미치지 않으면 그 연도에는 조정사유만 독립하여 다툴 수 없고 효과가 나타나는 사업연도에 다투어야 한다고 판시하였다. 또한 사건 당시 구 시행규칙 아래에서는 업무에 직접 사용하지 않은 기계장치를 비업무용 부동산과 유사한 업무무관자산으로 판단하고 상고를 기각하였다.</p>
+  
+  <p class="source-link"><a href="https://www.law.go.kr/LSW/precInfoP.do?precSeq=116100" rel="noopener noreferrer">공식 판결문 열기</a></p>
+</li></ol>
+    <section class="lesson-section" id="precedent" aria-labelledby="precedent-title">
+<h2 id="precedent-title">6. 중요 판례 예측과 해설 — 5분</h2>
+<h3 id="precedent-heading-1">판례를 먼저 쉽게</h3>
+<p>이 주제에는 특정 공식 판례가 배정되지 않았다. 사건번호를 만들지 않고 자산의 실제 사용, 사업 준비의 객관성, 일별 잔액이라는 구별 사실로 법령을 적용한다.</p>
+<section class="learning-block learning-block--prompt" aria-labelledby="precedent-heading-2">
+<p class="learning-block__label">먼저 예측하기</p>
+<h3 id="precedent-heading-2">결론 전 예측</h3>
+<p>미사용 토지라도 인허가 접수, 설계용역, 시공사 입찰이 계속 진행됐다면 단순히 임대수익이 없다는 이유만으로 업무무관자산이라고 볼 수 있는지 예측하자.</p>
+</section>
+<details class="reveal-block reveal-block--precedent">
+<summary>판례 결론과 이유 펼치기</summary>
+<div class="reveal-block__body">
+<h3 id="precedent-heading-3">법원 결론과 이유</h3>
+<ul>
+<li>주문·결론: 배정 판례가 없어 특정 주문을 제시하지 않는다.</li>
+<li>법리: 업무 관련성은 보유 명칭보다 취득 목적과 실제 사업활동을 구체적으로 보아야 한다.</li>
+<li>적용: 독립된 외부자료가 계속되면 사업준비 가설이 강해지지만 특수관계자의 무상 사용기간은 별도 판정한다.</li>
+</ul>
+<h3 id="precedent-heading-4">구별 사실과 한계</h3>
+<p>토지를 제3자에게 정상 임대하고 임대수입을 신고했다면 사용관계가 달라진다. 다만 법인의 고유사업과 수익사업 범위, 특수관계와 시가를 다시 확인해야 한다.</p>
+<h3 id="precedent-heading-5">후속 상태</h3>
+<ul>
+<li>상급심 상태: 특정 사건 배정 없음</li>
+<li>적용 법령: 2026년 법인세법 제28조와 시행령 제53조</li>
+<li>신고서: 별지 제26호서식 업무무관부동산등에관련한차입금이자조정명세서·별지 제15호서식 소득금액조정합계표</li>
+<li>확인 기준일: 2026-08-27</li>
+<li>추적 ID: CTA-INTEREST-NONBUSINESS-ASSET-001</li>
+</ul>
+</div>
+</details>
+</section>
+  </section>
+
+  <section class="reader-block reader-block--accounting" id="accounting" aria-labelledby="accounting-title">
+  <h2 id="accounting-title"><span class="heading-sequence">선택 모듈</span>회계·세무조정 연결</h2>
+  <p class="block-lead">장부 숫자가 세법상 과세표준과 신고서로 넘어가는 지점만 남겼습니다.</p>
+  <div class="table-wrap"><table class="accounting-table"><tbody><tr><th scope="row">회계 처리</th><td>일반기업회계기준 장부에는 지급이자 48000과 연중 차입금 200000이 계상되어 있으며 별도 수정분개보다 금융원장과 자산 사용자료를 확인한다.</td></tr><tr><th scope="row">대사 포인트</th><td>지급이자 원장 48000·차입금 200000·자산가액 50000과 별지 제26호서식의 두 적수 및 별지 제15호서식 가산 12000을 대사한다.</td></tr><tr><th scope="row">세무조정 방향</th><td>차입금 적수 200000×365=73000000, 업무무관자산 적수 50000×365=18250000, 비율 25%이므로 지급이자 48000 중 12000을 손금불산입 기타사외유출한다. 이 사례의 부인액은 영구적 차이다.</td></tr></tbody></table></div>
+</section>
+
+  <section class="reader-block reader-block--recall" id="recall" aria-labelledby="recall-title">
+    <h2 id="recall-title"><span class="heading-sequence">07 / 다시 말하기</span>오늘의 회상</h2>
+    <p class="block-lead">시험 답안처럼 외우기보다, 이 쟁점의 요건·결론을 바꾸는 사실·확인자료를 자신의 말로 다시 설명합니다.</p>
+    <section class="lesson-section" id="recall" aria-labelledby="recall-title">
+<h2 id="recall-title">7. 변형사례와 오늘의 회상 — 4분</h2>
+<section class="learning-block learning-block--transfer" aria-labelledby="recall-heading-1">
+<p class="learning-block__label">새 사실에 적용하기</p>
+<h3 id="recall-heading-1">변형사례</h3>
+<p>업무무관자산 50000이 2026년 7월 1일 정상 매각되어 보유일수가 181일로 줄었다면 결론은 연중 적수 18250000과 부인액 12000에서 실제 181일 자산 적수와 더 작은 손금불산입액을 다시 계산하는 것으로 바뀐다.</p>
+</section>
+<h3 id="recall-heading-2">오늘의 회상 3문항</h3>
+<ol>
+<li class="recall-question">법리 구분: 업무무관자산 판정과 지급이자 적수 계산을 두 단계로 나눠 설명해 보세요?</li>
+<li class="recall-question">증빙 선택: 자산 사용과 차입금 일별잔액을 확인할 자료를 고르세요?</li>
+<li class="recall-question">새 사실 전이: 자산이 7월 1일 매각되면 어떤 적수와 조정액이 바뀌는지 말해 보세요?</li>
+</ol>
+<section class="learning-block learning-block--confidence" aria-labelledby="recall-heading-3">
+<p class="learning-block__label">확신도 점검</p>
+<h3 id="recall-heading-3">확신도</h3>
+<p>각 답에 0 모르겠다 / 1 불확실 / 2 확실을 표시한다.</p>
+</section>
+<details class="reveal-block reveal-block--answer-key">
+<summary>답안 핵심요소 펼치기</summary>
+<div class="reveal-block__body">
+<h3 id="recall-heading-4">답안 핵심요소</h3>
+<ul>
+<li>법리 구분: 자산의 실제 용도와 객관적 사업진행으로 업무무관성을 먼저 확정하고, 그다음 다른 부인 지급이자를 제외한 기초금액에 자산 적수와 차입금 적수의 비율을 적용해야 한다.</li>
+<li>증빙 선택: 자산대장·출입·임대·인허가 자료로 사용관계를, 대출계약·차입금원장·은행 일별거래로 잔액과 기간을, 이자명세로 계산 기초를 확인해야 한다.</li>
+<li>새 사실 전이: 7월 1일 매각이면 자산 적수의 보유일수를 실제 181일로 줄이고 차입금 적수와 지급이자 기초는 별도 확인하여 별지 제26호서식과 가산액을 재계산해야 한다.</li>
+</ul>
+</div>
+</details>
+</section>
+  </section>
+
+  <section class="reader-block reader-block--sources" id="sources" aria-labelledby="sources-title">
+  <h2 id="sources-title"><span class="heading-sequence">검증 메모</span>출처와 기준일</h2>
+  <p>법령 원문은 각 조문의 공식 링크에서, 학습 설명은 공개된 원자료 원고에서 가져왔습니다. 사건 당시 법령이 현행법과 다르면 판례 카드의 적용법 메모를 우선 확인하세요.</p>
+  <dl class="provenance-list"><div><dt>법령 자료 기준일</dt><dd>원자료 기록에 따름</dd></div><div><dt>학습 원고</dt><dd><code>lessons/material-cta-interest-nonbusiness-asset-001.md</code></dd></div><div><dt>판례 자료 수</dt><dd>4건 직접 연결</dd></div></dl>
+  <ul class="source-list"><li>제28조 <a href="https://www.law.go.kr/법령/법인세법/제28조" rel="noopener noreferrer">공식 원문</a></li></ul>
+</section>
+
+  <nav class="issue-pager" aria-label="같은 법률의 다음 쟁점">
+    <div><span class="pager-label">이전 쟁점</span><a href="../CTA-DEPRECIATION-001/">감가상각 범위·시부인·내용연수</a></div>
+    <div class="pager-next"><span class="pager-label">다음 쟁점</span><a href="../CTA-RELATED-PARTY-001/">부당행위계산 부인의 요건과 경제적 합리성</a></div>
+  </nav>
+</main>
+<footer class="site-footer"><div><strong>세법 쟁점 대장</strong><span>이 페이지에는 로그인·진도 잠금·학습 완료 버튼이 없습니다. 필요한 곳부터 자유롭게 읽으세요.</span></div></footer>
+</body>
+</html>

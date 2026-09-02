@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="다섯 핵심 세법 50개 쟁점을 법령 원문과 판단·증빙·판례로 읽는 모바일 우선 아틀라스">
+  <title>세법 쟁점 대장 · 세법 쟁점 대장</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+<!--
+DIRECTION CONTRACT
+THESIS: 법령 원문에서 출발해 쟁점·증빙·판례의 판단 경계를 한 화면의 읽기 순서로 만든다.
+OWN-WORLD: 기존 사건배당부의 석재·종이·잉크·공식 파랑·규선 언어를 법률별 대장으로 확장한다.
+STORY: 법률 선택 → 쟁점 한 행 → 답을 보기 전 질문 → 원문 → 초보자 해설 → 판단 지도 → 증빙 → 판례 → 필요 시 회계.
+FIRST VIEWPORT: 첫 화면에서 다섯 법률과 50개 쟁점의 위치를 보고, 검색 없이도 어느 행을 열지 결정한다.
+FORM: 직각 대장 행, 얇은 규선, 짧은 라벨, 한 열 모바일 읽기 흐름을 사용한다.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md.
+-->
+<a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="wordmark" href="./"><span class="wordmark__mark">TAX</span><span>쟁점 대장</span></a>
+    <span class="header-note">자유열람 · 기준일 2026-09-03</span>
+  </div>
+</header>
+<main id="main-content" class="page page--index">
+  <section class="atlas-intro" aria-labelledby="atlas-title">
+    <h1 id="atlas-title">다섯 법률, 오십 개 판단 단위</h1>
+    <p class="intro-copy">조문을 먼저 열고, 결론을 바꾸는 사실과 증빙을 확인한 다음, 직접 연결된 판례로 판단의 경계를 넓혀 보세요.</p>
+    <div class="intro-rule" aria-hidden="true"><span></span><span></span><span></span></div>
+    <p class="intro-caption">국세기본법 · 국세징수법 · 법인세법 · 소득세법 · 부가가치세법</p>
+  </section>
+
+  <nav class="law-directory" aria-label="법률별 바로가기"><a class="law-tab" href="#law-NTBA"><span class="law-tab__code">NTBA</span><span>국세기본법</span><span class="law-tab__count">10개</span></a><a class="law-tab" href="#law-NCTA"><span class="law-tab__code">NCTA</span><span>국세징수법</span><span class="law-tab__count">10개</span></a><a class="law-tab" href="#law-CTA"><span class="law-tab__code">CTA</span><span>법인세법</span><span class="law-tab__count">10개</span></a><a class="law-tab" href="#law-ITA"><span class="law-tab__code">ITA</span><span>소득세법</span><span class="law-tab__count">10개</span></a><a class="law-tab" href="#law-VAT"><span class="law-tab__code">VAT</span><span>부가가치세법</span><span class="law-tab__count">10개</span></a></nav>
+
+  <section class="register-tools" aria-labelledby="tools-title">
+    <div class="tools-heading"><h2 id="tools-title">지금 읽을 행을 고르세요</h2></div>
+    <div class="tool-controls">
+      <label class="field-label" for="issue-search">쟁점 검색
+        <input id="issue-search" type="search" placeholder="예: 세무조사, 손금, 세금계산서" autocomplete="off">
+      </label>
+      <label class="field-label" for="law-filter">법률 필터
+        <select id="law-filter">
+          <option value="all">다섯 법률 모두</option>
+          <option value="NTBA">국세기본법</option><option value="NCTA">국세징수법</option><option value="CTA">법인세법</option><option value="ITA">소득세법</option><option value="VAT">부가가치세법</option>
+        </select>
+      </label>
+    </div>
+    <p id="filter-status" class="filter-status" role="status" aria-live="polite">50개 쟁점 표시</p>
+    <noscript><p class="no-script-note">검색을 켜지 않아도 아래 모든 쟁점 행과 링크를 읽을 수 있습니다.</p></noscript>
+  </section>
+
+  <div id="issue-register" class="issue-register"><section class="ledger-section" id="law-NTBA" data-law-section="NTBA">
+  <header class="ledger-section__header">
+    <div><h2><span class="heading-sequence">NTBA</span>국세기본법</h2></div>
+    <p class="section-count">10개 쟁점</p>
+  </header>
+  <ol class="issue-ledger"><li class="issue-row" data-law="NTBA" data-search="납세의무의 성립·확정·소멸 납세의무의 성립·확정·소멸 납세의무의 성립·확정·소멸을 신고액, 경정 추가액, 충당 취소 및 상속 승계 사실에 따라 어떻게 날짜와 금액별로 나눌 것인가?">
+  <span class="issue-row__number" aria-hidden="true">01</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">NTBA · 입문</span><a href="issues/NTBA-TAX-LIABILITY-LIFECYCLE-001/">납세의무의 성립·확정·소멸</a></h3>
+    <p class="issue-row__question">납세의무의 성립·확정·소멸을 신고액, 경정 추가액, 충당 취소 및 상속 승계 사실에 따라 어떻게 날짜와 금액별로 나눌 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 1</li></ul>
+  </div>
+  <a class="row-open" href="issues/NTBA-TAX-LIABILITY-LIFECYCLE-001/" aria-label="납세의무의 성립·확정·소멸 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="NTBA" data-search="조세법률주의와 법원·적용순위 조세법률주의와 법원·적용순위 조세법률주의 관점에서 법률의 위임, 시행령의 열거, 내부 업무편람의 설명을 어떤 순서로 대조해야 과세근거가 성립하는가?">
+  <span class="issue-row__number" aria-hidden="true">02</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">NTBA · 입문</span><a href="issues/NTBA-LEGALITY-001/">조세법률주의와 법원·적용순위</a></h3>
+    <p class="issue-row__question">조세법률주의 관점에서 법률의 위임, 시행령의 열거, 내부 업무편람의 설명을 어떤 순서로 대조해야 과세근거가 성립하는가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 4</li></ul>
+  </div>
+  <a class="row-open" href="issues/NTBA-LEGALITY-001/" aria-label="조세법률주의와 법원·적용순위 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="NTBA" data-search="근거과세 원칙과 장부·증빙에 의한 사실인정 근거과세 원칙과 장부·증빙에 의한 사실인정 근거과세 원칙 아래 포스 매출·재고·배달·환불 자료가 어긋날 때 장부의 어느 부분을 인정하고 어느 부분을 조사한 사실로 보정할 것인가?">
+  <span class="issue-row__number" aria-hidden="true">03</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">NTBA · 입문</span><a href="issues/NTBA-BASIS-001/">근거과세 원칙과 장부·증빙에 의한 사실인정</a></h3>
+    <p class="issue-row__question">근거과세 원칙 아래 포스 매출·재고·배달·환불 자료가 어긋날 때 장부의 어느 부분을 인정하고 어느 부분을 조사한 사실로 보정할 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 1</li></ul>
+  </div>
+  <a class="row-open" href="issues/NTBA-BASIS-001/" aria-label="근거과세 원칙과 장부·증빙에 의한 사실인정 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="NTBA" data-search="과세요건사실의 입증책임과 경험칙 과세요건사실의 입증책임과 경험칙 과세요건사실의 입증책임에서 과세관청의 초기입증, 경험칙에 따른 추정, 납세자의 반증을 어떤 증거와 순서로 평가하는가?">
+  <span class="issue-row__number" aria-hidden="true">04</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">NTBA · 중급</span><a href="issues/NTBA-BURDEN-001/">과세요건사실의 입증책임과 경험칙</a></h3>
+    <p class="issue-row__question">과세요건사실의 입증책임에서 과세관청의 초기입증, 경험칙에 따른 추정, 납세자의 반증을 어떤 증거와 순서로 평가하는가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 1</li></ul>
+  </div>
+  <a class="row-open" href="issues/NTBA-BURDEN-001/" aria-label="과세요건사실의 입증책임과 경험칙 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="NTBA" data-search="국세부과 제척기간의 구조 국세부과 제척기간의 구조 국세부과 제척기간을 계산할 때 신고 여부·부정행위·추징사유별 기산일과 5년·7년·10년 기간 중 무엇을 선택하는가?">
+  <span class="issue-row__number" aria-hidden="true">05</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">NTBA · 중급</span><a href="issues/NTBA-LIMITATION-001/">국세부과 제척기간의 구조</a></h3>
+    <p class="issue-row__question">국세부과 제척기간을 계산할 때 신고 여부·부정행위·추징사유별 기산일과 5년·7년·10년 기간 중 무엇을 선택하는가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 4</li></ul>
+  </div>
+  <a class="row-open" href="issues/NTBA-LIMITATION-001/" aria-label="국세부과 제척기간의 구조 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="NTBA" data-search="수정신고와 기한후신고 수정신고와 기한후신고 수정신고와 기한후신고를 구별할 때 기한 내 유효 접수, 결정·경정 전 제출, 추가세액 납부 시점을 어떤 기록으로 확정하는가?">
+  <span class="issue-row__number" aria-hidden="true">06</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">NTBA · 입문</span><a href="issues/NTBA-AMENDED-LATE-FILING-001/">수정신고와 기한후신고</a></h3>
+    <p class="issue-row__question">수정신고와 기한후신고를 구별할 때 기한 내 유효 접수, 결정·경정 전 제출, 추가세액 납부 시점을 어떤 기록으로 확정하는가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li></ul>
+  </div>
+  <a class="row-open" href="issues/NTBA-AMENDED-LATE-FILING-001/" aria-label="수정신고와 기한후신고 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="NTBA" data-search="가산세와 정당한 사유 가산세와 정당한 사유 가산세와 정당한 사유를 판단할 때 본세 성립, 위반한 의무, 당시 해석의 명확성 및 행정 태도를 어떻게 분리해 결론내리는가?">
+  <span class="issue-row__number" aria-hidden="true">07</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">NTBA · 중급</span><a href="issues/NTBA-PENALTY-001/">가산세와 정당한 사유</a></h3>
+    <p class="issue-row__question">가산세와 정당한 사유를 판단할 때 본세 성립, 위반한 의무, 당시 해석의 명확성 및 행정 태도를 어떻게 분리해 결론내리는가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 2</li></ul>
+  </div>
+  <a class="row-open" href="issues/NTBA-PENALTY-001/" aria-label="가산세와 정당한 사유 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="NTBA" data-search="세무조사권·중복조사 금지 세무조사권·중복조사 금지 세무조사권과 중복조사 금지를 판단할 때 첫 조사 범위, 후속 행위의 실질, 같은 세목·기간, 새로운 명백한 탈루자료의 당시성을 어떻게 비교하는가?">
+  <span class="issue-row__number" aria-hidden="true">08</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">NTBA · 중급</span><a href="issues/NTBA-AUDIT-RIGHTS-001/">세무조사권·중복조사 금지</a></h3>
+    <p class="issue-row__question">세무조사권과 중복조사 금지를 판단할 때 첫 조사 범위, 후속 행위의 실질, 같은 세목·기간, 새로운 명백한 탈루자료의 당시성을 어떻게 비교하는가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 7</li></ul>
+  </div>
+  <a class="row-open" href="issues/NTBA-AUDIT-RIGHTS-001/" aria-label="세무조사권·중복조사 금지 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="NTBA" data-search="세무조사 절차·사전통지·연기 세무조사 절차·사전통지·연기 세무조사 절차에서 사전통지 20일, 연기신청 처리, 통지 예외, 조사결과 통지와 과세전적부심사 유보를 어떻게 하나의 날짜 사슬로 검증하는가?">
+  <span class="issue-row__number" aria-hidden="true">09</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">NTBA · 고급</span><a href="issues/NTBA-AUDIT-PROCEDURE-001/">세무조사 절차·사전통지·연기</a></h3>
+    <p class="issue-row__question">세무조사 절차에서 사전통지 20일, 연기신청 처리, 통지 예외, 조사결과 통지와 과세전적부심사 유보를 어떻게 하나의 날짜 사슬로 검증하는가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 6</li></ul>
+  </div>
+  <a class="row-open" href="issues/NTBA-AUDIT-PROCEDURE-001/" aria-label="세무조사 절차·사전통지·연기 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="NTBA" data-search="위법한 세무조사와 절차상 하자의 구제 위법한 세무조사와 절차상 하자의 구제 위법한 세무조사와 절차상 하자의 구제에서 중복조사, 결과통지 지연, 과세전적부심사 기회 침해, 재처분의 하자 보완을 처분별로 어떻게 판단하는가?">
+  <span class="issue-row__number" aria-hidden="true">10</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">NTBA · 고급</span><a href="issues/NTBA-ILLEGAL-AUDIT-REMEDY-001/">위법한 세무조사와 절차상 하자의 구제</a></h3>
+    <p class="issue-row__question">위법한 세무조사와 절차상 하자의 구제에서 중복조사, 결과통지 지연, 과세전적부심사 기회 침해, 재처분의 하자 보완을 처분별로 어떻게 판단하는가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 10</li></ul>
+  </div>
+  <a class="row-open" href="issues/NTBA-ILLEGAL-AUDIT-REMEDY-001/" aria-label="위법한 세무조사와 절차상 하자의 구제 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li></ol>
+</section><section class="ledger-section" id="law-NCTA" data-law-section="NCTA">
+  <header class="ledger-section__header">
+    <div><h2><span class="heading-sequence">NCTA</span>국세징수법</h2></div>
+    <p class="section-count">10개 쟁점</p>
+  </header>
+  <ol class="issue-ledger"><li class="issue-row" data-law="NCTA" data-search="납부고지·납부기한·독촉·강제징수 단계 납부고지·납부기한·독촉·강제징수 단계 납부기한 다음 날 바로 예금압류통지가 도달했다면 어느 선행 문서와 날짜부터 확인해야 할까?">
+  <span class="issue-row__number" aria-hidden="true">01</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">NCTA · 입문</span><a href="issues/NCTA-DELINQUENCY-001/">납부고지·납부기한·독촉·강제징수 단계</a></h3>
+    <p class="issue-row__question">납부기한 다음 날 바로 예금압류통지가 도달했다면 어느 선행 문서와 날짜부터 확인해야 할까?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li></ul>
+  </div>
+  <a class="row-open" href="issues/NCTA-DELINQUENCY-001/" aria-label="납부고지·납부기한·독촉·강제징수 단계 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="NCTA" data-search="납기 전 징수와 보전압류 납기 전 징수와 보전압류 확정일·징수위험 발생일·고지일·압류일을 시간순으로 놓았을 때 국세징수법 제9조의 납기 전 징수와 제31조 제2항의 보전압류를 어떻게 구별하고, 고지액 또는 예상세액과 압류재산 범위를 어떤 절차기록으로 검증할 것인가?">
+  <span class="issue-row__number" aria-hidden="true">02</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">NCTA · 입문</span><a href="issues/NCTA-PREDEADLINE-COLLECTION-001/">납기 전 징수와 보전압류</a></h3>
+    <p class="issue-row__question">확정일·징수위험 발생일·고지일·압류일을 시간순으로 놓았을 때 국세징수법 제9조의 납기 전 징수와 제31조 제2항의 보전압류를 어떻게 구별하고, 고지액 또는 예상세액과 압류재산 범위를 어떤 절차기록으로 검증할 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 2</li></ul>
+  </div>
+  <a class="row-open" href="issues/NCTA-PREDEADLINE-COLLECTION-001/" aria-label="납기 전 징수와 보전압류 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="NCTA" data-search="제2차 납세의무의 성립요건과 범위 제2차 납세의무의 성립요건과 범위 제2차 납세의무에서 법인 재산의 징수부족, 납세의무 성립일, 직접 주주·과점조합원 요건, 실제 권리행사와 책임한도를 어떤 순서로 판단하는가?">
+  <span class="issue-row__number" aria-hidden="true">03</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">NCTA · 고급</span><a href="issues/NCTA-SECONDARY-LIABILITY-001/">제2차 납세의무의 성립요건과 범위</a></h3>
+    <p class="issue-row__question">제2차 납세의무에서 법인 재산의 징수부족, 납세의무 성립일, 직접 주주·과점조합원 요건, 실제 권리행사와 책임한도를 어떤 순서로 판단하는가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 5</li></ul>
+  </div>
+  <a class="row-open" href="issues/NCTA-SECONDARY-LIABILITY-001/" aria-label="제2차 납세의무의 성립요건과 범위 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="NCTA" data-search="조세우선권·법정기일·담보권·임차권·임금채권 조세우선권·법정기일·담보권·임차권·임금채권 하나의 고지서에 본세·가산세·가산금이 함께 있어도 법정기일은 하나일까?">
+  <span class="issue-row__number" aria-hidden="true">04</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">NCTA · 고급</span><a href="issues/NCTA-TAX-PRIORITY-001/">조세우선권·법정기일·담보권·임차권·임금채권</a></h3>
+    <p class="issue-row__question">하나의 고지서에 본세·가산세·가산금이 함께 있어도 법정기일은 하나일까?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 2</li></ul>
+  </div>
+  <a class="row-open" href="issues/NCTA-TAX-PRIORITY-001/" aria-label="조세우선권·법정기일·담보권·임차권·임금채권 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="NCTA" data-search="동산·유가증권·부동산 압류 동산·유가증권·부동산 압류 창고 안 물품이 체납자 재고인지 임가공을 맡긴 거래처 소유인지 모르면 어떤 자료부터 볼까?">
+  <span class="issue-row__number" aria-hidden="true">05</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">NCTA · 중급</span><a href="issues/NCTA-ASSET-SEIZURE-001/">동산·유가증권·부동산 압류</a></h3>
+    <p class="issue-row__question">창고 안 물품이 체납자 재고인지 임가공을 맡긴 거래처 소유인지 모르면 어떤 자료부터 볼까?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li></ul>
+  </div>
+  <a class="row-open" href="issues/NCTA-ASSET-SEIZURE-001/" aria-label="동산·유가증권·부동산 압류 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="NCTA" data-search="압류의 요건·통지·등기와 효력 압류의 요건·통지·등기와 효력 압류통지서는 8월 12일 도달했지만 부동산 등기는 8월 15일 접수됐다면 제3자와의 관계에서 어느 날짜가 중요한가?">
+  <span class="issue-row__number" aria-hidden="true">06</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">NCTA · 입문</span><a href="issues/NCTA-SEIZURE-EFFECT-001/">압류의 요건·통지·등기와 효력</a></h3>
+    <p class="issue-row__question">압류통지서는 8월 12일 도달했지만 부동산 등기는 8월 15일 접수됐다면 제3자와의 관계에서 어느 날짜가 중요한가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 3</li></ul>
+  </div>
+  <a class="row-open" href="issues/NCTA-SEIZURE-EFFECT-001/" aria-label="압류의 요건·통지·등기와 효력 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="NCTA" data-search="압류금지·제한·초과압류 금지 압류금지·제한·초과압류 금지 체납 3천만 원에 대해 1억 6천만 원 토지를 압류했지만 4천5백만 원 예금이 있었다면 어떤 비교가 필요한가?">
+  <span class="issue-row__number" aria-hidden="true">07</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">NCTA · 입문</span><a href="issues/NCTA-SEIZURE-LIMITS-001/">압류금지·제한·초과압류 금지</a></h3>
+    <p class="issue-row__question">체납 3천만 원에 대해 1억 6천만 원 토지를 압류했지만 4천5백만 원 예금이 있었다면 어떤 비교가 필요한가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li></ul>
+  </div>
+  <a class="row-open" href="issues/NCTA-SEIZURE-LIMITS-001/" aria-label="압류금지·제한·초과압류 금지 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="NCTA" data-search="제3자 소유재산·명의신탁·초과압류 제3자 소유재산·명의신탁·초과압류 제3자가 장비 대금을 전액 냈지만 체납자 공장에 보관하고 있었다면 누구 소유인지 어느 자료로 판단할까?">
+  <span class="issue-row__number" aria-hidden="true">08</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">NCTA · 고급</span><a href="issues/NCTA-THIRD-PARTY-ASSET-001/">제3자 소유재산·명의신탁·초과압류</a></h3>
+    <p class="issue-row__question">제3자가 장비 대금을 전액 냈지만 체납자 공장에 보관하고 있었다면 누구 소유인지 어느 자료로 판단할까?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li></ul>
+  </div>
+  <a class="row-open" href="issues/NCTA-THIRD-PARTY-ASSET-001/" aria-label="제3자 소유재산·명의신탁·초과압류 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="NCTA" data-search="예금·매출채권·대여금 압류 예금·매출채권·대여금 압류 채권압류 통지 전날 거래처가 체납자에게 매출대금을 지급했다면 국가가 같은 돈을 다시 추심할 수 있을까?">
+  <span class="issue-row__number" aria-hidden="true">09</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">NCTA · 중급</span><a href="issues/NCTA-RECEIVABLE-SEIZURE-001/">예금·매출채권·대여금 압류</a></h3>
+    <p class="issue-row__question">채권압류 통지 전날 거래처가 체납자에게 매출대금을 지급했다면 국가가 같은 돈을 다시 추심할 수 있을까?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li></ul>
+  </div>
+  <a class="row-open" href="issues/NCTA-RECEIVABLE-SEIZURE-001/" aria-label="예금·매출채권·대여금 압류 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="NCTA" data-search="채권압류와 제3채무자 채권압류와 제3채무자 제3채무자가 압류통지 후 체납자에게 지급했다면 누구에게 다시 지급할 위험이 생기는지 설명해 보라.">
+  <span class="issue-row__number" aria-hidden="true">10</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">NCTA · 중급</span><a href="issues/NCTA-THIRD-DEBTOR-001/">채권압류와 제3채무자</a></h3>
+    <p class="issue-row__question">제3채무자가 압류통지 후 체납자에게 지급했다면 누구에게 다시 지급할 위험이 생기는지 설명해 보라.</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li></ul>
+  </div>
+  <a class="row-open" href="issues/NCTA-THIRD-DEBTOR-001/" aria-label="채권압류와 제3채무자 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li></ol>
+</section><section class="ledger-section" id="law-CTA" data-law-section="CTA">
+  <header class="ledger-section__header">
+    <div><h2><span class="heading-sequence">CTA</span>법인세법</h2></div>
+    <p class="section-count">10개 쟁점</p>
+  </header>
+  <ol class="issue-ledger"><li class="issue-row" data-law="CTA" data-search="재무제표에서 세무조정으로 가는 기본 지도 재무제표에서 세무조정으로 가는 기본 지도 세무조정에서 장부 반영 여부를 확인한 뒤 각 항목의 가감 방향, 영구적 차이·일시적 차이, 소득처분과 신고서 대사를 어떻게 한 흐름으로 제시할 것인가?">
+  <span class="issue-row__number" aria-hidden="true">01</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">CTA · 입문</span><a href="issues/CTA-TAX-ADJUSTMENT-MAP-001/">재무제표에서 세무조정으로 가는 기본 지도</a></h3>
+    <p class="issue-row__question">세무조정에서 장부 반영 여부를 확인한 뒤 각 항목의 가감 방향, 영구적 차이·일시적 차이, 소득처분과 신고서 대사를 어떻게 한 흐름으로 제시할 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/CTA-TAX-ADJUSTMENT-MAP-001/" aria-label="재무제표에서 세무조정으로 가는 기본 지도 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="CTA" data-search="익금의 범위와 귀속시기 익금의 범위와 귀속시기 권리확정주의에서 권리 성립과 실현가능성 성숙을 어떤 기준일 증빙으로 판정하고, 장부에 빠진 미수이자를 익금산입 유보로 어떻게 조정할 것인가?">
+  <span class="issue-row__number" aria-hidden="true">02</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">CTA · 입문</span><a href="issues/CTA-GROSS-INCOME-001/">익금의 범위와 귀속시기</a></h3>
+    <p class="issue-row__question">권리확정주의에서 권리 성립과 실현가능성 성숙을 어떤 기준일 증빙으로 판정하고, 장부에 빠진 미수이자를 익금산입 유보로 어떻게 조정할 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 5</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/CTA-GROSS-INCOME-001/" aria-label="익금의 범위와 귀속시기 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="CTA" data-search="손금의 요건과 업무관련성 손금의 요건과 업무관련성 손금의 업무관련성·통상성·수익 직접관련성을 계약 목적, 실제 수행, 법인 효익과 귀속자 증빙으로 어떻게 판단할 것인가?">
+  <span class="issue-row__number" aria-hidden="true">03</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">CTA · 중급</span><a href="issues/CTA-DEDUCTIBILITY-001/">손금의 요건과 업무관련성</a></h3>
+    <p class="issue-row__question">손금의 업무관련성·통상성·수익 직접관련성을 계약 목적, 실제 수행, 법인 효익과 귀속자 증빙으로 어떻게 판단할 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 5</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/CTA-DEDUCTIBILITY-001/" aria-label="손금의 요건과 업무관련성 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="CTA" data-search="대손금의 요건과 회수가능성 대손금의 요건과 회수가능성 기대신용손실·세법상 대손충당금 한도·직접 대손사유를 어떻게 분리하고, 한도초과 유보를 실제 대손이나 환입 때 어떻게 추인할 것인가?">
+  <span class="issue-row__number" aria-hidden="true">04</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">CTA · 입문</span><a href="issues/CTA-BAD-DEBT-001/">대손금의 요건과 회수가능성</a></h3>
+    <p class="issue-row__question">기대신용손실·세법상 대손충당금 한도·직접 대손사유를 어떻게 분리하고, 한도초과 유보를 실제 대손이나 환입 때 어떻게 추인할 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 1</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/CTA-BAD-DEBT-001/" aria-label="대손금의 요건과 회수가능성 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="CTA" data-search="자본적 지출과 수익적 지출 자본적 지출과 수익적 지출 자본적 지출과 수익적 지출이 섞인 공사에서 공종별 원상회복·성능향상을 어떻게 나누고, 잘못 비용처리한 금액을 상각범위액과 유보로 연결할 것인가?">
+  <span class="issue-row__number" aria-hidden="true">05</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">CTA · 입문</span><a href="issues/CTA-CAPITAL-REVENUE-EXPENDITURE-001/">자본적 지출과 수익적 지출</a></h3>
+    <p class="issue-row__question">자본적 지출과 수익적 지출이 섞인 공사에서 공종별 원상회복·성능향상을 어떻게 나누고, 잘못 비용처리한 금액을 상각범위액과 유보로 연결할 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/CTA-CAPITAL-REVENUE-EXPENDITURE-001/" aria-label="자본적 지출과 수익적 지출 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="CTA" data-search="감가상각 범위·시부인·내용연수 감가상각 범위·시부인·내용연수 회사계상액·상각범위액·상각부인액·시인부족액을 자산별로 어떻게 계산하고 감가상각비조정명세서의 기초·기말 유보로 이어 갈 것인가?">
+  <span class="issue-row__number" aria-hidden="true">06</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">CTA · 입문</span><a href="issues/CTA-DEPRECIATION-001/">감가상각 범위·시부인·내용연수</a></h3>
+    <p class="issue-row__question">회사계상액·상각범위액·상각부인액·시인부족액을 자산별로 어떻게 계산하고 감가상각비조정명세서의 기초·기말 유보로 이어 갈 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/CTA-DEPRECIATION-001/" aria-label="감가상각 범위·시부인·내용연수 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="CTA" data-search="지급이자 손금불산입과 업무무관자산 지급이자 손금불산입과 업무무관자산 업무무관자산의 실제 용도와 기간을 확정한 뒤 차입금 적수·자산 적수·지급이자 적용순서로 손금불산입액을 어떻게 계산할 것인가?">
+  <span class="issue-row__number" aria-hidden="true">07</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">CTA · 중급</span><a href="issues/CTA-INTEREST-NONBUSINESS-ASSET-001/">지급이자 손금불산입과 업무무관자산</a></h3>
+    <p class="issue-row__question">업무무관자산의 실제 용도와 기간을 확정한 뒤 차입금 적수·자산 적수·지급이자 적용순서로 손금불산입액을 어떻게 계산할 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 4</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/CTA-INTEREST-NONBUSINESS-ASSET-001/" aria-label="지급이자 손금불산입과 업무무관자산 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="CTA" data-search="부당행위계산 부인의 요건과 경제적 합리성 부당행위계산 부인의 요건과 경제적 합리성 부당행위계산 부인의 특수관계·시가·조세감소·경제적 합리성을 어떤 거래시점 자료와 비교대상으로 입증할 것인가?">
+  <span class="issue-row__number" aria-hidden="true">08</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">CTA · 고급</span><a href="issues/CTA-RELATED-PARTY-001/">부당행위계산 부인의 요건과 경제적 합리성</a></h3>
+    <p class="issue-row__question">부당행위계산 부인의 특수관계·시가·조세감소·경제적 합리성을 어떤 거래시점 자료와 비교대상으로 입증할 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 8</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/CTA-RELATED-PARTY-001/" aria-label="부당행위계산 부인의 요건과 경제적 합리성 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="CTA" data-search="소득처분의 구조와 귀속자 소득처분의 구조와 귀속자 익금산입 총액을 법인 내 잔존액과 사외유출액으로 어떻게 나누고, 실제 귀속자별 소득처분과 미래 추인을 신고자료에 연결할 것인가?">
+  <span class="issue-row__number" aria-hidden="true">09</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">CTA · 중급</span><a href="issues/CTA-INCOME-DISPOSITION-001/">소득처분의 구조와 귀속자</a></h3>
+    <p class="issue-row__question">익금산입 총액을 법인 내 잔존액과 사외유출액으로 어떻게 나누고, 실제 귀속자별 소득처분과 미래 추인을 신고자료에 연결할 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 3</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/CTA-INCOME-DISPOSITION-001/" aria-label="소득처분의 구조와 귀속자 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="CTA" data-search="장기계약·건설용역의 손익 귀속시기 장기계약·건설용역의 손익 귀속시기 K-IFRS의 기간 인식 요건과 세법상 작업진행률을 독립적으로 검증하고, 두 수익 차이를 계약별 유보와 완공 추인으로 어떻게 관리할 것인가?">
+  <span class="issue-row__number" aria-hidden="true">10</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">CTA · 고급</span><a href="issues/CTA-LONG-TERM-CONTRACT-001/">장기계약·건설용역의 손익 귀속시기</a></h3>
+    <p class="issue-row__question">K-IFRS의 기간 인식 요건과 세법상 작업진행률을 독립적으로 검증하고, 두 수익 차이를 계약별 유보와 완공 추인으로 어떻게 관리할 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 3</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/CTA-LONG-TERM-CONTRACT-001/" aria-label="장기계약·건설용역의 손익 귀속시기 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li></ol>
+</section><section class="ledger-section" id="law-ITA" data-law-section="ITA">
+  <header class="ledger-section__header">
+    <div><h2><span class="heading-sequence">ITA</span>소득세법</h2></div>
+    <p class="section-count">10개 쟁점</p>
+  </header>
+  <ol class="issue-ledger"><li class="issue-row" data-law="ITA" data-search="종합과세·분리과세·분류과세의 기본 지도 종합과세·분리과세·분류과세의 기본 지도 종합과세·분리과세·분류과세를 구별한 뒤 사업소득 48000, 합산 금융소득 20000, 소득공제 8000과 별도 퇴직소득을 신고서에 어떻게 배치할 것인가?">
+  <span class="issue-row__number" aria-hidden="true">01</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">ITA · 입문</span><a href="issues/ITA-TAXATION-MAP-001/">종합과세·분리과세·분류과세의 기본 지도</a></h3>
+    <p class="issue-row__question">종합과세·분리과세·분류과세를 구별한 뒤 사업소득 48000, 합산 금융소득 20000, 소득공제 8000과 별도 퇴직소득을 신고서에 어떻게 배치할 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 7</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/ITA-TAXATION-MAP-001/" aria-label="종합과세·분리과세·분류과세의 기본 지도 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="ITA" data-search="거주자·비거주자와 국내원천소득 거주자·비거주자와 국내원천소득 국내법상 거주자 판정, 조약상 tie-breaker, 국내원천 사용료 40000과 학습 원천징수율 20퍼센트의 계산을 어떤 순서와 증빙으로 연결할 것인가?">
+  <span class="issue-row__number" aria-hidden="true">02</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">ITA · 고급</span><a href="issues/ITA-RESIDENCY-SOURCE-001/">거주자·비거주자와 국내원천소득</a></h3>
+    <p class="issue-row__question">국내법상 거주자 판정, 조약상 tie-breaker, 국내원천 사용료 40000과 학습 원천징수율 20퍼센트의 계산을 어떤 순서와 증빙으로 연결할 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 2</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/ITA-RESIDENCY-SOURCE-001/" aria-label="거주자·비거주자와 국내원천소득 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="ITA" data-search="사업소득과 기타소득의 구분 사업소득과 기타소득의 구분 계속성·반복성, 수익 목적과 지급원인으로 12개 회사의 정기 자문료 30000을 사업소득과 기타소득 중 어디에 분류하고 필요경비·원천징수·지급명세를 어떻게 고칠 것인가?">
+  <span class="issue-row__number" aria-hidden="true">03</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">ITA · 입문</span><a href="issues/ITA-INCOME-CLASSIFICATION-001/">사업소득과 기타소득의 구분</a></h3>
+    <p class="issue-row__question">계속성·반복성, 수익 목적과 지급원인으로 12개 회사의 정기 자문료 30000을 사업소득과 기타소득 중 어디에 분류하고 필요경비·원천징수·지급명세를 어떻게 고칠 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 2</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/ITA-INCOME-CLASSIFICATION-001/" aria-label="사업소득과 기타소득의 구분 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="ITA" data-search="근로소득·복리후생·퇴직소득 구분 근로소득·복리후생·퇴직소득 구분 퇴직일 총지급액 60000 중 재직 중 성과급 12000과 퇴직소득 후보 48000을 원천징수·연말정산·분류과세·확정신고 경로에 어떻게 배치할 것인가?">
+  <span class="issue-row__number" aria-hidden="true">04</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">ITA · 고급</span><a href="issues/ITA-EMPLOYMENT-RETIREMENT-001/">근로소득·복리후생·퇴직소득 구분</a></h3>
+    <p class="issue-row__question">퇴직일 총지급액 60000 중 재직 중 성과급 12000과 퇴직소득 후보 48000을 원천징수·연말정산·분류과세·확정신고 경로에 어떻게 배치할 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/ITA-EMPLOYMENT-RETIREMENT-001/" aria-label="근로소득·복리후생·퇴직소득 구분 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="ITA" data-search="이자·배당소득과 금융소득 종합과세 이자·배당소득과 금융소득 종합과세 이자소득 14000000과 배당소득 9000000을 금융소득 종합과세 기준과 비교하고 원천징수·비교과세·배당세액공제를 어떤 자료로 대사할 것인가?">
+  <span class="issue-row__number" aria-hidden="true">05</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">ITA · 중급</span><a href="issues/ITA-FINANCIAL-INCOME-001/">이자·배당소득과 금융소득 종합과세</a></h3>
+    <p class="issue-row__question">이자소득 14000000과 배당소득 9000000을 금융소득 종합과세 기준과 비교하고 원천징수·비교과세·배당세액공제를 어떤 자료로 대사할 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 2</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/ITA-FINANCIAL-INCOME-001/" aria-label="이자·배당소득과 금융소득 종합과세 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="ITA" data-search="소득의 귀속시기 소득의 귀속시기 수입시기와 지급일을 구별하여 2026-12-30 검수된 용역대금 24000과 대응 필요경비 6000을 어느 귀속연도 장부·신고서에 반영할 것인가?">
+  <span class="issue-row__number" aria-hidden="true">06</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">ITA · 입문</span><a href="issues/ITA-INCOME-TIMING-001/">소득의 귀속시기</a></h3>
+    <p class="issue-row__question">수입시기와 지급일을 구별하여 2026-12-30 검수된 용역대금 24000과 대응 필요경비 6000을 어느 귀속연도 장부·신고서에 반영할 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 4</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/ITA-INCOME-TIMING-001/" aria-label="소득의 귀속시기 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="ITA" data-search="필요경비의 요건과 증빙 필요경비의 요건과 증빙 필요경비의 대응성·통상성·실재를 검증하여 장부경비 45000 중 계약·성과물·지급자료가 없는 12000을 어떻게 조정할 것인가?">
+  <span class="issue-row__number" aria-hidden="true">07</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">ITA · 입문</span><a href="issues/ITA-NECESSARY-EXPENSE-001/">필요경비의 요건과 증빙</a></h3>
+    <p class="issue-row__question">필요경비의 대응성·통상성·실재를 검증하여 장부경비 45000 중 계약·성과물·지급자료가 없는 12000을 어떻게 조정할 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 3</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/ITA-NECESSARY-EXPENSE-001/" aria-label="필요경비의 요건과 증빙 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="ITA" data-search="특수관계인 거래와 부당행위계산 특수관계인 거래와 부당행위계산 특수관계인 저가임대에서 실제 임대료 10000과 비교가능 시가 30000의 차이 20000을 어떤 요건과 증빙으로 소득금액에 반영할 것인가?">
+  <span class="issue-row__number" aria-hidden="true">08</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">ITA · 중급</span><a href="issues/ITA-RELATED-PARTY-001/">특수관계인 거래와 부당행위계산</a></h3>
+    <p class="issue-row__question">특수관계인 저가임대에서 실제 임대료 10000과 비교가능 시가 30000의 차이 20000을 어떤 요건과 증빙으로 소득금액에 반영할 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/ITA-RELATED-PARTY-001/" aria-label="특수관계인 거래와 부당행위계산 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="ITA" data-search="공동사업의 소득분배와 명의 공동사업의 소득분배와 명의 공동사업 전체 소득 100000과 을의 손익분배비율 40퍼센트를 두 단계로 계산하고 명의와 실제 공동경영이 다를 때 별지 제41호서식을 어떻게 고칠 것인가?">
+  <span class="issue-row__number" aria-hidden="true">09</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">ITA · 중급</span><a href="issues/ITA-JOINT-BUSINESS-001/">공동사업의 소득분배와 명의</a></h3>
+    <p class="issue-row__question">공동사업 전체 소득 100000과 을의 손익분배비율 40퍼센트를 두 단계로 계산하고 명의와 실제 공동경영이 다를 때 별지 제41호서식을 어떻게 고칠 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 1</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/ITA-JOINT-BUSINESS-001/" aria-label="공동사업의 소득분배와 명의 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="ITA" data-search="장부비치·기장과 추계결정 장부비치·기장과 추계결정 실지조사와 추계결정을 구별하여 확인 수입 120000, 필요경비 70000과 일부 허위 매입을 어떻게 계산·경정하고 추계사유의 존재를 입증할 것인가?">
+  <span class="issue-row__number" aria-hidden="true">10</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">ITA · 입문</span><a href="issues/ITA-BOOKS-ESTIMATION-001/">장부비치·기장과 추계결정</a></h3>
+    <p class="issue-row__question">실지조사와 추계결정을 구별하여 확인 수입 120000, 필요경비 70000과 일부 허위 매입을 어떻게 계산·경정하고 추계사유의 존재를 입증할 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 6</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/ITA-BOOKS-ESTIMATION-001/" aria-label="장부비치·기장과 추계결정 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li></ol>
+</section><section class="ledger-section" id="law-VAT" data-law-section="VAT">
+  <header class="ledger-section__header">
+    <div><h2><span class="heading-sequence">VAT</span>부가가치세법</h2></div>
+    <p class="section-count">10개 쟁점</p>
+  </header>
+  <ol class="issue-ledger"><li class="issue-row" data-law="VAT" data-search="과세·면세·영세율·비과세의 구분 과세·면세·영세율·비과세의 구분 광고·강좌·번역 거래를 과세, 면세, 영세율 또는 비과세로 분류할 때 어떤 순서와 증빙으로 결론낼 것인가?">
+  <span class="issue-row__number" aria-hidden="true">01</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">VAT · 입문</span><a href="issues/VAT-TAXABILITY-CLASSIFICATION-001/">과세·면세·영세율·비과세의 구분</a></h3>
+    <p class="issue-row__question">광고·강좌·번역 거래를 과세, 면세, 영세율 또는 비과세로 분류할 때 어떤 순서와 증빙으로 결론낼 것인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 3</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/VAT-TAXABILITY-CLASSIFICATION-001/" aria-label="과세·면세·영세율·비과세의 구분 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="VAT" data-search="재화·용역 공급과 실제 공급자 재화·용역 공급과 실제 공급자 재화·용역의 공급이 있었고 플랫폼과 창고업자 중 누가 실제 공급자로서 계산과 책임을 부담했는가?">
+  <span class="issue-row__number" aria-hidden="true">02</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">VAT · 입문</span><a href="issues/VAT-SUPPLY-001/">재화·용역 공급과 실제 공급자</a></h3>
+    <p class="issue-row__question">재화·용역의 공급이 있었고 플랫폼과 창고업자 중 누가 실제 공급자로서 계산과 책임을 부담했는가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 3</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/VAT-SUPPLY-001/" aria-label="재화·용역 공급과 실제 공급자 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="VAT" data-search="간주공급·개인적 공급·사업폐지 잔존재화 간주공급·개인적 공급·사업폐지 잔존재화 공제받은 재화가 개인적 공급·사업상 증여·판매목적 타사업장 반출·폐업잔존 중 어느 간주공급 유형에 해당하며 공급가액은 얼마인가?">
+  <span class="issue-row__number" aria-hidden="true">03</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">VAT · 중급</span><a href="issues/VAT-DEEMED-SUPPLY-001/">간주공급·개인적 공급·사업폐지 잔존재화</a></h3>
+    <p class="issue-row__question">공제받은 재화가 개인적 공급·사업상 증여·판매목적 타사업장 반출·폐업잔존 중 어느 간주공급 유형에 해당하며 공급가액은 얼마인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 5</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/VAT-DEEMED-SUPPLY-001/" aria-label="간주공급·개인적 공급·사업폐지 잔존재화 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="VAT" data-search="사업의 포괄양도 사업의 포괄양도 양수인이 자산·부채·계약·인력·고객관계를 포괄승계하여 같은 사업을 계속하는가, 아니면 특정 자산만 취득해 다른 사업에 쓰는가?">
+  <span class="issue-row__number" aria-hidden="true">04</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">VAT · 고급</span><a href="issues/VAT-BUSINESS-TRANSFER-001/">사업의 포괄양도</a></h3>
+    <p class="issue-row__question">양수인이 자산·부채·계약·인력·고객관계를 포괄승계하여 같은 사업을 계속하는가, 아니면 특정 자산만 취득해 다른 사업에 쓰는가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 2</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/VAT-BUSINESS-TRANSFER-001/" aria-label="사업의 포괄양도 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="VAT" data-search="수출·수입·영세율 증빙 수출·수입·영세율 증빙 거래가 법정 수출·국외공급·외국항행용역에 해당하고 영세율 첨부서류와 대금수취 요건이 충족되는가, 수입세액은 어떻게 신고되는가?">
+  <span class="issue-row__number" aria-hidden="true">05</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">VAT · 고급</span><a href="issues/VAT-EXPORT-IMPORT-ZERO-RATE-001/">수출·수입·영세율 증빙</a></h3>
+    <p class="issue-row__question">거래가 법정 수출·국외공급·외국항행용역에 해당하고 영세율 첨부서류와 대금수취 요건이 충족되는가, 수입세액은 어떻게 신고되는가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 2</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/VAT-EXPORT-IMPORT-ZERO-RATE-001/" aria-label="수출·수입·영세율 증빙 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="VAT" data-search="사실과 다른 세금계산서와 매입세액 불공제 사실과 다른 세금계산서와 매입세액 불공제 실제 공급과 필요적 기재사항이 일치하는가, 불일치한다면 제39조의 불공제 원칙 또는 확인 가능한 예외 중 무엇이 적용되는가?">
+  <span class="issue-row__number" aria-hidden="true">06</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">VAT · 입문</span><a href="issues/VAT-INVOICE-001/">사실과 다른 세금계산서와 매입세액 불공제</a></h3>
+    <p class="issue-row__question">실제 공급과 필요적 기재사항이 일치하는가, 불일치한다면 제39조의 불공제 원칙 또는 확인 가능한 예외 중 무엇이 적용되는가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 6</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/VAT-INVOICE-001/" aria-label="사실과 다른 세금계산서와 매입세액 불공제 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="VAT" data-search="세금계산서 발급시기 세금계산서 발급시기 월합계 약정과 실제 전자서명·발급시각이 법 제34조 제3항의 다음 달 10일 기한을 충족하고 올바른 과세기간에 귀속되었는가?">
+  <span class="issue-row__number" aria-hidden="true">07</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">VAT · 중급</span><a href="issues/VAT-INVOICE-ISSUE-TIME-001/">세금계산서 발급시기</a></h3>
+    <p class="issue-row__question">월합계 약정과 실제 전자서명·발급시각이 법 제34조 제3항의 다음 달 10일 기한을 충족하고 올바른 과세기간에 귀속되었는가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 5</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/VAT-INVOICE-ISSUE-TIME-001/" aria-label="세금계산서 발급시기 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="VAT" data-search="사업 관련 매입세액과 비영업용·개인적 지출 사업 관련 매입세액과 비영업용·개인적 지출 해당 매입이 과세사업의 공급을 위해 사용되었고 지출 목적·경위·사업 내용상 객관적 필요성이 입증되는가?">
+  <span class="issue-row__number" aria-hidden="true">08</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">VAT · 입문</span><a href="issues/VAT-BUSINESS-INPUT-001/">사업 관련 매입세액과 비영업용·개인적 지출</a></h3>
+    <p class="issue-row__question">해당 매입이 과세사업의 공급을 위해 사용되었고 지출 목적·경위·사업 내용상 객관적 필요성이 입증되는가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 6</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/VAT-BUSINESS-INPUT-001/" aria-label="사업 관련 매입세액과 비영업용·개인적 지출 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="VAT" data-search="승용차·기업업무추진·토지·면세 관련 매입세액 승용차·기업업무추진·토지·면세 관련 매입세액 매입세액이 과세사업에 직접 귀속되는가, 아니면 승용차·기업업무추진·토지·면세 관련 법정 불공제에 해당하는가?">
+  <span class="issue-row__number" aria-hidden="true">09</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">VAT · 중급</span><a href="issues/VAT-NONDEDUCTIBLE-INPUT-001/">승용차·기업업무추진·토지·면세 관련 매입세액</a></h3>
+    <p class="issue-row__question">매입세액이 과세사업에 직접 귀속되는가, 아니면 승용차·기업업무추진·토지·면세 관련 법정 불공제에 해당하는가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 6</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/VAT-NONDEDUCTIBLE-INPUT-001/" aria-label="승용차·기업업무추진·토지·면세 관련 매입세액 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li><li class="issue-row" data-law="VAT" data-search="과세·면세 공통매입세액 안분과 재계산 과세·면세 공통매입세액 안분과 재계산 공통매입세액 중 실지귀속이 가능한 금액은 무엇이고, 남은 공통분의 면세사업 관련 불공제액과 재계산액은 얼마인가?">
+  <span class="issue-row__number" aria-hidden="true">10</span>
+  <div class="issue-row__body">
+    <h3><span class="issue-row__context">VAT · 중급</span><a href="issues/VAT-COMMON-INPUT-ALLOCATION-001/">과세·면세 공통매입세액 안분과 재계산</a></h3>
+    <p class="issue-row__question">공통매입세액 중 실지귀속이 가능한 금액은 무엇이고, 남은 공통분의 면세사업 관련 불공제액과 재계산액은 얼마인가?</p>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 3</li><li class="module-tag">회계·조정</li></ul>
+  </div>
+  <a class="row-open" href="issues/VAT-COMMON-INPUT-ALLOCATION-001/" aria-label="과세·면세 공통매입세액 안분과 재계산 읽기">읽기<span aria-hidden="true">↗</span></a>
+</li></ol>
+</section></div>
+
+  <section class="reading-order" aria-labelledby="reading-order-title">
+    <h2 id="reading-order-title"><span class="heading-sequence">읽는 순서</span>질문을 먼저 세우고, 원문으로 돌아오기</h2>
+    <ol>
+      <li><span>01</span> 답을 보기 전 결론을 바꿀 사실을 적습니다.</li>
+      <li><span>02</span> 현행 조문과 기준일을 확인합니다.</li>
+      <li><span>03</span> 초보자 해설·판단 지도·증빙을 연결합니다.</li>
+      <li><span>04</span> 관련 판례와 필요한 회계·세무조정을 대조합니다.</li>
+    </ol>
+  </section>
+</main>
+<footer class="site-footer"><div><strong>세법 쟁점 대장</strong><span>기존 학습 사이트의 진도·로그인·완료 상태와 분리된 공개 읽기 공간입니다.</span></div></footer>
+</body>
+</html>

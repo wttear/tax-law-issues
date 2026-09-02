@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="세무조정에서 장부 반영 여부를 확인한 뒤 각 항목의 가감 방향, 영구적 차이·일시적 차이, 소득처분과 신고서 대사를 어떻게 한 흐름으로 제시할 것인가?">
+  <title>재무제표에서 세무조정으로 가는 기본 지도 · 세법 쟁점 대장</title>
+  <link rel="stylesheet" href="../../styles.css">
+  
+</head>
+<body>
+<!--
+DIRECTION CONTRACT
+THESIS: 법령 원문에서 출발해 쟁점·증빙·판례의 판단 경계를 한 화면의 읽기 순서로 만든다.
+OWN-WORLD: 기존 사건배당부의 석재·종이·잉크·공식 파랑·규선 언어를 법률별 대장으로 확장한다.
+STORY: 법률 선택 → 쟁점 한 행 → 답을 보기 전 질문 → 원문 → 초보자 해설 → 판단 지도 → 증빙 → 판례 → 필요 시 회계.
+FIRST VIEWPORT: 첫 화면에서 다섯 법률과 50개 쟁점의 위치를 보고, 검색 없이도 어느 행을 열지 결정한다.
+FORM: 직각 대장 행, 얇은 규선, 짧은 라벨, 한 열 모바일 읽기 흐름을 사용한다.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md.
+-->
+<a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
+<header class="site-header"><div class="site-header__inner"><a class="wordmark" href="../../"><span class="wordmark__mark">TAX</span><span>쟁점 대장</span></a><a class="header-back" href="../../">전체 대장으로</a></div></header>
+<main id="main-content" class="page page--reader">
+  <nav class="breadcrumb" aria-label="현재 위치"><a href="../../">쟁점 대장</a><span aria-hidden="true">/</span><a href="../../#law-CTA">법인세법</a><span aria-hidden="true">/</span><span>01</span></nav>
+  <header class="reader-heading">
+    <h1>재무제표에서 세무조정으로 가는 기본 지도</h1>
+    <p class="reader-context">CTA · 쟁점 01 / 10 · 입문</p>
+    <p class="reader-lead">법령 원문과 사실·증빙·판례의 연결로 읽는 자유열람 쟁점입니다.</p>
+    <ul class="reader-meta"><li>30분 읽기</li><li>법령 3개 연결</li><li>판례 0건 직접 연결</li></ul>
+  </header>
+
+  <section class="prompt-band" aria-labelledby="prompt-title">
+    <h2 id="prompt-title"><span class="heading-sequence">답을 보기 전</span>먼저 이 질문에 답해 보세요</h2>
+    <p class="prompt-question">세무조정에서 장부 반영 여부를 확인한 뒤 각 항목의 가감 방향, 영구적 차이·일시적 차이, 소득처분과 신고서 대사를 어떻게 한 흐름으로 제시할 것인가?</p>
+    <p class="prompt-caption">결론을 바꿀 날짜·당사자·거래흐름·증빙을 한 줄로 적은 뒤 아래 원문을 여세요.</p>
+  </section>
+
+  <nav class="reader-index" aria-label="이 쟁점 안에서 이동"><a href="#law-source">법령 원문</a><a href="#beginner">초보자 해설</a><a href="#map">판단 지도</a><a href="#example">합성 사례</a><a href="#audit">증빙 실습</a><a href="#precedents">관련 판례</a><a href="#accounting">회계·조정</a><a href="#sources">출처</a></nav>
+
+  <section class="reader-block reader-block--law" id="law-source" aria-labelledby="law-source-title">
+    <h2 id="law-source-title"><span class="heading-sequence">01 / 기준점</span>법령 원문과 기준일</h2>
+    <p class="block-lead">현재 스냅샷의 시행 중 버전을 먼저 보여 줍니다. 과거 거래는 판례 카드와 사건 당시 법령을 분리해 대조합니다.</p>
+    <div class="article-stack"><details class="article-record" open>
+  <summary><span>제13조</span><strong>과세표준</strong><em>현행 · 시행 2026-07-01</em></summary>
+  <div class="article-record__body">
+    <p class="source-label">국가법령정보센터 원문</p>
+    <div class="law-source-text">제13조(과세표준)<br>① 내국법인의 각 사업연도의 소득에 대한 법인세의 과세표준은 각 사업연도의 소득의 범위에서 다음 각 호의 금액과 소득을 차례로 공제한 금액으로 한다. 다만, 제1호의 금액에 대한 공제는 각 사업연도 소득의 100분의 80[「조세특례제한법」 제6조제1항에 따른 중소기업(이하 &quot;중소기업&quot;이라 한다)과 회생계획을 이행 중인 기업 등 대통령령으로 정하는 법인의 경우는 100분의 100]을 한도로 한다. &lt;개정 2020.12.22, 2022.12.31&gt;<br>1. 제14조제3항의 이월결손금 중 다음 각 목의 요건을 모두 갖춘 금액<br>2. 이 법과 다른 법률에 따른 비과세소득<br>3. 이 법과 다른 법률에 따른 소득공제액<br>② 제1항의 과세표준을 계산할 때 다음 각 호의 금액은 해당 사업연도의 다음 사업연도 이후로 이월하여 공제할 수 없다.<br>1. 해당 사업연도의 과세표준을 계산할 때 공제되지 아니한 비과세소득 및 소득공제액<br>2. 「조세특례제한법」 제132조에 따른 최저한세의 적용으로 인하여 공제되지 아니한 소득공제액</div>
+    <p class="source-link"><a href="https://www.law.go.kr/법령/법인세법/제13조" rel="noopener noreferrer">공식 조문 열기</a></p>
+  </div>
+</details><details class="article-record" open>
+  <summary><span>제14조</span><strong>각 사업연도의 소득</strong><em>현행 · 시행 2026-07-01</em></summary>
+  <div class="article-record__body">
+    <p class="source-label">국가법령정보센터 원문</p>
+    <div class="law-source-text">제14조(각 사업연도의 소득)<br>① 내국법인의 각 사업연도의 소득은 그 사업연도에 속하는 익금(益金)의 총액에서 그 사업연도에 속하는 손금(損金)의 총액을 뺀 금액으로 한다. &lt;개정 2018.12.24&gt;<br>② 내국법인의 각 사업연도의 결손금은 그 사업연도에 속하는 손금의 총액이 그 사업연도에 속하는 익금의 총액을 초과하는 경우에 그 초과하는 금액으로 한다.<br>③ 내국법인의 이월결손금은 각 사업연도의 개시일 전 발생한 각 사업연도의 결손금으로서 그 후의 각 사업연도의 과세표준을 계산할 때 공제되지 아니한 금액으로 한다. &lt;신설 2018.12.24&gt;</div>
+    <p class="source-link"><a href="https://www.law.go.kr/법령/법인세법/제14조" rel="noopener noreferrer">공식 조문 열기</a></p>
+  </div>
+</details><details class="article-record" open>
+  <summary><span>제60조</span><strong>과세표준 등의 신고</strong><em>현행 · 시행 2026-07-01</em></summary>
+  <div class="article-record__body">
+    <p class="source-label">국가법령정보센터 원문</p>
+    <div class="law-source-text">제60조(과세표준 등의 신고)<br>① 납세의무가 있는 내국법인은 각 사업연도의 종료일이 속하는 달의 말일부터 3개월(제60조의2제1항 본문에 따라 내국법인이 성실신고확인서를 제출하는 경우에는 4개월로 한다) 이내에 대통령령으로 정하는 바에 따라 그 사업연도의 소득에 대한 법인세의 과세표준과 세액을 납세지 관할 세무서장에게 신고하여야 한다. &lt;개정 2018.12.24&gt;<br>② 제1항에 따른 신고를 할 때에는 그 신고서에 다음 각 호의 서류를 첨부하여야 한다.<br>1. 기업회계기준을 준용하여 작성한 개별 내국법인의 재무상태표ㆍ포괄손익계산서 및 이익잉여금처분계산서(또는 결손금처리계산서)<br>2. 대통령령으로 정하는 바에 따라 작성한 세무조정계산서(이하 &quot;세무조정계산서&quot;라 한다)<br>3. 그 밖에 대통령령으로 정하는 서류<br>③ 제1항은 내국법인으로서 각 사업연도의 소득금액이 없거나 결손금이 있는 법인의 경우에도 적용한다.<br>④ 내국법인이 합병 또는 분할로 해산하는 경우에 제1항에 따른 신고를 할 때에는 그 신고서에 다음 각 호의 서류를 첨부하여야 한다.<br>1. 합병등기일 또는 분할등기일 현재의 피합병법인ㆍ분할법인 또는 소멸한 분할합병의 상대방법인의 재무상태표와 합병법인등이 그 합병 또는 분할에 따라 승계한 자산 및 부채의 명세서<br>2. 그 밖에 대통령령으로 정하는 서류<br>⑤ 제1항에 따른 신고를 할 때 그 신고서에 제2항제1호 및 제2호의 서류를 첨부하지 아니하는 경우 이 법에 따른 신고로 보지 아니한다. 다만, 제4조제3항제1호 및 제7호에 따른 수익사업을 하지 아니하는 비영리내국법인은 그러하지 아니하다. &lt;개정 2018.12.24&gt;<br>⑥ 납세지 관할 세무서장 및 관할지방국세청장은 제1항과 제2항에 따라 제출된 신고서 또는 그 밖의 서류에 미비한 점이 있거나 오류가 있을 때에는 보정할 것을 요구할 수 있다.<br>⑦ 제1항에도 불구하고 「주식회사 등의 외부감사에 관한 법률」 제4조에 따라 감사인(監査人)에 의한 감사를 받아야 하는 내국법인이 해당 사업연도의 감사가 종결되지 아니하여 결산이 확정되지 아니하였다는 사유로 대통령령으로 정하는 바에 따라 신고기한의 연장을 신청한 경우에는 그 신고기한을 1개월의 범위에서 연장할 수 있다. &lt;개정 2017.10.31&gt;<br>⑧ 제7항에 따라 신고기한이 연장된 내국법인이 세액을 납부할 때에는 기한 연장일수에 금융회사 등의 이자율을 고려하여 대통령령으로 정하는 이자율을 적용하여 계산한 금액을 가산하여 납부하여야 한다. 이 경우 기한 연장일수는 제1항에 따른 신고기한의 다음 날부터 신고 및 납부가 이루어진 날(연장기한까지 신고납부가 이루어진 경우만 해당한다) 또는 연장된 날까지의 일수로 한다.<br>⑨ 기업회계와 세무회계의 정확한 조정 또는 성실한 납세를 위하여 필요하다고 인정하여 대통령령으로 정하는 내국법인의 경우 세무조정계산서는 다음 각 호의 어느 하나에 해당하는 자로서 대통령령으로 정하는 조정반에 소속된 자가 작성하여야 한다. &lt;신설 2015.12.15, 2021.11.23&gt;<br>1. 「세무사법」에 따른 세무사등록부에 등록한 세무사<br>2. 「세무사법」에 따른 세무사등록부 또는 공인회계사 세무대리업무등록부에 등록한 공인회계사<br>3. 「세무사법」에 따른 세무사등록부 또는 변호사 세무대리업무등록부에 등록한 변호사</div>
+    <p class="source-link"><a href="https://www.law.go.kr/법령/법인세법/제60조" rel="noopener noreferrer">공식 조문 열기</a></p>
+  </div>
+</details></div>
+    <div class="related-reference"><p class="source-label">시행령·시행규칙 및 연결 조문</p><p class="quiet">이 스냅샷에 전문이 포함된 조문은 위 원문으로, 나머지 연결은 공식 법령 페이지에서 사건 시점의 버전을 확인합니다.</p><ul class="source-list"><li><span>법인세법 제13조·제14조·제60조</span> <a href="https://www.law.go.kr/법령/법인세법" rel="noopener noreferrer">공식 법령 연결</a></li><li><span>법인세법 시행령 제97조</span> <a href="https://www.law.go.kr/법령/법인세법시행령" rel="noopener noreferrer">공식 법령 연결</a></li></ul></div>
+  </section>
+
+  <section class="reader-block reader-block--beginner" id="beginner" aria-labelledby="beginner-title">
+    <h2 id="beginner-title"><span class="heading-sequence">02 / 쉽게 말하면</span>초보자 해설</h2>
+    <div class="beginner-callout"><p>세무조정은 결산서상 당기순이익에 익금산입·손금불산입을 더하고 익금불산입·손금산입을 빼서 각 사업연도 소득으로 잇는 다리다. 벌금 같은 영구적 차이와 감가상각 한도초과 같은 일시적 차이는 소득처분과 후속관리가 다르다.</p></div>
+    <section class="lesson-section" id="concept" aria-labelledby="concept-title">
+<h2 id="concept-title">1. 오늘의 목표와 30초 쉬운 설명 — 2분</h2>
+<section class="learning-block learning-block--easy" aria-labelledby="concept-heading-1">
+<p class="learning-block__label">쉬운 설명</p>
+<h3 id="concept-heading-1">30초 쉬운 설명</h3>
+<p>회사가 만든 손익계산서의 이익이 곧바로 법인세 과세소득이 되는 것은 아니다. 회계는 기업의 성과를 보여 주고, 세법은 그 숫자 가운데 익금과 손금으로 인정할 범위·시기를 다시 정한다. 그래서 결산서상 당기순이익에 익금산입·손금불산입은 더하고, 익금불산입·손금산입은 빼는 다리가 필요하다.</p>
+<p>이 다리가 세무조정이다. 영구히 되돌아오지 않는 벌금 같은 차이와 다음 사업연도에 추인될 감가상각 같은 차이를 구별해야 소득처분과 후속 관리까지 맞는다.</p>
+</section>
+<section class="learning-block learning-block--objectives" aria-labelledby="concept-heading-2">
+<p class="learning-block__label">오늘의 목표</p>
+<h3 id="concept-heading-2">오늘 할 수 있어야 하는 것</h3>
+<ul>
+<li>결산서상 당기순이익에서 각 조정의 가감 방향을 정한다.</li>
+<li>재무제표·세무조정계산서·법인세신고서의 같은 숫자를 끝까지 대사한다.</li>
+<li>영구적 차이와 일시적 차이에 맞는 소득처분과 후속 관리를 설명한다.</li>
+</ul>
+</section>
+<section class="learning-block learning-block--prompt" aria-labelledby="concept-heading-3">
+<p class="learning-block__label">먼저 판단하기</p>
+<h3 id="concept-heading-3">시작 전 판단</h3>
+<p>A법인의 당기순이익은 82000이고 벌금 3000, 감가상각 한도초과 6000, 이미 회계수익에 포함된 비과세 항목 2000이 있다. 아직 계산하지 말고 어떤 금액을 더하고 뺄지만 적어 보자.</p>
+</section>
+</section>
+  </section>
+
+  <section class="reader-block reader-block--map" id="map" aria-labelledby="map-title">
+    <h2 id="map-title"><span class="heading-sequence">03 / 판단 구조</span>법령과 쟁점의 판단 지도</h2>
+    <div class="table-wrap"><table class="decision-table"><thead><tr><th>조문 연결</th><th>이 단계에서 볼 것</th></tr></thead><tbody><tr><td data-label="조문">법인세법 제13조·제14조·제60조</td><td data-label="규칙">각 사업연도 소득과 과세표준의 산출 구조를 신고서·세무조정계산서에 연결한다.</td></tr></tbody></table></div>
+    <section class="lesson-section" id="legal-structure" aria-labelledby="legal-structure-title">
+<h2 id="legal-structure-title">2. 핵심 용어와 법적 판단지도 — 4분</h2>
+<section class="learning-block learning-block--glossary" aria-labelledby="legal-structure-heading-1">
+<p class="learning-block__label">핵심 용어</p>
+<h3 id="legal-structure-heading-1">핵심 용어</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>용어</th>
+<th>쉬운 뜻</th>
+<th>법적 의미</th>
+<th>실무상 확인점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="용어">익금산입</td>
+<td data-label="쉬운 뜻">장부이익에 더함</td>
+<td data-label="법적 의미">회계수익이 아니어도 세법상 익금인 금액을 가산</td>
+<td data-label="실무상 확인점">소득금액조정합계표 가산란과 익금 귀속시기</td>
+</tr>
+<tr>
+<td data-label="용어">손금불산입</td>
+<td data-label="쉬운 뜻">장부비용을 세법에서 뺌</td>
+<td data-label="법적 의미">회계비용 중 손금 요건이나 한도를 충족하지 못한 금액을 가산</td>
+<td data-label="실무상 확인점">영구 차이인지 유보로 추인될 차이인지</td>
+</tr>
+<tr>
+<td data-label="용어">익금불산입</td>
+<td data-label="쉬운 뜻">장부수익에서 뺌</td>
+<td data-label="법적 의미">회계수익이지만 세법이 과세소득에서 제외한 금액을 차감</td>
+<td data-label="실무상 확인점">중복 차감 여부와 별도 명세서</td>
+</tr>
+<tr>
+<td data-label="용어">손금산입</td>
+<td data-label="쉬운 뜻">세법상 비용을 추가함</td>
+<td data-label="법적 의미">장부비용보다 세법상 손금이 큰 금액을 차감</td>
+<td data-label="실무상 확인점">전기 유보의 추인인지 당기 발생인지</td>
+</tr>
+<tr>
+<td data-label="용어">소득처분</td>
+<td data-label="쉬운 뜻">조정액의 행방표시</td>
+<td data-label="법적 의미">유보·상여·배당·기타사외유출 등으로 귀속과 후속 의무를 정함</td>
+<td data-label="실무상 확인점">자산·부채 잔액과 귀속자 자료</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="learning-block learning-block--decision-map" aria-labelledby="legal-structure-heading-2">
+<p class="learning-block__label">판단지도</p>
+<h3 id="legal-structure-heading-2">법적 판단지도</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>요건</th>
+<th>결정적 사실</th>
+<th>확인할 증빙</th>
+<th>반대가설</th>
+<th>잠정결론</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="요건">장부 출발점</td>
+<td data-label="결정적 사실">세전 당기순이익 82000</td>
+<td data-label="확인할 증빙">합계잔액시산표·손익계산서</td>
+<td data-label="반대가설">법인세비용 차감 후 순이익을 잘못 사용</td>
+<td data-label="잠정결론">법인세비용 차감 전 숫자로 고정</td>
+</tr>
+<tr>
+<td data-label="요건">세법상 가산</td>
+<td data-label="결정적 사실">벌금 3000과 상각 한도초과 6000</td>
+<td data-label="확인할 증빙">비용원장·감가상각비조정명세서</td>
+<td data-label="반대가설">이미 장부에서 제거하여 중복 가산</td>
+<td data-label="잠정결론">장부 반영 여부를 확인한 뒤 9000 가산</td>
+</tr>
+<tr>
+<td data-label="요건">세법상 차감</td>
+<td data-label="결정적 사실">과세 제외 수익 2000</td>
+<td data-label="확인할 증빙">수익원장·관련 명세서</td>
+<td data-label="반대가설">애초 장부수익에 없어서 차감 불필요</td>
+<td data-label="잠정결론">장부 포함을 확인한 뒤 2000 차감</td>
+</tr>
+<tr>
+<td data-label="요건">소득처분</td>
+<td data-label="결정적 사실">벌금은 사외유출, 상각초과는 자산차이</td>
+<td data-label="확인할 증빙">납부서·고정자산대장</td>
+<td data-label="반대가설">모두 유보라는 주장</td>
+<td data-label="잠정결론">3000 기타사외유출, 6000 유보로 구분</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol>
+<li>2026. 7. 1. 시행 법인세법 제13조·제14조에서 과세표준과 각 사업연도 소득의 출발 구조를 확인한다.</li>
+<li>2026. 2. 27. 시행 법인세법 시행령의 개별 익금·손금 규정으로 항목을 분류한다.</li>
+<li>장부 반영 여부를 먼저 확인해 같은 금액을 두 번 조정하지 않는다.</li>
+<li>가산·차감 뒤 소득처분과 다음 연도 추인표를 동시에 만든다.</li>
+<li>2026. 7. 1. 시행 법인세법 시행규칙의 법인세 신고서와 소득금액조정합계표에 연결한다.</li>
+</ol>
+</section>
+<h3 id="legal-structure-heading-3">적용 범위와 경계</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>적용되는 질문</th>
+<th>적용하지 않는 방식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="구분">법인세법 제13조·제14조</td>
+<td data-label="적용되는 질문">각 사업연도 소득과 공제 후 과세표준이 얼마인가</td>
+<td data-label="적용하지 않는 방식">회계이익에 세율만 바로 곱하기</td>
+</tr>
+<tr>
+<td data-label="구분">법인세법 제60조·시행령 제97조</td>
+<td data-label="적용되는 질문">어떤 신고서와 부속명세서로 조정을 제출하는가</td>
+<td data-label="적용하지 않는 방식">총액만 신고하고 조정 근거를 생략하기</td>
+</tr>
+<tr>
+<td data-label="구분">회계와 세법의 경계</td>
+<td data-label="적용되는 질문">장부금액과 세법상 금액이 왜 다른가</td>
+<td data-label="적용하지 않는 방식">회계 오류를 세법상 차이로 포장하기</td>
+</tr>
+</tbody>
+</table>
+</div>
+<details class="reveal-block reveal-block--deepening">
+<summary>심화 펼치기</summary>
+<div class="reveal-block__body">
+<h4 id="legal-structure-heading-4">심화</h4>
+<p>영구적 차이는 장래 반대 조정이 없고, 일시적 차이는 세무상 자산·부채 잔액이 남는다. 이 수업의 벌금 3000은 영구적 차이이고 감가상각 한도초과 6000은 다음 사업연도 시인부족 범위에서 추인될 수 있는 일시적 차이다. K-IFRS와 일반기업회계기준은 법인세 회계 표시가 다를 수 있으므로 이 자료는 K-IFRS 장부를 기준으로 하며 두 기준을 합쳐 설명하지 않는다.</p>
+</div>
+</details>
+</section>
+  </section>
+
+  <section class="reader-block reader-block--example" id="example" aria-labelledby="example-title">
+    <h2 id="example-title"><span class="heading-sequence">04 / 사실에 대입하기</span>합성 사례와 결론의 이동</h2>
+    <p class="synthetic-note">아래 사례는 학습을 위한 합성 사실입니다. 실제 사건이나 공식 판례의 사실로 읽지 마세요.</p>
+    <section class="lesson-section" id="worked-example" aria-labelledby="worked-example-title">
+<h2 id="worked-example-title">3. 완성된 쉬운 예제 — 4분</h2>
+<h3 id="worked-example-heading-1">사실</h3>
+<p>A법인의 2026년 세전 당기순이익은 82000이다. 장부비용에는 행정벌 3000과 감가상각 한도초과액 6000이 있고, 장부수익에는 법률상 과세소득에서 제외되는 2000이 들어 있다. 다른 조정·결손금·세액공제는 없다.</p>
+<section class="learning-block learning-block--prompt" aria-labelledby="worked-example-heading-2">
+<p class="learning-block__label">먼저 설명하기</p>
+<h3 id="worked-example-heading-2">자기설명</h3>
+<p>각 항목 옆에 가산·차감, 영구·일시, 소득처분을 먼저 적고 최종 금액을 계산해 보자.</p>
+</section>
+<details class="reveal-block reveal-block--model-explanation">
+<summary>모범 판단 과정 펼치기</summary>
+<div class="reveal-block__body">
+<section class="learning-block learning-block--worked-reasoning" aria-labelledby="worked-example-heading-3">
+<p class="learning-block__label">전문가 판단 과정</p>
+<h3 id="worked-example-heading-3">전문가 판단 과정</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>요건</th>
+<th>결정적 사실</th>
+<th>확인할 증빙</th>
+<th>반대가설</th>
+<th>잠정결론</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="요건">출발 이익</td>
+<td data-label="결정적 사실">세전 당기순이익 82000</td>
+<td data-label="확인할 증빙">손익계산서·시산표</td>
+<td data-label="반대가설">법인세비용 포함 숫자</td>
+<td data-label="잠정결론">82000에서 출발</td>
+</tr>
+<tr>
+<td data-label="요건">벌금</td>
+<td data-label="결정적 사실">비용 3000이 장부 반영</td>
+<td data-label="확인할 증빙">처분통지서·비용원장</td>
+<td data-label="반대가설">손금 가능한 공과금</td>
+<td data-label="잠정결론">손금불산입 3000, 기타사외유출</td>
+</tr>
+<tr>
+<td data-label="요건">상각초과</td>
+<td data-label="결정적 사실">장부상각액이 세법 한도보다 6000 큼</td>
+<td data-label="확인할 증빙">고정자산대장·상각명세</td>
+<td data-label="반대가설">한도 계산 오류</td>
+<td data-label="잠정결론">손금불산입 6000, 유보</td>
+</tr>
+<tr>
+<td data-label="요건">제외 수익</td>
+<td data-label="결정적 사실">장부수익 2000이나 세법상 제외</td>
+<td data-label="확인할 증빙">수익원장·근거 명세</td>
+<td data-label="반대가설">장부에 미반영</td>
+<td data-label="잠정결론">익금불산입 2000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>당기순이익 82000 + 가산 9000 - 차감 2000 = 과세소득 89000이다. 이 예제에서는 추가 공제가 없으므로 세무조정 후 과세표준도 89000이다. 3000은 영구적 차이, 6000은 일시적 차이, 2000은 해당 제외 규정의 사후관리 여부를 별도로 확인한다.</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>원시증빙</th>
+<th>전표·장부</th>
+<th>시산표·재무제표</th>
+<th>신고서·납부자료</th>
+<th>대사 결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="원시증빙">벌금 처분통지서·납부서와 자산 취득계약서</td>
+<td data-label="전표·장부">벌금 비용전표·감가상각 보조원장·수익원장</td>
+<td data-label="시산표·재무제표">합계잔액시산표 82000·손익계산서 세전이익</td>
+<td data-label="신고서·납부자료">법인세 과세표준 및 세액신고서·소득금액조정합계표</td>
+<td data-label="대사 결과">82000+9000-2000=89000으로 과세표준 금액 일치, 유보 6000은 자산별 추인표에 이월</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>이 단계는 신고서 대사이므로 분개를 억지로 만들지 않고 이미 확정된 장부, 조정명세서, 신고서를 연결한다.</p>
+</section>
+</div>
+</details>
+</section>
+  </section>
+
+  <section class="reader-block reader-block--audit" id="audit" aria-labelledby="audit-title">
+    <h2 id="audit-title"><span class="heading-sequence">05 / 조사·증빙</span>세무조사 증빙 실습</h2>
+    <div class="audit-summary">
+  <div><p class="mini-label">조사 가설</p><p>감가상각 한도초과 6000 중 3000이 신고 변환 과정에서 누락되어 과세표준이 과소신고되었다.</p></div>
+  <div><p class="mini-label">반대 가설</p><p>누락처럼 보이는 3000은 처분 자산에 대응하는 전기 유보의 적법한 당기 추인이다.</p></div>
+  <div><p class="mini-label">먼저 확인할 자료</p><ul class="evidence-list"><li>세전 당기순이익이 확인되는 재무제표·합계잔액시산표</li><li>당기·전기 감가상각비조정명세서와 자산별 유보 이월표</li><li>자산 처분계약서·고정자산대장과 전자신고 변환 로그</li></ul></div>
+</div>
+    <section class="lesson-section" id="audit-evidence" aria-labelledby="audit-evidence-title">
+<h2 id="audit-evidence-title">4. 세무조사 증빙 실습 — 8분</h2>
+<h3 id="audit-evidence-heading-1">결론을 가린 사건</h3>
+<p>B법인은 신고서상 과세표준을 86000으로 제출했다. 조사팀은 손익계산서 세전이익 82000, 벌금 3000, 상각 한도초과 6000, 제외 수익 2000을 확인했지만 신고파일에는 상각조정 6000 중 3000만 가산되어 있다. 아직 고정자산대장 원본과 전자신고 변환 로그는 확보되지 않았다.</p>
+<p>유보는 현금이 누구에게 나갔다는 뜻이 아니라 장부상 자산·부채와 세법상 잔액의 차이가 미래에 되돌아올 수 있다는 표시다.</p>
+<section class="learning-block learning-block--hypotheses" aria-labelledby="audit-evidence-heading-2">
+<p class="learning-block__label">경쟁 가설</p>
+<h3 id="audit-evidence-heading-2">경쟁 가설</h3>
+<ul>
+<li>조사 가설: 과세관청은 감가상각 한도초과 3000이 신고 변환 과정에서 누락되어 과세표준이 과소신고되었다고 본다.</li>
+<li>납세자 가설: 납세자는 고정자산 일부를 처분하여 전기 유보 3000이 당기에 적법하게 추인되었으므로 순가산은 3000이라고 본다.</li>
+</ul>
+<p>두 가설은 같은 3000 차이를 설명하지만 하나는 당기 누락이고 다른 하나는 전기 유보의 적법한 환입이므로 자산별 연속표가 결론을 가른다.</p>
+</section>
+<h3 id="audit-evidence-heading-3">증빙 판단표</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>법적 요건</th>
+<th>주장 사실</th>
+<th>확인 자료</th>
+<th>지지하는 실제 가설</th>
+<th>신뢰도·공백</th>
+<th>추가 확인</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="법적 요건">장부 출발점</td>
+<td data-label="주장 사실">세전이익은 82000</td>
+<td data-label="확인 자료">재무제표·합계잔액시산표</td>
+<td data-label="지지하는 실제 가설">조사 가설과 납세자 가설 공통</td>
+<td data-label="신뢰도·공백">재무제표 서명본은 높음, 결산수정 여부 공백</td>
+<td data-label="추가 확인">결산 전후 시산표 대조</td>
+</tr>
+<tr>
+<td data-label="법적 요건">상각 한도</td>
+<td data-label="주장 사실">당기 한도초과는 6000</td>
+<td data-label="확인 자료">세무조정계산서·감가상각명세</td>
+<td data-label="지지하는 실제 가설">조사 가설</td>
+<td data-label="신뢰도·공백">계산식은 있으나 자산 처분 반영 공백</td>
+<td data-label="추가 확인">자산별 상각범위액 재계산</td>
+</tr>
+<tr>
+<td data-label="법적 요건">전기 유보 추인</td>
+<td data-label="주장 사실">처분 자산에 전기 유보 3000 존재</td>
+<td data-label="확인 자료">재무제표·고정자산 세무조정계산서</td>
+<td data-label="지지하는 실제 가설">납세자 가설</td>
+<td data-label="신뢰도·공백">전기 이월표와 처분계약 미확보</td>
+<td data-label="추가 확인">전기 신고서와 처분대금 확인</td>
+</tr>
+<tr>
+<td data-label="법적 요건">신고 반영</td>
+<td data-label="주장 사실">순가산 3000만 전송</td>
+<td data-label="확인 자료">법인세신고서·전자신고 접수증</td>
+<td data-label="지지하는 실제 가설">조사 가설</td>
+<td data-label="신뢰도·공백">결과값은 확인되나 변환 원인 불명</td>
+<td data-label="추가 확인">신고 변환 로그와 작성자 검토표 확보</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>이 표는 원본 자산대장과 전기 유보 이월표를 받기 전의 잠정 증거지도다.</p>
+<section class="learning-block learning-block--prompt" aria-labelledby="audit-evidence-heading-4">
+<p class="learning-block__label">먼저 판단하기</p>
+<h3 id="audit-evidence-heading-4">학습자 잠정 결론</h3>
+<ul>
+<li>잠정 결론: 추가 확인 필요</li>
+<li>결정적 사실: 전기 유보 3000이 실제 처분 자산과 연결되는지 여부</li>
+<li>추가로 필요한 증빙: 전기 감가상각비조정명세서와 2026년 자산 처분계약서</li>
+</ul>
+</section>
+<details class="reveal-block reveal-block--feedback">
+<summary>전문가 피드백 펼치기</summary>
+<div class="reveal-block__body">
+<h3 id="audit-evidence-heading-5">전문가 피드백</h3>
+<p>납세자 설명은 전기 유보의 자산별 식별번호, 처분일, 당기 회계손익과 이어져야 한다. 사후 작성한 총액표만으로는 3000 추인을 확인하기 어렵다.</p>
+<p>조사팀도 단순히 신고 과세표준이 예상 계산과 다르다는 이유만으로 누락을 확정하면 안 된다. 전기 이월잔액과 당기 처분을 먼저 대사해야 한다.</p>
+<ul>
+<li>과세 가능: 전기 유보가 없고 당기 한도초과 6000 중 3000이 누락된 경우</li>
+<li>추가 확인 필요: 전기 유보와 처분 자산 연결은 주장되지만 원시자료가 없는 경우</li>
+<li>과세 곤란: 전기 유보 3000과 자산 처분이 일련번호·금액·날짜로 확인되는 경우</li>
+</ul>
+<p>처분서에는 단순 산술차이뿐 아니라 3000이 당기 발생 조정인지 전기 유보 추인인지 명시해야 불복 단계의 사실오인 위험을 줄일 수 있다.</p>
+</div>
+</details>
+</section>
+  </section>
+
+  <section class="reader-block reader-block--precedent" id="precedents" aria-labelledby="precedents-title">
+    <h2 id="precedents-title"><span class="heading-sequence">06 / 경계선</span>관련 중요 판례</h2>
+    <p class="quiet">이 시안의 공식 판례 색인에서 직접 연결된 사건은 확인되지 않았습니다. 판례를 만들거나 추정하지 않고, 원문 조문과 사실관계를 기준으로 읽습니다.</p>
+    <section class="lesson-section" id="precedent" aria-labelledby="precedent-title">
+<h2 id="precedent-title">6. 중요 판례 예측과 해설 — 5분</h2>
+<h3 id="precedent-heading-1">판례를 먼저 쉽게</h3>
+<p>이 기본지도에는 특정 거래 판례 하나를 억지로 붙이지 않는다. 대신 법원이 개별 익금·손금 사건을 판단할 때도 먼저 사건시기 법령을 정하고 장부 사실과 세법상 금액의 차이를 확인한다는 공통 구조를 연습한다.</p>
+<p>사건시기 법령은 판결 선고일 법령이 아니라 거래와 사업연도에 실제 적용된 법령을 뜻한다.</p>
+<section class="learning-block learning-block--prompt" aria-labelledby="precedent-heading-2">
+<p class="learning-block__label">먼저 예측하기</p>
+<h3 id="precedent-heading-2">결론 전 예측</h3>
+<p>장부비용 6000이 세법 한도를 넘었지만 과세관청이 자산별 한도표를 제시하지 않았다면 법원은 총액 차이만으로 전액 손금불산입을 유지할지, 결정적 사실을 한 문장으로 적어 보자.</p>
+</section>
+<details class="reveal-block reveal-block--precedent">
+<summary>판례 결론과 이유 펼치기</summary>
+<div class="reveal-block__body">
+<h3 id="precedent-heading-3">법원 결론과 이유</h3>
+<ul>
+<li>주문·결론: 이 자료는 확인된 특정 판결의 주문을 제시하는 단원이 아니며, 개별 쟁점 판례에서 자산별 법정 요건과 계산근거를 확인해야 한다.</li>
+<li>핵심 법리: 조세법률주의상 과세관청은 적용 조문, 사업연도, 조정액 계산을 구체적으로 연결해야 한다.</li>
+<li>사실포섭: 장부 총액만 있고 자산별 한도와 전기 유보가 없으면 6000의 발생·추인 여부를 확정하기 어렵다.</li>
+</ul>
+<h3 id="precedent-heading-4">구별 사실과 한계</h3>
+<p>이 지도는 판례의 결론을 대신하지 않는다. 익금 귀속, 대손금, 감가상각 등 뒤의 개별 수업에서 각 공식 판결의 주문·사실·구법 경계를 따로 학습한다.</p>
+<h3 id="precedent-heading-5">후속 상태</h3>
+<p>파기환송은 대법원이 원심판결을 깨고 다시 심리하도록 돌려보내는 절차다. 이 기본지도에서는 특정 파기환송 사건을 추적하지 않는다.</p>
+<ul>
+<li>상급심 상태: 특정 사건을 배정하지 않음</li>
+<li>후속판결: 개별 쟁점 수업에서 공식 판결별로 확인</li>
+<li>적용 법령: 2026년 사업연도에는 현행 법인세법과 시행령을 적용</li>
+<li>확인 기준일: 2026-08-27</li>
+<li>현재 학습상 의미: 모든 개별 판례를 장부금액·세법상 금액·소득처분의 같은 지도에 올려놓는 준비 단계</li>
+</ul>
+<details class="reveal-block reveal-block--deepening">
+<summary>심화 펼치기</summary>
+<div class="reveal-block__body">
+<h4 id="precedent-heading-6">심화</h4>
+<ul>
+<li>추적 ID: CTA-TAX-ADJUSTMENT-MAP-001</li>
+<li>사건: 특정 판례가 아니라 신고조정 구조 학습모형</li>
+<li>상세 사실관계: 당기순이익 82000, 가산 9000, 차감 2000의 비식별 계산사례</li>
+<li>법적 쟁점: 각 사업연도 소득 산출과 공식 신고서 연결</li>
+</ul>
+</div>
+</details>
+</div>
+</details>
+</section>
+  </section>
+
+  <section class="reader-block reader-block--accounting" id="accounting" aria-labelledby="accounting-title">
+  <h2 id="accounting-title"><span class="heading-sequence">선택 모듈</span>회계·세무조정 연결</h2>
+  <p class="block-lead">장부 숫자가 세법상 과세표준과 신고서로 넘어가는 지점만 남겼습니다.</p>
+  <div class="table-wrap"><table class="accounting-table"><tbody><tr><th scope="row">회계 처리</th><td>세전 당기순이익 82000에는 벌금비용 3000, 감가상각비 중 한도초과 6000, 과세 제외 수익 2000이 이미 반영되어 있으므로 별도 분개보다 결산 장부의 반영 여부를 먼저 고정한다.</td></tr><tr><th scope="row">대사 포인트</th><td>손익계산서 세전이익 82000, 소득금액조정합계표 가산 9000·차감 2000, 법인세 과세표준 및 세액신고서 89000을 대사하고 유보 6000을 자산별 추인표로 이월한다.</td></tr><tr><th scope="row">세무조정 방향</th><td>82000+벌금 손금불산입 3000 기타사외유출+감가상각 손금불산입 6000 유보-익금불산입 2000=89000이다. 벌금은 영구적 차이, 상각초과는 미래 시인부족에서 추인될 일시적 차이다.</td></tr></tbody></table></div>
+</section>
+
+  <section class="reader-block reader-block--recall" id="recall" aria-labelledby="recall-title">
+    <h2 id="recall-title"><span class="heading-sequence">07 / 다시 말하기</span>오늘의 회상</h2>
+    <p class="block-lead">시험 답안처럼 외우기보다, 이 쟁점의 요건·결론을 바꾸는 사실·확인자료를 자신의 말로 다시 설명합니다.</p>
+    <section class="lesson-section" id="recall" aria-labelledby="recall-title">
+<h2 id="recall-title">7. 변형사례와 오늘의 회상 — 4분</h2>
+<section class="learning-block learning-block--transfer" aria-labelledby="recall-heading-1">
+<p class="learning-block__label">새 사실에 적용하기</p>
+<h3 id="recall-heading-1">변형사례</h3>
+<p>감가상각 한도초과로 보았던 6000이 전기 유보 6000을 가진 자산의 처분으로 전액 추인되는 사실이 확인되면, 당기 가산은 벌금 3000만 남아 과세소득이 83000이 되므로 결론은 89000에서 83000으로 바뀐다. 어떤 전기 명세와 처분자료가 필요한지 함께 적어 보자.</p>
+</section>
+<h3 id="recall-heading-2">오늘의 회상 3문항</h3>
+<ol>
+<li class="recall-question">법리 구분: 영구적 차이와 일시적 차이를 소득처분·후속관리까지 구분해 설명해 보세요?</li>
+<li class="recall-question">증빙 선택: 당기순이익에서 신고 과세표준까지 대사할 때 가장 먼저 볼 세 자료와 이유를 말해 보세요?</li>
+<li class="recall-question">새 사실 전이: 전기 유보 6000이 당기에 추인되는 변형사례의 계산과 결론을 설명해 보세요?</li>
+</ol>
+<section class="learning-block learning-block--confidence" aria-labelledby="recall-heading-3">
+<p class="learning-block__label">확신도 점검</p>
+<h3 id="recall-heading-3">확신도</h3>
+<p>각 답에 0 모르겠다 / 1 불확실 / 2 확실을 표시한다.</p>
+</section>
+<details class="reveal-block reveal-block--answer-key">
+<summary>답안 핵심요소 펼치기</summary>
+<div class="reveal-block__body">
+<h3 id="recall-heading-4">답안 핵심요소</h3>
+<ul>
+<li>법리 구분: 영구적 차이는 반대 조정이 없고 일시적 차이는 유보 잔액과 미래 추인을 남긴다는 점, 벌금 3000과 상각초과 6000을 달리 처분한다는 점을 포함해야 한다.</li>
+<li>증빙 선택: 재무제표의 세전 당기순이익, 소득금액조정합계표의 가감액, 법인세신고서 과세표준을 선택하고 같은 사업연도·금액·조정 부호를 대사해야 한다.</li>
+<li>새 사실 전이: 전기 유보 6000의 자산별 존재와 당기 처분이 확인되면 손금산입 △유보 6000이 가능해지고 과세소득은 83000으로 바뀐다는 계산을 제시해야 한다.</li>
+</ul>
+</div>
+</details>
+</section>
+  </section>
+
+  <section class="reader-block reader-block--sources" id="sources" aria-labelledby="sources-title">
+  <h2 id="sources-title"><span class="heading-sequence">검증 메모</span>출처와 기준일</h2>
+  <p>법령 원문은 각 조문의 공식 링크에서, 학습 설명은 공개된 원자료 원고에서 가져왔습니다. 사건 당시 법령이 현행법과 다르면 판례 카드의 적용법 메모를 우선 확인하세요.</p>
+  <dl class="provenance-list"><div><dt>법령 자료 기준일</dt><dd>원자료 기록에 따름</dd></div><div><dt>학습 원고</dt><dd><code>lessons/material-cta-tax-adjustment-map-001.md</code></dd></div><div><dt>판례 자료 수</dt><dd>0건 직접 연결</dd></div></dl>
+  <ul class="source-list"><li>제13조 <a href="https://www.law.go.kr/법령/법인세법/제13조" rel="noopener noreferrer">공식 원문</a></li><li>제14조 <a href="https://www.law.go.kr/법령/법인세법/제14조" rel="noopener noreferrer">공식 원문</a></li><li>제60조 <a href="https://www.law.go.kr/법령/법인세법/제60조" rel="noopener noreferrer">공식 원문</a></li></ul>
+</section>
+
+  <nav class="issue-pager" aria-label="같은 법률의 다음 쟁점">
+    <div><span class="pager-label">이 법률의 첫 쟁점입니다</span><a href="../../#law-CTA">목록으로</a></div>
+    <div class="pager-next"><span class="pager-label">다음 쟁점</span><a href="../CTA-GROSS-INCOME-001/">익금의 범위와 귀속시기</a></div>
+  </nav>
+</main>
+<footer class="site-footer"><div><strong>세법 쟁점 대장</strong><span>이 페이지에는 로그인·진도 잠금·학습 완료 버튼이 없습니다. 필요한 곳부터 자유롭게 읽으세요.</span></div></footer>
+</body>
+</html>
