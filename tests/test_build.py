@@ -64,42 +64,98 @@ class BuildOutputTests(unittest.TestCase):
             self.assertNotIn("localStorage", text, page_path)
             self.assertNotIn("55:25:20", text, page_path)
             self.assertNotIn("수업 완료", text, page_path)
+            for banned in (
+                "앞서 확인한 사실",
+                "추가 사실",
+                "다음 단계에서 관련 판단을 더 구체화한다",
+                "완전 안내",
+                "부분 안내형",
+                "독립 해결형",
+                "VAT 실무 bridge",
+                "책임선",
+                "학습값",
+                "분개를 억지로 만들지 않고",
+                "교육문제는",
+                "보여 줘야",
+                "학습상",
+                "학습 기준",
+                "학습 원천징수율",
+                "교육금액",
+                "학습하게 한다",
+                "학습하므로",
+                "어떤 순서로 가르나요",
+            ):
+                self.assertNotIn(banned, text, page_path)
             for url in URL_RE.findall(text):
                 self.assertEqual(urlsplit(url).hostname in ALLOWED_HOSTS, True, url)
 
-    def test_every_issue_has_sequential_learning_steps(self) -> None:
+    def test_every_issue_has_case_first_question_blocks(self) -> None:
         required = {
-            "step_no",
+            "block_no",
             "question",
-            "new_fact",
+            "fact_scope",
             "legal_refs",
             "answer",
             "explanation",
             "evidence",
             "precedent_refs",
             "accounting_note",
-            "next_state",
         }
         for issue in self.data["issues"]:
-            steps = issue.get("steps")
-            self.assertIsInstance(steps, list, issue["issue_id"])
-            self.assertGreaterEqual(len(steps), 2, issue["issue_id"])
-            facts = []
-            for expected_no, step in enumerate(steps, start=1):
-                self.assertTrue(required.issubset(step), issue["issue_id"])
-                self.assertEqual(step["step_no"], expected_no, issue["issue_id"])
-                for key in ("question", "new_fact", "answer", "explanation", "next_state"):
-                    self.assertTrue(str(step[key]).strip(), f"{issue['issue_id']} {key}")
-                self.assertIsInstance(step["legal_refs"], list, issue["issue_id"])
-                self.assertIsInstance(step["evidence"], list, issue["issue_id"])
-                self.assertIsInstance(step["precedent_refs"], list, issue["issue_id"])
-                facts.append(step["new_fact"])
-            self.assertEqual(len(facts), len(set(facts)), issue["issue_id"])
+            self.assertTrue(str(issue.get("case_facts", "")).strip(), issue["issue_id"])
+            blocks = issue.get("question_blocks")
+            self.assertIsInstance(blocks, list, issue["issue_id"])
+            self.assertGreaterEqual(len(blocks), 2, issue["issue_id"])
+            for expected_no, block in enumerate(blocks, start=1):
+                self.assertTrue(required.issubset(block), issue["issue_id"])
+                self.assertEqual(block["block_no"], expected_no, issue["issue_id"])
+                for key in ("question", "fact_scope", "answer", "explanation"):
+                    self.assertTrue(str(block[key]).strip(), f"{issue['issue_id']} {key}")
+                self.assertGreaterEqual(len(str(block["answer"]).strip()), 8, issue["issue_id"])
+                self.assertNotEqual(block["answer"], block["legal_refs"][0] if block["legal_refs"] else None)
+                self.assertIsInstance(block["legal_refs"], list, issue["issue_id"])
+                self.assertIsInstance(block["evidence"], list, issue["issue_id"])
+                self.assertIsInstance(block["precedent_refs"], list, issue["issue_id"])
+            self.assertTrue(all("new_fact" not in block for block in blocks), issue["issue_id"])
+            self.assertTrue(all("next_state" not in block for block in blocks), issue["issue_id"])
+
+    def test_learner_copy_has_no_authoring_guidance(self) -> None:
+        banned = (
+            "앞서 확인한 사실",
+            "추가 사실",
+            "다음 단계에서 관련 판단을 더 구체화한다",
+            "완전 안내",
+            "부분 안내형",
+            "독립 해결형",
+            "VAT 실무 bridge",
+            "책임선",
+            "학습값",
+            "분개를 억지로 만들지 않고",
+            "교육문제는",
+            "보여 줘야",
+            "학습상",
+            "학습 기준",
+            "학습 원천징수율",
+            "교육금액",
+            "학습하게 한다",
+            "학습하므로",
+            "어떤 순서로 가르나요",
+            "55:25:20",
+        )
+        for issue in self.data["issues"]:
+            payload = json.dumps(issue, ensure_ascii=False)
+            for phrase in banned:
+                self.assertNotIn(phrase, payload, issue["issue_id"])
+            questions = [block["question"] for block in issue["question_blocks"]]
+            self.assertEqual(len(questions), len(set(questions)), issue["issue_id"])
+            for question in questions:
+                self.assertTrue(question.endswith("?"), question)
+                self.assertNotIn("??", question, question)
 
     def test_reader_is_static_and_uses_question_first_sequence(self) -> None:
         sample = DOCS / "issues" / "NTBA-TAX-LIABILITY-LIFECYCLE-001" / "index.html"
         text = sample.read_text(encoding="utf-8")
-        for label in ("오늘의 질문", "새 사실", "관련 조문 보기", "답과 해설", "판례·조사·회계 연결", "사실이 달라지면", "마지막 정리"):
+        for label in ("사실관계", "질문별 판단", "관련 조문 보기", "답과 해설", "판례·조사·회계 연결", "사실이 달라지면", "마지막 정리"):
             self.assertIn(label, text)
         self.assertIn('class="issue-step"', text)
         self.assertIn("국가법령정보센터 원문", text)
@@ -113,13 +169,14 @@ class BuildOutputTests(unittest.TestCase):
         sample_issue = next(
             item for item in self.data["issues"] if item["issue_id"] == "NTBA-TAX-LIABILITY-LIFECYCLE-001"
         )
-        self.assertEqual(text.count('class="issue-step"'), len(sample_issue["steps"]))
+        self.assertEqual(text.count('class="issue-step"'), len(sample_issue["question_blocks"]))
+        self.assertEqual(text.count('<div class="case-facts">'), 1)
         self.assertNotIn("<script", text)
 
         visible = text[text.index("<main") :]
         order = [
-            visible.index("오늘의 질문"),
-            visible.index("새 사실"),
+            visible.index("사실관계"),
+            visible.index("질문별 판단"),
             visible.index("관련 조문 보기"),
             visible.index("답과 해설"),
         ]

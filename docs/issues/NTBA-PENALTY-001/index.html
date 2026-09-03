@@ -11,9 +11,9 @@
 <body>
 <!--
 DIRECTION CONTRACT
-THESIS: 질문을 먼저 세우고, 사실을 한 조각씩 추가하면서 관련 조문·답·근거를 같은 순서로 읽게 한다.
+THESIS: 전체 사실관계를 먼저 제시하고, 질문별 판단에 관련 조문·답·근거를 붙인다.
 OWN-WORLD: 기존 사건배당부의 석재·종이·잉크·공식 파랑·규선 언어를 법률별 대장으로 확장한다.
-STORY: 법률 선택 → 쟁점 한 행 → 오늘의 질문 → 새 사실 → 관련 조문 → 답과 해설 → 판례·조사·회계 연결.
+STORY: 법률 선택 → 쟁점 한 행 → 사실관계 전문 → 질문별 판단 → 최종 결론 → 판례·조사·회계 연결.
 FIRST VIEWPORT: 첫 화면에서 다섯 법률과 50개 쟁점의 위치를 보고, 검색 없이도 어느 행을 열지 결정한다.
 FORM: 직각 대장 행, 얇은 규선, 짧은 라벨, 한 열 모바일 읽기 흐름을 사용한다. concept-seed: 0e3fac08.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md.
@@ -25,27 +25,33 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <header class="reader-heading">
     <h1>가산세와 정당한 사유</h1>
     <p class="reader-context">NTBA · 쟁점 07 / 10 · 중급</p>
-    <p class="reader-lead">질문에 답한 뒤 사실을 하나씩 추가하고, 그 단계에 필요한 조문만 열어 보는 자유열람 쟁점입니다.</p>
+    <p class="reader-lead">사실관계 전문을 먼저 읽고, 질문별로 조문·답·증빙을 확인하는 자유열람 쟁점입니다.</p>
     <ul class="reader-meta"><li>30분 읽기</li><li>법령 2개 연결</li><li>판례 2건 직접 연결</li></ul>
   </header>
 
-  <section class="prompt-band" aria-labelledby="prompt-title">
-    <h2 id="prompt-title"><span class="heading-sequence">시작점</span>오늘의 질문</h2>
-    <p class="prompt-question">가산세와 정당한 사유를 판단할 때 본세 성립, 위반한 의무, 당시 해석의 명확성 및 행정 태도를 어떻게 분리해 결론내리는가?</p>
-    <p class="prompt-caption">잠정 결론을 한 줄로 적은 뒤, 아래 단계에서 새 사실을 하나씩 확인하세요.</p>
+  <nav class="reader-index" aria-label="이 쟁점 안에서 이동"><a href="#facts">사실관계</a><a href="#steps">질문별 판단</a><a href="#connections">판례·조사·회계</a><a href="#changes">사실이 달라지면</a><a href="#summary">마지막 정리</a><a href="#sources">출처</a></nav>
+
+  <section class="reader-block reader-block--facts" id="facts" aria-labelledby="facts-title">
+    <h2 id="facts-title"><span class="heading-sequence">01 / 출발점</span>사실관계</h2>
+    <p class="block-lead">사건의 시간·주체·금액을 하나의 맥락으로 정리합니다.</p>
+    <div class="case-facts">W공사는 2009년 사업장폐기물 처리용역 대가 2억 원에 세금계산서를 받지 않아 본세 4천만 원과 가산세 1천6백만 원을 고지받았다. 계약은 대전광역시 업무대행이라고 쓰였지만 계산서와 처리량 정산표는 용역대가로 일치했다. 당시 과세기관의 일관된 비과세 해석 자료는 없었다.</div>
   </section>
 
-  <nav class="reader-index" aria-label="이 쟁점 안에서 이동"><a href="#steps">오늘의 질문</a><a href="#connections">판례·조사·회계</a><a href="#changes">사실이 달라지면</a><a href="#summary">마지막 정리</a><a href="#sources">출처</a></nav>
+  <section class="prompt-band" aria-labelledby="prompt-title">
+    <h2 id="prompt-title"><span class="heading-sequence">핵심 질문</span>무엇을 판단할까요?</h2>
+    <p class="prompt-question">가산세와 정당한 사유를 판단할 때 본세 성립, 위반한 의무, 당시 해석의 명확성 및 행정 태도를 어떻게 분리해 결론내리는가?</p>
+    <p class="prompt-caption">전체 사실관계를 기준으로 아래 질문마다 답과 근거를 확인합니다.</p>
+  </section>
 
   <section class="reader-block reader-block--steps" id="steps" aria-labelledby="steps-title">
-    <h2 id="steps-title"><span class="heading-sequence">01 / 한 단계씩</span>새 사실에 답하기</h2>
-    <p class="block-lead">각 단계의 질문을 먼저 읽고, 새 사실을 확인한 다음 관련 조문과 답·해설을 순서대로 엽니다. 조문은 필요한 단계 안에서만 접혀 있습니다.</p>
+    <h2 id="steps-title"><span class="heading-sequence">02 / 확인</span>질문별 판단</h2>
+    <p class="block-lead">각 질문은 위 사실관계의 한 부분을 가리킵니다. 조문은 필요한 질문 안에서만 접혀 있습니다.</p>
     <div class="issue-steps"><details class="issue-step" id="step-1" open>
-  <summary><span class="step-number">단계 01</span><strong>가산세와 정당한 사유를 판단할 때 본세 성립, 위반한 의무, 당시 해석의 명확성 및 행정 태도를 어떻게 분리해 결론내리는가?</strong></summary>
+  <summary><span class="step-number">질문 01</span><strong>가산세와 정당한 사유를 판단할 때 본세 성립, 위반한 의무, 당시 해석의 명확성 및 행정 태도를 어떻게 분리해 결론내리는가?</strong></summary>
   <div class="step-body">
     <div class="step-fact">
-      <p class="step-label">새 사실</p>
-      <p>비식별 W공사는 2009년 사업장폐기물 처리용역 대가 2억 원에 세금계산서를 받지 않아 본세 4천만 원과 가산세 1천6백만 원을 고지받았다.</p>
+      <p class="step-label">판단할 사실 범위</p>
+      <p>사실관계의 핵심 거래와 처분</p>
     </div>
     <details class="step-law">
       <summary>관련 조문 보기 <span aria-hidden="true">＋</span></summary>
@@ -72,14 +78,13 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </div>
 
 
-    <p class="step-next"><span>다음 단계</span>다음 단계에서 관련 판단을 더 구체화한다: 의무해태를 탓할 수 없는 정당한 사유 또는 법정 감면사유가 있는 범위의 가산세를 부과하지 않거나 감면한다.</p>
   </div>
 </details><details class="issue-step" id="step-2">
-  <summary><span class="step-number">단계 02</span><strong>앞서 확인한 사실에 이 조건이 더해지면, 의무해태를 탓할 수 없는 정당한 사유 또는 법정 감면사유가 있는 범위의 가산세를 부과하지 않거나 감면한다. 결과는 어떻게 달라질까?</strong></summary>
+  <summary><span class="step-number">질문 02</span><strong>본세와 가산세는 어떻게 나누고 정당한 사유는 무엇을 묻는가?</strong></summary>
   <div class="step-body">
     <div class="step-fact">
-      <p class="step-label">새 사실</p>
-      <p>계약은 대전광역시 업무대행이라고 쓰였지만 계산서와 처리량 정산표는 용역대가로 일치했다.</p>
+      <p class="step-label">판단할 사실 범위</p>
+      <p>사실관계의 핵심 거래와 처분</p>
     </div>
     <details class="step-law">
       <summary>관련 조문 보기 <span aria-hidden="true">＋</span></summary>
@@ -106,26 +111,25 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </div>
 
 
-    <p class="step-next"><span>다음 단계</span>다음 단계에서 관련 판단을 더 구체화한다: 가산세를 본세와 구별되는 납세의무 위반에 대한 행정상 제재로 심사한다.</p>
   </div>
 </details><details class="issue-step" id="step-3">
-  <summary><span class="step-number">단계 03</span><strong>앞서 확인한 사실에 이 조건이 더해지면, 가산세를 본세와 구별되는 납세의무 위반에 대한 행정상 제재로 심사한다. 결과는 어떻게 달라질까?</strong></summary>
+  <summary><span class="step-number">질문 03</span><strong>두 판결에서 어떤 거래·해석 기록이 서로 다른 결과를 만들었는가?</strong></summary>
   <div class="step-body">
     <div class="step-fact">
-      <p class="step-label">새 사실</p>
-      <p>당시 과세기관의 일관된 비과세 해석 자료는 없었다.</p>
+      <p class="step-label">판단할 사실 범위</p>
+      <p>사실관계의 핵심 거래와 처분</p>
     </div>
     <details class="step-law">
       <summary>관련 조문 보기 <span aria-hidden="true">＋</span></summary>
       <div class="step-law__body">
-        <ul class="step-law-ref-list"><li>국세기본법 제48조 (앞 단계 원문과 연결)</li></ul>
-        <div class="article-stack"><p class="quiet">이 단계에 직접 연결된 조문 원문은 공식 법령 링크에서 확인합니다.</p></div>
+        <ul class="step-law-ref-list"><li>국세기본법 제47조</li></ul>
+        <div class="article-stack"><p class="quiet">이 질문에 직접 연결된 조문 원문은 공식 법령 링크에서 확인할 수 있습니다.</p></div>
       </div>
     </details>
     <div class="step-answer">
       <p class="step-label">답과 해설</p>
       <p class="step-answer__headline">본세 적법만으로 결론낸 것이 아니라 위반을 탓할 수 있는지 별도로 심사했다.</p>
-      <p>추가 사실 3을 위 법리와 대조해 요건과 효과를 확인한다.</p>
+      <p>본세는 원래 내야 할 세금이고 가산세는 신고·납부의무 위반에 붙는 행정상 제재다.</p>
     </div>
     <div class="step-evidence">
   <p class="step-label">확인할 증빙</p>
@@ -136,14 +140,13 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <p class="step-label">연결 판례</p>
   <ul class="step-link-list"><li><a href="#case-SC-2008DU12986-2011-05-13">2008두12986</a></li><li><a href="#case-SC-2017DU36885-2017-07-11">2017두36885</a></li></ul>
 </div>
-    <p class="step-next"><span>다음 단계</span>판례·조사 증빙과 회계·세무조정 연결에서 이 결론을 다시 검증한다.</p>
   </div>
 </details></div>
   </section>
 
   <section class="reader-block reader-block--connections" id="connections" aria-labelledby="connections-title">
-  <h2 id="connections-title"><span class="heading-sequence">02 / 연결</span>판례·조사·회계 연결</h2>
-  <p class="block-lead">각 단계에서 확인한 결론을 공식 판례, 조사 가설과 증빙, 장부·세무조정으로 한 번 더 검증합니다.</p>
+  <h2 id="connections-title"><span class="heading-sequence">03 / 연결</span>판례·조사·회계 연결</h2>
+  <p class="block-lead">질문별 결론을 공식 판례, 조사 증빙, 장부·세무조정과 함께 확인합니다.</p>
   <div class="audit-summary">
   <div><p class="mini-label">조사 가설</p><p>과세 거래와 증빙의무가 명확했고 납세자가 확인을 게을리했으므로 본세와 가산세가 모두 적법하다.</p></div>
   <div><p class="mini-label">반대 가설</p><p>소득분류에 견해가 대립하고 과세관청도 확실한 태도를 보이지 않아 의무해태를 비난하기 어려운 정당한 사유가 있다.</p></div>
@@ -168,18 +171,18 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   </div>
 </section>
   <section class="reader-block reader-block--changes" id="changes" aria-labelledby="changes-title">
-  <h2 id="changes-title"><span class="heading-sequence">03 / 전이</span>사실이 달라지면</h2>
+  <h2 id="changes-title"><span class="heading-sequence">04 / 조건</span>사실이 달라지면</h2>
   <p class="block-lead">기본 사실에서 한 가지 조건만 바꿔 결론이 이동하는 지점을 확인합니다.</p>
   <div class="changes-callout"><p>파산관재인 보수의 소득구분에 관해 신고 전에 공개된 공식 해석이 명확했다. 이를 확인할 수 있었다면 정당한 사유를 인정하기 어려워진다. 본세와 별도로 가산세도 유지되는 방향이다.</p></div>
 </section>
   <section class="reader-block reader-block--summary" id="summary" aria-labelledby="summary-title">
-  <h2 id="summary-title"><span class="heading-sequence">04 / 마무리</span>마지막 정리</h2>
-  <div class="summary-callout"><p>가산세 정당한 사유은(는) 가산세를 본세와 구별되는 납세의무 위반에 대한 행정상 제재로 심사한다 → 의무해태를 탓할 수 없는 정당한 사유 또는 법정 감면사유가 있는 범위의 가산세를 부과하지 않거나 감면한다 순서로 확인하고, 마지막에 사실·증빙의 반대 가능성을 점검한다.</p></div>
-  <div class="summary-prompts"><p class="step-label">스스로 다시 답하기</p><ul class="summary-question-list"><li>법리 구분: 본세와 가산세는 어떻게 나누고 정당한 사유는 무엇을 묻는가?</li><li>증빙 선택: 두 판결에서 어떤 거래·해석 기록이 서로 다른 결과를 만들었는가?</li><li>새 사실 전이: 신고 전 공식 해석이 명확했다면 정당한 사유 결론은 어떻게 바뀌는가?</li></ul></div>
+  <h2 id="summary-title"><span class="heading-sequence">05 / 마무리</span>마지막 정리</h2>
+  <div class="summary-callout"><p>가산세 정당한 사유: 가산세를 본세와 구별되는 납세의무 위반에 대한 행정상 제재로 심사한다 → 의무해태를 탓할 수 없는 정당한 사유 또는 법정 감면사유가 있는 범위의 가산세를 부과하지 않거나 감면한다. 이 사실관계의 결론은 본세 적법만으로 결론낸 것이 아니라 위반을 탓할 수 있는지 별도로 심사했다.</p></div>
+  <div class="summary-prompts"><p class="step-label">스스로 다시 답하기</p><ul class="summary-question-list"><li>본세와 가산세는 어떻게 나누고 정당한 사유는 무엇을 묻는가?</li><li>두 판결에서 어떤 거래·해석 기록이 서로 다른 결과를 만들었는가?</li><li>신고 전 공식 해석이 명확했다면 정당한 사유 결론은 어떻게 바뀌는가?</li></ul></div>
 </section>
   <section class="reader-block reader-block--sources" id="sources" aria-labelledby="sources-title">
-  <h2 id="sources-title"><span class="heading-sequence">검증 메모</span>출처와 기준일</h2>
-  <p>법령 원문은 각 조문의 공식 링크에서, 학습 설명은 공개된 원자료 원고에서 가져왔습니다. 사건 당시 법령이 현행법과 다르면 판례 카드의 적용법 메모를 우선 확인하세요.</p>
+  <h2 id="sources-title"><span class="heading-sequence">06 / 출처</span>출처와 기준일</h2>
+  <p>법령 원문과 학습 설명의 출처, 사건 당시 법령과 현행법의 차이를 기록합니다.</p>
   <dl class="provenance-list"><div><dt>법령 자료 기준일</dt><dd>원자료 기록에 따름</dd></div><div><dt>학습 원고</dt><dd><code>lessons/material-ntba-penalty-001.md</code></dd></div><div><dt>판례 자료 수</dt><dd>2건 직접 연결</dd></div></dl>
   <ul class="source-list"><li>제47조 <a href="https://www.law.go.kr/법령/국세기본법/제47조" rel="noopener noreferrer">공식 원문</a></li><li>제48조 <a href="https://www.law.go.kr/법령/국세기본법/제48조" rel="noopener noreferrer">공식 원문</a></li></ul>
 </section>
@@ -189,6 +192,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div class="pager-next"><span class="pager-label">다음 쟁점</span><a href="../NTBA-AUDIT-RIGHTS-001/">세무조사권·중복조사 금지</a></div>
   </nav>
 </main>
-<footer class="site-footer"><div><strong>세법 쟁점 대장</strong><span>이 페이지에는 로그인·진도 잠금·학습 완료 버튼이 없습니다. 필요한 곳부터 자유롭게 읽으세요.</span></div></footer>
+<footer class="site-footer"><div><strong>세법 쟁점 대장</strong><span>로그인·진도 잠금 없이 제공되는 공개 읽기 공간입니다.</span></div></footer>
 </body>
 </html>

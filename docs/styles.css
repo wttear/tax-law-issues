@@ -629,6 +629,17 @@ input::placeholder {
   margin-bottom: 1.4rem;
 }
 
+.reader-block--facts .case-facts {
+  margin: 0;
+  border: 1px solid var(--rule-dark);
+  background: var(--paper);
+  padding: 1rem 1.1rem;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.04rem;
+  line-height: 1.75;
+}
+
 /* Sequential issue reader */
 .issue-steps {
   margin-top: 1.35rem;

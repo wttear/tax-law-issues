@@ -113,9 +113,9 @@ def page_shell(
 def direction_contract() -> str:
     return """<!--
 DIRECTION CONTRACT
-THESIS: 질문을 먼저 세우고, 사실을 한 조각씩 추가하면서 관련 조문·답·근거를 같은 순서로 읽게 한다.
+THESIS: 전체 사실관계를 먼저 제시하고, 질문별 판단에 관련 조문·답·근거를 붙인다.
 OWN-WORLD: 기존 사건배당부의 석재·종이·잉크·공식 파랑·규선 언어를 법률별 대장으로 확장한다.
-STORY: 법률 선택 → 쟁점 한 행 → 오늘의 질문 → 새 사실 → 관련 조문 → 답과 해설 → 판례·조사·회계 연결.
+STORY: 법률 선택 → 쟁점 한 행 → 사실관계 전문 → 질문별 판단 → 최종 결론 → 판례·조사·회계 연결.
 FIRST VIEWPORT: 첫 화면에서 다섯 법률과 50개 쟁점의 위치를 보고, 검색 없이도 어느 행을 열지 결정한다.
 FORM: 직각 대장 행, 얇은 규선, 짧은 라벨, 한 열 모바일 읽기 흐름을 사용한다. concept-seed: 0e3fac08.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md.
@@ -181,7 +181,7 @@ def render_index(data: dict[str, Any]) -> str:
 <main id="main-content" class="page page--index">
   <section class="atlas-intro" aria-labelledby="atlas-title">
     <h1 id="atlas-title">다섯 법률, 오십 개 판단 단위</h1>
-    <p class="intro-copy">질문을 먼저 세우고, 사실을 한 조각씩 추가하면서 관련 조문·답·증빙·판례를 순서대로 확인하세요.</p>
+    <p class="intro-copy">사실관계를 먼저 읽고, 질문별로 관련 조문·답·증빙·판례를 확인합니다.</p>
     <div class="intro-rule" aria-hidden="true"><span></span><span></span><span></span></div>
     <p class="intro-caption">국세기본법 · 국세징수법 · 법인세법 · 소득세법 · 부가가치세법</p>
   </section>
@@ -208,12 +208,12 @@ def render_index(data: dict[str, Any]) -> str:
   <div id="issue-register" class="issue-register">{"".join(law_sections)}</div>
 
   <section class="reading-order" aria-labelledby="reading-order-title">
-    <h2 id="reading-order-title"><span class="heading-sequence">읽는 순서</span>질문을 먼저 세우고, 원문으로 돌아오기</h2>
+    <h2 id="reading-order-title"><span class="heading-sequence">읽는 순서</span>사실에서 판단으로</h2>
     <ol>
-      <li><span>01</span> 오늘의 질문을 먼저 읽고 잠정 결론을 적습니다.</li>
-      <li><span>02</span> 새 사실을 하나씩 추가하고 관련 조문을 엽니다.</li>
-      <li><span>03</span> 답과 해설, 확인할 증빙을 바로 연결합니다.</li>
-      <li><span>04</span> 마지막에 판례와 필요한 회계·세무조정을 대조합니다.</li>
+      <li><span>01</span> 사실관계 전문을 먼저 읽습니다.</li>
+      <li><span>02</span> 질문별 판단에서 해당 조문과 답을 확인합니다.</li>
+      <li><span>03</span> 필요한 증빙과 판례를 바로 연결합니다.</li>
+      <li><span>04</span> 마지막에 회계·세무조정과 최종 결론을 대조합니다.</li>
     </ol>
   </section>
 </main>
@@ -294,13 +294,13 @@ def render_audit_summary(items: Any) -> str:
 
 def render_precedents(items: Any) -> str:
     if not isinstance(items, list) or not items:
-        return '<p class="quiet">이 시안의 공식 판례 색인에서 직접 연결된 사건은 확인되지 않았습니다. 판례를 만들거나 추정하지 않고, 원문 조문과 사실관계를 기준으로 읽습니다.</p>'
+        return '<p class="quiet">직접 연결된 공식 판례가 아직 없습니다. 이 쟁점은 조문 원문과 사실관계를 기준으로 정리했습니다.</p>'
     cards: list[str] = []
     for item in items:
         if not isinstance(item, dict):
             continue
         facts = list_items(item.get("distinguishing_facts"), "case-facts")
-        summary = item.get("holding_summary") or item.get("issue_summary") or "공식 판결문에서 판시내용을 확인하세요."
+        summary = item.get("holding_summary") or item.get("issue_summary") or "판시내용은 공식 판결문 원문에서 확인할 수 있습니다."
         title = item.get("title") or item.get("issue_summary") or "관련 판례"
         case_key = str(item.get("precedent_id") or item.get("case_number") or "case")
         case_anchor = "case-" + re.sub(r"[^0-9A-Za-z가-힣_-]+", "-", case_key).strip("-")
@@ -354,8 +354,8 @@ def render_step(
     article_by_id: dict[str, dict[str, Any]],
     precedent_by_ref: dict[str, dict[str, Any]],
 ) -> str:
-    step_no = int(step.get("step_no") or 0)
-    open_attr = " open" if step_no == 1 else ""
+    block_no = int(step.get("block_no") or step.get("step_no") or 0)
+    open_attr = " open" if block_no == 1 else ""
     article_ids = [
         str(value)
         for value in step.get("article_ids", [])
@@ -366,7 +366,7 @@ def render_step(
             render_article(article_by_id[article_id]) for article_id in article_ids
         )
     else:
-        article_stack = '<p class="quiet">이 단계에 직접 연결된 조문 원문은 공식 법령 링크에서 확인합니다.</p>'
+        article_stack = '<p class="quiet">이 질문에 직접 연결된 조문 원문은 공식 법령 링크에서 확인할 수 있습니다.</p>'
     evidence = list_items(step.get("evidence"), "step-evidence-list")
     evidence_block = ""
     if evidence:
@@ -381,12 +381,12 @@ def render_step(
   <p>{linebreak_text(step.get("accounting_note"))}</p>
 </div>'''
     legal_refs = list_items(step.get("legal_refs"), "step-law-ref-list")
-    return f'''<details class="issue-step" id="step-{step_no}"{open_attr}>
-  <summary><span class="step-number">단계 {step_no:02d}</span><strong>{esc(step.get("question"))}</strong></summary>
+    return f'''<details class="issue-step" id="step-{block_no}"{open_attr}>
+  <summary><span class="step-number">질문 {block_no:02d}</span><strong>{esc(step.get("question"))}</strong></summary>
   <div class="step-body">
     <div class="step-fact">
-      <p class="step-label">새 사실</p>
-      <p>{esc(step.get("new_fact"))}</p>
+      <p class="step-label">판단할 사실 범위</p>
+      <p>{esc(step.get("fact_scope"))}</p>
     </div>
     <details class="step-law">
       <summary>관련 조문 보기 <span aria-hidden="true">＋</span></summary>
@@ -403,7 +403,6 @@ def render_step(
     {evidence_block}
     {accounting_block}
     {render_step_precedents(step, precedent_by_ref)}
-    <p class="step-next"><span>다음 단계</span>{esc(step.get("next_state"))}</p>
   </div>
 </details>'''
 
@@ -415,8 +414,8 @@ def render_connections(issue: dict[str, Any]) -> str:
     if not audit_blocks and not precedent_block and not accounting:
         return ""
     return f'''<section class="reader-block reader-block--connections" id="connections" aria-labelledby="connections-title">
-  <h2 id="connections-title"><span class="heading-sequence">02 / 연결</span>판례·조사·회계 연결</h2>
-  <p class="block-lead">각 단계에서 확인한 결론을 공식 판례, 조사 가설과 증빙, 장부·세무조정으로 한 번 더 검증합니다.</p>
+  <h2 id="connections-title"><span class="heading-sequence">03 / 연결</span>판례·조사·회계 연결</h2>
+  <p class="block-lead">질문별 결론을 공식 판례, 조사 증빙, 장부·세무조정과 함께 확인합니다.</p>
   {audit_blocks}
   {accounting}
   <div class="connection-precedents" id="precedents">
@@ -431,7 +430,7 @@ def render_changes(issue: dict[str, Any]) -> str:
     if not text:
         return ""
     return f'''<section class="reader-block reader-block--changes" id="changes" aria-labelledby="changes-title">
-  <h2 id="changes-title"><span class="heading-sequence">03 / 전이</span>사실이 달라지면</h2>
+  <h2 id="changes-title"><span class="heading-sequence">04 / 조건</span>사실이 달라지면</h2>
   <p class="block-lead">기본 사실에서 한 가지 조건만 바꿔 결론이 이동하는 지점을 확인합니다.</p>
   <div class="changes-callout"><p>{esc(text)}</p></div>
 </section>'''
@@ -441,7 +440,7 @@ def render_final_summary(issue: dict[str, Any]) -> str:
     points = issue.get("recall_questions") or []
     questions = list_items(points, "summary-question-list")
     return f'''<section class="reader-block reader-block--summary" id="summary" aria-labelledby="summary-title">
-  <h2 id="summary-title"><span class="heading-sequence">04 / 마무리</span>마지막 정리</h2>
+  <h2 id="summary-title"><span class="heading-sequence">05 / 마무리</span>마지막 정리</h2>
   <div class="summary-callout"><p>{esc(issue.get("final_summary") or issue.get("easy_explanation"))}</p></div>
   {f'<div class="summary-prompts"><p class="step-label">스스로 다시 답하기</p>{questions}</div>' if questions else ''}
 </section>'''
@@ -482,8 +481,8 @@ def render_sources(issue: dict[str, Any], article_by_id: dict[str, dict[str, Any
         article_links.append(f'<li>{esc(article.get("article_number"))} {link(article.get("official_url"), "공식 원문")}</li>')
     lesson_path = issue.get("source", {}).get("lesson_path")
     return f'''<section class="reader-block reader-block--sources" id="sources" aria-labelledby="sources-title">
-  <h2 id="sources-title"><span class="heading-sequence">검증 메모</span>출처와 기준일</h2>
-  <p>법령 원문은 각 조문의 공식 링크에서, 학습 설명은 공개된 원자료 원고에서 가져왔습니다. 사건 당시 법령이 현행법과 다르면 판례 카드의 적용법 메모를 우선 확인하세요.</p>
+  <h2 id="sources-title"><span class="heading-sequence">06 / 출처</span>출처와 기준일</h2>
+  <p>법령 원문과 학습 설명의 출처, 사건 당시 법령과 현행법의 차이를 기록합니다.</p>
   <dl class="provenance-list"><div><dt>법령 자료 기준일</dt><dd>{esc(issue.get("source", {}).get("curriculum_source_as_of") or "원자료 기록에 따름")}</dd></div><div><dt>학습 원고</dt><dd><code>{esc(lesson_path)}</code></dd></div><div><dt>판례 자료 수</dt><dd>{len(issue.get("precedents", []))}건 직접 연결</dd></div></dl>
   <ul class="source-list">{"".join(article_links)}</ul>
 </section>'''
@@ -499,17 +498,18 @@ def render_issue(
     previous = all_issues_for_law[position - 2] if position > 1 else None
     following = all_issues_for_law[position] if position < len(all_issues_for_law) else None
     nav_links = [
-        '<a href="#steps">오늘의 질문</a>',
+        '<a href="#facts">사실관계</a>',
+        '<a href="#steps">질문별 판단</a>',
         '<a href="#connections">판례·조사·회계</a>',
         '<a href="#changes">사실이 달라지면</a>',
         '<a href="#summary">마지막 정리</a>',
     ]
     nav_links.append('<a href="#sources">출처</a>')
     precedent_by_ref = precedent_lookup(issue.get("precedents"))
-    steps = issue.get("steps", [])
+    question_blocks = issue.get("question_blocks", [])
     rendered_steps = "".join(
         render_step(step, article_by_id, precedent_by_ref)
-        for step in steps
+        for step in question_blocks
         if isinstance(step, dict)
     )
 
@@ -521,21 +521,27 @@ def render_issue(
   <header class="reader-heading">
     <h1>{esc(issue["title"])}</h1>
     <p class="reader-context">{esc(law["law_code"])} · 쟁점 {position:02d} / 10 · {esc(level_label(issue.get("level")))}</p>
-    <p class="reader-lead">질문에 답한 뒤 사실을 하나씩 추가하고, 그 단계에 필요한 조문만 열어 보는 자유열람 쟁점입니다.</p>
+    <p class="reader-lead">사실관계 전문을 먼저 읽고, 질문별로 조문·답·증빙을 확인하는 자유열람 쟁점입니다.</p>
     <ul class="reader-meta"><li>{esc(issue.get("estimated_minutes") or "") }분 읽기</li><li>법령 {len(issue.get("article_ids", []))}개 연결</li><li>판례 {len(issue.get("precedents", []))}건 직접 연결</li></ul>
   </header>
 
-  <section class="prompt-band" aria-labelledby="prompt-title">
-    <h2 id="prompt-title"><span class="heading-sequence">시작점</span>오늘의 질문</h2>
-    <p class="prompt-question">{esc(issue["core_question"])}</p>
-    <p class="prompt-caption">잠정 결론을 한 줄로 적은 뒤, 아래 단계에서 새 사실을 하나씩 확인하세요.</p>
-  </section>
-
   <nav class="reader-index" aria-label="이 쟁점 안에서 이동">{"".join(nav_links)}</nav>
 
+  <section class="reader-block reader-block--facts" id="facts" aria-labelledby="facts-title">
+    <h2 id="facts-title"><span class="heading-sequence">01 / 출발점</span>사실관계</h2>
+    <p class="block-lead">사건의 시간·주체·금액을 하나의 맥락으로 정리합니다.</p>
+    <div class="case-facts">{linebreak_text(issue.get("case_facts"))}</div>
+  </section>
+
+  <section class="prompt-band" aria-labelledby="prompt-title">
+    <h2 id="prompt-title"><span class="heading-sequence">핵심 질문</span>무엇을 판단할까요?</h2>
+    <p class="prompt-question">{esc(issue["core_question"])}</p>
+    <p class="prompt-caption">전체 사실관계를 기준으로 아래 질문마다 답과 근거를 확인합니다.</p>
+  </section>
+
   <section class="reader-block reader-block--steps" id="steps" aria-labelledby="steps-title">
-    <h2 id="steps-title"><span class="heading-sequence">01 / 한 단계씩</span>새 사실에 답하기</h2>
-    <p class="block-lead">각 단계의 질문을 먼저 읽고, 새 사실을 확인한 다음 관련 조문과 답·해설을 순서대로 엽니다. 조문은 필요한 단계 안에서만 접혀 있습니다.</p>
+    <h2 id="steps-title"><span class="heading-sequence">02 / 확인</span>질문별 판단</h2>
+    <p class="block-lead">각 질문은 위 사실관계의 한 부분을 가리킵니다. 조문은 필요한 질문 안에서만 접혀 있습니다.</p>
     <div class="issue-steps">{rendered_steps}</div>
   </section>
 
@@ -549,7 +555,7 @@ def render_issue(
     <div class="pager-next">{f'<span class="pager-label">다음 쟁점</span><a href="../{esc(following["issue_id"])}/">{esc(following["title"])}</a>' if following else '<span class="pager-label">이 법률을 다 읽었습니다</span><a href="../../#law-' + esc(law["law_code"]) + '">목록으로</a>'}</div>
   </nav>
 </main>
-<footer class="site-footer"><div><strong>세법 쟁점 대장</strong><span>이 페이지에는 로그인·진도 잠금·학습 완료 버튼이 없습니다. 필요한 곳부터 자유롭게 읽으세요.</span></div></footer>'''
+<footer class="site-footer"><div><strong>세법 쟁점 대장</strong><span>로그인·진도 잠금 없이 제공되는 공개 읽기 공간입니다.</span></div></footer>'''
     return page_shell(
         title=issue["title"],
         description=issue["core_question"],

@@ -11,9 +11,9 @@
 <body>
 <!--
 DIRECTION CONTRACT
-THESIS: 질문을 먼저 세우고, 사실을 한 조각씩 추가하면서 관련 조문·답·근거를 같은 순서로 읽게 한다.
+THESIS: 전체 사실관계를 먼저 제시하고, 질문별 판단에 관련 조문·답·근거를 붙인다.
 OWN-WORLD: 기존 사건배당부의 석재·종이·잉크·공식 파랑·규선 언어를 법률별 대장으로 확장한다.
-STORY: 법률 선택 → 쟁점 한 행 → 오늘의 질문 → 새 사실 → 관련 조문 → 답과 해설 → 판례·조사·회계 연결.
+STORY: 법률 선택 → 쟁점 한 행 → 사실관계 전문 → 질문별 판단 → 최종 결론 → 판례·조사·회계 연결.
 FIRST VIEWPORT: 첫 화면에서 다섯 법률과 50개 쟁점의 위치를 보고, 검색 없이도 어느 행을 열지 결정한다.
 FORM: 직각 대장 행, 얇은 규선, 짧은 라벨, 한 열 모바일 읽기 흐름을 사용한다. concept-seed: 0e3fac08.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md.
@@ -25,27 +25,33 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <header class="reader-heading">
     <h1>장부비치·기장과 추계결정</h1>
     <p class="reader-context">ITA · 쟁점 10 / 10 · 입문</p>
-    <p class="reader-lead">질문에 답한 뒤 사실을 하나씩 추가하고, 그 단계에 필요한 조문만 열어 보는 자유열람 쟁점입니다.</p>
+    <p class="reader-lead">사실관계 전문을 먼저 읽고, 질문별로 조문·답·증빙을 확인하는 자유열람 쟁점입니다.</p>
     <ul class="reader-meta"><li>30분 읽기</li><li>법령 3개 연결</li><li>판례 6건 직접 연결</li></ul>
   </header>
 
-  <section class="prompt-band" aria-labelledby="prompt-title">
-    <h2 id="prompt-title"><span class="heading-sequence">시작점</span>오늘의 질문</h2>
-    <p class="prompt-question">실지조사와 추계결정을 구별하여 확인 수입 120000, 필요경비 70000과 일부 허위 매입을 어떻게 계산·경정하고 추계사유의 존재를 입증할 것인가?</p>
-    <p class="prompt-caption">잠정 결론을 한 줄로 적은 뒤, 아래 단계에서 새 사실을 하나씩 확인하세요.</p>
+  <nav class="reader-index" aria-label="이 쟁점 안에서 이동"><a href="#facts">사실관계</a><a href="#steps">질문별 판단</a><a href="#connections">판례·조사·회계</a><a href="#changes">사실이 달라지면</a><a href="#summary">마지막 정리</a><a href="#sources">출처</a></nav>
+
+  <section class="reader-block reader-block--facts" id="facts" aria-labelledby="facts-title">
+    <h2 id="facts-title"><span class="heading-sequence">01 / 출발점</span>사실관계</h2>
+    <p class="block-lead">사건의 시간·주체·금액을 하나의 맥락으로 정리합니다.</p>
+    <div class="case-facts">갑의 장부와 금융자료로 확인되는 2026년 수입금액은 120000이다. 증빙과 거래처 확인으로 인정되는 필요경비는 70000이다. 일부 허위 매입자료를 제외해도 나머지 원장으로 전체 계산이 가능하다.</div>
   </section>
 
-  <nav class="reader-index" aria-label="이 쟁점 안에서 이동"><a href="#steps">오늘의 질문</a><a href="#connections">판례·조사·회계</a><a href="#changes">사실이 달라지면</a><a href="#summary">마지막 정리</a><a href="#sources">출처</a></nav>
+  <section class="prompt-band" aria-labelledby="prompt-title">
+    <h2 id="prompt-title"><span class="heading-sequence">핵심 질문</span>무엇을 판단할까요?</h2>
+    <p class="prompt-question">실지조사와 추계결정을 구별하여 확인 수입 120000, 필요경비 70000과 일부 허위 매입을 어떻게 계산·경정하고 추계사유의 존재를 입증할 것인가?</p>
+    <p class="prompt-caption">전체 사실관계를 기준으로 아래 질문마다 답과 근거를 확인합니다.</p>
+  </section>
 
   <section class="reader-block reader-block--steps" id="steps" aria-labelledby="steps-title">
-    <h2 id="steps-title"><span class="heading-sequence">01 / 한 단계씩</span>새 사실에 답하기</h2>
-    <p class="block-lead">각 단계의 질문을 먼저 읽고, 새 사실을 확인한 다음 관련 조문과 답·해설을 순서대로 엽니다. 조문은 필요한 단계 안에서만 접혀 있습니다.</p>
+    <h2 id="steps-title"><span class="heading-sequence">02 / 확인</span>질문별 판단</h2>
+    <p class="block-lead">각 질문은 위 사실관계의 한 부분을 가리킵니다. 조문은 필요한 질문 안에서만 접혀 있습니다.</p>
     <div class="issue-steps"><details class="issue-step" id="step-1" open>
-  <summary><span class="step-number">단계 01</span><strong>실지조사와 추계결정을 구별하여 확인 수입 120000, 필요경비 70000과 일부 허위 매입을 어떻게 계산·경정하고 추계사유의 존재를 입증할 것인가?</strong></summary>
+  <summary><span class="step-number">질문 01</span><strong>실지조사와 추계결정을 구별하여 확인 수입 120000, 필요경비 70000과 일부 허위 매입을 어떻게 계산·경정하고 추계사유의 존재를 입증할 것인가?</strong></summary>
   <div class="step-body">
     <div class="step-fact">
-      <p class="step-label">새 사실</p>
-      <p>갑의 장부와 금융자료로 확인되는 2026년 수입금액은 120000이다.</p>
+      <p class="step-label">판단할 사실 범위</p>
+      <p>사실관계의 핵심 거래와 처분</p>
     </div>
     <details class="step-law">
       <summary>관련 조문 보기 <span aria-hidden="true">＋</span></summary>
@@ -70,19 +76,15 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <p class="step-label">확인할 증빙</p>
   <ul class="step-evidence-list"><li>총계정원장·월별 매출원장·합계잔액시산표</li></ul>
 </div>
-    <div class="step-accounting">
-  <p class="step-label">회계·세무조정 연결</p>
-  <p>원시증빙과 총계정원장의 거래별 신뢰성을 나누고 허위 매입만 제거하되 별도 회계기준 분개는 작성하지 않는다.</p>
-</div>
 
-    <p class="step-next"><span>다음 단계</span>다음 단계에서 관련 판단을 더 구체화한다: 사업자의 장부비치·기장의무와 기록 기반을 확인한다.</p>
+
   </div>
 </details><details class="issue-step" id="step-2">
-  <summary><span class="step-number">단계 02</span><strong>앞서 확인한 사실에 이 조건이 더해지면, 사업자의 장부비치·기장의무와 기록 기반을 확인한다. 결과는 어떻게 달라질까?</strong></summary>
+  <summary><span class="step-number">질문 02</span><strong>실지조사와 추계결정을 장부의 중요한 부분과 계산 가능성으로 어떻게 구별하나요?</strong></summary>
   <div class="step-body">
     <div class="step-fact">
-      <p class="step-label">새 사실</p>
-      <p>증빙과 거래처 확인으로 인정되는 필요경비는 70000이다.</p>
+      <p class="step-label">판단할 사실 범위</p>
+      <p>사실관계의 핵심 거래와 처분</p>
     </div>
     <details class="step-law">
       <summary>관련 조문 보기 <span aria-hidden="true">＋</span></summary>
@@ -109,14 +111,13 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </div>
 
 
-    <p class="step-next"><span>다음 단계</span>다음 단계에서 관련 판단을 더 구체화한다: 중요 부분의 미비·허위 등 추계사유와 법정 추계방법을 적용한다.</p>
   </div>
 </details><details class="issue-step" id="step-3">
-  <summary><span class="step-number">단계 03</span><strong>앞서 확인한 사실에 이 조건이 더해지면, 중요 부분의 미비·허위 등 추계사유와 법정 추계방법을 적용한다. 결과는 어떻게 달라질까?</strong></summary>
+  <summary><span class="step-number">질문 03</span><strong>일부 허위 장부에서 신뢰 가능한 부분을 판정할 자료를 어떤 순서로 보나요?</strong></summary>
   <div class="step-body">
     <div class="step-fact">
-      <p class="step-label">새 사실</p>
-      <p>일부 허위 매입자료를 제외해도 나머지 원장으로 전체 계산이 가능하다.</p>
+      <p class="step-label">판단할 사실 범위</p>
+      <p>사실관계 중 증빙·신고 자료</p>
     </div>
     <details class="step-law">
       <summary>관련 조문 보기 <span aria-hidden="true">＋</span></summary>
@@ -134,8 +135,8 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </details>
     <div class="step-answer">
       <p class="step-label">답과 해설</p>
-      <p class="step-answer__headline">분개를 억지로 만들지 않고 원시증빙에서 장부, 시산표, 종합소득세 신고서로 이어지는 계산 가능성과 차이를 대사한다.</p>
-      <p>추가 사실 3을 위 법리와 대조해 요건과 효과를 확인한다.</p>
+      <p class="step-answer__headline">원시증빙에서 장부, 시산표, 종합소득세 신고서로 이어지는 계산 가능성과 차이를 대사한다.</p>
+      <p>장부 일부가 허위여도 남은 장부·금융·재고자료로 소득을 계산할 수 있으면 실지조사로 그 부분만 고친다.</p>
     </div>
     <div class="step-evidence">
   <p class="step-label">확인할 증빙</p>
@@ -149,14 +150,13 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <p class="step-label">연결 판례</p>
   <ul class="step-link-list"><li><a href="#case-SC-1989NU2851-1990-02-13">89누2851</a></li><li><a href="#case-SC-1996NU8192-1997-09-26">96누8192</a></li><li><a href="#case-SC-2002DU12786-2003-12-12">2002두12786</a></li><li><a href="#case-SC-2013DU25399-2015-11-26">2013두25399</a></li><li><a href="#case-SC-2018DU35025-2018-06-28">2018두35025</a></li><li><a href="#case-important-2020두53699-2021-04-08">2020두53699</a></li></ul>
 </div>
-    <p class="step-next"><span>다음 단계</span>판례·조사 증빙과 회계·세무조정 연결에서 이 결론을 다시 검증한다.</p>
   </div>
 </details></div>
   </section>
 
   <section class="reader-block reader-block--connections" id="connections" aria-labelledby="connections-title">
-  <h2 id="connections-title"><span class="heading-sequence">02 / 연결</span>판례·조사·회계 연결</h2>
-  <p class="block-lead">각 단계에서 확인한 결론을 공식 판례, 조사 가설과 증빙, 장부·세무조정으로 한 번 더 검증합니다.</p>
+  <h2 id="connections-title"><span class="heading-sequence">03 / 연결</span>판례·조사·회계 연결</h2>
+  <p class="block-lead">질문별 결론을 공식 판례, 조사 증빙, 장부·세무조정과 함께 확인합니다.</p>
   <div class="audit-summary">
   <div><p class="mini-label">조사 가설</p><p>현금매출과 핵심 매입 누락으로 장부의 중요한 부분이 미비·허위여서 실제 소득 계산이 불가능하다.</p></div>
   <div><p class="mini-label">반대 가설</p><p>PG·금융·재고와 대부분의 원장으로 소득을 재구성할 수 있어 확인 오류만 부분 경정해야 한다.</p></div>
@@ -165,7 +165,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="connection-accounting" id="accounting">
   <h2 id="accounting-title"><span class="heading-sequence">선택 모듈</span>회계·세무조정 연결</h2>
   <p class="block-lead">장부 숫자가 세법상 과세표준과 신고서로 넘어가는 지점만 남겼습니다.</p>
-  <div class="table-wrap"><table class="accounting-table"><tbody><tr><th scope="row">회계 처리</th><td>원시증빙과 총계정원장의 거래별 신뢰성을 나누고 허위 매입만 제거하되 별도 회계기준 분개는 작성하지 않는다.</td></tr><tr><th scope="row">대사 포인트</th><td>계약·금융·세금계산서→수입전표·총계정원장→시산표→별지 제40호서식(1) 순으로 120000·70000·50000을 맞추고 허위부분과 추계근거를 분리 표시한다.</td></tr><tr><th scope="row">세무조정 방향</th><td>남은 자료로 계산 가능하면 확인 수입 120000에서 인정 필요경비 70000을 빼 실지조사 소득금액 50000으로 부분 경정한다. 계산 불가능할 때만 추계사유·지표·산식을 별도 제시한다.</td></tr></tbody></table></div>
+  <div class="table-wrap"><table class="accounting-table"><tbody><tr><th scope="row">대사 포인트</th><td>계약·금융·세금계산서→수입전표·총계정원장→시산표→별지 제40호서식(1) 순으로 120000·70000·50000을 맞추고 허위부분과 추계근거를 분리 표시한다.</td></tr><tr><th scope="row">세무조정 방향</th><td>남은 자료로 계산 가능하면 확인 수입 120000에서 인정 필요경비 70000을 빼 실지조사 소득금액 50000으로 부분 경정한다. 계산 불가능할 때만 추계사유·지표·산식을 별도 제시한다.</td></tr></tbody></table></div>
 </div>
   <div class="connection-precedents" id="precedents">
     <h3>관련 중요 판례</h3>
@@ -202,25 +202,25 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </li><li class="precedent-row" id="case-important-2020두53699-2021-04-08">
   <div class="precedent-row__head"><span class="case-number">2020두53699</span><span>대법원 · 2021-04-08</span></div>
   <h3>관련 판례</h3>
-  <p>공식 판결문에서 판시내용을 확인하세요.</p>
+  <p>판시내용은 공식 판결문 원문에서 확인할 수 있습니다.</p>
 
   <p class="source-link"><a href="https://www.law.go.kr/LSW/precInfoP.do?precSeq=226843" rel="noopener noreferrer">공식 판결문 열기</a></p>
 </li></ol>
   </div>
 </section>
   <section class="reader-block reader-block--changes" id="changes" aria-labelledby="changes-title">
-  <h2 id="changes-title"><span class="heading-sequence">03 / 전이</span>사실이 달라지면</h2>
+  <h2 id="changes-title"><span class="heading-sequence">04 / 조건</span>사실이 달라지면</h2>
   <p class="block-lead">기본 사실에서 한 가지 조건만 바꿔 결론이 이동하는 지점을 확인합니다.</p>
   <div class="changes-callout"><p>PG·금융 원본마저 소실되고 매출·매입·재고의 핵심 장부가 서로 모순되어 실제 소득을 계산할 수 없다는 사실이 확인되면 부분 실지조사 결론은 법정 추계결정을 검토하는 쪽으로 바뀐다.</p></div>
 </section>
   <section class="reader-block reader-block--summary" id="summary" aria-labelledby="summary-title">
-  <h2 id="summary-title"><span class="heading-sequence">04 / 마무리</span>마지막 정리</h2>
-  <div class="summary-callout"><p>장부비치·기장과 추계결정은(는) 장부·증빙에 따른 결정·경정을 원칙으로 하고 추계의 법정 경계를 둔다 → 사업자의 장부비치·기장의무와 기록 기반을 확인한다 → 중요 부분의 미비·허위 등 추계사유와 법정 추계방법을 적용한다 순서로 확인하고, 마지막에 사실·증빙의 반대 가능성을 점검한다.</p></div>
-  <div class="summary-prompts"><p class="step-label">스스로 다시 답하기</p><ul class="summary-question-list"><li>법리 구분: 실지조사와 추계결정을 장부의 중요한 부분과 계산 가능성으로 어떻게 구별하나요?</li><li>증빙 선택: 일부 허위 장부에서 신뢰 가능한 부분을 판정할 자료를 어떤 순서로 보나요?</li><li>새 사실 전이: 핵심 원본이 모두 소실되면 추계사유와 방법을 답안에 어떻게 추가하나요?</li></ul></div>
+  <h2 id="summary-title"><span class="heading-sequence">05 / 마무리</span>마지막 정리</h2>
+  <div class="summary-callout"><p>장부비치·기장과 추계결정: 장부·증빙에 따른 결정·경정을 원칙으로 하고 추계의 법정 경계를 둔다 → 사업자의 장부비치·기장의무와 기록 기반을 확인한다 → 중요 부분의 미비·허위 등 추계사유와 법정 추계방법을 적용한다. 이 사실관계의 결론은 원시증빙에서 장부, 시산표, 종합소득세 신고서로 이어지는 계산 가능성과 차이를 대사한다.</p></div>
+  <div class="summary-prompts"><p class="step-label">스스로 다시 답하기</p><ul class="summary-question-list"><li>실지조사와 추계결정을 장부의 중요한 부분과 계산 가능성으로 어떻게 구별하나요?</li><li>일부 허위 장부에서 신뢰 가능한 부분을 판정할 자료를 어떤 순서로 보나요?</li><li>핵심 원본이 모두 소실되면 추계사유와 방법을 답안에 어떻게 추가하나요?</li></ul></div>
 </section>
   <section class="reader-block reader-block--sources" id="sources" aria-labelledby="sources-title">
-  <h2 id="sources-title"><span class="heading-sequence">검증 메모</span>출처와 기준일</h2>
-  <p>법령 원문은 각 조문의 공식 링크에서, 학습 설명은 공개된 원자료 원고에서 가져왔습니다. 사건 당시 법령이 현행법과 다르면 판례 카드의 적용법 메모를 우선 확인하세요.</p>
+  <h2 id="sources-title"><span class="heading-sequence">06 / 출처</span>출처와 기준일</h2>
+  <p>법령 원문과 학습 설명의 출처, 사건 당시 법령과 현행법의 차이를 기록합니다.</p>
   <dl class="provenance-list"><div><dt>법령 자료 기준일</dt><dd>원자료 기록에 따름</dd></div><div><dt>학습 원고</dt><dd><code>lessons/material-ita-books-estimation-001.md</code></dd></div><div><dt>판례 자료 수</dt><dd>6건 직접 연결</dd></div></dl>
   <ul class="source-list"><li>제70조 <a href="https://www.law.go.kr/법령/소득세법/제70조" rel="noopener noreferrer">공식 원문</a></li><li>제80조 <a href="https://www.law.go.kr/법령/소득세법/제80조" rel="noopener noreferrer">공식 원문</a></li><li>제160조 <a href="https://www.law.go.kr/법령/소득세법/제160조" rel="noopener noreferrer">공식 원문</a></li></ul>
 </section>
@@ -230,6 +230,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div class="pager-next"><span class="pager-label">이 법률을 다 읽었습니다</span><a href="../../#law-ITA">목록으로</a></div>
   </nav>
 </main>
-<footer class="site-footer"><div><strong>세법 쟁점 대장</strong><span>이 페이지에는 로그인·진도 잠금·학습 완료 버튼이 없습니다. 필요한 곳부터 자유롭게 읽으세요.</span></div></footer>
+<footer class="site-footer"><div><strong>세법 쟁점 대장</strong><span>로그인·진도 잠금 없이 제공되는 공개 읽기 공간입니다.</span></div></footer>
 </body>
 </html>

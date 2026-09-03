@@ -1,6 +1,6 @@
 # 세법 쟁점 대장
 
-국세기본법·국세징수법·법인세법·소득세법·부가가치세법에서 10개씩 고른 50개 쟁점을 읽는 별도 정적 사이트입니다. 각 쟁점은 `오늘의 질문 → 새 사실 한 조각 → 관련 조문(기본 접힘) → 답·해설`을 단계별로 반복한 뒤 `판례·조사·회계 연결 → 사실이 달라지면 → 마지막 정리`로 마칩니다.
+국세기본법·국세징수법·법인세법·소득세법·부가가치세법에서 10개씩 고른 50개 쟁점을 읽는 별도 정적 사이트입니다. 각 쟁점은 `사실관계 전문 → 핵심 질문 → 질문별 판단(관련 조문·답·해설·증빙)` 순서로 읽은 뒤 `판례·조사·회계 연결 → 조건이 달라지면 → 마지막 정리`로 마칩니다.
 
 기존 [`tax-study`](../tax-study/) 사이트의 대시보드·진도·로그인 상태를 수정하지 않습니다. 이 디렉터리는 자유열람용 새 사이트이며, 학습 완료 버튼과 브라우저 저장 상태를 사용하지 않습니다.
 
@@ -18,7 +18,7 @@ python3 -m http.server 4173 --directory docs
 
 - `content/issue-selection.json`: 법률별 10개 선정 목록
 - `scripts/bootstrap_content.py`: 공개 `tax-study` 원천에서 쟁점·조문·판례 스냅샷을 재생성
-- `content/issues.json`: 50개 쟁점과 순차 `steps` 배열
+- `content/issues.json`: 50개 쟁점과 `case_facts`·`question_blocks` 배열
 - `content/articles.json`: 연결된 현행 조문 원문과 공식 URL
 - `content/precedents.json`: 공식 판결문으로 확인 가능한 판례 연결
 - `scripts/build.py`: 런타임 서버 없이 `docs/`에 51개 HTML과 CSS/JS를 생성
