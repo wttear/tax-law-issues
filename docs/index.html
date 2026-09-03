@@ -11,9 +11,9 @@
 <body>
 <!--
 DIRECTION CONTRACT
-THESIS: 법령 원문에서 출발해 쟁점·증빙·판례의 판단 경계를 한 화면의 읽기 순서로 만든다.
+THESIS: 질문을 먼저 세우고, 사실을 한 조각씩 추가하면서 관련 조문·답·근거를 같은 순서로 읽게 한다.
 OWN-WORLD: 기존 사건배당부의 석재·종이·잉크·공식 파랑·규선 언어를 법률별 대장으로 확장한다.
-STORY: 법률 선택 → 쟁점 한 행 → 답을 보기 전 질문 → 원문 → 초보자 해설 → 판단 지도 → 증빙 → 판례 → 필요 시 회계.
+STORY: 법률 선택 → 쟁점 한 행 → 오늘의 질문 → 새 사실 → 관련 조문 → 답과 해설 → 판례·조사·회계 연결.
 FIRST VIEWPORT: 첫 화면에서 다섯 법률과 50개 쟁점의 위치를 보고, 검색 없이도 어느 행을 열지 결정한다.
 FORM: 직각 대장 행, 얇은 규선, 짧은 라벨, 한 열 모바일 읽기 흐름을 사용한다. concept-seed: 0e3fac08.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md.
@@ -28,7 +28,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <main id="main-content" class="page page--index">
   <section class="atlas-intro" aria-labelledby="atlas-title">
     <h1 id="atlas-title">다섯 법률, 오십 개 판단 단위</h1>
-    <p class="intro-copy">조문을 먼저 열고, 결론을 바꾸는 사실과 증빙을 확인한 다음, 직접 연결된 판례로 판단의 경계를 넓혀 보세요.</p>
+    <p class="intro-copy">질문을 먼저 세우고, 사실을 한 조각씩 추가하면서 관련 조문·답·증빙·판례를 순서대로 확인하세요.</p>
     <div class="intro-rule" aria-hidden="true"><span></span><span></span><span></span></div>
     <p class="intro-caption">국세기본법 · 국세징수법 · 법인세법 · 소득세법 · 부가가치세법</p>
   </section>
@@ -70,7 +70,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="issue-row__body">
     <h3><span class="issue-row__context">NTBA · 입문</span><a href="issues/NTBA-LEGALITY-001/">조세법률주의와 법원·적용순위</a></h3>
     <p class="issue-row__question">조세법률주의 관점에서 법률의 위임, 시행령의 열거, 내부 업무편람의 설명을 어떤 순서로 대조해야 과세근거가 성립하는가?</p>
-    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 4</li></ul>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 3</li></ul>
   </div>
   <a class="row-open" href="issues/NTBA-LEGALITY-001/" aria-label="조세법률주의와 법원·적용순위 읽기">읽기<span aria-hidden="true">↗</span></a>
 </li><li class="issue-row" data-law="NTBA" data-search="근거과세 원칙과 장부·증빙에 의한 사실인정 근거과세 원칙과 장부·증빙에 의한 사실인정 근거과세 원칙 아래 포스 매출·재고·배달·환불 자료가 어긋날 때 장부의 어느 부분을 인정하고 어느 부분을 조사한 사실로 보정할 것인가?">
@@ -94,7 +94,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="issue-row__body">
     <h3><span class="issue-row__context">NTBA · 중급</span><a href="issues/NTBA-LIMITATION-001/">국세부과 제척기간의 구조</a></h3>
     <p class="issue-row__question">국세부과 제척기간을 계산할 때 신고 여부·부정행위·추징사유별 기산일과 5년·7년·10년 기간 중 무엇을 선택하는가?</p>
-    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 4</li></ul>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 3</li></ul>
   </div>
   <a class="row-open" href="issues/NTBA-LIMITATION-001/" aria-label="국세부과 제척기간의 구조 읽기">읽기<span aria-hidden="true">↗</span></a>
 </li><li class="issue-row" data-law="NTBA" data-search="수정신고와 기한후신고 수정신고와 기한후신고 수정신고와 기한후신고를 구별할 때 기한 내 유효 접수, 결정·경정 전 제출, 추가세액 납부 시점을 어떤 기록으로 확정하는가?">
@@ -118,7 +118,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="issue-row__body">
     <h3><span class="issue-row__context">NTBA · 중급</span><a href="issues/NTBA-AUDIT-RIGHTS-001/">세무조사권·중복조사 금지</a></h3>
     <p class="issue-row__question">세무조사권과 중복조사 금지를 판단할 때 첫 조사 범위, 후속 행위의 실질, 같은 세목·기간, 새로운 명백한 탈루자료의 당시성을 어떻게 비교하는가?</p>
-    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 7</li></ul>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 6</li></ul>
   </div>
   <a class="row-open" href="issues/NTBA-AUDIT-RIGHTS-001/" aria-label="세무조사권·중복조사 금지 읽기">읽기<span aria-hidden="true">↗</span></a>
 </li><li class="issue-row" data-law="NTBA" data-search="세무조사 절차·사전통지·연기 세무조사 절차·사전통지·연기 세무조사 절차에서 사전통지 20일, 연기신청 처리, 통지 예외, 조사결과 통지와 과세전적부심사 유보를 어떻게 하나의 날짜 사슬로 검증하는가?">
@@ -126,7 +126,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="issue-row__body">
     <h3><span class="issue-row__context">NTBA · 고급</span><a href="issues/NTBA-AUDIT-PROCEDURE-001/">세무조사 절차·사전통지·연기</a></h3>
     <p class="issue-row__question">세무조사 절차에서 사전통지 20일, 연기신청 처리, 통지 예외, 조사결과 통지와 과세전적부심사 유보를 어떻게 하나의 날짜 사슬로 검증하는가?</p>
-    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 6</li></ul>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 4</li></ul>
   </div>
   <a class="row-open" href="issues/NTBA-AUDIT-PROCEDURE-001/" aria-label="세무조사 절차·사전통지·연기 읽기">읽기<span aria-hidden="true">↗</span></a>
 </li><li class="issue-row" data-law="NTBA" data-search="위법한 세무조사와 절차상 하자의 구제 위법한 세무조사와 절차상 하자의 구제 위법한 세무조사와 절차상 하자의 구제에서 중복조사, 결과통지 지연, 과세전적부심사 기회 침해, 재처분의 하자 보완을 처분별로 어떻게 판단하는가?">
@@ -134,7 +134,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="issue-row__body">
     <h3><span class="issue-row__context">NTBA · 고급</span><a href="issues/NTBA-ILLEGAL-AUDIT-REMEDY-001/">위법한 세무조사와 절차상 하자의 구제</a></h3>
     <p class="issue-row__question">위법한 세무조사와 절차상 하자의 구제에서 중복조사, 결과통지 지연, 과세전적부심사 기회 침해, 재처분의 하자 보완을 처분별로 어떻게 판단하는가?</p>
-    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 10</li></ul>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 7</li></ul>
   </div>
   <a class="row-open" href="issues/NTBA-ILLEGAL-AUDIT-REMEDY-001/" aria-label="위법한 세무조사와 절차상 하자의 구제 읽기">읽기<span aria-hidden="true">↗</span></a>
 </li></ol>
@@ -156,7 +156,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="issue-row__body">
     <h3><span class="issue-row__context">NCTA · 입문</span><a href="issues/NCTA-PREDEADLINE-COLLECTION-001/">납기 전 징수와 보전압류</a></h3>
     <p class="issue-row__question">확정일·징수위험 발생일·고지일·압류일을 시간순으로 놓았을 때 국세징수법 제9조의 납기 전 징수와 제31조 제2항의 보전압류를 어떻게 구별하고, 고지액 또는 예상세액과 압류재산 범위를 어떤 절차기록으로 검증할 것인가?</p>
-    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 2</li></ul>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 1</li></ul>
   </div>
   <a class="row-open" href="issues/NCTA-PREDEADLINE-COLLECTION-001/" aria-label="납기 전 징수와 보전압류 읽기">읽기<span aria-hidden="true">↗</span></a>
 </li><li class="issue-row" data-law="NCTA" data-search="제2차 납세의무의 성립요건과 범위 제2차 납세의무의 성립요건과 범위 제2차 납세의무에서 법인 재산의 징수부족, 납세의무 성립일, 직접 주주·과점조합원 요건, 실제 권리행사와 책임한도를 어떤 순서로 판단하는가?">
@@ -164,7 +164,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="issue-row__body">
     <h3><span class="issue-row__context">NCTA · 고급</span><a href="issues/NCTA-SECONDARY-LIABILITY-001/">제2차 납세의무의 성립요건과 범위</a></h3>
     <p class="issue-row__question">제2차 납세의무에서 법인 재산의 징수부족, 납세의무 성립일, 직접 주주·과점조합원 요건, 실제 권리행사와 책임한도를 어떤 순서로 판단하는가?</p>
-    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 5</li></ul>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 4</li></ul>
   </div>
   <a class="row-open" href="issues/NCTA-SECONDARY-LIABILITY-001/" aria-label="제2차 납세의무의 성립요건과 범위 읽기">읽기<span aria-hidden="true">↗</span></a>
 </li><li class="issue-row" data-law="NCTA" data-search="조세우선권·법정기일·담보권·임차권·임금채권 조세우선권·법정기일·담보권·임차권·임금채권 하나의 고지서에 본세·가산세·가산금이 함께 있어도 법정기일은 하나일까?">
@@ -242,7 +242,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="issue-row__body">
     <h3><span class="issue-row__context">CTA · 입문</span><a href="issues/CTA-GROSS-INCOME-001/">익금의 범위와 귀속시기</a></h3>
     <p class="issue-row__question">권리확정주의에서 권리 성립과 실현가능성 성숙을 어떤 기준일 증빙으로 판정하고, 장부에 빠진 미수이자를 익금산입 유보로 어떻게 조정할 것인가?</p>
-    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 5</li><li class="module-tag">회계·조정</li></ul>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 3</li><li class="module-tag">회계·조정</li></ul>
   </div>
   <a class="row-open" href="issues/CTA-GROSS-INCOME-001/" aria-label="익금의 범위와 귀속시기 읽기">읽기<span aria-hidden="true">↗</span></a>
 </li><li class="issue-row" data-law="CTA" data-search="손금의 요건과 업무관련성 손금의 요건과 업무관련성 손금의 업무관련성·통상성·수익 직접관련성을 계약 목적, 실제 수행, 법인 효익과 귀속자 증빙으로 어떻게 판단할 것인가?">
@@ -250,7 +250,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="issue-row__body">
     <h3><span class="issue-row__context">CTA · 중급</span><a href="issues/CTA-DEDUCTIBILITY-001/">손금의 요건과 업무관련성</a></h3>
     <p class="issue-row__question">손금의 업무관련성·통상성·수익 직접관련성을 계약 목적, 실제 수행, 법인 효익과 귀속자 증빙으로 어떻게 판단할 것인가?</p>
-    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 5</li><li class="module-tag">회계·조정</li></ul>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 3</li><li class="module-tag">회계·조정</li></ul>
   </div>
   <a class="row-open" href="issues/CTA-DEDUCTIBILITY-001/" aria-label="손금의 요건과 업무관련성 읽기">읽기<span aria-hidden="true">↗</span></a>
 </li><li class="issue-row" data-law="CTA" data-search="대손금의 요건과 회수가능성 대손금의 요건과 회수가능성 기대신용손실·세법상 대손충당금 한도·직접 대손사유를 어떻게 분리하고, 한도초과 유보를 실제 대손이나 환입 때 어떻게 추인할 것인가?">
@@ -282,7 +282,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="issue-row__body">
     <h3><span class="issue-row__context">CTA · 중급</span><a href="issues/CTA-INTEREST-NONBUSINESS-ASSET-001/">지급이자 손금불산입과 업무무관자산</a></h3>
     <p class="issue-row__question">업무무관자산의 실제 용도와 기간을 확정한 뒤 차입금 적수·자산 적수·지급이자 적용순서로 손금불산입액을 어떻게 계산할 것인가?</p>
-    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 4</li><li class="module-tag">회계·조정</li></ul>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 3</li><li class="module-tag">회계·조정</li></ul>
   </div>
   <a class="row-open" href="issues/CTA-INTEREST-NONBUSINESS-ASSET-001/" aria-label="지급이자 손금불산입과 업무무관자산 읽기">읽기<span aria-hidden="true">↗</span></a>
 </li><li class="issue-row" data-law="CTA" data-search="부당행위계산 부인의 요건과 경제적 합리성 부당행위계산 부인의 요건과 경제적 합리성 부당행위계산 부인의 특수관계·시가·조세감소·경제적 합리성을 어떤 거래시점 자료와 비교대상으로 입증할 것인가?">
@@ -290,7 +290,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="issue-row__body">
     <h3><span class="issue-row__context">CTA · 고급</span><a href="issues/CTA-RELATED-PARTY-001/">부당행위계산 부인의 요건과 경제적 합리성</a></h3>
     <p class="issue-row__question">부당행위계산 부인의 특수관계·시가·조세감소·경제적 합리성을 어떤 거래시점 자료와 비교대상으로 입증할 것인가?</p>
-    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 8</li><li class="module-tag">회계·조정</li></ul>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 6</li><li class="module-tag">회계·조정</li></ul>
   </div>
   <a class="row-open" href="issues/CTA-RELATED-PARTY-001/" aria-label="부당행위계산 부인의 요건과 경제적 합리성 읽기">읽기<span aria-hidden="true">↗</span></a>
 </li><li class="issue-row" data-law="CTA" data-search="소득처분의 구조와 귀속자 소득처분의 구조와 귀속자 익금산입 총액을 법인 내 잔존액과 사외유출액으로 어떻게 나누고, 실제 귀속자별 소득처분과 미래 추인을 신고자료에 연결할 것인가?">
@@ -298,7 +298,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="issue-row__body">
     <h3><span class="issue-row__context">CTA · 중급</span><a href="issues/CTA-INCOME-DISPOSITION-001/">소득처분의 구조와 귀속자</a></h3>
     <p class="issue-row__question">익금산입 총액을 법인 내 잔존액과 사외유출액으로 어떻게 나누고, 실제 귀속자별 소득처분과 미래 추인을 신고자료에 연결할 것인가?</p>
-    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 3</li><li class="module-tag">회계·조정</li></ul>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 2</li><li class="module-tag">회계·조정</li></ul>
   </div>
   <a class="row-open" href="issues/CTA-INCOME-DISPOSITION-001/" aria-label="소득처분의 구조와 귀속자 읽기">읽기<span aria-hidden="true">↗</span></a>
 </li><li class="issue-row" data-law="CTA" data-search="장기계약·건설용역의 손익 귀속시기 장기계약·건설용역의 손익 귀속시기 K-IFRS의 기간 인식 요건과 세법상 작업진행률을 독립적으로 검증하고, 두 수익 차이를 계약별 유보와 완공 추인으로 어떻게 관리할 것인가?">
@@ -352,7 +352,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="issue-row__body">
     <h3><span class="issue-row__context">ITA · 중급</span><a href="issues/ITA-FINANCIAL-INCOME-001/">이자·배당소득과 금융소득 종합과세</a></h3>
     <p class="issue-row__question">이자소득 14000000과 배당소득 9000000을 금융소득 종합과세 기준과 비교하고 원천징수·비교과세·배당세액공제를 어떤 자료로 대사할 것인가?</p>
-    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 2</li><li class="module-tag">회계·조정</li></ul>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 1</li><li class="module-tag">회계·조정</li></ul>
   </div>
   <a class="row-open" href="issues/ITA-FINANCIAL-INCOME-001/" aria-label="이자·배당소득과 금융소득 종합과세 읽기">읽기<span aria-hidden="true">↗</span></a>
 </li><li class="issue-row" data-law="ITA" data-search="소득의 귀속시기 소득의 귀속시기 수입시기와 지급일을 구별하여 2026-12-30 검수된 용역대금 24000과 대응 필요경비 6000을 어느 귀속연도 장부·신고서에 반영할 것인가?">
@@ -406,7 +406,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="issue-row__body">
     <h3><span class="issue-row__context">VAT · 입문</span><a href="issues/VAT-TAXABILITY-CLASSIFICATION-001/">과세·면세·영세율·비과세의 구분</a></h3>
     <p class="issue-row__question">광고·강좌·번역 거래를 과세, 면세, 영세율 또는 비과세로 분류할 때 어떤 순서와 증빙으로 결론낼 것인가?</p>
-    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 3</li><li class="module-tag">회계·조정</li></ul>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 2</li><li class="module-tag">회계·조정</li></ul>
   </div>
   <a class="row-open" href="issues/VAT-TAXABILITY-CLASSIFICATION-001/" aria-label="과세·면세·영세율·비과세의 구분 읽기">읽기<span aria-hidden="true">↗</span></a>
 </li><li class="issue-row" data-law="VAT" data-search="재화·용역 공급과 실제 공급자 재화·용역 공급과 실제 공급자 재화·용역의 공급이 있었고 플랫폼과 창고업자 중 누가 실제 공급자로서 계산과 책임을 부담했는가?">
@@ -414,7 +414,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="issue-row__body">
     <h3><span class="issue-row__context">VAT · 입문</span><a href="issues/VAT-SUPPLY-001/">재화·용역 공급과 실제 공급자</a></h3>
     <p class="issue-row__question">재화·용역의 공급이 있었고 플랫폼과 창고업자 중 누가 실제 공급자로서 계산과 책임을 부담했는가?</p>
-    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 3</li><li class="module-tag">회계·조정</li></ul>
+    <ul class="module-tags" aria-label="학습 모듈"><li class="module-tag">법령·판단</li><li class="module-tag">조사·증빙</li><li class="module-tag">판례 2</li><li class="module-tag">회계·조정</li></ul>
   </div>
   <a class="row-open" href="issues/VAT-SUPPLY-001/" aria-label="재화·용역 공급과 실제 공급자 읽기">읽기<span aria-hidden="true">↗</span></a>
 </li><li class="issue-row" data-law="VAT" data-search="간주공급·개인적 공급·사업폐지 잔존재화 간주공급·개인적 공급·사업폐지 잔존재화 공제받은 재화가 개인적 공급·사업상 증여·판매목적 타사업장 반출·폐업잔존 중 어느 간주공급 유형에 해당하며 공급가액은 얼마인가?">
@@ -487,10 +487,10 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <section class="reading-order" aria-labelledby="reading-order-title">
     <h2 id="reading-order-title"><span class="heading-sequence">읽는 순서</span>질문을 먼저 세우고, 원문으로 돌아오기</h2>
     <ol>
-      <li><span>01</span> 답을 보기 전 결론을 바꿀 사실을 적습니다.</li>
-      <li><span>02</span> 현행 조문과 기준일을 확인합니다.</li>
-      <li><span>03</span> 초보자 해설·판단 지도·증빙을 연결합니다.</li>
-      <li><span>04</span> 관련 판례와 필요한 회계·세무조정을 대조합니다.</li>
+      <li><span>01</span> 오늘의 질문을 먼저 읽고 잠정 결론을 적습니다.</li>
+      <li><span>02</span> 새 사실을 하나씩 추가하고 관련 조문을 엽니다.</li>
+      <li><span>03</span> 답과 해설, 확인할 증빙을 바로 연결합니다.</li>
+      <li><span>04</span> 마지막에 판례와 필요한 회계·세무조정을 대조합니다.</li>
     </ol>
   </section>
 </main>

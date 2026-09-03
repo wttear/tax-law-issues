@@ -67,22 +67,63 @@ class BuildOutputTests(unittest.TestCase):
             for url in URL_RE.findall(text):
                 self.assertEqual(urlsplit(url).hostname in ALLOWED_HOSTS, True, url)
 
-    def test_reader_is_static_and_has_required_sections(self) -> None:
+    def test_every_issue_has_sequential_learning_steps(self) -> None:
+        required = {
+            "step_no",
+            "question",
+            "new_fact",
+            "legal_refs",
+            "answer",
+            "explanation",
+            "evidence",
+            "precedent_refs",
+            "accounting_note",
+            "next_state",
+        }
+        for issue in self.data["issues"]:
+            steps = issue.get("steps")
+            self.assertIsInstance(steps, list, issue["issue_id"])
+            self.assertGreaterEqual(len(steps), 2, issue["issue_id"])
+            facts = []
+            for expected_no, step in enumerate(steps, start=1):
+                self.assertTrue(required.issubset(step), issue["issue_id"])
+                self.assertEqual(step["step_no"], expected_no, issue["issue_id"])
+                for key in ("question", "new_fact", "answer", "explanation", "next_state"):
+                    self.assertTrue(str(step[key]).strip(), f"{issue['issue_id']} {key}")
+                self.assertIsInstance(step["legal_refs"], list, issue["issue_id"])
+                self.assertIsInstance(step["evidence"], list, issue["issue_id"])
+                self.assertIsInstance(step["precedent_refs"], list, issue["issue_id"])
+                facts.append(step["new_fact"])
+            self.assertEqual(len(facts), len(set(facts)), issue["issue_id"])
+
+    def test_reader_is_static_and_uses_question_first_sequence(self) -> None:
         sample = DOCS / "issues" / "NTBA-TAX-LIABILITY-LIFECYCLE-001" / "index.html"
         text = sample.read_text(encoding="utf-8")
-        for anchor in (
-            "law-source",
-            "beginner",
-            "map",
-            "example",
-            "audit",
-            "precedents",
-            "sources",
-        ):
-            self.assertIn(f'id="{anchor}"', text)
+        for label in ("오늘의 질문", "새 사실", "관련 조문 보기", "답과 해설", "판례·조사·회계 연결", "사실이 달라지면", "마지막 정리"):
+            self.assertIn(label, text)
+        self.assertIn('class="issue-step"', text)
         self.assertIn("국가법령정보센터 원문", text)
         self.assertIn("공식 판결문", text)
+        self.assertNotIn("법령과 쟁점의 판단 지도", text)
+        self.assertNotIn("법적 판단지도", text)
+        self.assertNotIn("합성 사례", text)
+        self.assertNotIn("결론의 이동", text)
+        self.assertNotRegex(text, r"\bR[0-9]+\b")
+        self.assertNotIn('class="step-law" open', text)
+        sample_issue = next(
+            item for item in self.data["issues"] if item["issue_id"] == "NTBA-TAX-LIABILITY-LIFECYCLE-001"
+        )
+        self.assertEqual(text.count('class="issue-step"'), len(sample_issue["steps"]))
         self.assertNotIn("<script", text)
+
+        visible = text[text.index("<main") :]
+        order = [
+            visible.index("오늘의 질문"),
+            visible.index("새 사실"),
+            visible.index("관련 조문 보기"),
+            visible.index("답과 해설"),
+        ]
+        self.assertEqual(order, sorted(order))
 
     def test_index_keeps_fallback_rows_for_javascript_off(self) -> None:
         index = (DOCS / "index.html").read_text(encoding="utf-8")

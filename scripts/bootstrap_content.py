@@ -137,6 +137,264 @@ def extract_easy_explanation(document: Any) -> str:
     return document.lead
 
 
+_STEP_SENTENCE_PATTERN = re.compile(
+    r"(?<=[다요죠음임됨함]\.)\s+|(?<=[!?])\s+"
+)
+
+
+def clean_learning_text(value: Any) -> str:
+    """Remove Markdown presentation from learner-facing step text."""
+    if not isinstance(value, str):
+        return ""
+    value = re.sub(r"\*\*(.*?)\*\*", r"\1", value)
+    value = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", value)
+    value = re.sub(r"`([^`]+)`", r"\1", value)
+    return " ".join(value.split()).strip()
+
+
+def split_learning_sentences(value: Any) -> list[str]:
+    """Split Korean prose at sentence endings without splitting dotted dates."""
+    text = clean_learning_text(value)
+    if not text:
+        return []
+    parts = [clean_learning_text(item) for item in _STEP_SENTENCE_PATTERN.split(text)]
+    return [item for item in parts if item]
+
+
+def extract_heading_text(document: Any, heading: str) -> str:
+    """Return prose directly under the first matching Markdown H3."""
+    lines = [line for section in document.sections for line in section.lines]
+    target = f"### {heading}"
+    collected: list[str] = []
+    started = False
+    for line in lines:
+        stripped = line.strip()
+        if not started:
+            if stripped == target:
+                started = True
+            continue
+        if stripped.startswith("### ") or stripped.startswith("## "):
+            break
+        if not stripped or "|" in stripped:
+            continue
+        if stripped.startswith("-"):
+            stripped = stripped[1:].strip()
+        if stripped:
+            collected.append(stripped)
+    return " ".join(collected)
+
+
+def extract_numbered_items(document: Any, heading: str) -> list[str]:
+    """Keep short numbered recall prompts without importing the old layout."""
+    lines = [line for section in document.sections for line in section.lines]
+    target = f"### {heading}"
+    result: list[str] = []
+    started = False
+    for line in lines:
+        stripped = line.strip()
+        if not started:
+            if stripped == target:
+                started = True
+            continue
+        if stripped.startswith("### ") or stripped.startswith("## "):
+            break
+        match = re.match(r"^[0-9]+\.\s+(.+)$", stripped)
+        if match:
+            result.append(clean_learning_text(match.group(1)))
+    return result
+
+
+def article_display_label(
+    article_id: str,
+    law_name: str,
+    selected_articles: list[dict[str, Any]],
+) -> str:
+    """Build a stable human label while retaining article IDs for rendering."""
+    for article in selected_articles:
+        if article.get("article_id") != article_id:
+            continue
+        source_law = article.get("source_law", {})
+        number = source_law.get("article_number")
+        if number:
+            return f"{law_name} {number}"
+    suffix_parts = article_id.split("-", 1)[-1].split("-")
+    if len(suffix_parts) > 1:
+        number = f"제{suffix_parts[0]}조의{suffix_parts[1]}"
+    else:
+        number = f"제{suffix_parts[0]}조"
+    return f"{law_name} {number}"
+
+
+def build_sequential_steps(
+    *,
+    issue_id: str,
+    core_question: str,
+    law_name: str,
+    article_ids: list[str],
+    selected_articles: list[dict[str, Any]],
+    law_map: list[dict[str, Any]],
+    beginner: list[dict[str, Any]],
+    audit: list[dict[str, Any]],
+    accounting: list[dict[str, Any]],
+    resolved_precedents: list[dict[str, Any]],
+    document: Any,
+    topic: dict[str, Any],
+) -> tuple[list[dict[str, Any]], str, str, list[str]]:
+    """Turn one lesson's case material into a question-first step sequence."""
+    facts = split_learning_sentences(extract_heading_text(document, "사실"))
+    # The source introduces many examples with a short anonymisation sentence;
+    # it is not a fact the learner needs to remember.
+    facts = [
+        fact
+        for fact in facts
+        if not ("사례다" in fact and len(fact) < 32)
+    ]
+    if not facts:
+        facts = split_learning_sentences(extract_prompt(document))
+    if not facts:
+        facts = ["기록에 적힌 사실과 기준일을 먼저 특정한다."]
+    if len(facts) == 1:
+        facts.append("추가 사실은 아직 확인되지 않았으므로 필요한 원본 자료를 특정한다.")
+    fact_keys = [fact.casefold() for fact in facts]
+    if len(fact_keys) != len(set(fact_keys)):
+        raise ValueError(f"{issue_id}: duplicate sequential facts")
+
+    rules = [
+        clean_learning_text(item.get("rule_summary"))
+        for item in law_map
+        if isinstance(item, dict) and clean_learning_text(item.get("rule_summary"))
+    ]
+    if not rules:
+        rules = [f"{law_name}의 해당 조문에서 요건과 효과를 순서대로 확인한다."]
+    reasoning = split_learning_sentences(
+        extract_heading_text(document, "전문가 판단 과정")
+    )
+    easy = split_learning_sentences(
+        beginner[0].get("text") if beginner and isinstance(beginner[0], dict) else ""
+    )
+    if not easy:
+        easy = split_learning_sentences(extract_easy_explanation(document))
+
+    article_labels = {
+        article_id: article_display_label(article_id, law_name, selected_articles)
+        for article_id in article_ids
+    }
+    evidence: list[str] = []
+    for item in audit:
+        if isinstance(item, dict) and isinstance(item.get("evidence_to_check"), list):
+            evidence.extend(
+                clean_learning_text(value)
+                for value in item["evidence_to_check"]
+                if clean_learning_text(value)
+            )
+    evidence = list(dict.fromkeys(evidence))
+    precedent_refs = [
+        str(item.get("precedent_id") or item.get("case_number"))
+        for item in resolved_precedents
+        if item.get("precedent_id") or item.get("case_number")
+    ]
+    accounting_item = next(
+        (
+            item
+            for item in accounting
+            if isinstance(item, dict) and item.get("status") not in {None, "not_applicable"}
+        ),
+        None,
+    )
+    steps: list[dict[str, Any]] = []
+    used_explanations: set[str] = set()
+    for index, fact in enumerate(facts):
+        rule = rules[index % len(rules)]
+        if index == 0:
+            question = clean_learning_text(core_question)
+        else:
+            question = f"앞서 확인한 사실에 이 조건이 더해지면, {rule} 결과는 어떻게 달라질까?"
+        if index < len(reasoning):
+            answer = reasoning[index]
+        elif index == len(facts) - 1 and accounting_item and accounting_item.get("tax_adjustment"):
+            answer = accounting_item["tax_adjustment"]
+        elif accounting_item and accounting_item.get("reconciliation"):
+            answer = accounting_item["reconciliation"]
+        elif accounting_item and accounting_item.get("accounting_treatment"):
+            answer = accounting_item["accounting_treatment"]
+        else:
+            answer = rule
+        explanation = easy[index] if index < len(easy) else (easy[0] if easy else "")
+        explanation = clean_learning_text(explanation)
+        if not explanation or explanation in used_explanations:
+            explanation = (
+                f"추가 사실 {index + 1}을 위 법리와 대조해 요건과 효과를 확인한다."
+            )
+        used_explanations.add(explanation)
+
+        if article_ids and index < len(article_ids):
+            article_id = article_ids[index]
+            step_article_ids = [article_id]
+            legal_refs = [article_labels[article_id]]
+        elif article_ids:
+            # Do not print the same long statutory text again.  The learner can
+            # return to the earlier step where this article was opened.
+            article_id = article_ids[-1]
+            step_article_ids = []
+            legal_refs = [f"{article_labels[article_id]} (앞 단계 원문과 연결)"]
+        else:
+            step_article_ids = []
+            legal_refs = [law_name]
+
+        step_evidence: list[str] = []
+        if evidence:
+            if index < len(evidence):
+                step_evidence.append(evidence[index])
+            if index == len(facts) - 1 and len(evidence) > len(facts):
+                step_evidence.extend(evidence[len(facts) :])
+
+        accounting_note: str | None = None
+        if accounting_item:
+            if index == 0 and accounting_item.get("accounting_treatment"):
+                accounting_note = clean_learning_text(accounting_item["accounting_treatment"])
+            elif index == len(facts) - 1:
+                parts = [
+                    accounting_item.get("reconciliation"),
+                    accounting_item.get("tax_adjustment"),
+                ]
+                parts = [clean_learning_text(part) for part in parts if clean_learning_text(part)]
+                if parts:
+                    accounting_note = " ".join(parts)
+
+        if index == len(facts) - 1:
+            next_state = "판례·조사 증빙과 회계·세무조정 연결에서 이 결론을 다시 검증한다."
+        else:
+            next_rule = rules[(index + 1) % len(rules)].rstrip(". ")
+            next_state = f"다음 단계에서 관련 판단을 더 구체화한다: {next_rule}."
+
+        steps.append(
+            {
+                "step_no": index + 1,
+                "question": question,
+                "new_fact": fact,
+                "legal_refs": legal_refs,
+                "article_ids": step_article_ids,
+                "answer": clean_learning_text(answer),
+                "explanation": clean_learning_text(explanation),
+                "evidence": step_evidence,
+                "precedent_refs": precedent_refs if index == len(facts) - 1 else [],
+                "accounting_note": accounting_note,
+                "next_state": next_state,
+            }
+        )
+
+    transfer = clean_learning_text(extract_heading_text(document, "변형사례"))
+    concept = clean_learning_text(
+        topic.get("concept_key") or topic.get("canonical_title") or law_name
+    )
+    rule_chain = " → ".join(rule.rstrip(". ") for rule in rules[:3])
+    summary = (
+        f"{concept}은(는) {rule_chain} 순서로 확인하고, 마지막에 사실·증빙의 반대 가능성을 점검한다."
+    )
+    recall_questions = extract_numbered_items(document, "오늘의 회상 3문항")
+    return steps, transfer, summary, recall_questions
+
+
 def references_from_topic(topic: dict[str, Any]) -> list[str]:
     """Fallback article IDs for topics not expanded into learning.articles."""
     references: list[str] = []
@@ -298,7 +556,11 @@ def resolve_precedents(
         official = record.get("official_source_url") or record.get("official_url")
         if not is_official_url(official):
             continue
+        dedupe_key = str(record.get("case_number") or official or canonical)
+        if dedupe_key in seen:
+            continue
         seen.add(canonical)
+        seen.add(dedupe_key)
         result.append(
             {
                 "precedent_id": record.get("precedent_id") or record.get("case_id") or canonical,
@@ -474,6 +736,21 @@ def build_content(source_root: Path, output_root: Path) -> dict[str, Any]:
                 if key:
                     all_precedents[str(key)] = item
 
+            steps, transfer_case, final_summary, recall_questions = build_sequential_steps(
+                issue_id=issue_id,
+                core_question=core_question,
+                law_name=law["law_name"],
+                article_ids=article_ids,
+                selected_articles=selected_articles,
+                law_map=law_map,
+                beginner=beginner,
+                audit=audit,
+                accounting=accounting,
+                resolved_precedents=resolved_precedents,
+                document=document,
+                topic=topic,
+            )
+
             # Preserve useful source metadata without exposing the old fixed ratio.
             material_meta = dict(document.metadata)
             material_meta.pop("source_as_of", None)
@@ -505,6 +782,10 @@ def build_content(source_root: Path, output_root: Path) -> dict[str, Any]:
                         for item in resolved_precedents
                     ],
                     "precedents": resolved_precedents,
+                    "steps": steps,
+                    "transfer_case": transfer_case,
+                    "final_summary": final_summary,
+                    "recall_questions": recall_questions,
                     "modules": {
                         "audit": bool(audit) or bool(rendered_sections.get("audit-evidence")),
                         "accounting": any(
@@ -523,7 +804,6 @@ def build_content(source_root: Path, output_root: Path) -> dict[str, Any]:
                         "curriculum_source_as_of": topic.get("source_as_of"),
                         "source_root": "tax-study 공개 원천",
                     },
-                    "sections": rendered_sections,
                     "lesson_lead": document.lead,
                     "estimated_minutes": document.estimated_minutes,
                     "audience": document.audience,
@@ -537,7 +817,7 @@ def build_content(source_root: Path, output_root: Path) -> dict[str, Any]:
     )
     article_list.sort(key=lambda item: (item["law_code"], item["article_id"]))
     output = {
-        "schema_version": 1,
+        "schema_version": 2,
         "generated_as_of": selection.get("selection_as_of"),
         "source_repository": "tax-study",
         "laws": [

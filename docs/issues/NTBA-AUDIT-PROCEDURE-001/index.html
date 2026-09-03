@@ -6,14 +6,14 @@
   <meta name="description" content="세무조사 절차에서 사전통지 20일, 연기신청 처리, 통지 예외, 조사결과 통지와 과세전적부심사 유보를 어떻게 하나의 날짜 사슬로 검증하는가?">
   <title>세무조사 절차·사전통지·연기 · 세법 쟁점 대장</title>
   <link rel="stylesheet" href="../../styles.css">
-  
+
 </head>
 <body>
 <!--
 DIRECTION CONTRACT
-THESIS: 법령 원문에서 출발해 쟁점·증빙·판례의 판단 경계를 한 화면의 읽기 순서로 만든다.
+THESIS: 질문을 먼저 세우고, 사실을 한 조각씩 추가하면서 관련 조문·답·근거를 같은 순서로 읽게 한다.
 OWN-WORLD: 기존 사건배당부의 석재·종이·잉크·공식 파랑·규선 언어를 법률별 대장으로 확장한다.
-STORY: 법률 선택 → 쟁점 한 행 → 답을 보기 전 질문 → 원문 → 초보자 해설 → 판단 지도 → 증빙 → 판례 → 필요 시 회계.
+STORY: 법률 선택 → 쟁점 한 행 → 오늘의 질문 → 새 사실 → 관련 조문 → 답과 해설 → 판례·조사·회계 연결.
 FIRST VIEWPORT: 첫 화면에서 다섯 법률과 50개 쟁점의 위치를 보고, 검색 없이도 어느 행을 열지 결정한다.
 FORM: 직각 대장 행, 얇은 규선, 짧은 라벨, 한 열 모바일 읽기 흐름을 사용한다. concept-seed: 0e3fac08.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md.
@@ -25,392 +25,181 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <header class="reader-heading">
     <h1>세무조사 절차·사전통지·연기</h1>
     <p class="reader-context">NTBA · 쟁점 09 / 10 · 고급</p>
-    <p class="reader-lead">법령 원문과 사실·증빙·판례의 연결로 읽는 자유열람 쟁점입니다.</p>
-    <ul class="reader-meta"><li>30분 읽기</li><li>법령 4개 연결</li><li>판례 6건 직접 연결</li></ul>
+    <p class="reader-lead">질문에 답한 뒤 사실을 하나씩 추가하고, 그 단계에 필요한 조문만 열어 보는 자유열람 쟁점입니다.</p>
+    <ul class="reader-meta"><li>30분 읽기</li><li>법령 4개 연결</li><li>판례 4건 직접 연결</li></ul>
   </header>
 
   <section class="prompt-band" aria-labelledby="prompt-title">
-    <h2 id="prompt-title"><span class="heading-sequence">답을 보기 전</span>먼저 이 질문에 답해 보세요</h2>
+    <h2 id="prompt-title"><span class="heading-sequence">시작점</span>오늘의 질문</h2>
     <p class="prompt-question">세무조사 절차에서 사전통지 20일, 연기신청 처리, 통지 예외, 조사결과 통지와 과세전적부심사 유보를 어떻게 하나의 날짜 사슬로 검증하는가?</p>
-    <p class="prompt-caption">결론을 바꿀 날짜·당사자·거래흐름·증빙을 한 줄로 적은 뒤 아래 원문을 여세요.</p>
+    <p class="prompt-caption">잠정 결론을 한 줄로 적은 뒤, 아래 단계에서 새 사실을 하나씩 확인하세요.</p>
   </section>
 
-  <nav class="reader-index" aria-label="이 쟁점 안에서 이동"><a href="#law-source">법령 원문</a><a href="#beginner">초보자 해설</a><a href="#map">판단 지도</a><a href="#example">합성 사례</a><a href="#audit">증빙 실습</a><a href="#precedents">관련 판례</a><a href="#sources">출처</a></nav>
+  <nav class="reader-index" aria-label="이 쟁점 안에서 이동"><a href="#steps">오늘의 질문</a><a href="#connections">판례·조사·회계</a><a href="#changes">사실이 달라지면</a><a href="#summary">마지막 정리</a><a href="#sources">출처</a></nav>
 
-  <section class="reader-block reader-block--law" id="law-source" aria-labelledby="law-source-title">
-    <h2 id="law-source-title"><span class="heading-sequence">01 / 기준점</span>법령 원문과 기준일</h2>
-    <p class="block-lead">현재 스냅샷의 시행 중 버전을 먼저 보여 줍니다. 과거 거래는 판례 카드와 사건 당시 법령을 분리해 대조합니다.</p>
-    <div class="article-stack"><details class="article-record" open>
+  <section class="reader-block reader-block--steps" id="steps" aria-labelledby="steps-title">
+    <h2 id="steps-title"><span class="heading-sequence">01 / 한 단계씩</span>새 사실에 답하기</h2>
+    <p class="block-lead">각 단계의 질문을 먼저 읽고, 새 사실을 확인한 다음 관련 조문과 답·해설을 순서대로 엽니다. 조문은 필요한 단계 안에서만 접혀 있습니다.</p>
+    <div class="issue-steps"><details class="issue-step" id="step-1" open>
+  <summary><span class="step-number">단계 01</span><strong>세무조사 절차에서 사전통지 20일, 연기신청 처리, 통지 예외, 조사결과 통지와 과세전적부심사 유보를 어떻게 하나의 날짜 사슬로 검증하는가?</strong></summary>
+  <div class="step-body">
+    <div class="step-fact">
+      <p class="step-label">새 사실</p>
+      <p>비식별 AC법인은 세목·기간·사유의 기재사항이 적힌 통지를 2026-08-15 받았고 조사는 2026-09-01 시작됐다.</p>
+    </div>
+    <details class="step-law">
+      <summary>관련 조문 보기 <span aria-hidden="true">＋</span></summary>
+      <div class="step-law__body">
+        <ul class="step-law-ref-list"><li>국세기본법 제81조의7</li></ul>
+        <div class="article-stack"><details class="article-record">
   <summary><span>제81조의7</span><strong>세무조사의 통지와 연기신청 등</strong><em>현행 · 시행 2026-08-11</em></summary>
   <div class="article-record__body">
     <p class="source-label">국가법령정보센터 원문</p>
     <div class="law-source-text">제81조의7(세무조사의 통지와 연기신청 등)<br>① 세무공무원은 세무조사를 하는 경우에는 조사를 받을 납세자(납세자가 제82조에 따라 납세관리인을 정하여 관할 세무서장에게 신고한 경우에는 납세관리인을 말한다. 이하 이 조에서 같다)에게 조사를 시작하기 20일[제65조제1항제3호 단서(제66조제6항과 제80조의2에서 준용하는 경우를 포함한다) 또는 제81조의15제5항제2호 단서에 따른 재조사 결정으로 재조사를 하는 경우에는 7일] 전에 조사대상 세목, 조사기간 및 조사 사유, 그 밖에 대통령령으로 정하는 사항을 통지(이하 이 조에서 &quot;사전통지&quot;라 한다)하여야 한다. 다만, 사전통지를 하면 증거인멸 등으로 조사 목적을 달성할 수 없다고 인정되는 경우에는 그러하지 아니하다. &lt;개정 2011.12.31, 2017.12.19, 2018.12.31, 2024.12.31&gt;<br>② 사전통지를 받은 납세자가 다음 각 호의 어느 하나에 해당하는 사유로 조사를 받기 곤란한 경우에는 대통령령으로 정하는 바에 따라 관할 세무관서의 장에게 조사를 연기해 줄 것을 신청할 수 있다. &lt;개정 2017.12.19, 2026.8.11&gt;<br>1. 천재지변으로 납세자의 생명ㆍ신체, 재산 또는 공급망(「경제안보를 위한 공급망 안정화 지원 기본법」 제2조제2호에 따른 공급망을 말한다) 등에 상당한 피해가 발생한 경우<br>2. 납세자가 경영하는 사업에 현저한 손실이 발생하거나 부도 또는 도산의 우려가 있는 경우<br>3. 그 밖에 대통령령으로 정하는 사유<br>③ 제2항에 따라 연기신청을 받은 관할 세무관서의 장은 연기신청 승인 여부를 결정하고 그 결과(연기 결정 시 연기한 기간을 포함한다)를 조사 개시 전까지 통지하여야 한다. &lt;개정 2021.12.21&gt;<br>④ 관할 세무관서의 장은 다음 각 호의 어느 하나에 해당하는 사유가 있는 경우에는 제3항에 따라 연기한 기간이 만료되기 전에 조사를 개시할 수 있다. &lt;신설 2021.12.21, 2026.8.11&gt;<br>1. 제2항 각 호의 연기 사유가 소멸한 경우<br>2. 조세채권을 확보하기 위하여 조사를 긴급히 개시할 필요가 있다고 인정되는 경우<br>⑤ 관할 세무관서의 장은 제4항제1호의 사유로 조사를 개시하려는 경우에는 조사를 개시하기 5일 전까지 조사를 받을 납세자에게 연기 사유가 소멸한 사실과 조사기간을 통지하여야 한다. &lt;신설 2021.12.21&gt;<br>⑥ 세무공무원은 제1항 단서에 따라 사전통지를 하지 아니하고 조사를 개시하거나 제4항제2호의 사유로 조사를 개시할 때 다음 각 호의 구분에 따른 사항이 포함된 세무조사통지서를 세무조사를 받을 납세자에게 교부하여야 한다. 다만, 폐업 등 대통령령으로 정하는 경우에는 그러하지 아니하다. &lt;신설 2017.12.19, 2021.12.21&gt;<br>1. 제1항 단서에 따라 사전통지를 하지 아니하고 조사를 개시하는 경우: 사전통지 사항, 사전통지를 하지 아니한 사유, 그 밖에 세무조사의 개시와 관련된 사항으로서 대통령령으로 정하는 사항<br>2. 제4항제2호의 사유로 조사를 개시하는 경우: 조사를 긴급히 개시하여야 하는 사유</div>
     <p class="source-link"><a href="https://www.law.go.kr/법령/국세기본법/제81조의7" rel="noopener noreferrer">공식 조문 열기</a></p>
   </div>
-</details><details class="article-record" open>
+</details></div>
+      </div>
+    </details>
+    <div class="step-answer">
+      <p class="step-label">답과 해설</p>
+      <p class="step-answer__headline">8월 15일에서 9월 1일까지는 20일 전 조건을 충족하지 못한다.</p>
+      <p>세무조사 전에는 조사대상·기간·사유를 갖춘 사전통지를 원칙적으로 20일 전에 해야 한다.</p>
+    </div>
+    <div class="step-evidence">
+  <p class="step-label">확인할 증빙</p>
+  <ul class="step-evidence-list"><li>사전통지서·송달증·착수보고</li></ul>
+</div>
+
+
+    <p class="step-next"><span>다음 단계</span>다음 단계에서 관련 판단을 더 구체화한다: 조사기간과 착수·연장 절차를 통지·연기·예외 기록과 날짜별로 대조한다.</p>
+  </div>
+</details><details class="issue-step" id="step-2">
+  <summary><span class="step-number">단계 02</span><strong>앞서 확인한 사실에 이 조건이 더해지면, 조사기간과 착수·연장 절차를 통지·연기·예외 기록과 날짜별로 대조한다. 결과는 어떻게 달라질까?</strong></summary>
+  <div class="step-body">
+    <div class="step-fact">
+      <p class="step-label">새 사실</p>
+      <p>AC는 8월 20일 수술확인서를 붙인 연기신청서를 냈으나 조사팀은 연기결정서를 작성하지 않았다.</p>
+    </div>
+    <details class="step-law">
+      <summary>관련 조문 보기 <span aria-hidden="true">＋</span></summary>
+      <div class="step-law__body">
+        <ul class="step-law-ref-list"><li>국세기본법 제81조의8</li></ul>
+        <div class="article-stack"><details class="article-record">
   <summary><span>제81조의8</span><strong>세무조사 기간</strong><em>현행 · 시행 2026-08-11</em></summary>
   <div class="article-record__body">
     <p class="source-label">국가법령정보센터 원문</p>
     <div class="law-source-text">제81조의8(세무조사 기간)<br>①세무공무원은 조사대상 세목ㆍ업종ㆍ규모, 조사 난이도 등을 고려하여 세무조사 기간이 최소한이 되도록 하여야 한다. 다만, 다음 각 호의 어느 하나에 해당하는 경우에는 세무조사 기간을 연장할 수 있다. &lt;개정 2010.1.1, 2011.12.31, 2014.1.1, 2018.12.31&gt;<br>1. 납세자가 장부ㆍ서류 등을 은닉하거나 제출을 지연하거나 거부하는 등 조사를 기피하는 행위가 명백한 경우<br>2. 거래처 조사, 거래처 현지확인 또는 금융거래 현지확인이 필요한 경우<br>3. 세금탈루 혐의가 포착되거나 조사 과정에서 「조세범 처벌절차법」에 따른 조세범칙조사를 개시하는 경우<br>4. 천재지변이나 노동쟁의로 조사가 중단되는 경우<br>5. 제81조의16제2항에 따른 납세자보호관 또는 담당관(이하 이 조에서 &quot;납세자보호관등&quot;이라 한다)이 세금탈루혐의와 관련하여 추가적인 사실 확인이 필요하다고 인정하는 경우<br>6. 세무조사 대상자가 세금탈루혐의에 대한 해명 등을 위하여 세무조사 기간의 연장을 신청한 경우로서 납세자보호관등이 이를 인정하는 경우<br>② 세무공무원은 제1항에 따라 세무조사 기간을 정할 경우 조사대상 과세기간 중 연간 수입금액 또는 양도가액이 가장 큰 과세기간의 연간 수입금액 또는 양도가액이 100억원 미만인 납세자에 대한 세무조사 기간은 20일 이내로 한다. &lt;신설 2010.1.1&gt;<br>③ 제2항에 따라 기간을 정한 세무조사를 제1항 단서에 따라 연장하는 경우로서 최초로 연장하는 경우에는 관할 세무관서의 장의 승인을 받아야 하고, 2회 이후 연장의 경우에는 관할 상급 세무관서의 장의 승인을 받아 각각 20일 이내에서 연장할 수 있다. 다만, 다음 각 호에 해당하는 경우에는 제2항의 세무조사 기간의 제한 및 이 항 본문의 세무조사 연장기간의 제한을 받지 아니한다. &lt;신설 2010.1.1, 2014.1.1, 2014.12.23, 2019.12.31&gt;<br>1. 무자료거래, 위장ㆍ가공거래 등 거래 내용이 사실과 다른 혐의가 있어 실제 거래 내용에 대한 조사가 필요한 경우<br>2. 역외거래를 이용하여 세금을 탈루(脫漏)하거나 국내 탈루소득을 해외로 변칙유출한 혐의로 조사하는 경우<br>3. 명의위장, 이중장부의 작성, 차명계좌의 이용, 현금거래의 누락 등의 방법을 통하여 세금을 탈루한 혐의로 조사하는 경우<br>4. 거짓계약서 작성, 미등기양도 등을 이용한 부동산 투기 등을 통하여 세금을 탈루한 혐의로 조사하는 경우<br>5. 상속세ㆍ증여세 조사, 주식변동 조사, 범칙사건 조사 및 출자ㆍ거래관계에 있는 관련자에 대하여 동시조사를 하는 경우<br>④ 세무공무원은 납세자가 자료의 제출을 지연하는 등 대통령령으로 정하는 사유로 세무조사를 진행하기 어려운 경우에는 세무조사를 중지할 수 있다. 이 경우 그 중지기간은 제1항부터 제3항까지의 세무조사 기간 및 세무조사 연장기간에 산입하지 아니한다. &lt;신설 2010.1.1&gt;<br>⑤ 세무공무원은 제4항에 따른 세무조사의 중지기간 중에는 납세자에 대하여 국세의 과세표준과 세액을 결정 또는 경정하기 위한 질문을 하거나 장부등의 검사ㆍ조사 또는 그 제출을 요구할 수 없다. &lt;신설 2017.12.19&gt;<br>⑥ 세무공무원은 제4항에 따라 세무조사를 중지한 경우에는 그 중지사유가 소멸하게 되면 즉시 조사를 재개하여야 한다. 다만, 조세채권의 확보 등 긴급히 조사를 재개하여야 할 필요가 있는 경우에는 세무조사를 재개할 수 있다. &lt;신설 2010.1.1, 2017.12.19&gt;<br>⑦ 세무공무원은 제1항 단서에 따라 세무조사 기간을 연장하는 경우에는 그 사유와 기간을 납세자에게 문서로 통지하여야 하고, 제4항 및 제6항에 따라 세무조사를 중지 또는 재개하는 경우에는 그 사유를 문서로 통지하여야 한다. &lt;개정 2010.1.1, 2017.12.19&gt;<br>⑧ 세무공무원은 세무조사 기간을 단축하기 위하여 노력하여야 하며, 장부기록 및 회계처리의 투명성 등 납세성실도를 검토하여 더 이상 조사할 사항이 없다고 판단될 때에는 조사기간 종료 전이라도 조사를 조기에 종결할 수 있다. &lt;신설 2014.1.1, 2017.12.19&gt;</div>
     <p class="source-link"><a href="https://www.law.go.kr/법령/국세기본법/제81조의8" rel="noopener noreferrer">공식 조문 열기</a></p>
   </div>
-</details><details class="article-record" open>
+</details></div>
+      </div>
+    </details>
+    <div class="step-answer">
+      <p class="step-label">답과 해설</p>
+      <p class="step-answer__headline">8월 20일 연기신청에 대한 결정도 없고 증거인멸 우려는 착수 후 작성되어 통지 예외의 당시성을 뒷받침하지 못한다.</p>
+      <p>연기신청과 증거인멸 우려 예외는 각각 착수 전에 접수·결정·기록되어야 한다.</p>
+    </div>
+    <div class="step-evidence">
+  <p class="step-label">확인할 증빙</p>
+  <ul class="step-evidence-list"><li>연기신청서·증빙·결정서·통지로그</li></ul>
+</div>
+
+
+    <p class="step-next"><span>다음 단계</span>다음 단계에서 관련 판단을 더 구체화한다: 조사 종결 뒤 조사결과 통지의 법정 시점·내용과 예외를 확인하고, 통지서와 조사종결일을 대조한다.</p>
+  </div>
+</details><details class="issue-step" id="step-3">
+  <summary><span class="step-number">단계 03</span><strong>앞서 확인한 사실에 이 조건이 더해지면, 조사 종결 뒤 조사결과 통지의 법정 시점·내용과 예외를 확인하고, 통지서와 조사종결일을 대조한다. 결과는 어떻게 달라질까?</strong></summary>
+  <div class="step-body">
+    <div class="step-fact">
+      <p class="step-label">새 사실</p>
+      <p>증거인멸 우려 메모는 9월 3일 작성됐다.</p>
+    </div>
+    <details class="step-law">
+      <summary>관련 조문 보기 <span aria-hidden="true">＋</span></summary>
+      <div class="step-law__body">
+        <ul class="step-law-ref-list"><li>국세기본법 제81조의12</li></ul>
+        <div class="article-stack"><details class="article-record">
   <summary><span>제81조의12</span><strong>세무조사의 결과 통지</strong><em>현행 · 시행 2026-08-11</em></summary>
   <div class="article-record__body">
     <p class="source-label">국가법령정보센터 원문</p>
     <div class="law-source-text">제81조의12(세무조사의 결과 통지)<br>① 세무공무원은 세무조사를 마쳤을 때에는 그 조사를 마친 날부터 20일(제11조제1항 각 호의 어느 하나에 해당하는 경우에는 40일) 이내에 다음 각 호의 사항이 포함된 조사결과를 납세자에게 설명하고, 이를 서면으로 통지하여야 한다. 다만, 납세관리인을 정하지 아니하고 국내에 주소 또는 거소를 두지 아니한 경우 등 대통령령으로 정하는 경우에는 그러하지 아니하다. &lt;개정 2011.12.31, 2017.12.19, 2018.12.31, 2019.12.31&gt;<br>1. 세무조사 내용<br>2. 결정 또는 경정할 과세표준, 세액 및 산출근거<br>3. 그 밖에 대통령령으로 정하는 사항<br>② 제1항에도 불구하고 세무공무원은 다음 각 호의 어느 하나에 해당하는 사유로 제1항에 따른 기간 이내에 조사결과를 통지할 수 없는 부분이 있는 경우에는 납세자가 동의하는 경우에 한정하여 조사결과를 통지할 수 없는 부분을 제외한 조사결과를 납세자에게 설명하고, 이를 서면으로 통지할 수 있다. &lt;신설 2019.12.31, 2025.10.1&gt;<br>1. 「국제조세조정에 관한 법률」 및 조세조약에 따른 국외자료의 수집ㆍ제출 또는 상호합의절차 개시에 따라 외국 과세기관과의 협의가 진행 중인 경우<br>2. 해당 세무조사와 관련하여 세법의 해석 또는 사실관계 확정을 위하여 재정경제부장관 또는 국세청장에 대한 질의 절차가 진행 중인 경우<br>③ 상호합의절차 종료, 세법의 해석 또는 사실관계 확정을 위한 질의에 대한 회신 등 제2항 각 호에 해당하는 사유가 해소된 때에는 그 사유가 해소된 날부터 20일(제11조제1항 각 호의 어느 하나에 해당하는 경우에는 40일) 이내에 제2항에 따라 통지한 부분 외에 대한 조사결과를 납세자에게 설명하고, 이를 서면으로 통지하여야 한다. &lt;신설 2019.12.31&gt;</div>
     <p class="source-link"><a href="https://www.law.go.kr/법령/국세기본법/제81조의12" rel="noopener noreferrer">공식 조문 열기</a></p>
   </div>
-</details><details class="article-record" open>
-  <summary><span>제81조의15</span><strong>과세전적부심사</strong><em>현행 · 시행 2026-08-11</em></summary>
-  <div class="article-record__body">
-    <p class="source-label">국가법령정보센터 원문</p>
-    <div class="law-source-text">제81조의15(과세전적부심사)<br>① 세무서장 또는 지방국세청장은 다음 각 호의 어느 하나에 해당하는 경우에는 미리 납세자에게 그 내용을 서면으로 통지(이하 이 조에서 &quot;과세예고통지&quot;라 한다)하여야 한다. &lt;신설 2018.12.31, 2020.12.29, 2024.12.31&gt;<br>1. 세무서 또는 지방국세청에 대한 지방국세청장 또는 국세청장의 업무감사 결과(현지에서 시정조치하는 경우를 포함한다)에 따라 세무서장 또는 지방국세청장이 과세하는 경우<br>2. 세무조사에서 확인된 것으로 조사대상자 외의 자에 대한 과세자료 및 현지 확인조사에 따라 세무서장 또는 지방국세청장이 과세하는 경우<br>3. 납부고지하려는 세액이 100만원 이상인 경우. 다만, 다음 각 목의 경우는 제외한다.<br>② 다음 각 호의 어느 하나에 해당하는 통지를 받은 자는 통지를 받은 날부터 30일 이내에 통지를 한 세무서장이나 지방국세청장에게 통지 내용의 적법성에 관한 심사[이하 이 조에서 &quot;과세전적부심사&quot;(課稅前適否審査)라 한다]를 청구할 수 있다. 다만, 법령과 관련하여 국세청장의 유권해석을 변경하여야 하거나 새로운 해석이 필요한 경우 등 대통령령으로 정하는 사항에 대해서는 국세청장에게 청구할 수 있다. &lt;개정 2018.12.31&gt;<br>1. 제81조의12에 따른 세무조사 결과에 대한 서면통지<br>2. 제1항 각 호에 따른 과세예고통지<br>③ 다음 각 호의 어느 하나에 해당하는 경우에는 제2항을 적용하지 아니한다. &lt;개정 2010.12.27, 2018.12.31, 2020.12.29, 2023.12.31&gt;<br>1. 「국세징수법」 제9조에 규정된 납부기한 전 징수의 사유가 있거나 세법에서 규정하는 수시부과의 사유가 있는 경우<br>2. 「조세범 처벌법」 위반으로 고발 또는 통고처분하는 경우. 다만, 고발 또는 통고처분과 관련 없는 세목 또는 세액에 대해서는 그러하지 아니하다.<br>3. 세무조사 결과 통지 및 과세예고통지를 하는 날부터 국세부과 제척기간의 만료일까지의 기간이 3개월 이하인 경우<br>4. 그 밖에 대통령령으로 정하는 경우<br>④ 과세전적부심사 청구를 받은 세무서장, 지방국세청장 또는 국세청장은 각각 국세심사위원회의 심사를 거쳐 결정을 하고 그 결과를 청구를 받은 날부터 30일 이내에 청구인에게 통지하여야 한다. &lt;개정 2018.12.31&gt;<br>⑤ 과세전적부심사 청구에 대한 결정은 다음 각 호의 구분에 따른다. &lt;개정 2014.12.23, 2016.12.20, 2018.12.31, 2023.12.31&gt;<br>1. 청구가 이유 없다고 인정되는 경우: 채택하지 아니한다는 결정<br>2. 청구가 이유 있다고 인정되는 경우: 채택하거나 일부 채택하는 결정. 다만, 구체적인 채택의 범위를 정하기 위하여 사실관계 확인 등 추가적으로 조사가 필요한 경우에는 제2항 각 호의 통지를 한 세무서장이나 지방국세청장으로 하여금 이를 재조사하여 그 결과에 따라 당초 통지 내용을 수정하여 통지하도록 하는 재조사 결정을 할 수 있다.<br>3. 청구가 다음 각 목의 어느 하나에 해당하는 경우: 심사하지 아니한다는 결정<br>⑥ 과세전적부심사에 관하여는 제58조, 제59조, 제60조의2, 제61조제3항, 제62조제2항, 제63조, 제64조제1항 단서, 제64조제3항 및 제65조제4항부터 제7항까지의 규정을 준용한다. &lt;개정 2016.12.20, 2018.12.31, 2019.12.31, 2022.12.31&gt;<br>⑦ 과세전적부심사에 관하여는 「행정심판법」 제15조ㆍ제16조ㆍ제20조부터 제22조까지ㆍ제29조ㆍ제36조제1항ㆍ제39조ㆍ제40조 및 제42조를 준용한다. 이 경우 &quot;심판청구&quot;는 &quot;과세전적부심사 청구&quot;로, &quot;제7조제6항 또는 제8조제7항에 따른 의결&quot;은 &quot;제4항에 따른 과세전적부심사 청구에 대한 결정&quot;으로, &quot;위원회&quot;는 &quot;국세심사위원회&quot;로 본다. &lt;개정 2010.1.25, 2015.12.15, 2018.12.31&gt;<br>⑧ 제2항 각 호의 어느 하나에 해당하는 통지를 받은 자는 과세전적부심사를 청구하지 아니하고 통지를 한 세무서장이나 지방국세청장에게 통지받은 내용의 전부 또는 일부에 대하여 과세표준 및 세액을 조기에 결정하거나 경정결정해 줄 것을 신청할 수 있다. 이 경우 해당 세무서장이나 지방국세청장은 신청받은 내용대로 즉시 결정이나 경정결정을 하여야 한다. &lt;개정 2010.12.27, 2018.12.31&gt;<br>⑨ 과세전적부심사의 신청, 방법, 그 밖에 필요한 사항은 대통령령으로 정한다. &lt;개정 2018.12.31&gt;</div>
-    <p class="source-link"><a href="https://www.law.go.kr/법령/국세기본법/제81조의15" rel="noopener noreferrer">공식 조문 열기</a></p>
+</details></div>
+      </div>
+    </details>
+    <div class="step-answer">
+      <p class="step-label">답과 해설</p>
+      <p class="step-answer__headline">절차상 하자를 조사결과와 분리해 기록해야 한다.</p>
+      <p>추가 사실 3을 위 법리와 대조해 요건과 효과를 확인한다.</p>
+    </div>
+    <div class="step-evidence">
+  <p class="step-label">확인할 증빙</p>
+  <ul class="step-evidence-list"><li>예외검토서 원본·결재시각·첨부자료 생성시각</li><li>조사결과 통지서와 과세예고통지서</li><li>과세전적부심사 접수·결정과 재처분 타임라인</li></ul>
+</div>
+
+    <div class="step-links step-links--precedents">
+  <p class="step-label">연결 판례</p>
+  <ul class="step-link-list"><li><a href="#case-latest-2026두30542-2026-08-13">2026두30542</a></li><li><a href="#case-latest-2025두34254-2025-12-04">2025두34254</a></li><li><a href="#case-SC-2016DU55421-2017-12-13">2016두55421</a></li><li><a href="#case-latest-2025다210837-2026-04-30">2025다210837</a></li></ul>
+</div>
+    <p class="step-next"><span>다음 단계</span>판례·조사 증빙과 회계·세무조정 연결에서 이 결론을 다시 검증한다.</p>
   </div>
 </details></div>
-    <div class="related-reference"><p class="source-label">시행령·시행규칙 및 연결 조문</p><p class="quiet">이 스냅샷에 전문이 포함된 조문은 위 원문으로, 나머지 연결은 공식 법령 페이지에서 사건 시점의 버전을 확인합니다.</p><ul class="source-list"><li><span>국세기본법 제81조의7</span> <a href="https://www.law.go.kr/법령/국세기본법" rel="noopener noreferrer">공식 법령 연결</a></li><li><span>국세기본법 제81조의8</span> <a href="https://www.law.go.kr/법령/국세기본법" rel="noopener noreferrer">공식 법령 연결</a></li></ul></div>
   </section>
 
-  <section class="reader-block reader-block--beginner" id="beginner" aria-labelledby="beginner-title">
-    <h2 id="beginner-title"><span class="heading-sequence">02 / 쉽게 말하면</span>초보자 해설</h2>
-    <div class="beginner-callout"><p>세무조사 전에는 조사대상·기간·사유를 갖춘 사전통지를 원칙적으로 20일 전에 해야 한다. 연기신청과 증거인멸 우려 예외는 각각 착수 전에 접수·결정·기록되어야 한다.</p></div>
-    <section class="lesson-section" id="concept" aria-labelledby="concept-title">
-<h2 id="concept-title">1. 오늘의 목표와 30초 쉬운 설명 — 2분</h2>
-<section class="learning-block learning-block--easy" aria-labelledby="concept-heading-1">
-<p class="learning-block__label">쉬운 설명</p>
-<h3 id="concept-heading-1">30초 쉬운 설명</h3>
-<p>조사 시작 전에는 조사대상과 이유 등 기재사항을 갖춘 통지를 원칙적으로 20일 전에 보내야 한다. 납세자는 사유를 증명해 연기를 신청할 수 있고 증거인멸 우려 같은 예외는 사전에 기록되어야 한다.</p>
-</section>
-<section class="learning-block learning-block--objectives" aria-labelledby="concept-heading-2">
-<p class="learning-block__label">오늘의 목표</p>
-<h3 id="concept-heading-2">오늘 할 수 있어야 하는 것</h3>
-<ul>
-<li>사전통지 기재사항과 20일 조건을 확인한다.</li>
-<li>2026-08-15 수령부터 2026-09-01 착수까지 계산한다.</li>
-<li>연기신청·결정·예외사유의 시간 순서를 배열한다.</li>
-</ul>
-</section>
-<section class="learning-block learning-block--prompt" aria-labelledby="concept-heading-3">
-<p class="learning-block__label">먼저 판단하기</p>
-<h3 id="concept-heading-3">시작 전 판단</h3>
-<p>8월 15일 받은 통지로 9월 1일 조사를 시작했다. 20일 전 통지 조건을 충족했을까?</p>
-</section>
-</section>
-  </section>
-
-  <section class="reader-block reader-block--map" id="map" aria-labelledby="map-title">
-    <h2 id="map-title"><span class="heading-sequence">03 / 판단 구조</span>법령과 쟁점의 판단 지도</h2>
-    <div class="table-wrap"><table class="decision-table"><thead><tr><th>조문 연결</th><th>이 단계에서 볼 것</th></tr></thead><tbody><tr><td data-label="조문">국세기본법 제81조의7</td><td data-label="규칙">조사대상 세목·기간·사유 등 기재사항을 갖춘 사전통지와 납세자의 법정 연기신청 절차를 확인한다.</td></tr><tr><td data-label="조문">국세기본법 제81조의8</td><td data-label="규칙">조사기간과 착수·연장 절차를 통지·연기·예외 기록과 날짜별로 대조한다.</td></tr><tr><td data-label="조문">제81조의12</td><td data-label="규칙">조사 종결 뒤 조사결과 통지의 법정 시점·내용과 예외를 확인하고, 통지서와 조사종결일을 대조한다.</td></tr><tr><td data-label="조문">제81조의15</td><td data-label="규칙">과세전적부심사 청구의 대상·절차를 확인하고, 청구가 있으면 결정 전까지 과세처분을 유보했는지 검증한다.</td></tr></tbody></table></div>
-    <section class="lesson-section" id="legal-structure" aria-labelledby="legal-structure-title">
-<h2 id="legal-structure-title">2. 핵심 용어와 법적 판단지도 — 4분</h2>
-<section class="learning-block learning-block--glossary" aria-labelledby="legal-structure-heading-1">
-<p class="learning-block__label">핵심 용어</p>
-<h3 id="legal-structure-heading-1">핵심 용어</h3>
-<div class="table-wrap">
-<table>
-<thead>
-<tr>
-<th>용어</th>
-<th>초보자 뜻</th>
-<th>실무상 확인점</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="용어">사전통지</td>
-<td data-label="초보자 뜻">조사대상 세목·기간·이유 등 기재사항을 미리 알리는 절차</td>
-<td data-label="실무상 확인점">수령일과 착수일을 계산한다.</td>
-</tr>
-<tr>
-<td data-label="용어">연기신청</td>
-<td data-label="초보자 뜻">질병 등 사유로 조사 시작을 미뤄 달라는 신청</td>
-<td data-label="실무상 확인점">신청·증빙·결정 순서를 본다.</td>
-</tr>
-<tr>
-<td data-label="용어">통지 예외</td>
-<td data-label="초보자 뜻">사전통지가 증거인멸 등으로 목적 달성을 어렵게 하는 경우</td>
-<td data-label="실무상 확인점">착수 전 구체적 검토기록을 확인한다.</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section class="learning-block learning-block--decision-map" aria-labelledby="legal-structure-heading-2">
-<p class="learning-block__label">판단지도</p>
-<h3 id="legal-structure-heading-2">법적 판단지도</h3>
-<div class="table-wrap">
-<table>
-<thead>
-<tr>
-<th>판단 단계</th>
-<th>결정적 사실</th>
-<th>우선 증빙</th>
-<th>사실이 뜻하는 결론</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="판단 단계">기재사항</td>
-<td data-label="결정적 사실">대상 세목·기간·사유가 특정됐다</td>
-<td data-label="우선 증빙">사전통지서</td>
-<td data-label="사실이 뜻하는 결론">빈 항목이 있으면 방어 준비가 어렵다.</td>
-</tr>
-<tr>
-<td data-label="판단 단계">20일 전 통지</td>
-<td data-label="결정적 사실">2026-08-15 수령, 2026-09-01 착수</td>
-<td data-label="우선 증빙">송달증·착수보고</td>
-<td data-label="사실이 뜻하는 결론">달력상 17일이므로 조건을 충족하지 못한다.</td>
-</tr>
-<tr>
-<td data-label="판단 단계">연기·예외</td>
-<td data-label="결정적 사실">연기신청과 결정, 증거인멸 우려가 언제 기록됐는가</td>
-<td data-label="우선 증빙">연기신청서·결정서·예외검토서</td>
-<td data-label="사실이 뜻하는 결론">착수 뒤 만든 이유는 사전 예외를 증명하지 못한다.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>검토는 위 표의 순서로 진행한다. 서로 다른 날짜·금액·문서를 한 단계로 합치지 않고, 각 문서가 실제로 증명하는 사실까지만 사용한다.</p>
-</section>
-<h3 id="legal-structure-heading-3">적용 범위와 경계</h3>
-<p>제81조의7의 사전통지와 연기, 제81조의8의 조사기간을 구별한다. 20일 계산은 실제 수령과 착수 날짜를 기준으로 하고 구체적 예외는 통지 생략 당시 자료로 확인한다.</p>
-<details class="reveal-block reveal-block--deepening">
-<summary>심화 펼치기</summary>
-<div class="reveal-block__body">
-<h4 id="legal-structure-heading-4">심화</h4>
-<p>개별 세목의 과세요건과 이 단원의 국세기본법 절차를 함께 적용하되, 한 조문의 효과를 다른 조문의 요건으로 대신하지 않는다.</p>
-</div>
-</details>
-</section>
-  </section>
-
-  <section class="reader-block reader-block--example" id="example" aria-labelledby="example-title">
-    <h2 id="example-title"><span class="heading-sequence">04 / 사실에 대입하기</span>합성 사례와 결론의 이동</h2>
-    <p class="synthetic-note">아래 사례는 학습을 위한 합성 사실입니다. 실제 사건이나 공식 판례의 사실로 읽지 마세요.</p>
-    <section class="lesson-section" id="worked-example" aria-labelledby="worked-example-title">
-<h2 id="worked-example-title">3. 완성된 쉬운 예제 — 4분</h2>
-<h3 id="worked-example-heading-1">사실</h3>
-<p>비식별 가상 사례다. 비식별 AC법인은 세목·기간·사유의 기재사항이 적힌 통지를 2026-08-15 받았고 조사는 2026-09-01 시작됐다. AC는 8월 20일 수술확인서를 붙인 연기신청서를 냈으나 조사팀은 연기결정서를 작성하지 않았다. 증거인멸 우려 메모는 9월 3일 작성됐다.</p>
-<section class="learning-block learning-block--prompt" aria-labelledby="worked-example-heading-2">
-<p class="learning-block__label">먼저 설명하기</p>
-<h3 id="worked-example-heading-2">자기설명</h3>
-<p>수령일부터 착수일까지 17일, 연기신청과 무결정, 착수 후 예외메모를 각각 판단한다.</p>
-</section>
-<details class="reveal-block reveal-block--model-explanation">
-<summary>모범 판단 과정 펼치기</summary>
-<div class="reveal-block__body">
-<section class="learning-block learning-block--worked-reasoning" aria-labelledby="worked-example-heading-3">
-<p class="learning-block__label">전문가 판단 과정</p>
-<h3 id="worked-example-heading-3">전문가 판단 과정</h3>
-<p>8월 15일에서 9월 1일까지는 20일 전 조건을 충족하지 못한다. 8월 20일 연기신청에 대한 결정도 없고 증거인멸 우려는 착수 후 작성되어 통지 예외의 당시성을 뒷받침하지 못한다. 절차상 하자를 조사결과와 분리해 기록해야 한다.</p>
-</section>
-</div>
-</details>
-</section>
-  </section>
-
-  <section class="reader-block reader-block--audit" id="audit" aria-labelledby="audit-title">
-    <h2 id="audit-title"><span class="heading-sequence">05 / 조사·증빙</span>세무조사 증빙 실습</h2>
-    <div class="audit-summary">
+  <section class="reader-block reader-block--connections" id="connections" aria-labelledby="connections-title">
+  <h2 id="connections-title"><span class="heading-sequence">02 / 연결</span>판례·조사·회계 연결</h2>
+  <p class="block-lead">각 단계에서 확인한 결론을 공식 판례, 조사 가설과 증빙, 장부·세무조정으로 한 번 더 검증합니다.</p>
+  <div class="audit-summary">
   <div><p class="mini-label">조사 가설</p><p>착수 전 구체적 증거인멸 우려가 결재되어 사전통지 예외가 인정되고 연기신청도 적법하게 처리됐다.</p></div>
   <div><p class="mini-label">반대 가설</p><p>수령일부터 착수일까지 17일뿐이고 연기결정이 없으며 예외메모도 착수 뒤 작성되어 절차요건을 충족하지 못했다.</p></div>
   <div><p class="mini-label">먼저 확인할 자료</p><ul class="evidence-list"><li>사전통지서·송달증·착수보고</li><li>연기신청서·증빙·결정서·통지로그</li><li>예외검토서 원본·결재시각·첨부자료 생성시각</li><li>조사결과 통지서와 과세예고통지서</li><li>과세전적부심사 접수·결정과 재처분 타임라인</li></ul></div>
 </div>
-    <section class="lesson-section" id="audit-evidence" aria-labelledby="audit-evidence-title">
-<h2 id="audit-evidence-title">4. 세무조사 증빙 실습 — 8분</h2>
-<h3 id="audit-evidence-heading-1">결론을 가린 사건</h3>
-<p>비식별 AD는 2026-08-15 통지를 받고 2026-09-01 착수 통보를 받았다. 조사팀은 8월 14일 작성된 예외검토서가 있다고 주장하지만 결재시각이 지워져 있다.</p>
-<p>결론을 보지 말고 어느 사실이 법적 경계를 바꾸는지 먼저 적는다.</p>
-<section class="learning-block learning-block--hypotheses" aria-labelledby="audit-evidence-heading-2">
-<p class="learning-block__label">경쟁 가설</p>
-<h3 id="audit-evidence-heading-2">경쟁 가설</h3>
-<ul>
-<li>조사 가설: 과세관청은 구체적 증거인멸 우려 때문에 20일 전 통지가 불필요했다고 본다.</li>
-<li>납세자 가설: 납세자는 예외기록의 당시성이 없고 연기신청도 처리되지 않았다고 본다.</li>
-</ul>
-</section>
-<h3 id="audit-evidence-heading-3">증빙 판단표</h3>
-<div class="table-wrap">
-<table>
-<thead>
-<tr>
-<th>법적 요건</th>
-<th>주장 사실</th>
-<th>확인 자료</th>
-<th>지지하는 실제 가설</th>
-<th>신뢰도·공백</th>
-<th>추가 확인</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="법적 요건">20일 사전통지</td>
-<td data-label="주장 사실">2026-08-15 수령 뒤 2026-09-01 착수했다</td>
-<td data-label="확인 자료">사전통지서·송달증·착수보고</td>
-<td data-label="지지하는 실제 가설">20일 미충족 가설</td>
-<td data-label="신뢰도·공백">공식 날짜가 직접 비교되지만 별도 예외가 남는다</td>
-<td data-label="추가 확인">초일·착수일을 포함한 계산근거를 표시한다</td>
-</tr>
-<tr>
-<td data-label="법적 요건">연기절차</td>
-<td data-label="주장 사실">신청은 있었지만 결정이 통지되지 않았다</td>
-<td data-label="확인 자료">연기신청서·연기결정서</td>
-<td data-label="지지하는 실제 가설">연기 미처리 가설</td>
-<td data-label="신뢰도·공백">접수증은 신청을, 빈 결정대장은 무처리를 각각 지지한다</td>
-<td data-label="추가 확인">접수 후 결재·통지 로그를 조회한다</td>
-</tr>
-<tr>
-<td data-label="법적 요건">통지 예외</td>
-<td data-label="주장 사실">증거인멸 우려가 착수 전에 구체적으로 확인됐다</td>
-<td data-label="확인 자료">예외검토서·결재로그</td>
-<td data-label="지지하는 실제 가설">사전통지 예외 가설</td>
-<td data-label="신뢰도·공백">문서일자만 있고 전자 결재시각이 없으면 당시성이 약하다</td>
-<td data-label="추가 확인">원본 속성과 첨부자료 생성시각을 대사한다</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="table-wrap">
-<table>
-<thead>
-<tr>
-<th>절차 단계</th>
-<th>담당 주체</th>
-<th>서류</th>
-<th>기한</th>
-<th>조사·불복상 확인점</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="절차 단계">착수 적법성 점검</td>
-<td data-label="담당 주체">조사책임자와 보호담당</td>
-<td data-label="서류">통지·연기·예외 연표</td>
-<td data-label="기한">조사 착수 전</td>
-<td data-label="조사·불복상 확인점">20일과 예외결재를 착수 전에 확인한다</td>
-</tr>
-</tbody>
-</table>
-</div>
-<section class="learning-block learning-block--prompt" aria-labelledby="audit-evidence-heading-4">
-<p class="learning-block__label">먼저 판단하기</p>
-<h3 id="audit-evidence-heading-4">학습자 잠정 결론</h3>
-<p>가설 하나를 고르고 그 결론을 바꿀 미확인 문서와 이유를 한 문장으로 쓴다.</p>
-</section>
-<details class="reveal-block reveal-block--feedback">
-<summary>전문가 피드백 펼치기</summary>
-<div class="reveal-block__body">
-<h3 id="audit-evidence-heading-5">전문가 피드백</h3>
-<p>현재는 20일 미충족, 연기 무결정, 예외 당시성 미확인이다. 조사팀은 착수 전 구체적 증거인멸 자료와 결재를 제시해야 한다.</p>
-</div>
-</details>
-</section>
-  </section>
 
-  <section class="reader-block reader-block--precedent" id="precedents" aria-labelledby="precedents-title">
-    <h2 id="precedents-title"><span class="heading-sequence">06 / 경계선</span>관련 중요 판례</h2>
-    <ol class="precedent-ledger"><li class="precedent-row">
+  <div class="connection-precedents" id="precedents">
+    <h3>관련 중요 판례</h3>
+    <ol class="precedent-ledger"><li class="precedent-row" id="case-latest-2026두30542-2026-08-13">
   <div class="precedent-row__head"><span class="case-number">2026두30542</span><span>대법원 · 2026-08-13</span></div>
   <h3>관련 판례</h3>
   <p>공식 판결문에서 판시내용을 확인하세요.</p>
-  
+
   <p class="source-link"><a href="https://www.scourt.go.kr/sjudge/1787793813825_102333.pdf" rel="noopener noreferrer">공식 판결문 열기</a></p>
-</li><li class="precedent-row">
+</li><li class="precedent-row" id="case-latest-2025두34254-2025-12-04">
   <div class="precedent-row__head"><span class="case-number">2025두34254</span><span>대법원 · 2025-12-04</span></div>
   <h3>관련 판례</h3>
   <p>공식 판결문에서 판시내용을 확인하세요.</p>
-  
+
   <p class="source-link"><a href="https://www.scourt.go.kr/sjudge/1765430391637_141951.pdf" rel="noopener noreferrer">공식 판결문 열기</a></p>
-</li><li class="precedent-row">
+</li><li class="precedent-row" id="case-SC-2016DU55421-2017-12-13">
   <div class="precedent-row__head"><span class="case-number">2016두55421</span><span>대법원 · 2017-12-13</span></div>
   <h3>양도소득세부과처분취소(금지된 재조사의 효력)</h3>
   <p>허용사유 없는 같은 세목·과세기간 재조사에 기한 처분은 원칙적으로 그 자체가 위법하고 재조사 자료를 배제해도 같은 처분이 가능하다는 사정만으로 달라지지 않는다고 보았다.</p>
   <ul class="case-facts"><li>최초 조사에서 공사비 필요경비를 인정하고 조사를 종결했다.</li><li>업무감사 지시 뒤 조사공무원이 다시 현장을 방문해 진술서와 장부를 받았다.</li><li>재조사는 법에 열거된 예외사유에 해당하지 않았다.</li></ul>
   <p class="source-link"><a href="https://www.law.go.kr/LSW/precInfoP.do?precSeq=186499" rel="noopener noreferrer">공식 판결문 열기</a></p>
-</li><li class="precedent-row">
+</li><li class="precedent-row" id="case-latest-2025다210837-2026-04-30">
   <div class="precedent-row__head"><span class="case-number">2025다210837</span><span>대법원 · 2026-04-30</span></div>
   <h3>관련 판례</h3>
   <p>공식 판결문에서 판시내용을 확인하세요.</p>
-  
+
   <p class="source-link"><a href="https://www.scourt.go.kr/sjudge/1778491333352_182213.pdf" rel="noopener noreferrer">공식 판결문 열기</a></p>
-</li><li class="precedent-row">
-  <div class="precedent-row__head"><span class="case-number">2026두30542</span><span>대법원 · 2026-08-13</span></div>
-  <h3>과세전적부심사 기회를 부여하지 않은 당초 처분이 취소된 뒤 하자를 보완한 재처분의 허용 범위, 세무조사 결과 통지기한 위반의 효력, 과세전적부심사 결정 전 처분 유보의무가 문제 된 사건이다.</h3>
-  <p>대법원은 과세전적부심사 기회를 주지 않은 당초 처분을 취소한 뒤 절차상 하자를 보완하여 재처분하는 것은 원칙적으로 허용되고, 조사결과 통지기한을 위반한 처분은 원칙적으로 위법하며, 과세전적부심사 청구가 있으면 결정 시점까지 처분을 유보해야 한다고 판시하였다. 다만 이 사건에서는 지연된 재통지 뒤에도 납세자가 실제로 과세전적부심사를 청구·행사하고 그 결정 후 재처분이 이루어진 특별한 사정이 있어 재처분을 적법하다고 보아 상고를 기각하였다.</p>
-  
-  <p class="source-link"><a href="https://www.scourt.go.kr/sjudge/1787793813825_102333.pdf" rel="noopener noreferrer">공식 판결문 열기</a></p>
-</li><li class="precedent-row">
-  <div class="precedent-row__head"><span class="case-number">2025두34254</span><span>대법원 · 2025-12-04</span></div>
-  <h3>과세예고통지와 같은 날 과세처분을 하여 납세자의 과세전적부심사 기회를 침해한 하자가 처분의 무효사유인지와, 감면세액 추징의 부과제척기간 기산일이 문제 된 사건이다.</h3>
-  <p>대법원은 과세예고와 같은 날 처분하여 과세전적부심사 기회를 침해한 하자가 중대하고 명백하여 처분이 무효라고 보았다. 또한 구 국세기본법 시행령 제12조의3 제2항 제3호의 ‘징수할 수 있는 사유가 발생한 날’은 2017년 7월 5일 수도권 재이전일이 아니라 과세관청이 징수절차에 나아갈 수 있는 2017 사업연도 신고기한 다음 날인 2018년 4월 1일이라고 판시하여 상고를 기각하였다.</p>
-  
-  <p class="source-link"><a href="https://www.scourt.go.kr/sjudge/1765430391637_141951.pdf" rel="noopener noreferrer">공식 판결문 열기</a></p>
 </li></ol>
-    <section class="lesson-section" id="precedent" aria-labelledby="precedent-title">
-<h2 id="precedent-title">6. 중요 판례 예측과 해설 — 5분</h2>
-<h3 id="precedent-heading-1">판례를 먼저 쉽게</h3>
-<p>연결된 특정 판결 없이 제81조의7·제81조의8 절차를 날짜순으로 학습한다.</p>
-<section class="learning-block learning-block--prompt" aria-labelledby="precedent-heading-2">
-<p class="learning-block__label">먼저 예측하기</p>
-<h3 id="precedent-heading-2">결론 전 예측</h3>
-<p>예외검토서가 착수 전 결재됐다는 로그가 나오면 어느 결론만 바뀌는지 예측한다.</p>
+  </div>
 </section>
-<details class="reveal-block reveal-block--precedent">
-<summary>판례 결론과 이유 펼치기</summary>
-<div class="reveal-block__body">
-<h3 id="precedent-heading-3">법원 결론과 이유</h3>
-<p>개별 판결 주문은 없다. 사전통지 예외와 연기처리는 독립적으로 증명해야 한다.</p>
-<h3 id="precedent-heading-4">구별 사실과 한계</h3>
-<p>예외가 인정되어도 조사범위·기간·권리보호 등 다른 절차요건까지 면제되는 것은 아니다.</p>
-<h3 id="precedent-heading-5">후속 상태</h3>
-<p>기준일 현재 현행 조문과 합성 날짜를 사용했다.</p>
-</div>
-</details>
+  <section class="reader-block reader-block--changes" id="changes" aria-labelledby="changes-title">
+  <h2 id="changes-title"><span class="heading-sequence">03 / 전이</span>사실이 달라지면</h2>
+  <p class="block-lead">기본 사실에서 한 가지 조건만 바꿔 결론이 이동하는 지점을 확인합니다.</p>
+  <div class="changes-callout"><p>구체적인 증거인멸 우려가 착수 전에 작성·결재되고 원자료도 첨부됐다. 사전통지 예외를 인정할 여지가 생긴다. 그러나 연기신청에 대한 결정·통지 여부는 별도로 남는다.</p></div>
 </section>
-  </section>
-
-  
-
-  <section class="reader-block reader-block--recall" id="recall" aria-labelledby="recall-title">
-    <h2 id="recall-title"><span class="heading-sequence">07 / 다시 말하기</span>오늘의 회상</h2>
-    <p class="block-lead">시험 답안처럼 외우기보다, 이 쟁점의 요건·결론을 바꾸는 사실·확인자료를 자신의 말로 다시 설명합니다.</p>
-    <section class="lesson-section" id="recall" aria-labelledby="recall-title">
-<h2 id="recall-title">7. 변형사례와 오늘의 회상 — 4분</h2>
-<section class="learning-block learning-block--transfer" aria-labelledby="recall-heading-1">
-<p class="learning-block__label">새 사실에 적용하기</p>
-<h3 id="recall-heading-1">변형사례</h3>
-<p>구체적인 증거인멸 우려가 착수 전에 작성·결재되고 원자료도 첨부됐다. 사전통지 예외를 인정할 여지가 생긴다. 그러나 연기신청에 대한 결정·통지 여부는 별도로 남는다.</p>
+  <section class="reader-block reader-block--summary" id="summary" aria-labelledby="summary-title">
+  <h2 id="summary-title"><span class="heading-sequence">04 / 마무리</span>마지막 정리</h2>
+  <div class="summary-callout"><p>세무조사 절차·사전통지·연기은(는) 조사대상 세목·기간·사유 등 기재사항을 갖춘 사전통지와 납세자의 법정 연기신청 절차를 확인한다 → 조사기간과 착수·연장 절차를 통지·연기·예외 기록과 날짜별로 대조한다 → 조사 종결 뒤 조사결과 통지의 법정 시점·내용과 예외를 확인하고, 통지서와 조사종결일을 대조한다 순서로 확인하고, 마지막에 사실·증빙의 반대 가능성을 점검한다.</p></div>
+  <div class="summary-prompts"><p class="step-label">스스로 다시 답하기</p><ul class="summary-question-list"><li>법리 구분: 사전통지의 기재사항·20일·예외를 어떻게 구별하는가?</li><li>증빙 선택: 통지서·연기신청서·연기결정서·예외검토서는 어떤 시점을 증명하는가?</li><li>새 사실 전이: 착수 전 증거인멸 자료가 확인되면 어떤 결론이 달라지는가?</li></ul></div>
 </section>
-<h3 id="recall-heading-2">오늘의 회상 3문항</h3>
-<ol>
-<li class="recall-question">법리 구분: 사전통지의 기재사항·20일·예외를 어떻게 구별하는가?</li>
-<li class="recall-question">증빙 선택: 통지서·연기신청서·연기결정서·예외검토서는 어떤 시점을 증명하는가?</li>
-<li class="recall-question">새 사실 전이: 착수 전 증거인멸 자료가 확인되면 어떤 결론이 달라지는가?</li>
-</ol>
-<section class="learning-block learning-block--confidence" aria-labelledby="recall-heading-3">
-<p class="learning-block__label">확신도 점검</p>
-<h3 id="recall-heading-3">확신도</h3>
-<p>세 답에 각각 0 모르겠다 / 1 불확실 / 2 확실을 표시한다. 0과 1은 해당 조문과 증빙 행으로 돌아가 다시 설명한다.</p>
-</section>
-<details class="reveal-block reveal-block--answer-key">
-<summary>답안 핵심요소 펼치기</summary>
-<div class="reveal-block__body">
-<h3 id="recall-heading-4">답안 핵심요소</h3>
-<ul>
-<li>법리 구분: 사전통지의 기재사항을 확인하고, 8월 15일 수령부터 9월 1일 착수까지는 20일 전 조건을 충족하지 못한다. 예외는 별도다.</li>
-<li>증빙 선택: 통지서는 수령을, 관련 기록은 연기신청·결정·예외사유의 시간 순서를 증명하며 예외검토서는 증거인멸 우려의 착수 전 존재를 보여 준다.</li>
-<li>새 사실 전이: 착수 전 구체적 예외자료라는 새 사실은 사전통지 예외를 인정할 여지를 만들지만 연기 무처리 결론은 바꾸지 않는다.</li>
-</ul>
-</div>
-</details>
-</section>
-  </section>
-
   <section class="reader-block reader-block--sources" id="sources" aria-labelledby="sources-title">
   <h2 id="sources-title"><span class="heading-sequence">검증 메모</span>출처와 기준일</h2>
   <p>법령 원문은 각 조문의 공식 링크에서, 학습 설명은 공개된 원자료 원고에서 가져왔습니다. 사건 당시 법령이 현행법과 다르면 판례 카드의 적용법 메모를 우선 확인하세요.</p>
-  <dl class="provenance-list"><div><dt>법령 자료 기준일</dt><dd>원자료 기록에 따름</dd></div><div><dt>학습 원고</dt><dd><code>lessons/material-ntba-audit-procedure-001.md</code></dd></div><div><dt>판례 자료 수</dt><dd>6건 직접 연결</dd></div></dl>
+  <dl class="provenance-list"><div><dt>법령 자료 기준일</dt><dd>원자료 기록에 따름</dd></div><div><dt>학습 원고</dt><dd><code>lessons/material-ntba-audit-procedure-001.md</code></dd></div><div><dt>판례 자료 수</dt><dd>4건 직접 연결</dd></div></dl>
   <ul class="source-list"><li>제81조의7 <a href="https://www.law.go.kr/법령/국세기본법/제81조의7" rel="noopener noreferrer">공식 원문</a></li><li>제81조의8 <a href="https://www.law.go.kr/법령/국세기본법/제81조의8" rel="noopener noreferrer">공식 원문</a></li><li>제81조의12 <a href="https://www.law.go.kr/법령/국세기본법/제81조의12" rel="noopener noreferrer">공식 원문</a></li><li>제81조의15 <a href="https://www.law.go.kr/법령/국세기본법/제81조의15" rel="noopener noreferrer">공식 원문</a></li></ul>
 </section>
 
