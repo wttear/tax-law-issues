@@ -45,6 +45,7 @@ Vercel 같은 서버 런타임으로 SSR·API를 사용할 수 있다. 그러나
 - React와 React DOM
 - TypeScript
 - Tailwind CSS v4 + PostCSS (`app/globals.css`에서 `@import "tailwindcss"`로 로드)
+- shadcn/ui: 저장소에 복사해 소유하는 UI primitives
 - JSON 콘텐츠 스냅샷
 - Python 3 표준 라이브러리: 기존 원천자료 추출·콘텐츠 재생성
 - Node.js LTS와 npm lockfile
@@ -85,9 +86,12 @@ GitHub Pages Actions → https://wttear.github.io/tax-law-issues/
 - `app/not-found.tsx`: 존재하지 않는 쟁점 경로의 읽기 쉬운 404와 대장 복귀 링크
 - `components/issue-browser.tsx`: 검색어·법률 필터·결과 수를 관리하는 유일한 클라이언트 컴포넌트
 - `components/issue-reader.tsx`: 사실관계, 질문 블록, 조문 `details`, 판례·조사·회계 카드를 표시
+- `components/ui/`: shadcn/ui에서 생성한 `button`, `input`, `select`, `badge`, `card`, `separator` 컴포넌트
 - `lib/content.ts`: JSON 로드, 법률별 목록, issue ID 조회, 공식 URL 허용목록, 필수 구조 검증
+- `lib/utils.ts`: shadcn/ui가 사용하는 `cn()` 클래스 병합 함수
 - `types/content.ts`: 법률·쟁점·질문 블록·조문·판례의 타입
-- `app/globals.css`: Tailwind import, 석재·종이·잉크 색상 토큰, 기본 타이포그래피·접근성 규칙. 기존 `src/site.css`의 컴포넌트 규칙은 JSX의 Tailwind 유틸리티 클래스로 옮긴다.
+- `components.json`: shadcn/ui 경로 별칭과 스타일 설정
+- `app/globals.css`: Tailwind import, shadcn 색상 토큰을 석재·종이·잉크 팔레트로 재정의, 기본 타이포그래피·접근성 규칙. 기존 `src/site.css`의 컴포넌트 규칙은 JSX의 Tailwind 유틸리티 클래스로 옮긴다.
 - `postcss.config.mjs`: Tailwind CSS v4의 `@tailwindcss/postcss` 플러그인 설정
 - `next.config.mjs`: 정적 export, `basePath: '/tax-law-issues'`, `trailingSlash: true`, 정적 이미지 설정
 - `.github/workflows/deploy-pages.yml`: Node 설치, `npm ci`, 콘텐츠 생성, Next 빌드, `out/` Pages artifact 업로드·배포
@@ -95,6 +99,12 @@ GitHub Pages Actions → https://wttear.github.io/tax-law-issues/
 기존 `src/site.js`의 검색·필터 로직은 `issue-browser.tsx`로 옮기되, 서버가 모든 행과 실제 링크를 먼저 출력한다. 따라서 JavaScript가 꺼져도 목록·제목·상세 링크·원문 링크는 읽을 수 있다.
 
 Tailwind는 공식 Next.js 연동 방식인 PostCSS 플러그인을 사용한다. `@import "tailwindcss"`로 빌드 시 CSS를 생성하며 CDN이나 브라우저 런타임 Tailwind를 사용하지 않는다. 색상·간격·반응형 중단점은 `globals.css`의 `@theme` 토큰과 정적 유틸리티 클래스 조합으로 관리하고, 동적 검색어를 클래스명으로 만들지 않는다.
+
+### shadcn/ui 사용 원칙
+
+shadcn/ui는 별도 SaaS나 닫힌 컴포넌트 패키지를 호출하는 방식이 아니라, CLI로 생성한 컴포넌트 소스가 저장소에 들어오는 방식을 사용한다. 따라서 필요한 컴포넌트만 추가하고 코드를 직접 수정할 수 있다. 이번 사이트에서는 검색 입력에 `Input`, 법률 선택에 `Select`, 모듈 라벨에 `Badge`, 판례·조사·회계 묶음에 `Card`, 주요 이동과 복귀에 `Button`, 구획선에 `Separator`를 사용한다. 법령 원문 접기와 펼치기는 JavaScript가 꺼져도 읽혀야 하므로 shadcn Accordion으로 대체하지 않고 native `<details>`를 유지한다.
+
+기본 shadcn 색상과 둥근 카드 스타일을 그대로 적용하지 않는다. `globals.css`의 CSS 변수와 Tailwind 유틸리티로 기존 대장의 종이·석재·잉크·공식 파랑 팔레트를 주입하고, 모서리·테두리·간격을 조정해 법률 대장이라는 시각 언어를 유지한다. `components/ui`는 상호작용·접근성 primitive의 책임만 맡고, 쟁점 행과 읽기 순서는 도메인 컴포넌트에서 명시적으로 구성한다.
 
 ## 라우팅과 정적 생성
 
@@ -136,6 +146,7 @@ GitHub Free 공개 저장소의 GitHub Pages를 사용한다. Actions는 `out/`�
 - 상세 원문은 브라우저 기본 `<details>`로 열고 닫으며, JavaScript 없이도 전체 문서가 접근 가능하다.
 - 외부 공식 링크에는 `rel="noopener noreferrer"`와 명확한 링크 라벨을 둔다.
 - Tailwind의 `sr-only`, `focus-visible`, 반응형 유틸리티를 사용해 시각적 숨김·키보드 초점·390px 레이아웃을 일관되게 유지한다.
+- shadcn 컴포넌트의 키보드 조작·aria 속성을 보존하고, `Button`·`Input`·`Select`에 44px 이상 터치 영역과 명확한 레이블을 제공한다.
 
 ## 검증 기준
 
@@ -147,6 +158,7 @@ GitHub Free 공개 저장소의 GitHub Pages를 사용한다. Actions는 `out/`�
 - 대표 상세 페이지와 404 페이지에 하나의 `h1`, 스킵 링크, 사실관계·질문별 판단·공식 출처가 있다.
 - 콘텐츠 검증 테스트와 기존 원천 데이터 검증 테스트가 모두 통과한다.
 - 빌드 산출물에 `localStorage`, 로그인·완료 상태, `localhost`, `file://`, 허용목록 밖의 외부 링크가 없다.
+- shadcn 컴포넌트가 저장소의 `components/ui`에서 import되고 CDN·원격 UI 번들을 참조하지 않는다.
 - JavaScript를 비활성화해도 모든 쟁점 행과 상세 페이지를 읽을 수 있다.
 - 로컬 정적 서버에서 `/`, 대표 issue URL, 존재하지 않는 issue URL이 각각 기대한 상태 코드와 본문을 반환한다.
 - GitHub Pages 공개 주소에서 루트와 대표 issue URL을 모바일 폭으로 확인하고, 기존 주소가 새 Next.js 산출물을 제공한다.
