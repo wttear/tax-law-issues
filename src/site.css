@@ -701,6 +701,30 @@ input::placeholder {
   white-space: nowrap;
 }
 
+.step-kind {
+  display: inline-block;
+  margin: 0 0.42rem 0.12rem 0;
+  border: 1px solid var(--teal);
+  border-radius: 999px;
+  padding: 0.08rem 0.38rem;
+  color: var(--teal);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  line-height: 1.35;
+  vertical-align: 0.08em;
+}
+
+.step-kind--calculation {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.step-kind--change {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
 .step-body {
   padding: 0 0.85rem 1rem;
 }

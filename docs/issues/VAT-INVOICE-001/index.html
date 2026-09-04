@@ -47,11 +47,11 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <h2 id="steps-title"><span class="heading-sequence">02 / 확인</span>질문별 판단</h2>
     <p class="block-lead">각 질문은 위 사실관계의 한 부분을 가리킵니다. 조문은 필요한 질문 안에서만 접혀 있습니다.</p>
     <div class="issue-steps"><details class="issue-step" id="step-1" open>
-  <summary><span class="step-number">질문 01</span><strong>실제 공급과 필요적 기재사항이 일치하는가, 불일치한다면 제39조의 불공제 원칙 또는 확인 가능한 예외 중 무엇이 적용되는가?</strong></summary>
+  <summary><span class="step-number">질문 01</span><strong><span class="step-kind step-kind--calculation">계산</span>매입세액 500,000원 - 사실과 다른 세금계산서 불공제 500,000원을 계산하면 공제세액은 얼마인가?</strong></summary>
   <div class="step-body">
     <div class="step-fact">
       <p class="step-label">판단할 사실 범위</p>
-      <p>사실관계의 핵심 거래와 처분</p>
+      <p>사실관계 중 금액·기간·산식</p>
     </div>
     <details class="step-law">
       <summary>관련 조문 보기 <span aria-hidden="true">＋</span></summary>
@@ -76,11 +76,14 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <p class="step-label">확인할 증빙</p>
   <ul class="step-evidence-list"><li>전자세금계산서 XML·발급로그·작성권한 IP</li></ul>
 </div>
-
+    <div class="step-accounting">
+  <p class="step-label">회계·세무조정 연결</p>
+  <p>매입 전표에서 공급가액은 자산·비용 계정에, 적격 세금계산서 세액은 부가세대급금에 기록하되 공급자·작성일자 검증이 끝나지 않은 세액은 공제대상 보조부에서 보류 표시한다. XML 필요적 기재사항과 계약·운송·검수·금융거래를 거래키로 묶어 매입보조부의 부가세대급금, 별지 제39호 합계표, 별지 제21호 매입세액을 대사한다. 사실과 다른 세금계산서로 확정되면 해당 부가세대급금을 공제받지 못할 매입세액으로 전환하고 제38조 공제액에서 차감한다. 거래사실과 법정 예외가 확인되면 그 범위만 공제한다.</p>
+</div>
 
   </div>
 </details><details class="issue-step" id="step-2">
-  <summary><span class="step-number">질문 02</span><strong>실제 도매상과 XML상 유통사가 다른 500,000원 매입세액을 제39조에 따라 공제할 수 있는지를 어떤 순서로 판단할까요?</strong></summary>
+  <summary><span class="step-number">질문 02</span><strong><span class="step-kind step-kind--rule">법리</span>제32조·제39조·제75조의 불공제 요건과 예외는 무엇인가?</strong></summary>
   <div class="step-body">
     <div class="step-fact">
       <p class="step-label">판단할 사실 범위</p>
@@ -102,12 +105,78 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </details>
     <div class="step-answer">
       <p class="step-label">답과 해설</p>
-      <p class="step-answer__headline">500,000원은 별지 제39호 거래처 자료와 별지 제21호 공제 매입세액 사이에서 제거한다.</p>
+      <p class="step-answer__headline">법 제32조 필요적 기재, 제39조 불공제, 영 제75조 예외를 차례로 쓴다</p>
       <p>거래 실재와 필요적 기재사항, 법정 예외를 따로 확인한다.</p>
     </div>
     <div class="step-evidence">
   <p class="step-label">확인할 증빙</p>
-  <ul class="step-evidence-list"><li>계약서·발주서·운송장·검수서</li><li>거래대금 금융흐름과 환급계좌</li><li>거래처 등록자료와 매입처별 합계표</li><li>명의자와 실제 운영자의 자금·의사결정 기록</li></ul>
+  <ul class="step-evidence-list"><li>계약서·발주서·운송장·검수서</li></ul>
+</div>
+
+
+  </div>
+</details><details class="issue-step" id="step-3">
+  <summary><span class="step-number">질문 03</span><strong><span class="step-kind step-kind--evidence">증빙</span>계근 화주코드·재고 소유권 로그·마진정산 은행자료 등 자료는 사실관계의 어느 부분을 입증하는가?</strong></summary>
+  <div class="step-body">
+    <div class="step-fact">
+      <p class="step-label">판단할 사실 범위</p>
+      <p>사실관계 중 결론을 입증하는 자료</p>
+    </div>
+    <details class="step-law">
+      <summary>관련 조문 보기 <span aria-hidden="true">＋</span></summary>
+      <div class="step-law__body">
+        <ul class="step-law-ref-list"><li>부가가치세법 제39조</li></ul>
+        <div class="article-stack"><details class="article-record">
+  <summary><span>제39조</span><strong>공제하지 아니하는 매입세액</strong><em>현행 · 시행 2026-01-02</em></summary>
+  <div class="article-record__body">
+    <p class="source-label">국가법령정보센터 원문</p>
+    <div class="law-source-text">제39조(공제하지 아니하는 매입세액)<br>① 제38조에도 불구하고 다음 각 호의 매입세액은 매출세액에서 공제하지 아니한다. &lt;개정 2017.12.19, 2019.12.31, 2022.12.31&gt;<br>1. 제54조제1항 및 제3항에 따라 매입처별 세금계산서합계표를 제출하지 아니한 경우의 매입세액 또는 제출한 매입처별 세금계산서합계표의 기재사항 중 거래처별 등록번호 또는 공급가액의 전부 또는 일부가 적히지 아니하였거나 사실과 다르게 적힌 경우 그 기재사항이 적히지 아니한 부분 또는 사실과 다르게 적힌 부분의 매입세액. 다만, 대통령령으로 정하는 경우의 매입세액은 제외한다.<br>2. 세금계산서 또는 수입세금계산서를 발급받지 아니한 경우 또는 발급받은 세금계산서 또는 수입세금계산서에 제32조제1항제1호부터 제4호까지의 규정에 따른 기재사항(이하 &quot;필요적 기재사항&quot;이라 한다)의 전부 또는 일부가 적히지 아니하였거나 사실과 다르게 적힌 경우의 매입세액(공급가액이 사실과 다르게 적힌 경우에는 실제 공급가액과 사실과 다르게 적힌 금액의 차액에 해당하는 세액을 말한다). 다만, 대통령령으로 정하는 경우의 매입세액은 제외한다.<br>3. 삭제&lt;2014.1.1&gt;<br>4. 사업과 직접 관련이 없는 지출로서 대통령령으로 정하는 것에 대한 매입세액<br>5. 「개별소비세법」 제1조제2항제3호에 따른 자동차(운수업, 자동차판매업 등 대통령령으로 정하는 업종에 직접 영업으로 사용되는 것은 제외한다)의 구입과 임차 및 유지에 관한 매입세액<br>6. 기업업무추진비 및 이와 유사한 비용으로서 대통령령으로 정하는 비용의 지출에 관련된 매입세액<br>7. 면세사업등에 관련된 매입세액(면세사업등을 위한 투자에 관련된 매입세액을 포함한다)과 대통령령으로 정하는 토지에 관련된 매입세액<br>8. 제8조에 따른 사업자등록을 신청하기 전의 매입세액. 다만, 공급시기가 속하는 과세기간이 끝난 후 20일 이내에 등록을 신청한 경우 등록신청일부터 공급시기가 속하는 과세기간 기산일(제5조제1항에 따른 과세기간의 기산일을 말한다)까지 역산한 기간 내의 것은 제외한다.<br>② 제1항에 따라 공제되지 아니하는 매입세액의 범위에 관하여 필요한 사항은 대통령령으로 정한다.</div>
+    <p class="source-link"><a href="https://www.law.go.kr/법령/부가가치세법/제39조" rel="noopener noreferrer">공식 조문 열기</a></p>
+  </div>
+</details></div>
+      </div>
+    </details>
+    <div class="step-answer">
+      <p class="step-label">답과 해설</p>
+      <p class="step-answer__headline">계근 화주코드·재고 소유권 로그·마진정산 은행자료가 핵심 독립증거다</p>
+      <p>세금계산서에 거래가 적혀 있어도 실제 공급자·공급받는 자·공급가액·작성일자가 사실과 다르면 매입세액 공제가 제한될 수 있다.</p>
+    </div>
+    <div class="step-evidence">
+  <p class="step-label">확인할 증빙</p>
+  <ul class="step-evidence-list"><li>전자세금계산서 XML·발급로그·작성권한 IP</li><li>계약서·발주서·운송장·검수서</li><li>거래대금 금융흐름과 환급계좌</li><li>거래처 등록자료와 매입처별 합계표</li><li>명의자와 실제 운영자의 자금·의사결정 기록</li></ul>
+</div>
+
+
+  </div>
+</details><details class="issue-step" id="step-4">
+  <summary><span class="step-number">질문 04</span><strong><span class="step-kind step-kind--change">조건 변경</span>선매입과 손실부담이 추가되면 결론은 어떻게 달라지는가?</strong></summary>
+  <div class="step-body">
+    <div class="step-fact">
+      <p class="step-label">판단할 사실 범위</p>
+      <p>사실관계에서 결론을 바꾸는 조건</p>
+    </div>
+    <details class="step-law">
+      <summary>관련 조문 보기 <span aria-hidden="true">＋</span></summary>
+      <div class="step-law__body">
+        <ul class="step-law-ref-list"><li>부가가치세법 제32조</li></ul>
+        <div class="article-stack"><details class="article-record">
+  <summary><span>제32조</span><strong>세금계산서 등</strong><em>현행 · 시행 2026-01-02</em></summary>
+  <div class="article-record__body">
+    <p class="source-label">국가법령정보센터 원문</p>
+    <div class="law-source-text">제32조(세금계산서 등)<br>① 사업자가 재화 또는 용역을 공급(부가가치세가 면제되는 재화 또는 용역의 공급은 제외한다)하는 경우에는 다음 각 호의 사항을 적은 계산서(이하 &quot;세금계산서&quot;라 한다)를 그 공급을 받는 자에게 발급하여야 한다.<br>1. 공급하는 사업자의 등록번호와 성명 또는 명칭<br>2. 공급받는 자의 등록번호. 다만, 공급받는 자가 사업자가 아니거나 등록한 사업자가 아닌 경우에는 대통령령으로 정하는 고유번호 또는 공급받는 자의 주민등록번호<br>3. 공급가액과 부가가치세액<br>4. 작성 연월일<br>5. 그 밖에 대통령령으로 정하는 사항<br>② 법인사업자와 대통령령으로 정하는 개인사업자는 제1항에 따라 세금계산서를 발급하려면 대통령령으로 정하는 전자적 방법으로 세금계산서(이하 &quot;전자세금계산서&quot;라 한다)를 발급하여야 한다.<br>③ 제2항에 따라 전자세금계산서를 발급하였을 때에는 대통령령으로 정하는 기한까지 대통령령으로 정하는 전자세금계산서 발급명세를 국세청장에게 전송하여야 한다.<br>④ 제2항에도 불구하고 「전기사업법」 제2조제2호에 따른 전기사업자가 산업용 전력을 공급하는 경우 등 대통령령으로 정하는 경우 해당 사업자는 대통령령으로 정하는 바에 따라 전자세금계산서임을 적은 계산서를 발급하고 전자세금계산서 파일을 국세청장에게 전송할 수 있다. 이 경우 제2항에 따라 전자세금계산서를 발급하고 제3항에 따른 발급명세를 전송한 것으로 본다.<br>⑤ 전자세금계산서를 발급하여야 하는 사업자가 아닌 사업자도 제2항 및 제3항에 따라 전자세금계산서를 발급하고 전자세금계산서 발급명세를 전송할 수 있다.<br>⑥ 위탁판매 또는 대리인에 의한 판매 등 대통령령으로 정하는 경우에는 제1항에도 불구하고 해당 재화 또는 용역을 공급하는 자이거나 공급받는 자가 아닌 경우에도 대통령령으로 정하는 바에 따라 세금계산서 또는 전자세금계산서를 발급하거나 발급받을 수 있다.<br>⑦ 세금계산서 또는 전자세금계산서의 기재사항을 착오로 잘못 적거나 세금계산서 또는 전자세금계산서를 발급한 후 그 기재사항에 관하여 대통령령으로 정하는 사유가 발생하면 대통령령으로 정하는 바에 따라 수정한 세금계산서(이하 &quot;수정세금계산서&quot;라 한다) 또는 수정한 전자세금계산서(이하 &quot;수정전자세금계산서&quot;라 한다)를 발급할 수 있다.<br>⑧ 세금계산서, 전자세금계산서, 수정세금계산서 및 수정전자세금계산서의 작성과 발급에 필요한 사항은 대통령령으로 정한다.</div>
+    <p class="source-link"><a href="https://www.law.go.kr/법령/부가가치세법/제32조" rel="noopener noreferrer">공식 조문 열기</a></p>
+  </div>
+</details></div>
+      </div>
+    </details>
+    <div class="step-answer">
+      <p class="step-label">답과 해설</p>
+      <p class="step-answer__headline">선매입과 손실부담이 추가되면 공급자 불일치가 해소되어 500,000원 공제 가능성을 재계산한다</p>
+      <p>거래 실재와 필요적 기재사항, 법정 예외를 따로 확인한다.</p>
+    </div>
+    <div class="step-evidence">
+  <p class="step-label">확인할 증빙</p>
+  <ul class="step-evidence-list"><li>거래처 등록자료와 매입처별 합계표</li></ul>
 </div>
     <div class="step-accounting">
   <p class="step-label">회계·세무조정 연결</p>
@@ -182,7 +251,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </section>
   <section class="reader-block reader-block--summary" id="summary" aria-labelledby="summary-title">
   <h2 id="summary-title"><span class="heading-sequence">05 / 마무리</span>마지막 정리</h2>
-  <div class="summary-callout"><p>사실과 다른 세금계산서: 세금계산서 발급·기재, 매입세액 공제 원칙, 사실과 다른 필요적 기재사항의 불공제와 예외를 순서대로 판단한다. 이 사실관계의 결론은 500,000원은 별지 제39호 거래처 자료와 별지 제21호 공제 매입세액 사이에서 제거한다.</p></div>
+  <div class="summary-callout"><p>사실과 다른 세금계산서: 세금계산서 발급·기재, 매입세액 공제 원칙, 사실과 다른 필요적 기재사항의 불공제와 예외를 순서대로 판단한다. 이 사실관계의 결론은 선매입과 손실부담이 추가되면 공급자 불일치가 해소되어 500,000원 공제 가능성을 재계산한다</p></div>
   <div class="summary-prompts"><p class="step-label">스스로 다시 답하기</p><ul class="summary-question-list"><li>실제 도매상과 XML상 유통사가 다른 500,000원 매입세액을 제39조에 따라 공제할 수 있는지를 어떤 순서로 판단할까요?</li><li>경쟁가설을 가를 주요 원본 자료는 무엇일까요?</li><li>조건이 바뀌면 사실과 다른 세금계산서와 매입세액 불공제 계산과 별지 제21호서식 일반과세자 부가가치세 신고서 신고위치는 어떻게 달라지는가?</li></ul></div>
 </section>
   <section class="reader-block reader-block--sources" id="sources" aria-labelledby="sources-title">

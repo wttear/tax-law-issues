@@ -36,6 +36,12 @@ STATUS_LABELS = {
     "source_only": "원문",
     "historical": "과거 기준",
 }
+JUDGMENT_TYPE_LABELS = {
+    "rule": "법리",
+    "calculation": "계산",
+    "evidence": "증빙",
+    "change": "조건 변경",
+}
 
 
 def esc(value: Any) -> str:
@@ -356,6 +362,8 @@ def render_step(
 ) -> str:
     block_no = int(step.get("block_no") or step.get("step_no") or 0)
     open_attr = " open" if block_no == 1 else ""
+    judgment_type = str(step.get("judgment_type") or "")
+    judgment_label = JUDGMENT_TYPE_LABELS.get(judgment_type, "판단")
     article_ids = [
         str(value)
         for value in step.get("article_ids", [])
@@ -382,7 +390,7 @@ def render_step(
 </div>'''
     legal_refs = list_items(step.get("legal_refs"), "step-law-ref-list")
     return f'''<details class="issue-step" id="step-{block_no}"{open_attr}>
-  <summary><span class="step-number">질문 {block_no:02d}</span><strong>{esc(step.get("question"))}</strong></summary>
+  <summary><span class="step-number">질문 {block_no:02d}</span><strong><span class="step-kind step-kind--{esc(judgment_type)}">{esc(judgment_label)}</span>{esc(step.get("question"))}</strong></summary>
   <div class="step-body">
     <div class="step-fact">
       <p class="step-label">판단할 사실 범위</p>

@@ -92,6 +92,7 @@ class BuildOutputTests(unittest.TestCase):
     def test_every_issue_has_case_first_question_blocks(self) -> None:
         required = {
             "block_no",
+            "judgment_type",
             "question",
             "fact_scope",
             "legal_refs",
@@ -109,6 +110,11 @@ class BuildOutputTests(unittest.TestCase):
             for expected_no, block in enumerate(blocks, start=1):
                 self.assertTrue(required.issubset(block), issue["issue_id"])
                 self.assertEqual(block["block_no"], expected_no, issue["issue_id"])
+                self.assertIn(
+                    block["judgment_type"],
+                    {"rule", "calculation", "evidence", "change"},
+                    issue["issue_id"],
+                )
                 for key in ("question", "fact_scope", "answer", "explanation"):
                     self.assertTrue(str(block[key]).strip(), f"{issue['issue_id']} {key}")
                 self.assertGreaterEqual(len(str(block["answer"]).strip()), 8, issue["issue_id"])
@@ -151,6 +157,58 @@ class BuildOutputTests(unittest.TestCase):
             for question in questions:
                 self.assertTrue(question.endswith("?"), question)
                 self.assertNotIn("??", question, question)
+
+    def test_question_and_answer_share_a_concrete_subject(self) -> None:
+        vague = (
+            "어떤 순서",
+            "어떻게 설명",
+            "어떻게 연결할",
+            "무엇을 고를",
+            "어떤 자료로 결론낼",
+        )
+        for issue in self.data["issues"]:
+            for block in issue["question_blocks"]:
+                question = block["question"]
+                answer = block["answer"]
+                for phrase in vague:
+                    self.assertNotIn(phrase, question, f"{issue['issue_id']} {question}")
+                suffixes = (
+                    "으로써", "으로", "에서", "에게", "부터", "까지", "보다", "처럼",
+                    "만큼", "로", "은", "는", "이", "가", "을", "를", "에", "도", "만", "와", "과",
+                )
+
+                def stems(text: str) -> set[str]:
+                    result = set()
+                    for token in re.findall(r"[가-힣A-Za-z]{2,}|\d[\d,\.]*", text):
+                        for suffix in suffixes:
+                            if token.endswith(suffix) and len(token) - len(suffix) >= 2:
+                                token = token[: -len(suffix)]
+                                break
+                        result.add(token)
+                    return result
+
+                concrete_tokens = stems(question)
+                answer_tokens = stems(answer)
+                shared = concrete_tokens & answer_tokens
+                self.assertGreaterEqual(
+                    len(shared),
+                    2,
+                    f"{issue['issue_id']} Q{block['block_no']}: {question} / {answer}",
+                )
+
+    def test_question_wording_is_direct_and_readable(self) -> None:
+        for issue in self.data["issues"]:
+            for block in issue["question_blocks"]:
+                question = block["question"]
+                self.assertNotIn("있고·단정하지·않는다", question, issue["issue_id"])
+                self.assertNotIn("확인할 원본 자료는", question, issue["issue_id"])
+                self.assertNotIn("확인에 필요한 원본 자료는", question, issue["issue_id"])
+                if block["judgment_type"] == "evidence":
+                    self.assertRegex(
+                        question,
+                        r"(?:어떻게 확인하는가|무엇을 입증하는가|어떻게 입증하는가|어느 부분을 입증하는가)\?$",
+                        issue["issue_id"],
+                    )
 
     def test_reader_is_static_and_uses_question_first_sequence(self) -> None:
         sample = DOCS / "issues" / "NTBA-TAX-LIABILITY-LIFECYCLE-001" / "index.html"

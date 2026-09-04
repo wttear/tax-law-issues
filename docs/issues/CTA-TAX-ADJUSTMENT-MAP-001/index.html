@@ -47,11 +47,11 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <h2 id="steps-title"><span class="heading-sequence">02 / 확인</span>질문별 판단</h2>
     <p class="block-lead">각 질문은 위 사실관계의 한 부분을 가리킵니다. 조문은 필요한 질문 안에서만 접혀 있습니다.</p>
     <div class="issue-steps"><details class="issue-step" id="step-1" open>
-  <summary><span class="step-number">질문 01</span><strong>세무조정에서 장부 반영 여부를 확인한 뒤 각 항목의 가감 방향, 영구적 차이·일시적 차이, 소득처분과 신고서 대사를 어떻게 한 흐름으로 제시할 것인가?</strong></summary>
+  <summary><span class="step-number">질문 01</span><strong><span class="step-kind step-kind--calculation">계산</span>당기순이익 82000 + 가산 9000 - 차감 2000을 계산하면 과세소득은 얼마인가?</strong></summary>
   <div class="step-body">
     <div class="step-fact">
       <p class="step-label">판단할 사실 범위</p>
-      <p>사실관계의 핵심 거래와 처분</p>
+      <p>사실관계 중 금액·기간·산식</p>
     </div>
     <details class="step-law">
       <summary>관련 조문 보기 <span aria-hidden="true">＋</span></summary>
@@ -76,11 +76,14 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <p class="step-label">확인할 증빙</p>
   <ul class="step-evidence-list"><li>세전 당기순이익이 확인되는 재무제표·합계잔액시산표</li></ul>
 </div>
-
+    <div class="step-accounting">
+  <p class="step-label">회계·세무조정 연결</p>
+  <p>세전 당기순이익 82000에는 벌금비용 3000, 감가상각비 중 한도초과 6000, 과세 제외 수익 2000이 이미 반영되어 있으므로 별도 분개보다 결산 장부의 반영 여부를 먼저 고정한다. 손익계산서 세전이익 82000, 소득금액조정합계표 가산 9000·차감 2000, 법인세 과세표준 및 세액신고서 89000을 대사하고 유보 6000을 자산별 추인표로 이월한다. 82000+벌금 손금불산입 3000 기타사외유출+감가상각 손금불산입 6000 유보-익금불산입 2000=89000이다. 벌금은 영구적 차이, 상각초과는 미래 시인부족에서 추인될 일시적 차이다.</p>
+</div>
 
   </div>
 </details><details class="issue-step" id="step-2">
-  <summary><span class="step-number">질문 02</span><strong>영구적 차이와 일시적 차이를 소득처분·후속관리까지 구분해 어떻게 설명할까요?</strong></summary>
+  <summary><span class="step-number">질문 02</span><strong><span class="step-kind step-kind--rule">법리</span>영구적 차이와 일시적 차이의 소득처분·후속관리 기준은 무엇인가?</strong></summary>
   <div class="step-body">
     <div class="step-fact">
       <p class="step-label">판단할 사실 범위</p>
@@ -102,7 +105,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </details>
     <div class="step-answer">
       <p class="step-label">답과 해설</p>
-      <p class="step-answer__headline">이 사례에서는 추가 공제가 없으므로 세무조정 후 과세표준도 89000이다.</p>
+      <p class="step-answer__headline">영구적 차이는 반대 조정이 없고 일시적 차이는 유보 잔액과 미래 추인을 남긴다는 점, 벌금 3000과 상각초과 6000을 달리 처분한다는 점을 적용한다</p>
       <p>벌금 같은 영구적 차이와 감가상각 한도초과 같은 일시적 차이는 소득처분과 후속관리가 다르다.</p>
     </div>
     <div class="step-evidence">
@@ -113,11 +116,11 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
   </div>
 </details><details class="issue-step" id="step-3">
-  <summary><span class="step-number">질문 03</span><strong>당기순이익에서 신고 과세표준까지 대사할 때 가장 먼저 볼 세 자료와 이유를 어떻게 설명할까요?</strong></summary>
+  <summary><span class="step-number">질문 03</span><strong><span class="step-kind step-kind--evidence">증빙</span>재무제표의 세전 당기순이익 등 자료는 사실관계의 어느 부분을 입증하는가?</strong></summary>
   <div class="step-body">
     <div class="step-fact">
       <p class="step-label">판단할 사실 범위</p>
-      <p>사실관계 중 증빙·신고 자료</p>
+      <p>사실관계 중 결론을 입증하는 자료</p>
     </div>
     <details class="step-law">
       <summary>관련 조문 보기 <span aria-hidden="true">＋</span></summary>
@@ -135,18 +138,18 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </details>
     <div class="step-answer">
       <p class="step-label">답과 해설</p>
-      <p class="step-answer__headline">3000은 영구적 차이, 6000은 일시적 차이, 2000은 해당 제외 규정의 사후관리 여부를 별도로 확인한다.</p>
+      <p class="step-answer__headline">재무제표의 세전 당기순이익, 소득금액조정합계표의 가감액, 법인세신고서 과세표준을 선택하고 같은 사업연도·금액·조정 부호를 대사한다</p>
       <p>세무조정은 결산서상 당기순이익에 익금산입·손금불산입을 더하고 익금불산입·손금산입을 빼서 각 사업연도 소득으로 잇는 다리다.</p>
     </div>
     <div class="step-evidence">
   <p class="step-label">확인할 증빙</p>
-  <ul class="step-evidence-list"><li>자산 처분계약서·고정자산대장과 전자신고 변환 로그</li></ul>
+  <ul class="step-evidence-list"><li>세전 당기순이익이 확인되는 재무제표·합계잔액시산표</li><li>당기·전기 감가상각비조정명세서와 자산별 유보 이월표</li><li>자산 처분계약서·고정자산대장과 전자신고 변환 로그</li></ul>
 </div>
 
 
   </div>
 </details><details class="issue-step" id="step-4">
-  <summary><span class="step-number">질문 04</span><strong>전기 유보 6000이 당기에 추인되는 조건이 바뀐 사례의 계산과 결론을 어떻게 설명할까요?</strong></summary>
+  <summary><span class="step-number">질문 04</span><strong><span class="step-kind step-kind--change">조건 변경</span>전기 유보 6000의 자산별 존재와 당기 처분이 확인되면 결론은 어떻게 달라지는가?</strong></summary>
   <div class="step-body">
     <div class="step-fact">
       <p class="step-label">판단할 사실 범위</p>
@@ -155,14 +158,21 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <details class="step-law">
       <summary>관련 조문 보기 <span aria-hidden="true">＋</span></summary>
       <div class="step-law__body">
-        <ul class="step-law-ref-list"><li>법인세법 제13조·제14조·제60조</li></ul>
-        <div class="article-stack"><p class="quiet">이 질문에 직접 연결된 조문 원문은 공식 법령 링크에서 확인할 수 있습니다.</p></div>
+        <ul class="step-law-ref-list"><li>법인세법 제13조</li></ul>
+        <div class="article-stack"><details class="article-record">
+  <summary><span>제13조</span><strong>과세표준</strong><em>현행 · 시행 2026-07-01</em></summary>
+  <div class="article-record__body">
+    <p class="source-label">국가법령정보센터 원문</p>
+    <div class="law-source-text">제13조(과세표준)<br>① 내국법인의 각 사업연도의 소득에 대한 법인세의 과세표준은 각 사업연도의 소득의 범위에서 다음 각 호의 금액과 소득을 차례로 공제한 금액으로 한다. 다만, 제1호의 금액에 대한 공제는 각 사업연도 소득의 100분의 80[「조세특례제한법」 제6조제1항에 따른 중소기업(이하 &quot;중소기업&quot;이라 한다)과 회생계획을 이행 중인 기업 등 대통령령으로 정하는 법인의 경우는 100분의 100]을 한도로 한다. &lt;개정 2020.12.22, 2022.12.31&gt;<br>1. 제14조제3항의 이월결손금 중 다음 각 목의 요건을 모두 갖춘 금액<br>2. 이 법과 다른 법률에 따른 비과세소득<br>3. 이 법과 다른 법률에 따른 소득공제액<br>② 제1항의 과세표준을 계산할 때 다음 각 호의 금액은 해당 사업연도의 다음 사업연도 이후로 이월하여 공제할 수 없다.<br>1. 해당 사업연도의 과세표준을 계산할 때 공제되지 아니한 비과세소득 및 소득공제액<br>2. 「조세특례제한법」 제132조에 따른 최저한세의 적용으로 인하여 공제되지 아니한 소득공제액</div>
+    <p class="source-link"><a href="https://www.law.go.kr/법령/법인세법/제13조" rel="noopener noreferrer">공식 조문 열기</a></p>
+  </div>
+</details></div>
       </div>
     </details>
     <div class="step-answer">
       <p class="step-label">답과 해설</p>
-      <p class="step-answer__headline">이 단계는 신고서 대사이므로 이미 확정된 장부, 조정명세서, 신고서를 연결한다.</p>
-      <p>세무조정은 결산서상 당기순이익에 익금산입·손금불산입을 더하고 익금불산입·손금산입을 빼서 각 사업연도 소득으로 잇는 다리다.</p>
+      <p class="step-answer__headline">전기 유보 6000의 자산별 존재와 당기 처분이 확인되면 손금산입 △유보 6000이 가능해지고 과세소득은 83000으로 바뀐다는 계산이다</p>
+      <p>벌금 같은 영구적 차이와 감가상각 한도초과 같은 일시적 차이는 소득처분과 후속관리가 다르다.</p>
     </div>
 
     <div class="step-accounting">
@@ -199,7 +209,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </section>
   <section class="reader-block reader-block--summary" id="summary" aria-labelledby="summary-title">
   <h2 id="summary-title"><span class="heading-sequence">05 / 마무리</span>마지막 정리</h2>
-  <div class="summary-callout"><p>재무제표에서 세무조정으로 가는 기본 지도: 각 사업연도 소득과 과세표준의 산출 구조를 신고서·세무조정계산서에 연결한다. 이 사실관계의 결론은 이 단계는 신고서 대사이므로 이미 확정된 장부, 조정명세서, 신고서를 연결한다.</p></div>
+  <div class="summary-callout"><p>재무제표에서 세무조정으로 가는 기본 지도: 각 사업연도 소득과 과세표준의 산출 구조를 신고서·세무조정계산서에 연결한다. 이 사실관계의 결론은 전기 유보 6000의 자산별 존재와 당기 처분이 확인되면 손금산입 △유보 6000이 가능해지고 과세소득은 83000으로 바뀐다는 계산이다</p></div>
   <div class="summary-prompts"><p class="step-label">스스로 다시 답하기</p><ul class="summary-question-list"><li>영구적 차이와 일시적 차이를 소득처분·후속관리까지 구분해 어떻게 설명할까요?</li><li>당기순이익에서 신고 과세표준까지 대사할 때 가장 먼저 볼 세 자료와 이유를 어떻게 설명할까요?</li><li>전기 유보 6000이 당기에 추인되는 조건이 바뀐 사례의 계산과 결론을 어떻게 설명할까요?</li></ul></div>
 </section>
   <section class="reader-block reader-block--sources" id="sources" aria-labelledby="sources-title">

@@ -163,30 +163,31 @@ def split_learning_sentences(value: Any) -> list[str]:
 
 def extract_heading_text(document: Any, heading: str) -> str:
     """Return prose directly under the first matching Markdown H3."""
-    lines = [line for section in document.sections for line in section.lines]
     target = f"### {heading}"
     collected: list[str] = []
     started = False
-    for line in lines:
-        stripped = line.strip()
-        if not started:
-            if stripped == target:
-                started = True
-            continue
-        if stripped.startswith("### ") or stripped.startswith("## "):
+    for section in document.sections:
+        if started and str(getattr(section, "heading", "")).startswith("## "):
             break
-        if not stripped or "|" in stripped:
-            continue
-        if stripped.startswith("-"):
-            stripped = stripped[1:].strip()
-        if stripped:
-            collected.append(stripped)
+        for line in section.lines:
+            stripped = line.strip()
+            if not started:
+                if stripped == target:
+                    started = True
+                continue
+            if stripped.startswith("### ") or stripped.startswith("## "):
+                return " ".join(collected)
+            if not stripped or "|" in stripped:
+                continue
+            if stripped.startswith("-"):
+                stripped = stripped[1:].strip()
+            if stripped:
+                collected.append(stripped)
     return " ".join(collected)
 
 
 def extract_heading_paragraphs(document: Any, heading: str) -> list[str]:
     """Return prose paragraphs under a heading without splitting sentences."""
-    lines = [line for section in document.sections for line in section.lines]
     target = f"### {heading}"
     paragraphs: list[str] = []
     current: list[str] = []
@@ -197,21 +198,25 @@ def extract_heading_paragraphs(document: Any, heading: str) -> list[str]:
             paragraphs.append(clean_learning_text(" ".join(current)))
             current.clear()
 
-    for line in lines:
-        stripped = line.strip()
-        if not started:
-            if stripped == target:
-                started = True
-            continue
-        if stripped.startswith("### ") or stripped.startswith("## "):
+    for section in document.sections:
+        if started and str(getattr(section, "heading", "")).startswith("## "):
             break
-        if not stripped or "|" in stripped:
-            flush()
-            continue
-        if stripped.startswith("-"):
-            stripped = stripped[1:].strip()
-        if stripped:
-            current.append(stripped)
+        for line in section.lines:
+            stripped = line.strip()
+            if not started:
+                if stripped == target:
+                    started = True
+                continue
+            if stripped.startswith("### ") or stripped.startswith("## "):
+                flush()
+                return [paragraph for paragraph in paragraphs if paragraph]
+            if not stripped or "|" in stripped:
+                flush()
+                continue
+            if stripped.startswith("-"):
+                stripped = stripped[1:].strip()
+            if stripped:
+                current.append(stripped)
     flush()
     return [paragraph for paragraph in paragraphs if paragraph]
 
@@ -380,22 +385,741 @@ def extract_case_facts(document: Any) -> str:
 
 def extract_numbered_items(document: Any, heading: str) -> list[str]:
     """Keep short numbered recall prompts without importing the old layout."""
-    lines = [line for section in document.sections for line in section.lines]
     target = f"### {heading}"
     result: list[str] = []
     started = False
-    for line in lines:
-        stripped = line.strip()
-        if not started:
-            if stripped == target:
-                started = True
-            continue
-        if stripped.startswith("### ") or stripped.startswith("## "):
+    for section in document.sections:
+        if started and str(getattr(section, "heading", "")).startswith("## "):
             break
-        match = re.match(r"^[0-9]+\.\s+(.+)$", stripped)
-        if match:
-            result.append(clean_learning_text(match.group(1)))
+        for line in section.lines:
+            stripped = line.strip()
+            if not started:
+                if stripped == target:
+                    started = True
+                continue
+            if stripped.startswith("### ") or stripped.startswith("## "):
+                return result
+            match = re.match(r"^[0-9]+\.\s+(.+)$", stripped)
+            if match:
+                result.append(clean_learning_text(match.group(1)))
     return result
+
+
+JUDGMENT_TYPE_BY_LABEL = {
+    "법리 구분": "rule",
+    "증빙 선택": "evidence",
+    "새 사실 전이": "change",
+}
+JUDGMENT_TYPE_LABELS = {
+    "rule": "법리",
+    "calculation": "계산",
+    "evidence": "증빙",
+    "change": "조건 변경",
+}
+ALIGNMENT_STOPWORDS = {
+    "그리고",
+    "그러나",
+    "따라서",
+    "통해",
+    "대해",
+    "대한",
+    "관련",
+    "해당",
+    "이때",
+    "이상",
+    "이하",
+    "경우",
+    "부분",
+    "방법",
+    "자료",
+    "원본",
+    "확인",
+    "검토",
+    "판단",
+    "기준",
+    "요건",
+    "결론",
+    "적용",
+    "계산",
+    "금액",
+    "내용",
+    "사례",
+    "사실",
+    "법리",
+    "구분",
+    "증빙",
+    "선택",
+    "전이",
+    "새",
+    "보면",
+    "살펴",
+    "먼저",
+    "다시",
+    "각각",
+    "어떤",
+    "무엇",
+    "어떻게",
+    "필요",
+    "가능",
+    "별도",
+    "대상",
+    "여부",
+    "세무상",
+    "법정",
+    "실제",
+    "관계",
+    "처분",
+    "신고",
+}
+VAGUE_QUESTION_PHRASES = (
+    "어떤 순서",
+    "어떻게 설명",
+    "어떻게 연결할",
+    "무엇을 고를",
+    "어떤 자료로 결론낼",
+)
+
+
+def extract_answer_core_units(document: Any) -> list[dict[str, str]]:
+    """Parse the source lesson's three labelled answer anchors.
+
+    ``답안 핵심요소`` is intentionally treated as data rather than prose to
+    be distributed by list index.  Each label becomes one judgment unit, so
+    its question and answer can be generated from the same claim.
+    """
+    raw = clean_learner_copy(extract_heading_text(document, "답안 핵심요소"))
+    if not raw:
+        return []
+    marker = re.compile(r"(법리 구분|증빙 선택|새 사실 전이)\s*:\s*")
+    matches = list(marker.finditer(raw))
+    if not matches:
+        return []
+    units: list[dict[str, str]] = []
+    for index, match in enumerate(matches):
+        end = matches[index + 1].start() if index + 1 < len(matches) else len(raw)
+        answer = clean_learner_copy(raw[match.end() : end]).strip(" .")
+        if not answer:
+            continue
+        # Source lessons use author-facing verbs in this section.  Keep the
+        # substantive conclusion but phrase it as something the learner can
+        # apply immediately.
+        answer = re.sub(r"\s*포함해야 한다\.?", " 적용한다.", answer)
+        answer = re.sub(r"\s*확인해야 한다\.?", " 확인한다.", answer)
+        answer = re.sub(r"\s*검토해야 한다\.?", " 검토한다.", answer)
+        answer = re.sub(r"\s*고른다\.?", " 확인한다.", answer)
+        answer = re.sub(r"\s*써야 한다\.?", " 적용한다.", answer)
+        answer = re.sub(r"\s*말해야 한다\.?", " 판단한다.", answer)
+        answer = re.sub(r"계산을 제시해야 한다\.?", "계산이다.", answer)
+        answer = answer.replace("해야 한다", "한다")
+        answer = re.sub(r"\s+", " ", answer).strip(" .")
+        units.append(
+            {
+                "label": match.group(1),
+                "judgment_type": JUDGMENT_TYPE_BY_LABEL[match.group(1)],
+                "answer": answer,
+            }
+        )
+    return units
+
+
+def extract_recall_questions_by_type(document: Any) -> dict[str, str]:
+    """Return the source recall prompts keyed by their labelled purpose."""
+    result: dict[str, str] = {}
+    fallback_types = ("rule", "evidence", "change")
+    for index, raw in enumerate(extract_numbered_items(document, "오늘의 회상 3문항")):
+        label_match = re.match(r"^(법리 구분|증빙 선택|새 사실 전이)\s*:", raw)
+        judgment_type = (
+            JUDGMENT_TYPE_BY_LABEL[label_match.group(1)]
+            if label_match
+            else fallback_types[min(index, len(fallback_types) - 1)]
+        )
+        question = clean_question_text(raw)
+        if question and judgment_type not in result:
+            result[judgment_type] = question
+    return result
+
+
+def extract_focus_terms(text: str, *, limit: int = 4) -> list[str]:
+    """Pick concrete words/numbers that let a question point to its answer."""
+    tokens = re.findall(r"제\s*\d+조(?:의\d+)?|[가-힣A-Za-z]{2,}|\d[\d,\.]*", text)
+    result: list[str] = []
+    for token in tokens:
+        normalized = token.strip(".,")
+        if not normalized or normalized in ALIGNMENT_STOPWORDS:
+            continue
+        if normalized not in result:
+            result.append(normalized)
+        if len(result) >= limit:
+            break
+    return result
+
+
+def format_focus_terms(terms: list[str], *, limit: int = 3) -> str:
+    """Render answer nouns as a readable phrase, retaining concrete tokens."""
+    rendered: list[str] = []
+    for token in terms:
+        if (
+            rendered
+            and re.fullmatch(r"\d[\d,\.]*", rendered[-1])
+            and re.fullmatch(r"[가-힣]{1,4}", token)
+        ):
+            rendered[-1] += token
+        else:
+            rendered.append(token)
+    return " ".join(rendered[:limit])
+
+
+def focus_subject(terms: list[str]) -> str:
+    """Prefer article references together when a rule answer starts with them."""
+    article_terms = [term for term in terms if term.startswith("제") and "조" in term]
+    if len(article_terms) >= 2:
+        return "·".join(article_terms[:2])
+    return format_focus_terms(terms)
+
+
+def object_particle(phrase: str) -> str:
+    """Choose a readable 을/를 after a formula or noun phrase."""
+    compact = re.sub(r"[^가-힣A-Za-z0-9]", "", phrase)
+    if not compact:
+        return "을"
+    if "%" in phrase:
+        return "를"
+    last = compact[-1]
+    if "가" <= last <= "힣":
+        jongseong = (ord(last) - ord("가")) % 28
+        return "을" if jongseong else "를"
+    return "을"
+
+
+def subject_particle(phrase: str) -> str:
+    """Choose 이/가 for a noun phrase used as a changed fact."""
+    compact = re.sub(r"[^가-힣A-Za-z0-9]", "", phrase)
+    if not compact:
+        return "이"
+    last = compact[-1]
+    if "가" <= last <= "힣":
+        return "이" if (ord(last) - ord("가")) % 28 else "가"
+    return "이"
+
+
+def topic_particle(phrase: str) -> str:
+    """Choose 은/는 for a result noun used as a question topic."""
+    compact = re.sub(r"[^가-힣A-Za-z0-9]", "", phrase)
+    if not compact:
+        return "은"
+    last = compact[-1]
+    if "가" <= last <= "힣":
+        return "은" if (ord(last) - ord("가")) % 28 else "는"
+    return "은"
+
+
+def with_object_particle(phrase: str) -> str:
+    """Add 을/를 unless the source phrase already carries an object marker."""
+    if phrase.endswith(("을", "를")):
+        return phrase
+    phrase = re.sub(r"(으로|로|은|는|이|가|에|의|와|과)$", "", phrase)
+    return f"{phrase}{object_particle(phrase)}"
+
+
+def make_rule_question_from_answer(answer: str) -> str:
+    """Turn the first rule clause into a single, readable judgment prompt."""
+    if all(term in answer for term in ("성립", "확정", "소멸")):
+        return "사업연도 말에 납세의무가 성립하고 신고로 확정되며 납부·충당으로 소멸하는 기준은 무엇인가?"
+    if "사업장 전체 소득금액" in answer:
+        return "사업장 전체 소득금액을 먼저 계산한 뒤 구성원별 귀속을 판단하는 기준은 무엇인가?"
+    if "권리의 법률상 성립" in answer:
+        return "권리의 법률상 성립·실현가능성·법정 대손요건을 단계별로 구분하는 기준은 무엇인가?"
+    if "법 제40조" in answer and "실지귀속" in answer:
+        return "법 제40조·영 제81조의 실지귀속·공통분 안분 순서는 무엇인가?"
+    if "소득종류와 비과세" in answer:
+        return "소득종류와 비과세 여부를 먼저 판단하는 기준은 무엇인가?"
+    if "제16조" in answer and "제17조" in answer:
+        return "제16조·제17조의 이자·배당 판정 기준은 무엇인가?"
+    if "영구적 차이" in answer and "일시적 차이" in answer:
+        return "영구적 차이와 일시적 차이의 소득처분·후속관리 기준은 무엇인가?"
+    if "기대신용손실" in answer and "충당금" in answer:
+        return "기대신용손실은 회계상 추정이고 대손금은 법정 요건에 따른 손실일 때 두 항목의 구분 기준은 무엇인가?"
+    if "익금산입은 과세소득 조정" in answer:
+        return "익금산입은 과세소득 조정이고 소득처분은 귀속 표시일 때 유보·상여를 구분하는 기준은 무엇인가?"
+    if "거래일 특수관계" in answer:
+        return "거래일 특수관계 확인부터 시가·대가·조세부담 감소를 판단하는 기준은 무엇인가?"
+    if "K-IFRS" in answer and "문단 35" in answer:
+        return "K-IFRS 문단 35의 기간 이행 요건과 세법상 작업진행률을 어떻게 구분하는가?"
+    if "법률의 구체적 위임" in answer:
+        return "법률의 구체적 위임과 내부지침의 과세요건 창설 여부를 판단하는 기준은 무엇인가?"
+    if "순자산 감소" in answer:
+        return "순자산 감소·사업관련성·통상성·수익 직접관련성의 손금 요건은 무엇인가?"
+    if "자산의 실제 용도" in answer and "지급이자" in answer:
+        return "자산의 실제 용도·객관적 사업진행을 먼저 확인한 뒤 지급이자 적수를 계산하는 기준은 무엇인가?"
+    if "특수관계 확인 뒤" in answer:
+        return "특수관계 확인 후 실제 대가·비교가능 시가·조세부담 감소를 판단하는 기준은 무엇인가?"
+    if "현금 유입일" in answer:
+        return "현금 유입일과 계약상 권리 확정 시점을 구분해 소득 귀속시기를 판단하는 기준은 무엇인가?"
+    if "장부를 출발점" in answer:
+        return "장부와 관계 증거를 기준으로 부분 오류를 보정하는 근거과세의 판단 기준은 무엇인가?"
+    if "과세관청의 초기 입증" in answer:
+        return "과세관청의 초기 입증과 납세자의 반증을 나누는 기준은 무엇인가?"
+    if "신고·무신고·부정행위" in answer:
+        return "신고·무신고·부정행위별 제척기간의 기산일과 만료일을 구분하는 기준은 무엇인가?"
+    if "본세와 가산세" in answer:
+        return "본세와 가산세를 구분하고 정당한 사유를 판단하는 기준은 무엇인가?"
+    if "후속 질문" in answer:
+        return "후속 접촉이 세무조사인지와 재조사 예외 여부를 판단하는 기준은 무엇인가?"
+    if "사전통지의 기재사항" in answer:
+        return "사전통지의 기재사항·20일 요건·예외사유를 판단하는 기준은 무엇인가?"
+    if "중복조사는" in answer:
+        return "중복조사와 미통지의 절차상 하자가 처분에 미치는 효과는 무엇인가?"
+    if "수익적 지출 후보" in answer and "취득가액" in answer:
+        return "정상 기능 유지·원상회복과 가치·수명·생산능력 증가분을 자본적·수익적 지출로 구분하는 기준은 무엇인가?"
+    if "상각부인액" in answer and "시인부족" in answer:
+        return "회사계상액이 한도를 넘거나 모자랄 때 유보액과 전기 부인액을 조정하는 기준은 무엇인가?"
+    if "익금산입은 과세소득 조정" in answer:
+        return "익금산입과 소득처분(유보·상여)을 구분하는 기준은 무엇인가?"
+    if "과세요건상 입증" in answer:
+        return "필요경비의 과세요건상 입증과 특별사실의 자료요구를 구분하는 기준은 무엇인가?"
+
+    first = re.split(r"[.!?]", answer, maxsplit=1)[0].strip()
+    article_terms = list(dict.fromkeys(re.findall(r"제\s*\d+조(?:의\d+)?", answer)))
+    if article_terms:
+        references = "·".join(article_terms[:5])
+        if "책임한도" in answer:
+            return "구 제39조와 현행 제39조의 제2차 납세의무·책임한도 적용 기준은 무엇인가?"
+        if "신고납부" in answer and "강제징수" in answer:
+            return f"{references}의 신고납부·납부고지·독촉·강제징수 절차는 어떻게 이어지는가?"
+        if "재화 공급" in answer and "용역 공급" in answer:
+            return f"{references}의 재화·용역 공급 주체와 책임은 어떻게 판단하는가?"
+        if "압류" in answer and "통지" in answer:
+            return f"{references}의 압류·통지 요건과 효력은 어떻게 연결되는가?"
+        if "법정기일" in answer:
+            return f"{references}의 법정기일·담보·특별보호 우선순위는 어떻게 정하는가?"
+        if "불공제" in answer:
+            return f"{references}의 불공제 요건과 예외는 무엇인가?"
+        if "수출" in answer and "수입" in answer:
+            return f"{references}의 수출 영세율과 수입세액 적용 요건은 무엇인가?"
+        return f"이 사례에서 {references}를 적용할 때 충족해야 할 요건과 세무상 효과는 무엇인가?"
+
+    # Stop at the first action verb so the question contains the concrete
+    # facts but not the answer's whole procedural sentence.
+    if " 종합하고" in first or " 종합하며" in first:
+        subject = re.split(r"\s+종합하고|\s+종합하며", first, maxsplit=1)[0].strip(" ,")
+        return f"{with_object_particle(subject)} 종합해 소득을 구분하는 기준은 무엇인가?"
+    if " 차례로" in first:
+        subject = first.split(" 차례로", 1)[0].strip(" ,")
+        return f"{subject} 차례로 구분하는 기준은 무엇인가?"
+    if re.search(r"(?:으로|로)\s+먼저", first):
+        left = re.split(r"(?:으로|로)\s+먼저", first, maxsplit=1)[0].strip(" ,")
+        particle = "를" if re.search(r"문단\s*\d+$", left) else object_particle(left)
+        return f"{left}{particle} 기준으로 판단하는 요건은 무엇인가?"
+    if " 먼저" in first:
+        subject = first.split(" 먼저", 1)[0].strip(" ,")
+        return f"{with_object_particle(subject)} 먼저 판단하고 이후 결론을 정하는 기준은 무엇인가?"
+    if "으로" in first and "으로써" not in first:
+        left, right = first.split("으로", 1)
+        target = right.strip().split("을", 1)[0].split("를", 1)[0].strip(" ,")
+        if left.strip() and target:
+            return f"{with_object_particle(left.strip())} 기준으로 {target}을 판단하는 기준은 무엇인가?"
+    if first:
+        first = re.sub(
+            r"\s*(?:적용한다|판단한다|검토한다|설명한다|구분한다|나눈다|정한다|연결한다|기록한다|맞춰야 한다|핵심이다|다르다|한다|이다)\.?$",
+            "",
+            first,
+        ).strip(" ,")
+        first = re.sub(r"[을를]$", "", first)
+        if any(term in first for term in ("인지", "여부", "요건", "기준")):
+            first = re.sub(r"[을를]$", "", first)
+            return f"{first}의 구분 기준은 무엇인가?"
+        return f"{first}의 판단 기준은 무엇인가?"
+    subject = format_focus_terms(extract_focus_terms(answer)) or "이 쟁점"
+    return f"{subject}의 판단 기준은 무엇인가?"
+
+
+EVIDENCE_ACTION_PATTERN = re.compile(
+    r"(?:함께\s+)?(?:보고|확인하고|확인|선택하고|선택|검토하고|검토|"
+    r"입증하고|입증|증명하고|증명|대사하고|대사|교차검증하고|교차검증|"
+    r"재구성하고|재구성|정리하고|정리|기록하고|기록|검증하고|검증|"
+    r"비교하고|비교|맞춰|맞추고|맞춘다)"
+    r"(?=(?:한다|한다며|하고|하며|해|하여|\s|$))"
+)
+
+
+def strip_case_marker(value: str) -> str:
+    """Remove a final Korean case particle before composing a new sentence."""
+    value = value.strip(" .")
+    # ``의`` is intentionally omitted: words such as ``변경합의`` and
+    # ``주의`` legitimately end with that syllable and are common evidence
+    # labels.  The remaining particles are unambiguous in these short
+    # source phrases.
+    value = re.sub(r"(?:으로써|으로|로|에서|에게|부터|까지|보다|처럼|만큼|은|는|이|가|을|를|에|도|만|와|과)$", "", value)
+    return value.strip(" .")
+
+
+def clean_evidence_part(value: str) -> str:
+    """Trim source verbs left after an evidence bundle or target."""
+    value = value.strip(" ,.")
+    value = re.sub(r"\s+(?:먼저|우선)$", "", value)
+    value = re.sub(
+        r"\s*(?:확인|선택|검토|입증|증명|대사|교차검증|재구성|정리|기록|검증|비교|맞춰|맞추고|맞춘다)"
+        r"(?:한다|하고|하며|해|하여|한다며|맞춰)$",
+        "",
+        value,
+    )
+    value = re.sub(r"\s+(?:먼저|우선)$", "", value)
+    value = re.sub(r"\s*(?:한다|하고|하며|이다|다)$", "", value)
+    return strip_case_marker(value)
+
+
+def parse_evidence_clause(clause: str) -> tuple[str, str]:
+    """Return a document bundle and the fact it is used to check."""
+    clause = clause.strip(" .")
+    if not clause:
+        return "", ""
+
+    # ``A와 별도로 B를 먼저 확인한다`` names an initial document bundle
+    # and then the fact that must be checked.  Handle this construction
+    # before the shorter ``로`` matcher can mistake ``별도로`` for a verb.
+    if "와 별도로" in clause:
+        before, after = clause.split("와 별도로", 1)
+        return clean_evidence_part(before), clean_evidence_part(after)
+
+    # Phrases such as ``장부를 ... 맞추고 오류가 ...`` put the document
+    # bundle before the action; keep the trailing target as a separate cue.
+    action = EVIDENCE_ACTION_PATTERN.search(clause)
+    marker = re.match(r"^(.+?)(?:은|는|이|가)\s+(.+)$", clause)
+    preposition = re.match(r"^(.+?)(?:으로|로)\s+(.+)$", clause)
+    joining = re.match(r"^(.+?)(?:에|에는)\s+(.+)$", clause)
+
+    # A noun particle at the start of a clause should win over an action
+    # found later (``대조표는 동일성 ... 증명한다``).  Conversely, an
+    # action wins when a lexical word such as ``같은`` creates a false
+    # ``은`` match after it (``표준을 선택하고 같은 ...``).
+    candidates = [item for item in (marker, preposition, joining) if item]
+    earliest = min(candidates, key=lambda item: len(item.group(1))) if candidates else None
+    earliest_pos = len(earliest.group(1)) if earliest else None
+    earliest_delimiter_end = None
+    if earliest:
+        delimiter_length = len(earliest.group(0)) - len(earliest.group(1)) - len(earliest.group(2))
+        earliest_delimiter_end = len(earliest.group(1)) + delimiter_length
+    if earliest and (
+        not action
+        or (
+            earliest_pos is not None
+            and earliest_delimiter_end is not None
+            and earliest_pos < action.start()
+            and earliest_delimiter_end < action.start()
+        )
+    ):
+        return clean_evidence_part(earliest.group(1)), clean_evidence_part(earliest.group(2))
+
+    if action:
+        before = clause[: action.start()].strip()
+        after = clause[action.end() :].strip(" ,.")
+        # ``A와 별도로 B를 먼저 확인`` has two evidence targets; prefer
+        # the first bundle as the anchor and the second phrase as the fact.
+        if "와 별도로" in before:
+            before, after_before = before.split("와 별도로", 1)
+            after = f"{after_before} {after}".strip()
+        # ``장부를 PG·금융과 거래단위로 맞추고`` has a document bundle,
+        # an intermediate comparison set, and then the verb.  Keep both
+        # comparison sets as targets instead of attaching them to the
+        # document name.
+        object_bundle = re.match(r"^(.+?)(?:을|를)\s+(.+?)(?:으로|로)$", before)
+        if object_bundle:
+            before = object_bundle.group(1)
+            after = f"{object_bundle.group(2)} {after}".strip()
+        else:
+            before = re.sub(r"(?:을|를)$", "", before).strip()
+        if before:
+            return clean_evidence_part(before), clean_evidence_part(after)
+
+    if earliest:
+        return clean_evidence_part(earliest.group(1)), clean_evidence_part(earliest.group(2))
+
+    return clean_evidence_part(clause), ""
+
+
+def make_evidence_question_from_answer(
+    answer: str,
+    evidence: list[str] | None = None,
+) -> str:
+    """Ask how the named evidence proves the concrete fact in the answer."""
+    sentence = re.split(r"[.!?]", answer, maxsplit=1)[0].strip()
+    clauses = [part.strip() for part in re.split(r",\s*", sentence) if part.strip()]
+    documents: list[str] = []
+
+    def anchor(clause: str) -> str:
+        """Take the document bundle before the first evidence action."""
+        clause = clause.strip(" .")
+        if not clause:
+            return ""
+        if "대사해야" in clause and "압류대상과 효력시점" in answer:
+            return "세 문서의 체납자·지번"
+        if "와 별도로" in clause:
+            clause = clause.split("와 별도로", 1)[0]
+        # Find the earliest reliable boundary.  For ``계약으로 활동 실질을``
+        # the preposition comes before the object particle; for
+        # ``자료를 계약·계좌와 맞춰`` the object particle comes first.
+        object_match = re.match(r"^(.+?)(?:을|를)\s+", clause)
+        preposition = re.match(r"^(.+?)(?<!서)(?:으로|로|에)\s+", clause)
+        marker = re.match(r"^(.+?)(?:은|는|이|가)\s+", clause)
+        candidates: list[tuple[int, str]] = []
+        if object_match:
+            candidates.append((len(object_match.group(1)), object_match.group(1)))
+        if preposition:
+            candidates.append((len(preposition.group(1)), preposition.group(1)))
+        if marker:
+            candidate = marker.group(1).strip(" .")
+            if not candidate.endswith(("같", "인허", "가능", "없", "있", "하", "되")):
+                candidates.append((len(marker.group(1)), candidate))
+        if candidates:
+            return min(candidates, key=lambda item: item[0])[1].strip(" .")
+        return re.sub(r"(?:\s+(?:먼저|우선))$", "", clause).strip(" .")
+
+    for clause in clauses[:4]:
+        document = anchor(clause)
+        if document and document not in documents:
+            documents.append(document)
+
+    # When the source sentence is only ``자료를 확인한다`` use the audit
+    # evidence list as a concrete fallback rather than returning a vague
+    # prompt.  The answer itself remains the primary source of wording.
+    if evidence:
+        documents.extend(item.strip(" .") for item in evidence[:3] if item)
+    documents = [item for item in documents if item]
+    if "압류대상과 효력시점을 특정" in answer:
+        documents = ["세 문서의 체납자·지번"]
+    if "결과를 갈랐" in answer:
+        documents = ["폐기물 사건의 계약·정산", "파산관재인 사건의 신고이력·해명요구"]
+    if "장부·기장자료" in answer:
+        documents = ["장부·기장자료"]
+    if "등록 명의와 실제 경영" in answer:
+        documents = ["동업계약·출자 금융·의사결정 기록·손익분배표"]
+
+    # Keep the prompt short while guaranteeing at least two concrete nouns
+    # are shared with the answer.  A second document is added only when the
+    # first bundle is a single short label such as ``접수증``.
+    selected: list[str] = []
+    for document in documents:
+        if document not in selected:
+            selected.append(document)
+        if len(question_answer_tokens(" ".join(selected))) >= 2:
+            break
+    document_text = "·".join(selected[:2]) or format_focus_terms(extract_focus_terms(answer)) or "관련"
+    return f"{document_text} 등 자료는 사실관계의 어느 부분을 입증하는가?"
+
+
+def make_change_question_from_answer(answer: str) -> str:
+    """Ask how the conclusion moves when the answer's changed fact is true."""
+    match = re.match(
+        r"(.+?(?:되면|하면|이면|나오면|충족되면|확인되면|바뀌면|강해지면|늘면|줄면|사라지면|일치하면|추가되면|제거되면|않으면|없으면|가까우면|라면|다면|지면))",
+        answer,
+    )
+    if match:
+        return f"{match.group(1)} 결론은 어떻게 달라지는가?"
+    new_fact = re.match(r"(.+?)(이라는|라는) 새 사실은", answer)
+    if new_fact:
+        subject = f"{new_fact.group(1).strip()}{new_fact.group(2)} 사실"
+        return f"{subject}이 확인되면 결론은 어떻게 달라지는가?"
+    if "소멸사유를 제거" in answer:
+        return "충당 취소는 소멸사유를 제거하므로 충당 대상 1천만 원이 남는지 확인하면 결론은 어떻게 달라지는가?"
+    first = re.split(r"[,.]", answer, maxsplit=1)[0].strip(" .")
+    if "이므로" in first:
+        first = first.split("이므로", 1)[0].strip() + "이면"
+        return f"{first} 결론은 어떻게 달라지는가?"
+    first = re.sub(r"\s*(?:따라|바꾼다|바뀐다|이어진다|만든다|검토한다|판단한다)\.?$", "", first).strip()
+    if "제거하므로" in first:
+        first = first.replace("는 소멸사유를 제거하므로", "로 소멸사유가 제거되면")
+    if first:
+        return f"{first}에 따라 결론은 어떻게 달라지는가?"
+    subject = format_focus_terms(extract_focus_terms(answer)) or "사실관계의 조건"
+    return f"{subject} 조건이 바뀌면 결론은 어떻게 달라지는가?"
+
+
+KOREAN_CASE_SUFFIXES = (
+    "으로써",
+    "으로",
+    "에서",
+    "에게",
+    "부터",
+    "까지",
+    "보다",
+    "처럼",
+    "만큼",
+    "로",
+    "은",
+    "는",
+    "이",
+    "가",
+    "을",
+    "를",
+    "에",
+    "도",
+    "만",
+    "와",
+    "과",
+)
+
+
+def alignment_token_stem(token: str) -> str:
+    """Normalize a token's final case particle for question/answer matching."""
+    if not re.search(r"[가-힣]", token):
+        return token
+    for suffix in KOREAN_CASE_SUFFIXES:
+        if token.endswith(suffix) and len(token) - len(suffix) >= 2:
+            return token[: -len(suffix)]
+    return token
+
+
+def question_answer_tokens(text: str) -> set[str]:
+    return {
+        alignment_token_stem(token)
+        for token in re.findall(r"[가-힣A-Za-z]{2,}|\d[\d,\.]*", text)
+    }
+
+
+def concrete_answer_tokens(text: str, *, limit: int = 4) -> list[str]:
+    """Keep answer tokens that can be reused verbatim in a short prompt."""
+    tokens = re.findall(r"[가-힣A-Za-z]{2,}|\d[\d,\.]*", text)
+    result: list[str] = []
+    for token in tokens:
+        token = alignment_token_stem(token)
+        if token in ALIGNMENT_STOPWORDS or token in {"한다", "해야", "한다며", "한다는"}:
+            continue
+        # A noun without a case particle is easier to join with · in a
+        # fallback question and still appears verbatim in the answer.
+        if token.endswith(("은", "는", "이", "가", "을", "를", "에", "의", "로", "와", "과")):
+            continue
+        if token not in result:
+            result.append(token)
+        if len(result) >= limit:
+            break
+    return result
+
+
+def normalize_recall_question(question: str, judgment_type: str) -> str:
+    """Remove author prompts while preserving a useful source question."""
+    text = clean_question_text(question)
+    # Apply compound endings before the generic ``어떻게 설명`` rewrite;
+    # otherwise ``구분해 무엇인가?`` is left behind.
+    text = text.replace("구분해 어떻게 설명할까요?", "구분 기준은 무엇인가?")
+    text = text.replace("계산과 결론을 어떻게 설명할까요?", "계산과 결론은 무엇인가?")
+    text = text.replace("이유를 어떻게 설명할까요?", "이유는 무엇인가?")
+    text = text.replace("을 어떻게 설명할까요?", "은 무엇인가?")
+    text = text.replace("를 어떻게 설명할까요?", "는 무엇인가?")
+    replacements = {
+        "어떤 순서로 판단할까요?": "어떤 요건을 기준으로 판단하는가?",
+        "어떤 순서로 구별할까요?": "어떤 요건을 기준으로 구별하는가?",
+        "어떻게 설명할까요?": "무엇인가?",
+        "무엇을 고를까요?": "어떤 자료가 필요한가?",
+        "무엇부터 확인할까요?": "어떤 자료가 필요한가?",
+        "어떻게 구분할까요?": "어떤 요건으로 구분하는가?",
+        "어떻게 판단할까요?": "어떤 요건으로 판단하는가?",
+        "어떻게 계산할까요?": "계산 결과는 얼마인가?",
+    }
+    for old, new in replacements.items():
+        text = text.replace(old, new)
+    # A source prompt can still contain a workflow phrase in the middle.
+    text = text.replace("어떤 순서로", "어떤 요건을 기준으로")
+    text = text.replace("어떻게 설명할", "무엇인지")
+    if judgment_type == "evidence":
+        text = text.replace("자료를 고를까요", "확인할 자료는 무엇인가")
+    if judgment_type == "change":
+        text = text.replace("새 사실", "조건")
+    text = re.sub(r"\?{2,}$", "?", text)
+    return text
+
+
+def make_question_from_unit(
+    unit: dict[str, str],
+    recall_question: str,
+    evidence: list[str] | None = None,
+) -> str:
+    """Generate one focused prompt from the very answer it will reveal."""
+    judgment_type = unit["judgment_type"]
+    answer = unit["answer"]
+    focus = extract_focus_terms(answer, limit=8 if judgment_type == "change" else 4)
+
+    # Each question is generated from its own answer unit.  The source recall
+    # prompt is retained in the JSON as a reference, but is not allowed to
+    # pull an unrelated topic into this block.
+    if judgment_type == "calculation":
+        formula = answer.split("=", 1)[0].strip() if "=" in answer else ""
+        result_match = re.search(
+            r"=\s*(?:[△▲]\s*)?(?P<label>[가-힣A-Za-z][가-힣A-Za-z·\s]{0,24}?)"
+            r"\s+(?=[\d,]+(?:\.\d+)?)",
+            answer,
+        )
+        result_name = "세무상 금액"
+        if result_match:
+            result_name = re.sub(r"\s+", " ", result_match.group("label")).strip()
+            result_name = re.sub(r"(?:이다|이다\.)$", "", result_name).strip()
+        if result_name == "세무상 금액":
+            result_name = next(
+                (
+                    term
+                    for term in ("과세표준", "과세소득", "불공제액", "손금불산입", "세액", "손금", "소득금액")
+                    if term in answer
+                ),
+                result_name,
+            )
+        if result_name == "세무상 금액":
+            fallback_match = re.search(
+                r"=\s*(?:[△▲]\s*)?([가-힣A-Za-z][가-힣A-Za-z·\s]{0,24}?)\s+[\d,]+",
+                answer,
+            )
+            if fallback_match:
+                result_name = re.sub(r"\s+", " ", fallback_match.group(1)).strip()
+        if result_name.endswith("금액") and "합계" in answer:
+            result_name = f"{result_name} 합계"
+        if "익금산입" in answer and "유보" in answer and "상여" in answer:
+            question = f"{with_object_particle(formula or '익금산입')} 유보와 상여로 어떻게 나누는가?"
+        else:
+            result_topic = f"{result_name}{topic_particle(result_name)}"
+            if formula:
+                question = f"{with_object_particle(formula)} 계산하면 {result_topic} 얼마인가?"
+            else:
+                subject = format_focus_terms(focus) or "이 거래"
+                question = f"{with_object_particle(subject)} 적용하면 {result_topic} 얼마인가?"
+    elif judgment_type == "evidence":
+        question = make_evidence_question_from_answer(answer, evidence)
+    elif judgment_type == "change":
+        question = make_change_question_from_answer(answer)
+    else:
+        question = make_rule_question_from_answer(answer)
+
+    # Keep a concrete lexical link even when a source sentence ends in a
+    # particle that the regex cannot share.  This is a final safety net, not
+    # the normal path for any of the four unit types above.
+    shared = question_answer_tokens(question) & question_answer_tokens(answer)
+    if len(shared) < 2:
+        anchors = concrete_answer_tokens(answer)
+        focus = focus or ["해당 쟁점", "판단"]
+        subject = "·".join(anchors[:3]) if anchors else format_focus_terms(focus)
+        if judgment_type == "calculation":
+            question = f"{with_object_particle(subject)} 계산하면 세무상 금액은 얼마인가?"
+        elif judgment_type == "evidence":
+            question = f"{subject} 등 자료는 사실관계의 어느 부분을 입증하는가?"
+        elif judgment_type == "change":
+            question = f"{subject} 조건이 바뀌면 결론은 어떻게 달라지는가?"
+        else:
+            question = f"{subject}의 판단 기준은 무엇인가?"
+    return clean_question_text(question)
+
+
+def extract_calculation_claims(reasoning: list[str]) -> list[str]:
+    """Keep concrete formula/result sentences for a dedicated calculation unit."""
+    # A date or a sentence that merely mentions a later adjustment is not a
+    # calculation.  Require an explicit arithmetic operator so that the
+    # calculation question really has a number to work out.
+    markers = re.compile(r"=|×|÷")
+    claims: list[str] = []
+    for sentence in reasoning:
+        if not markers.search(sentence):
+            continue
+        if sentence in {"관련 자료를 순서대로 대조한다."}:
+            continue
+        if sentence not in claims:
+            claims.append(sentence)
+    return claims
 
 
 def article_display_label(
@@ -434,11 +1158,13 @@ def build_question_blocks(
     document: Any,
     topic: dict[str, Any],
 ) -> tuple[str, list[dict[str, Any]], str, str, list[str]]:
-    """Build a case-first narrative with self-contained question blocks.
+    """Build case-first blocks where every prompt and answer share one unit.
 
-    The source lesson may contain many short sentences, but those sentences
-    are not independent facts.  Keep the complete ``사실`` section together
-    and let each question point back to the relevant semantic part of it.
+    The source lesson has three labelled answer anchors (rule, evidence and
+    changed facts), and often a concrete calculation in the expert reasoning.
+    We turn those anchors into small judgment units first, then write each
+    question from the same unit.  This avoids the old index-based pairing in
+    which a broad question was followed by an unrelated sentence.
     """
     case_facts = extract_case_facts(document)
 
@@ -448,7 +1174,7 @@ def build_question_blocks(
         if isinstance(item, dict) and clean_learner_copy(item.get("rule_summary"))
     ]
     if not rules:
-        rules = [f"{law_name}의 해당 조문에서 요건과 효과를 순서대로 확인한다."]
+        rules = [f"{law_name}의 해당 조문에서 요건과 효과를 확인한다."]
 
     reasoning = split_learning_sentences(
         clean_learner_copy(extract_heading_text(document, "전문가 판단 과정"))
@@ -498,53 +1224,74 @@ def build_question_blocks(
         for item in extract_numbered_items(document, "오늘의 회상 3문항")
         if clean_question_text(item)
     ]
-    candidates = [clean_question_text(core_question)]
-    candidates.extend(recall_questions)
-    candidates.extend(
-        clean_question_text(
-            f"{item.get('article_reference') or article_labels.get(article_ids[index], law_name)}의 요건과 예외를 이 사실관계에 어떻게 적용할까요?"
-        )
-        for index, item in enumerate(law_map)
-        if isinstance(item, dict)
-    )
-    candidates = list(dict.fromkeys(item for item in candidates if item))
-    if len(candidates) < 2:
-        candidates.append("이 사실관계에서 최종 세무상 결론은 무엇일까요?")
-    block_count = min(max(2, len(reasoning) or 2), len(candidates), 4)
-    questions = candidates[:block_count]
+    recall_by_type = extract_recall_questions_by_type(document)
+    core_units = extract_answer_core_units(document)
+    calculation_claims = extract_calculation_claims(reasoning)
 
-    # The last answer can carry the remaining reasoning so the reader gets a
-    # complete conclusion without being forced through artificial transitions.
-    answers: list[str] = []
-    for index in range(block_count):
-        if reasoning and index == block_count - 1 and index < len(reasoning):
-            answer = " ".join(reasoning[index:])
-        elif index < len(reasoning):
-            answer = reasoning[index]
-        elif accounting_item and accounting_item.get("tax_adjustment") and index == block_count - 1:
-            answer = accounting_item["tax_adjustment"]
-        elif index < len(rules):
-            answer = rules[index]
-        else:
-            answer = rules[index % len(rules)]
-        answers.append(clean_learner_copy(answer))
+    units: list[dict[str, str]] = []
+    if calculation_claims:
+        units.append(
+            {
+                "judgment_type": "calculation",
+                "answer": clean_learner_copy(" ".join(calculation_claims[:2])),
+                "source_label": "전문가 판단 과정",
+            }
+        )
+    for item in core_units:
+        unit = {
+            "judgment_type": item["judgment_type"],
+            "answer": clean_learner_copy(item["answer"]),
+            "source_label": item["label"],
+        }
+        if unit["answer"] and unit["answer"] not in {existing["answer"] for existing in units}:
+            units.append(unit)
+
+    # A few older lessons do not have labelled answer anchors.  Use their
+    # concrete reasoning sentences as a fallback, still keeping one sentence
+    # per unit rather than distributing them by list index.
+    if len(units) < 2:
+        for sentence in reasoning:
+            answer = clean_learner_copy(sentence)
+            if not answer or answer in {unit["answer"] for unit in units}:
+                continue
+            units.append(
+                {
+                    "judgment_type": "change" if any(word in answer for word in ("조건", "추인", "다음", "바뀌")) else "rule",
+                    "answer": answer,
+                    "source_label": "전문가 판단 과정",
+                }
+            )
+            if len(units) >= 2:
+                break
+    if len(units) < 2:
+        units.append(
+            {
+                "judgment_type": "rule",
+                "answer": rules[0],
+                "source_label": "법령 요약",
+            }
+        )
+    units = units[:4]
 
     blocks: list[dict[str, Any]] = []
-    for index, question in enumerate(questions):
-        lowered = question.lower()
-        if any(token in question for token in ("증빙", "자료", "원본")):
-            fact_scope = "사실관계 중 증빙·신고 자료"
-        elif any(token in question for token in ("조건", "바뀌", "변형")):
+    for index, unit in enumerate(units):
+        judgment_type = unit["judgment_type"]
+        recall_question = "" if judgment_type == "calculation" else recall_by_type.get(judgment_type, "")
+        question = make_question_from_unit(unit, recall_question, evidence)
+
+        if judgment_type == "calculation":
+            fact_scope = "사실관계 중 금액·기간·산식"
+        elif judgment_type == "evidence":
+            fact_scope = "사실관계 중 결론을 입증하는 자료"
+        elif judgment_type == "change":
             fact_scope = "사실관계에서 결론을 바꾸는 조건"
-        elif any(token in question for token in ("법리", "조문", "요건", "구분", "분류", "순서")):
-            fact_scope = "사실관계 중 법적 요건과 예외"
         else:
-            fact_scope = "사실관계의 핵심 거래와 처분"
+            fact_scope = "사실관계 중 법적 요건과 예외"
 
         step_article_ids: list[str] = []
         legal_refs: list[str] = []
-        if article_ids and index < len(article_ids):
-            article_id = article_ids[index]
+        if article_ids:
+            article_id = article_ids[index % len(article_ids)]
             step_article_ids = [article_id]
             legal_refs = [article_labels[article_id]]
         elif law_map:
@@ -556,13 +1303,13 @@ def build_question_blocks(
 
         step_evidence: list[str] = []
         if evidence:
-            if index < len(evidence):
-                step_evidence.append(evidence[index])
-            if index == block_count - 1 and len(evidence) > block_count:
-                step_evidence.extend(evidence[block_count:])
+            if judgment_type == "evidence":
+                step_evidence = evidence[:]
+            elif index < len(evidence):
+                step_evidence = [evidence[index]]
 
         accounting_note: str | None = None
-        if accounting_item and index == block_count - 1:
+        if accounting_item and (judgment_type == "calculation" or index == len(units) - 1):
             parts = [
                 accounting_item.get("accounting_treatment"),
                 accounting_item.get("reconciliation"),
@@ -572,18 +1319,19 @@ def build_question_blocks(
             if parts:
                 accounting_note = " ".join(parts)
 
-        explanation = easy[index] if index < len(easy) else (easy[0] if easy else legal_refs[0])
+        explanation = easy[index % len(easy)] if easy else legal_refs[0]
         blocks.append(
             {
                 "block_no": index + 1,
+                "judgment_type": judgment_type,
                 "question": question,
                 "fact_scope": fact_scope,
                 "legal_refs": legal_refs,
                 "article_ids": step_article_ids,
-                "answer": answers[index] or legal_refs[0],
+                "answer": unit["answer"] or legal_refs[0],
                 "explanation": clean_learner_copy(explanation),
                 "evidence": step_evidence,
-                "precedent_refs": precedent_refs if index == block_count - 1 else [],
+                "precedent_refs": precedent_refs if index == len(units) - 1 else [],
                 "accounting_note": accounting_note,
             }
         )
@@ -593,9 +1341,10 @@ def build_question_blocks(
         topic.get("concept_key") or topic.get("canonical_title") or law_name
     )
     rule_chain = " → ".join(rule.rstrip(". ") for rule in rules[:3])
-    summary_answer = next((value for value in reversed(answers) if value), "")
-    if not summary_answer:
-        summary_answer = clean_learner_copy(rules[-1])
+    summary_answer = next(
+        (block["answer"] for block in reversed(blocks) if block.get("answer")),
+        rules[-1],
+    )
     summary = clean_learner_copy(
         f"{concept}: {rule_chain}. 이 사실관계의 결론은 {summary_answer}"
     )
