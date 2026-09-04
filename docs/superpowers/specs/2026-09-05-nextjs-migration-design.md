@@ -44,7 +44,7 @@ Vercel 같은 서버 런타임으로 SSR·API를 사용할 수 있다. 그러나
 - Next.js App Router
 - React와 React DOM
 - TypeScript
-- CSS 전역 스타일시트(`app/globals.css`로 이관)
+- Tailwind CSS v4 + PostCSS (`app/globals.css`에서 `@import "tailwindcss"`로 로드)
 - JSON 콘텐츠 스냅샷
 - Python 3 표준 라이브러리: 기존 원천자료 추출·콘텐츠 재생성
 - Node.js LTS와 npm lockfile
@@ -87,11 +87,14 @@ GitHub Pages Actions → https://wttear.github.io/tax-law-issues/
 - `components/issue-reader.tsx`: 사실관계, 질문 블록, 조문 `details`, 판례·조사·회계 카드를 표시
 - `lib/content.ts`: JSON 로드, 법률별 목록, issue ID 조회, 공식 URL 허용목록, 필수 구조 검증
 - `types/content.ts`: 법률·쟁점·질문 블록·조문·판례의 타입
-- `app/globals.css`: 현재 `src/site.css`의 시각 언어와 모바일 규칙을 이관
+- `app/globals.css`: Tailwind import, 석재·종이·잉크 색상 토큰, 기본 타이포그래피·접근성 규칙. 기존 `src/site.css`의 컴포넌트 규칙은 JSX의 Tailwind 유틸리티 클래스로 옮긴다.
+- `postcss.config.mjs`: Tailwind CSS v4의 `@tailwindcss/postcss` 플러그인 설정
 - `next.config.mjs`: 정적 export, `basePath: '/tax-law-issues'`, `trailingSlash: true`, 정적 이미지 설정
 - `.github/workflows/deploy-pages.yml`: Node 설치, `npm ci`, 콘텐츠 생성, Next 빌드, `out/` Pages artifact 업로드·배포
 
 기존 `src/site.js`의 검색·필터 로직은 `issue-browser.tsx`로 옮기되, 서버가 모든 행과 실제 링크를 먼저 출력한다. 따라서 JavaScript가 꺼져도 목록·제목·상세 링크·원문 링크는 읽을 수 있다.
+
+Tailwind는 공식 Next.js 연동 방식인 PostCSS 플러그인을 사용한다. `@import "tailwindcss"`로 빌드 시 CSS를 생성하며 CDN이나 브라우저 런타임 Tailwind를 사용하지 않는다. 색상·간격·반응형 중단점은 `globals.css`의 `@theme` 토큰과 정적 유틸리티 클래스 조합으로 관리하고, 동적 검색어를 클래스명으로 만들지 않는다.
 
 ## 라우팅과 정적 생성
 
@@ -132,6 +135,7 @@ GitHub Free 공개 저장소의 GitHub Pages를 사용한다. Actions는 `out/`�
 - 색만으로 법률·판단 유형을 구분하지 않고 텍스트 라벨을 함께 표시한다.
 - 상세 원문은 브라우저 기본 `<details>`로 열고 닫으며, JavaScript 없이도 전체 문서가 접근 가능하다.
 - 외부 공식 링크에는 `rel="noopener noreferrer"`와 명확한 링크 라벨을 둔다.
+- Tailwind의 `sr-only`, `focus-visible`, 반응형 유틸리티를 사용해 시각적 숨김·키보드 초점·390px 레이아웃을 일관되게 유지한다.
 
 ## 검증 기준
 
