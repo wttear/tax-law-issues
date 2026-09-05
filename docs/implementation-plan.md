@@ -1,12 +1,14 @@
 # 세법 쟁점 아틀라스 Implementation Plan
 
+> **상태:** 이 문서는 초기 Python/정적 HTML 설계의 이력이다. 현재 구현 계획과 실행 기준은 [`docs/superpowers/plans/2026-09-05-nextjs-tailwind-shadcn-migration.md`](superpowers/plans/2026-09-05-nextjs-tailwind-shadcn-migration.md)이며, 실제 사이트는 Next.js 정적 내보내기와 `out/` 산출물을 사용한다.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** 다섯 핵심 세법에서 10개씩 고른 50개 쟁점을 `전체 사실관계 → 질문별 판단` 흐름으로 읽는 별도 모바일 우선 정적 사이트를 만들고 GitHub Pages 게시 가능한 번들을 만든다.
 
-**Architecture:** `content/`는 검증된 공개 학습 데이터, `scripts/bootstrap_content.py`는 기존 `tax-study` 공개 원천에서 50개 큐레이션 데이터를 한 번 추출하며, `scripts/build.py`는 그 데이터만 읽어 `docs/`에 독립 HTML을 생성한다. 각 쟁점은 사건 전체를 한 번 제공하는 `case_facts`와, 해당 사실의 일부를 가리켜 법령·판례·증빙·실무 결과를 붙이는 `question_blocks`로 표현한다. 문장 단위 자동 분할 대신 판단 단위의 사실 묶음을 사용하며, 학습자에게 노출되는 생성 안내문·메타 문구는 추출 단계에서 제거한다. 런타임 JavaScript는 법률·쟁점 필터만 담당하고, 사실관계·질문 블록·원문은 브라우저 기본 `details`만으로 JavaScript 없이 읽힌다. 기존 `tax-study`의 원장·템플릿·HTML은 수정하지 않는다.
+**Architecture (historical):** `content/`는 검증된 공개 학습 데이터이며, 각 쟁점은 사건 전체를 한 번 제공하는 `case_facts`와 해당 사실에 법령·판례·증빙·실무 결과를 붙이는 `question_blocks`로 표현한다. 이 문서의 초기 `docs/` HTML 빌더는 폐기했고, 현재 Next.js 서버 컴포넌트가 같은 JSON 스냅샷을 읽어 `out/`에 정적 HTML을 생성한다. 기존 `tax-study`의 원장·템플릿·HTML은 수정하지 않는다.
 
-**Tech Stack:** Python 3 표준 라이브러리, 정적 HTML5, CSS, 브라우저 기본 JavaScript, GitHub Pages.
+**Tech Stack (current):** Next.js App Router, React, Tailwind CSS v4, 저장소 소유 shadcn 스타일 프리미티브, GitHub Actions Pages.
 
 ---
 

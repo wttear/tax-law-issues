@@ -8,14 +8,14 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run test:node",
     "dev": "next dev",
     "build": "next build --webpack",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "test:node": "node --import tsx --test tests/*.test.ts",
+    "test:node": "node --import tsx --test tests/*.test.ts && node --test tests/*.test.mjs",
     "test:python": "python3 -m unittest discover -s tests -p 'test_*.py'",
-    "verify": "npm run typecheck && npm run build && npm run test:node && npm run test:python"
+    "verify": "npm run typecheck && npm run build && npm run test:node"
   },
   "keywords": [],
   "author": "",

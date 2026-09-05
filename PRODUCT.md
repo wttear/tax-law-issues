@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-delegated: 별도 정적 HTML/CSS/JavaScript 사이트와 Python 표준 라이브러리 빌드 스크립트를 사용한다. 공개 산출물은 GitHub Pages의 `docs/`에 배포할 수 있어야 하며, 런타임 서버나 패키지 설치를 요구하지 않는다.
+Next.js App Router와 React의 정적 내보내기(`output: export`)를 사용한다. Tailwind CSS v4 토큰과 저장소가 소유한 shadcn 스타일 UI 프리미티브를 사용하고, GitHub Actions가 `out/`을 GitHub Pages artifact로 배포한다. 콘텐츠는 빌드 시 JSON 스냅샷에서 읽으며 런타임 서버나 로그인 상태를 요구하지 않는다.
 
 ## Users
 
@@ -24,7 +24,7 @@ delegated: 별도 정적 HTML/CSS/JavaScript 사이트와 Python 표준 라이�
 
 ## Operating Context
 
-첫 화면에서 법률을 고르고, 법률별 쟁점 목록에서 하나를 선택한다. 쟁점 리더는 `사실관계 전문 → 핵심 질문 → 질문별 판단(사실 범위·관련 조문·답·해설)` 순서로 구성한다. 판례·조사자료·회계·세무조정은 해당 판단을 설명할 때만 붙이고, 마지막에 전체 결론을 한 번 정리한다. 검색과 법률 필터는 열람 범위만 줄이며 학습 완료·잠금·로그인 없이 동작한다.
+첫 화면에서 법률을 고르고, 법률별 쟁점 목록에서 하나를 선택한다. 쟁점 리더는 `사실관계 전문 → 중심 질문 → 질문별 판단(답·해설·연결 조문·증빙)` 순서로 구성한다. 법령 원문은 질문 판단 뒤에 두고, 판례·조사자료·회계·세무조정은 해당 쟁점에 실제로 연결될 때만 붙인다. 마지막에는 조건 변경과 한 문장 정리를 둔다. 검색과 법률 필터는 열람 범위만 줄이며 학습 완료·잠금·로그인 없이 동작한다.
 
 ## Capabilities and Constraints
 
@@ -34,7 +34,7 @@ delegated: 별도 정적 HTML/CSS/JavaScript 사이트와 Python 표준 라이�
 - 사례는 학습용 사실임을 표시하고, 사건 전체 사실을 `case_facts`에 한 번 제시한다. 질문 블록은 사실 전문을 반복하지 않고 판단할 범위만 가리키며, 자료가 부족한 경우 확인되지 않은 부분과 확인할 자료를 구분한다.
 - 회계·세무조정은 금액·장부·신고 결과가 실제로 바뀌는 쟁점에서만 표시한다. 시험 모듈도 실제 기출 또는 독립 연습 기준을 충족할 때만 선택한다.
 - 기존 `tax-study` 사이트와 그 진도 원장은 수정하지 않는다. 이 사이트는 별도 정적 산출물이며 브라우저 저장이나 공식 진도 상태 변경을 사용하지 않는다.
-- 공개 배포는 GitHub Pages를 목표로 한다. 현재 로컬 GitHub CLI 인증은 만료되어 있어 인증 이후 게시가 필요하다.
+- 공개 배포는 `.github/workflows/deploy-pages.yml`의 GitHub Pages Actions를 사용한다. 저장소 Settings → Pages에서 source를 GitHub Actions로 지정하면 push 때 자동 배포된다.
 
 ## Brand Commitments
 

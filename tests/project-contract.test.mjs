@@ -6,7 +6,7 @@ const packageJson = JSON.parse(fs.readFileSync("package.json", "utf8"));
 
 test("Next project exposes required scripts", () => {
   assert.equal(packageJson.private, true);
-  assert.equal(packageJson.scripts.build, "next build");
+  assert.equal(packageJson.scripts.build, "next build --webpack");
   assert.equal(packageJson.scripts.typecheck, "tsc --noEmit");
   assert.ok(packageJson.dependencies.next);
   assert.ok(packageJson.dependencies.tailwindcss);
