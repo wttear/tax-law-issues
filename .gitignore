@@ -6,4 +6,7 @@ __pycache__/
 .codex/
 .superpowers/
 .worktrees/
+node_modules/
+.next/
+out/
 *.log
