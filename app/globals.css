@@ -1,0 +1,67 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+:root {
+  --background: #f4f1e8;
+  --foreground: #16283d;
+  --card: #fffdf7;
+  --card-foreground: #16283d;
+  --popover: #fffdf7;
+  --popover-foreground: #16283d;
+  --primary: #155d9c;
+  --primary-foreground: #fffdf7;
+  --secondary: #0b6f69;
+  --secondary-foreground: #fffdf7;
+  --muted: #ece8dd;
+  --muted-foreground: #33465a;
+  --accent: #e6e1d5;
+  --accent-foreground: #16283d;
+  --destructive: #9b3d36;
+  --border: #b7b4ab;
+  --input: #b7b4ab;
+  --ring: #155d9c;
+  --radius: 0.2rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-size: 17px;
+    line-height: 1.72;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+}
