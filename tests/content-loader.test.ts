@@ -174,6 +174,19 @@ test("nonbusiness-asset learning calculates the interest adjustment from the sta
   assert.match(issue.question_blocks[1].explanation, /적수/);
 });
 
+test("construction-contract learning teaches the current work-progress default instead of an obsolete one-year trigger", () => {
+  const issue = getIssue("CTA-LONG-TERM-CONTRACT-001");
+
+  assert.ok(issue);
+  assert.equal(issue.title, "공사가 아직 끝나지 않았는데, 올해 매출을 잡아야 할까?");
+  assert.match(issue.case_facts, /중소기업에 해당하지 않으며/);
+  assert.match(issue.question_blocks[0].answer, /작업진행률/);
+  assert.match(issue.question_blocks[0].explanation, /계약기간이 1년 이상인지 여부만으로/);
+  assert.match(issue.question_blocks[1].answer, /1,200,000,000원/);
+  assert.match(issue.question_blocks[1].answer, /1,500,000,000원/);
+  assert.match(issue.question_blocks[1].explanation, /계약 당시에 추정한 공사원가/);
+});
+
 test("every published issue has a reviewed learning-note override", () => {
   const source = JSON.parse(readFileSync("content/learning-notes.json", "utf8")) as { notes: Array<{ issue_id: string }> };
   const publishedIds = getCatalog().issues.map((issue) => issue.issue_id).sort();
