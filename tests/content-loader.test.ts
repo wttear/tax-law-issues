@@ -124,6 +124,44 @@ test("collection notes use precedents to make priority and setoff dates concrete
   assert.match(setoffCase.official_source_url, /law\.go\.kr/);
 });
 
+test("income-disposition learning separates cash retained by the company from the representative's personal use", () => {
+  const issue = getIssue("CTA-INCOME-DISPOSITION-001");
+
+  assert.ok(issue);
+  assert.match(issue.question_blocks[0].answer, /70,000,000원.*익금/);
+  assert.match(issue.question_blocks[1].question, /법인 계좌에 남은 35,000,000원.*개인 생활비로 쓴 35,000,000원/);
+  assert.match(issue.question_blocks[1].answer, /사내유보/);
+  assert.match(issue.question_blocks[1].answer, /상여/);
+});
+
+test("income-disposition learning cites the source-backed omitted-sales precedent", () => {
+  const issue = getIssue("CTA-INCOME-DISPOSITION-001");
+  const precedent = getPrecedent("SC-1997NU19151-1999-05-25");
+
+  assert.ok(issue);
+  assert.ok(precedent);
+  assert.deepEqual(issue.precedent_ids, ["SC-1997NU19151-1999-05-25"]);
+  assert.equal(precedent.case_number, "97누19151");
+  assert.match(precedent.official_source_url, /law\.go\.kr/);
+});
+
+test("related-party pricing learning tests the actual economic consideration at the transaction date", () => {
+  const issue = getIssue("CTA-RELATED-PARTY-001");
+
+  assert.ok(issue);
+  assert.deepEqual(issue.precedent_ids, ["SC-2017DU35165-2020-12-10"]);
+  assert.match(issue.question_blocks[0].answer, /거래 당시/);
+  assert.match(issue.question_blocks[1].answer, /100,000,000원/);
+  assert.match(issue.question_blocks[1].answer, /실제 부담/);
+});
+
+test("a precedent is not attached to an unrelated legal-principle note", () => {
+  const issue = getIssue("NTBA-LEGALITY-001");
+
+  assert.ok(issue);
+  assert.deepEqual(issue.precedent_ids, []);
+});
+
 test("every published issue has a reviewed learning-note override", () => {
   const source = JSON.parse(readFileSync("content/learning-notes.json", "utf8")) as { notes: Array<{ issue_id: string }> };
   const publishedIds = getCatalog().issues.map((issue) => issue.issue_id).sort();

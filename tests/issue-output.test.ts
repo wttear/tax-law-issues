@@ -41,3 +41,13 @@ test("collection precedent cards are visible where statutory dates decide the re
   assert.match(thirdDebtorHtml, /관련 판례/);
   assert.match(thirdDebtorHtml, /2011다45521/);
 });
+
+test("corporate-tax learning notes render the concrete split and transaction-time precedent boundaries", () => {
+  const incomeDispositionHtml = readFileSync("out/issues/CTA-INCOME-DISPOSITION-001/index.html", "utf8");
+  const relatedPartyHtml = readFileSync("out/issues/CTA-RELATED-PARTY-001/index.html", "utf8");
+
+  assert.match(incomeDispositionHtml, /법인 계좌에 남은 35,000,000원/);
+  assert.match(incomeDispositionHtml, /97누19151/);
+  assert.match(relatedPartyHtml, /같은 날 독립 거래 가격이 100,000,000원/);
+  assert.match(relatedPartyHtml, /2017두35165/);
+});
