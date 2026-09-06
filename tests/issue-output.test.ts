@@ -31,3 +31,13 @@ test("a vetted income-tax precedent is visible in its static learning note", () 
   assert.match(html, /2016두37584/);
   assert.match(html, /law.go.kr/);
 });
+
+test("collection precedent cards are visible where statutory dates decide the result", () => {
+  const priorityHtml = readFileSync("out/issues/NCTA-TAX-PRIORITY-001/index.html", "utf8");
+  const thirdDebtorHtml = readFileSync("out/issues/NCTA-THIRD-DEBTOR-001/index.html", "utf8");
+
+  assert.match(priorityHtml, /관련 판례/);
+  assert.match(priorityHtml, /97다12037/);
+  assert.match(thirdDebtorHtml, /관련 판례/);
+  assert.match(thirdDebtorHtml, /2011다45521/);
+});

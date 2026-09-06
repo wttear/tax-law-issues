@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { getCatalog, getIssue, getLaws, mergeLearningNotes, validateContentSnapshot } from "../lib/content";
+import { getCatalog, getIssue, getLaws, getPrecedent, mergeLearningNotes, validateContentSnapshot } from "../lib/content";
 
 test("catalog lists its published laws and issues", () => {
   const catalog = getCatalog();
@@ -107,6 +107,21 @@ test("income-tax notes connect precedents that answer their specific judgment bo
   assert.deepEqual(classification.precedent_ids, ["SAC-2008GUHAP14548-2008-11-26"]);
   assert.deepEqual(jointBusiness.precedent_ids, ["SC-1996NU8192-1997-09-26"]);
   assert.deepEqual(books.precedent_ids, ["SC-1996NU8192-1997-09-26"]);
+});
+
+test("collection notes use precedents to make priority and setoff dates concrete", () => {
+  const priority = getIssue("NCTA-TAX-PRIORITY-001");
+  const thirdDebtor = getIssue("NCTA-THIRD-DEBTOR-001");
+  const setoffCase = getPrecedent("SC-2011DA45521-2012-02-16");
+
+  assert.ok(priority);
+  assert.ok(thirdDebtor);
+  assert.ok(setoffCase);
+  assert.deepEqual(priority.precedent_ids, ["SC-1997DA12037-1998-09-08"]);
+  assert.deepEqual(thirdDebtor.precedent_ids, ["SC-2011DA45521-2012-02-16"]);
+  assert.match(thirdDebtor.question_blocks[1].answer, /압류 효력이 생긴 때.*상계/);
+  assert.equal(setoffCase.case_number, "2011다45521");
+  assert.match(setoffCase.official_source_url, /law\.go\.kr/);
 });
 
 test("every published issue has a reviewed learning-note override", () => {
