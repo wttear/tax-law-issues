@@ -1,5 +1,7 @@
 # 세법 쟁점 아틀라스 Implementation Plan
 
+> **콘텐츠 기준 갱신(2026-09-06):** 집필 기준은 [세무쟁점 학습노트 범용 설계](superpowers/specs/2026-09-06-general-tax-learning-note-design.md), 이번 제작 범위는 [첫 50개 신규 집필 실행계획](superpowers/plans/2026-09-06-practical-tax-learning-regeneration.md)을 따른다. 아래의 고정 개수·최소 질문 수·질문 템플릿·토큰 일치 검증은 과거 구현 이력이며 더 이상 작성 기준이 아니다. 기존 코드와 원고는 새 집필의 전제가 아니며 계획 수립은 집필·배포 완료를 뜻하지 않는다.
+
 > **상태:** 이 문서는 초기 Python/정적 HTML 설계의 이력이다. 현재 구현 계획과 실행 기준은 [`docs/superpowers/plans/2026-09-05-nextjs-tailwind-shadcn-migration.md`](superpowers/plans/2026-09-05-nextjs-tailwind-shadcn-migration.md)이며, 실제 사이트는 Next.js 정적 내보내기와 `out/` 산출물을 사용한다.
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
