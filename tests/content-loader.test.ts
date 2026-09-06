@@ -202,6 +202,22 @@ test("business-income timing learning uses service completion instead of the cas
   assert.match(serviceTimingRule.versions[0]?.text ?? "", /용역의 제공을 완료한 날/);
 });
 
+test("common-input learning separates direct attribution, final allocation, and scheduled-return settlement", () => {
+  const issue = getIssue("VAT-COMMON-INPUT-ALLOCATION-001");
+  const allocationRule = getArticle("VAT-81");
+
+  assert.ok(issue);
+  assert.ok(allocationRule);
+  assert.equal(issue.title, "과세·면세를 함께 하는 광고비, 부가세는 얼마까지 공제될까?");
+  assert.match(issue.question_blocks[0].answer, /200,000원/);
+  assert.match(issue.question_blocks[1].answer, /240,000원/);
+  assert.match(issue.question_blocks[1].answer, /760,000원/);
+  assert.match(issue.question_blocks[1].explanation, /5퍼센트 미만/);
+  assert.match(issue.question_blocks[2].answer, /160,000원/);
+  assert.match(issue.question_blocks[2].explanation, /확정신고를 할 때에 정산/);
+  assert.match(allocationRule.versions[0]?.text ?? "", /면세사업등에 관련된 매입세액/);
+});
+
 test("every published issue has a reviewed learning-note override", () => {
   const source = JSON.parse(readFileSync("content/learning-notes.json", "utf8")) as { notes: Array<{ issue_id: string }> };
   const publishedIds = getCatalog().issues.map((issue) => issue.issue_id).sort();
