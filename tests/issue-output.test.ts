@@ -96,3 +96,14 @@ test("expanded notes render direct questions, current rules, and no template fil
   assert.match(invoice, /반품된 날/);
   assert.match(invoice, /수정세금계산서/);
 });
+
+test("the practical core notes are included in the static export", () => {
+  for (const issueId of [
+    "CTA-ADVANCE-TO-OFFICER-001",
+    "ITA-CAPITAL-GAINS-TIMING-001",
+    "VAT-DEEMED-INPUT-001",
+  ]) {
+    const html = readFileSync(`out/issues/${issueId}/index.html`, "utf8");
+    assert.match(html, /사실관계 전문/);
+  }
+});
