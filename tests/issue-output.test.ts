@@ -59,3 +59,12 @@ test("the nonbusiness-asset note renders its interest calculation rather than a 
   assert.match(html, /25,000,000원 × 100,000,000원 ÷ 500,000,000원 = 5,000,000원/);
   assert.match(html, /적수/);
 });
+
+test("the construction-contract note renders the current work-progress rule and both calculation outcomes", () => {
+  const html = readFileSync("out/issues/CTA-LONG-TERM-CONTRACT-001/index.html", "utf8");
+
+  assert.match(html, /공사가 아직 끝나지 않았는데, 올해 매출을 잡아야 할까/);
+  assert.match(html, /계약기간이 1년 이상인지 여부만으로/);
+  assert.match(html, /1,200,000,000원/);
+  assert.match(html, /1,500,000,000원/);
+});
