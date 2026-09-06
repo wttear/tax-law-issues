@@ -270,3 +270,57 @@ test("the practical expansion adds only reviewed, source-backed issue notes", ()
   assert.match(getArticle("CTAE-50-2")?.versions[0]?.text ?? "", /해당 사업연도 전체 기간/);
   assert.match(getIssue("VAT-BAD-DEBT-CREDIT-001")?.question_blocks[1].answer ?? "", /110분의 10/);
 });
+
+test("the practical core expansion adds direct, evidence-ready issue notes", () => {
+  const ids = [
+    "CTA-ADVANCE-TO-OFFICER-001",
+    "CTA-BUSINESS-PROMOTION-EVIDENCE-001",
+    "CTA-DONATION-001",
+    "CTA-EXECUTIVE-RETIREMENT-001",
+    "CTA-LOSS-CARRYFORWARD-001",
+    "ITA-WITHHOLDING-PAYROLL-001",
+    "ITA-FAMILY-WAGE-001",
+    "ITA-RENTAL-INCOME-001",
+    "ITA-CAPITAL-GAINS-TIMING-001",
+    "ITA-CAPITAL-GAINS-COST-001",
+    "VAT-INVOICE-PENALTY-001",
+    "VAT-CARD-SALES-001",
+    "VAT-DEEMED-INPUT-001",
+    "VAT-INVENTORY-TAX-TRANSITION-001",
+    "VAT-BUSINESS-REGISTRATION-001",
+  ];
+
+  for (const id of ids) assert.ok(getIssue(id), id);
+  assert.equal(getCatalog().issues.length, 78);
+  assert.equal(getLaws().find((law) => law.law_code === "CTA")?.issue_count, 18);
+  assert.equal(getLaws().find((law) => law.law_code === "ITA")?.issue_count, 17);
+  assert.equal(getLaws().find((law) => law.law_code === "VAT")?.issue_count, 18);
+  assert.match(getIssue("CTA-ADVANCE-TO-OFFICER-001")?.case_facts ?? "", /80,000,000원/);
+  assert.match(getIssue("ITA-FAMILY-WAGE-001")?.question_blocks[0]?.question ?? "", /배우자에게 준 급여/);
+  assert.match(getIssue("ITA-CAPITAL-GAINS-COST-001")?.question_blocks[0]?.answer ?? "", /자본적 지출/);
+  assert.match(getIssue("VAT-DEEMED-INPUT-001")?.question_blocks[0]?.question ?? "", /농산물/);
+  assert.match(getIssue("VAT-BUSINESS-REGISTRATION-001")?.question_blocks[0]?.answer ?? "", /매입세액/);
+  assert.match(getArticle("CTAE-44")?.versions[0]?.text ?? "", /현실적으로 퇴직/);
+  assert.match(getArticle("ITA-128")?.versions[0]?.text ?? "", /다음 달 10일까지/);
+  assert.match(getArticle("ITAE-163")?.versions[0]?.text ?? "", /증명서류를 수취ㆍ보관/);
+  assert.match(getArticle("VAT-42")?.versions[0]?.text ?? "", /면세농산물등/);
+  assert.match(getArticle("VATE-112")?.versions[0]?.text ?? "", /재고납부세액/);
+  assert.match(getIssue("CTA-ADVANCE-TO-OFFICER-001")?.question_blocks[1]?.answer ?? "", /인정이자/);
+  assert.match(getIssue("CTA-LOSS-CARRYFORWARD-001")?.question_blocks[0]?.legal_refs.join(" ") ?? "", /제14조 제3항/);
+  assert.match(getArticle("CTA-24")?.versions[0]?.text ?? "", /10년 이내/);
+  assert.match(getIssue("ITA-RENTAL-INCOME-001")?.question_blocks[0]?.legal_refs.join(" ") ?? "", /제25조 제1항$/);
+  assert.match(getArticle("ITAE-163")?.versions[0]?.text ?? "", /제163조[\s\S]*⑤/);
+  assert.match(getIssue("ITA-CAPITAL-GAINS-COST-001")?.question_blocks[0]?.legal_refs.join(" ") ?? "", /제163조 제5항/);
+  assert.match(getArticle("ITA-97")?.versions[0]?.official_url ?? "", /1033246443/);
+  assert.match(getArticle("ITA-98")?.versions[0]?.official_url ?? "", /1033246255/);
+  assert.match(getArticle("VAT-33")?.versions[0]?.text ?? "", /세금계산서를 발급하지 아니한다/);
+  assert.match(getIssue("VAT-CARD-SALES-001")?.question_blocks[1]?.answer ?? "", /제33조 제2항/);
+  assert.match(getIssue("VAT-INVOICE-PENALTY-001")?.article_ids.join(" ") ?? "", /VAT-34/);
+  assert.match(getIssue("VAT-BUSINESS-REGISTRATION-001")?.question_blocks[1]?.legal_refs.join(" ") ?? "", /제60조 제1항/);
+  assert.equal(getIssue("VAT-INVENTORY-TAX-TRANSITION-001")?.question_blocks[0]?.legal_refs[0], "부가가치세법 제64조");
+  assert.match(getIssue("VAT-INVENTORY-TAX-TRANSITION-001")?.question_blocks[0]?.legal_refs.join(" ") ?? "", /제112조 제3항 제1호/);
+  assert.match(getIssue("VAT-INVENTORY-TAX-TRANSITION-001")?.question_blocks[0]?.legal_refs.join(" ") ?? "", /제112조 제7항/);
+  assert.match(getIssue("VAT-INVENTORY-TAX-TRANSITION-001")?.question_blocks[1]?.legal_refs.join(" ") ?? "", /제112조 제1항 제5호/);
+  assert.match(getIssue("VAT-INVENTORY-TAX-TRANSITION-001")?.question_blocks[1]?.legal_refs.join(" ") ?? "", /제112조 제3항 제3호 나목/);
+  assert.match(getArticle("VATE-112")?.versions[0]?.text ?? "", /그 밖의 감가상각자산/);
+});
