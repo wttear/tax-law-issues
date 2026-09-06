@@ -24,3 +24,10 @@ test("a directly relevant, source-backed precedent is rendered after the learnin
   assert.match(html, /2021두33371/);
   assert.match(html, /law.go.kr/);
 });
+
+test("a vetted income-tax precedent is visible in its static learning note", () => {
+  const html = readFileSync("out/issues/ITA-RESIDENCY-SOURCE-001/index.html", "utf8");
+  assert.match(html, /관련 판례/);
+  assert.match(html, /2016두37584/);
+  assert.match(html, /law.go.kr/);
+});

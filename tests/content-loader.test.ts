@@ -93,6 +93,22 @@ test("a directly relevant precedent is connected only where it adds a concrete b
   assert.deepEqual(issue.precedent_ids, ["SC-2021DU33371-2021-12-30"]);
 });
 
+test("income-tax notes connect precedents that answer their specific judgment boundary", () => {
+  const residency = getIssue("ITA-RESIDENCY-SOURCE-001");
+  const classification = getIssue("ITA-INCOME-CLASSIFICATION-001");
+  const jointBusiness = getIssue("ITA-JOINT-BUSINESS-001");
+  const books = getIssue("ITA-BOOKS-ESTIMATION-001");
+
+  assert.ok(residency);
+  assert.ok(classification);
+  assert.ok(jointBusiness);
+  assert.ok(books);
+  assert.deepEqual(residency.precedent_ids, ["SC-2016DU37584-2016-08-17"]);
+  assert.deepEqual(classification.precedent_ids, ["SAC-2008GUHAP14548-2008-11-26"]);
+  assert.deepEqual(jointBusiness.precedent_ids, ["SC-1996NU8192-1997-09-26"]);
+  assert.deepEqual(books.precedent_ids, ["SC-1996NU8192-1997-09-26"]);
+});
+
 test("every published issue has a reviewed learning-note override", () => {
   const source = JSON.parse(readFileSync("content/learning-notes.json", "utf8")) as { notes: Array<{ issue_id: string }> };
   const publishedIds = getCatalog().issues.map((issue) => issue.issue_id).sort();
