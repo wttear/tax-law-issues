@@ -77,3 +77,12 @@ test("the business-income timing note renders service completion, receivable rec
   assert.match(html, /2027년 매출로 다시 적지 않는다/);
   assert.match(html, /사업소득의 수입시기/);
 });
+
+test("the common-input note renders direct attribution, final allocation, and scheduled-return settlement", () => {
+  const html = readFileSync("out/issues/VAT-COMMON-INPUT-ALLOCATION-001/index.html", "utf8");
+
+  assert.match(html, /과세·면세를 함께 하는 광고비, 부가세는 얼마까지 공제될까/);
+  assert.match(html, /공제받을 광고비 부가세는 760,000원/);
+  assert.match(html, /160,000원 더 줄여 정산한다/);
+  assert.match(html, /공통매입세액 안분 계산/);
+});
