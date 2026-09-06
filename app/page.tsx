@@ -32,7 +32,7 @@ export default function HomePage() {
       <main id="main-content" className="mx-auto max-w-6xl px-4 pb-20 pt-8 sm:px-6 lg:px-8 lg:pt-14">
         <section className="grid gap-8 border-b border-border pb-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div>
-            <Badge variant="outline">국세 5개 법령 · 50개 쟁점</Badge>
+            <Badge variant="outline">국세 {laws.length}개 법령 · {issues.length}개 쟁점</Badge>
             <h1 className="mt-5 max-w-3xl text-3xl font-semibold tracking-tight sm:text-5xl sm:leading-[1.12]">
               법령을 읽고, 쟁점을 판단하고,
               <br className="hidden sm:block" /> 실제 조사에 적용합니다.
@@ -74,7 +74,7 @@ export default function HomePage() {
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary">법령별 쟁점</p>
               <h2 id="law-directory-title" className="mt-1 text-2xl font-semibold tracking-tight">먼저 법령을 고르세요</h2>
             </div>
-            <span className="text-sm text-muted-foreground">법령별 10개</span>
+            <span className="text-sm text-muted-foreground">법령별 실제 개수</span>
           </div>
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
             {laws.map((law) => (

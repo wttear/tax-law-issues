@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { getCatalog } from "../lib/content";
 
 function htmlFiles(): string[] {
   const pages = ["out/index.html"];
@@ -36,7 +37,7 @@ test("static pages keep the orientation, accessibility, and source contracts", (
 
 test("the index keeps all issue rows in the HTML fallback", () => {
   const html = readFileSync("out/index.html", "utf8");
-  assert.equal((html.match(/data-issue-row="true"/g) ?? []).length, 50);
+  assert.equal((html.match(/data-issue-row="true"/g) ?? []).length, getCatalog().issues.length);
   assert.match(html, /id="issue-search"/);
   assert.match(html, /id="law-filter"/);
 });

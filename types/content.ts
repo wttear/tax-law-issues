@@ -1,4 +1,4 @@
-export type JudgmentType = "rule" | "calculation" | "evidence" | "change";
+export type JudgmentType = string;
 
 export interface Law {
   law_code: string;
@@ -19,12 +19,19 @@ export interface QuestionBlock {
   evidence: string[];
   precedent_refs: string[];
   accounting_note: string | null;
+  practical_note?: string | null;
 }
 
 export interface IssueModules {
   audit: boolean;
   accounting: boolean;
   exam: boolean;
+}
+
+export interface PracticalApplication {
+  title: string;
+  introduction: string;
+  steps: string[];
 }
 
 export interface RelatedReference {
@@ -61,6 +68,8 @@ export interface Issue {
   estimated_minutes: number;
   audience: string;
   material_metadata: Record<string, unknown>;
+  practical_application?: PracticalApplication | null;
+  takeaway?: string | null;
 }
 
 export interface ArticleVersion {
