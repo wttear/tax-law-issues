@@ -44,7 +44,7 @@ export function IssueBrowser({ laws, issueCount, children }: { laws: Law[]; issu
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary">탐색</p>
           <h2 id="issue-browser-title" className="mt-1 text-2xl font-semibold tracking-tight">
-            50개 쟁점에서 골라 읽기
+            {issueCount}개 쟁점에서 골라 읽기
           </h2>
         </div>
         <p className="text-sm text-muted-foreground" aria-live="polite">

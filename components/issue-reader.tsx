@@ -1,31 +1,16 @@
 import Link from "next/link";
-import { ExternalLink, FileCheck2, FileText, Gavel, SearchCheck } from "lucide-react";
+import { ExternalLink, FileText, Gavel } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { getArticle, getPrecedent } from "@/lib/content";
 import type { Article, Issue, Precedent, QuestionBlock } from "@/types/content";
 
-const judgmentLabels: Record<string, string> = {
-  rule: "규칙 적용",
-  calculation: "계산",
-  evidence: "증거 확인",
-  change: "조건 변경",
-};
-
 const levelLabels: Record<string, string> = {
   beginner: "기초",
   intermediate: "중급",
   advanced: "심화",
 };
-
-function textValue(value: unknown): string {
-  return typeof value === "string" ? value : "";
-}
-
-function textList(value: unknown): string[] {
-  return Array.isArray(value) ? value.filter((item): item is string => typeof item === "string" && item.length > 0) : [];
-}
 
 function safeOfficialUrl(value: string): string | null {
   try {
@@ -61,7 +46,7 @@ function ArticleCard({ articleId }: { articleId: string }) {
 
   return (
     <Card className="overflow-hidden">
-      <CardHeader className="gap-3 border-b border-border bg-muted/40 sm:flex-row sm:items-start sm:justify-between">
+      <CardHeader className="gap-3 bg-muted/40 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
             <Badge variant="outline">{article.article_number}</Badge>
@@ -73,13 +58,16 @@ function ArticleCard({ articleId }: { articleId: string }) {
         </div>
         <OfficialLink href={article.official_url}>법령 원문 열기</OfficialLink>
       </CardHeader>
-      <CardContent className="space-y-4 pt-5">
-        <p className="text-sm text-muted-foreground">
-          시행일 {version.effective_date} · 확인일 {version.checked_at}
-        </p>
-        <div className="rounded-md border border-border bg-background p-4 text-[0.98rem] leading-8 whitespace-pre-wrap">
-          {version.text}
-        </div>
+      <CardContent className="pt-0">
+        <details className="border-t border-border pt-4">
+          <summary className="cursor-pointer font-semibold text-sm">조문과 기준일 보기</summary>
+          <p className="mt-4 text-sm text-muted-foreground">
+            시행일 {version.effective_date} · 확인일 {version.checked_at}
+          </p>
+          <div className="mt-4 rounded-md border border-border bg-background p-4 text-[0.98rem] leading-8 whitespace-pre-wrap">
+            {version.text}
+          </div>
+        </details>
       </CardContent>
     </Card>
   );
@@ -88,41 +76,28 @@ function ArticleCard({ articleId }: { articleId: string }) {
 function QuestionBlockCard({ block }: { block: QuestionBlock }) {
   return (
     <article id={`question-${block.block_no}`} className="border-t border-border py-7 first:border-t-0 first:pt-2">
-      <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-        <Badge variant="secondary">질문 {block.block_no}</Badge>
-        <span>{judgmentLabels[block.judgment_type] ?? block.judgment_type}</span>
-      </div>
+      <Badge variant="secondary">질문 {block.block_no}</Badge>
       <h3 className="mt-3 text-xl font-semibold leading-snug">{block.question}</h3>
 
-      <div className="mt-5 grid gap-4 lg:grid-cols-2">
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base">답</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p>{block.answer}</p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base">왜 이렇게 판단하나</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p>{block.explanation}</p>
-          </CardContent>
-        </Card>
+      <div className="mt-5 rounded-md bg-muted/45 p-5">
+        <p className="font-semibold">답</p>
+        <p className="mt-2 text-lg leading-8">{block.answer}</p>
+        <p className="mt-4 leading-8 text-muted-foreground">{block.explanation}</p>
       </div>
 
-      <div className="mt-4 grid gap-5 border-l-2 border-primary/30 pl-4 lg:grid-cols-2">
-        <div>
+      {(block.legal_refs.length > 0 || block.evidence.length > 0 || block.practical_note) && (
+        <div className="mt-5 grid gap-5 border-l-2 border-primary/30 pl-4 lg:grid-cols-2">
+          {block.legal_refs.length > 0 && (
+            <div>
           <h4 className="font-semibold">연결 법령</h4>
           <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
             {block.legal_refs.map((reference) => (
               <li key={reference}>{reference}</li>
             ))}
           </ul>
-        </div>
-        {block.evidence.length > 0 && (
+            </div>
+          )}
+          {block.evidence.length > 0 && (
           <div>
             <h4 className="font-semibold">확인할 자료</h4>
             <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
@@ -131,8 +106,15 @@ function QuestionBlockCard({ block }: { block: QuestionBlock }) {
               ))}
             </ul>
           </div>
-        )}
-      </div>
+          )}
+          {block.practical_note && (
+            <div className="lg:col-span-2">
+              <h4 className="font-semibold">실무에서 볼 점</h4>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">{block.practical_note}</p>
+            </div>
+          )}
+        </div>
+      )}
 
       {block.accounting_note && (
         <div className="mt-5 rounded-md bg-muted/60 p-4 text-sm">
@@ -141,63 +123,6 @@ function QuestionBlockCard({ block }: { block: QuestionBlock }) {
         </div>
       )}
     </article>
-  );
-}
-
-function AuditCard({ item }: { item: Record<string, unknown> }) {
-  const evidence = textList(item.evidence_to_check);
-  return (
-    <Card>
-      <CardHeader className="flex-row items-center gap-3">
-        <SearchCheck aria-hidden="true" className="size-5 text-secondary" />
-        <CardTitle className="text-base">조사 가설과 반대 가설</CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-4 text-sm">
-        <div>
-          <p className="font-semibold">과세 가설</p>
-          <p className="mt-1 text-muted-foreground">{textValue(item.audit_hypothesis)}</p>
-        </div>
-        <div>
-          <p className="font-semibold">반대 가설</p>
-          <p className="mt-1 text-muted-foreground">{textValue(item.counter_hypothesis)}</p>
-        </div>
-        {evidence.length > 0 && (
-          <div>
-            <p className="font-semibold">먼저 확보할 증거</p>
-            <ul className="mt-1 list-disc space-y-1 pl-5 text-muted-foreground">
-              {evidence.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </CardContent>
-    </Card>
-  );
-}
-
-function AccountingCard({ item }: { item: Record<string, unknown> }) {
-  return (
-    <Card>
-      <CardHeader className="flex-row items-center gap-3">
-        <FileCheck2 aria-hidden="true" className="size-5 text-primary" />
-        <CardTitle className="text-base">회계·세무조정 연결</CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-4 text-sm">
-        <div>
-          <p className="font-semibold">회계 처리</p>
-          <p className="mt-1 text-muted-foreground">{textValue(item.accounting_treatment)}</p>
-        </div>
-        <div>
-          <p className="font-semibold">신고서 대사</p>
-          <p className="mt-1 text-muted-foreground">{textValue(item.reconciliation)}</p>
-        </div>
-        <div>
-          <p className="font-semibold">세무조정</p>
-          <p className="mt-1 text-muted-foreground">{textValue(item.tax_adjustment)}</p>
-        </div>
-      </CardContent>
-    </Card>
   );
 }
 
@@ -251,14 +176,15 @@ function PrecedentCard({ precedent }: { precedent: Precedent }) {
 }
 
 function ArticleReferences({ issue }: { issue: Issue }) {
+  if (issue.article_ids.length === 0) return null;
   return (
     <section aria-labelledby="articles-title" className="mt-12 scroll-mt-6">
       <div className="flex items-start gap-3">
         <FileText aria-hidden="true" className="mt-1 size-5 text-primary" />
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-secondary">근거 확인</p>
-          <h2 id="articles-title" className="mt-1 text-2xl font-semibold tracking-tight">관련 법령 원문</h2>
-          <p className="mt-2 text-muted-foreground">앞에서 판단한 질문에 연결된 조문만 순서대로 확인합니다.</p>
+          <h2 id="articles-title" className="mt-1 text-2xl font-semibold tracking-tight">관련 법령</h2>
+          <p className="mt-2 text-muted-foreground">본문에서 사용한 조문만 모았습니다. 원문은 필요할 때 펼쳐 보세요.</p>
         </div>
       </div>
       <div className="mt-6 space-y-4">
@@ -271,9 +197,9 @@ function ArticleReferences({ issue }: { issue: Issue }) {
 }
 
 export function IssueReader({ issue, previousIssue, nextIssue }: { issue: Issue; previousIssue?: Issue; nextIssue?: Issue }) {
-  const auditItems = issue.audit_application;
-  const accountingItems = issue.accounting_tax_adjustment;
-  const precedents = issue.precedent_ids.map((id) => getPrecedent(id)).filter((item): item is Precedent => Boolean(item));
+  const precedents = issue.precedent_ids
+    .map((id) => getPrecedent(id))
+    .filter((item): item is Precedent => Boolean(item?.title && item.holding_summary));
 
   return (
     <>
@@ -295,15 +221,12 @@ export function IssueReader({ issue, previousIssue, nextIssue }: { issue: Issue;
           </Link>
           <span aria-hidden="true">/</span>
           <span>{issue.law_name}</span>
-          <span aria-hidden="true">/</span>
-          <span>{issue.position}번째 쟁점</span>
         </div>
 
         <header className="mt-6">
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="secondary">{issue.law_name}</Badge>
             <Badge variant="outline">{levelLabels[issue.level] ?? issue.level}</Badge>
-            <span className="text-sm text-muted-foreground">약 {issue.estimated_minutes}분</span>
           </div>
           <h1 className="mt-4 text-3xl font-semibold tracking-tight sm:text-5xl sm:leading-tight">{issue.title}</h1>
         </header>
@@ -316,20 +239,8 @@ export function IssueReader({ issue, previousIssue, nextIssue }: { issue: Issue;
           <p className="mt-4 text-lg leading-8">{issue.case_facts}</p>
         </section>
 
-        <section aria-labelledby="core-question-title" className="mt-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-secondary">이 사례의 중심</p>
-          <h2 id="core-question-title" className="mt-1 text-2xl font-semibold tracking-tight">무엇을 판단해야 하나</h2>
-          <p className="mt-3 text-lg leading-8 text-muted-foreground">{issue.core_question}</p>
-        </section>
-
-        <section aria-labelledby="questions-title" className="mt-12 scroll-mt-6">
-          <div className="flex items-end justify-between gap-4">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-secondary">판단의 흐름</p>
-              <h2 id="questions-title" className="mt-1 text-2xl font-semibold tracking-tight">질문별 판단</h2>
-            </div>
-            <span className="text-sm text-muted-foreground">{issue.question_blocks.length}단계</span>
-          </div>
+        <section aria-labelledby="questions-title" className="mt-10 scroll-mt-6">
+          <h2 id="questions-title" className="sr-only">질문과 답</h2>
           <div className="mt-5 rounded-md border border-border bg-card px-4 sm:px-6">
             {issue.question_blocks.map((block) => (
               <QuestionBlockCard key={block.block_no} block={block} />
@@ -339,28 +250,17 @@ export function IssueReader({ issue, previousIssue, nextIssue }: { issue: Issue;
 
         <ArticleReferences issue={issue} />
 
-        {auditItems.length > 0 && (
-          <section aria-labelledby="audit-title" className="mt-12 scroll-mt-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-secondary">현장 연결</p>
-            <h2 id="audit-title" className="mt-1 text-2xl font-semibold tracking-tight">세무조사에 적용하기</h2>
-            <p className="mt-2 text-muted-foreground">같은 규칙을 조사 자료와 반대 가설에 대입해 결론을 검증합니다.</p>
-            <div className="mt-5 grid gap-4">
-              {auditItems.map((item, index) => (
-                <AuditCard key={index} item={item} />
-              ))}
-            </div>
-          </section>
-        )}
-
-        {accountingItems.length > 0 && (
-          <section aria-labelledby="accounting-title" className="mt-12 scroll-mt-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-secondary">실무 연결</p>
-            <h2 id="accounting-title" className="mt-1 text-2xl font-semibold tracking-tight">회계·세무조정으로 옮기기</h2>
-            <div className="mt-5 grid gap-4">
-              {accountingItems.map((item, index) => (
-                <AccountingCard key={index} item={item} />
-              ))}
-            </div>
+        {issue.practical_application && (
+          <section aria-labelledby="practical-title" className="mt-12 rounded-md border border-secondary/30 bg-secondary/5 p-5 sm:p-7">
+            <h2 id="practical-title" className="text-2xl font-semibold tracking-tight">{issue.practical_application.title}</h2>
+            <p className="mt-3 leading-8">{issue.practical_application.introduction}</p>
+            {issue.practical_application.steps.length > 0 && (
+              <ol className="mt-5 list-decimal space-y-2 pl-5 leading-7 text-muted-foreground">
+                {issue.practical_application.steps.map((step) => (
+                  <li key={step}>{step}</li>
+                ))}
+              </ol>
+            )}
           </section>
         )}
 
@@ -382,46 +282,35 @@ export function IssueReader({ issue, previousIssue, nextIssue }: { issue: Issue;
           </section>
         )}
 
-        {issue.transfer_case && (
-          <section aria-labelledby="transfer-title" className="mt-12 rounded-md border border-secondary/30 bg-secondary/5 p-5 sm:p-7">
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-secondary">결론의 조건</p>
-            <h2 id="transfer-title" className="mt-1 text-2xl font-semibold tracking-tight">조건이 달라지면</h2>
-            <p className="mt-4 leading-8">{issue.transfer_case}</p>
+        {issue.takeaway && (
+          <section aria-labelledby="summary-title" className="mt-12 rounded-md bg-primary p-5 text-primary-foreground sm:p-7">
+            <h2 id="summary-title" className="text-2xl font-semibold tracking-tight">핵심 정리</h2>
+            <p className="mt-4 leading-8">{issue.takeaway}</p>
           </section>
         )}
 
-        <section aria-labelledby="summary-title" className="mt-12 rounded-md bg-primary p-5 text-primary-foreground sm:p-7">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary-foreground/75">마지막 정리</p>
-          <h2 id="summary-title" className="mt-1 text-2xl font-semibold tracking-tight">한 문장으로 답하기</h2>
-          <p className="mt-4 leading-8">{issue.final_summary}</p>
-          {issue.recall_questions.length > 0 && (
-            <div className="mt-6 border-t border-primary-foreground/25 pt-5">
-              <p className="font-semibold">다시 떠올릴 질문</p>
-              <ul className="mt-2 list-disc space-y-2 pl-5 text-primary-foreground/85">
-                {issue.recall_questions.map((question) => (
-                  <li key={question}>{question}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </section>
-
         <Separator className="my-10" />
-        <nav aria-label="쟁점 이동" className="grid gap-3 sm:grid-cols-2">
-          {previousIssue ? (
-            <Link className="rounded-md border border-border bg-card p-4 hover:bg-muted" href={`/issues/${previousIssue.issue_id}/`}>
-              <span className="block text-sm text-muted-foreground">이전 쟁점</span>
-              <span className="mt-1 block font-semibold">{previousIssue.title}</span>
-            </Link>
-          ) : (
-            <span />
-          )}
-          {nextIssue ? (
-            <Link className="rounded-md border border-border bg-card p-4 text-left hover:bg-muted sm:text-right" href={`/issues/${nextIssue.issue_id}/`}>
-              <span className="block text-sm text-muted-foreground">다음 쟁점</span>
-              <span className="mt-1 block font-semibold">{nextIssue.title}</span>
-            </Link>
-          ) : null}
+        <nav aria-label="쟁점 이동" className="space-y-3">
+          <Link className="flex min-h-11 items-center justify-between rounded-md border border-border bg-card px-4 py-3 hover:bg-muted" href="/#issues">
+            <span className="text-sm text-muted-foreground">다른 주제로 이동</span>
+            <span className="font-semibold text-primary">전체 쟁점 목록으로</span>
+          </Link>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {previousIssue ? (
+              <Link className="rounded-md border border-border bg-card p-4 hover:bg-muted" href={`/issues/${previousIssue.issue_id}/`}>
+                <span className="block text-sm text-muted-foreground">이전 쟁점</span>
+                <span className="mt-1 block font-semibold">{previousIssue.title}</span>
+              </Link>
+            ) : (
+              <span />
+            )}
+            {nextIssue ? (
+              <Link className="rounded-md border border-border bg-card p-4 text-left hover:bg-muted sm:text-right" href={`/issues/${nextIssue.issue_id}/`}>
+                <span className="block text-sm text-muted-foreground">다음 쟁점</span>
+                <span className="mt-1 block font-semibold">{nextIssue.title}</span>
+              </Link>
+            ) : null}
+          </div>
         </nav>
       </main>
     </>
