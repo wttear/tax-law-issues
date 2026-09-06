@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { getCatalog, getIssue, getLaws, getPrecedent, mergeLearningNotes, validateContentSnapshot } from "../lib/content";
+import { getArticle, getCatalog, getIssue, getLaws, getPrecedent, mergeLearningNotes, validateContentSnapshot } from "../lib/content";
 
 test("catalog lists its published laws and issues", () => {
   const catalog = getCatalog();
@@ -185,6 +185,21 @@ test("construction-contract learning teaches the current work-progress default i
   assert.match(issue.question_blocks[1].answer, /1,200,000,000원/);
   assert.match(issue.question_blocks[1].answer, /1,500,000,000원/);
   assert.match(issue.question_blocks[1].explanation, /계약 당시에 추정한 공사원가/);
+});
+
+test("business-income timing learning uses service completion instead of the cash-receipt date", () => {
+  const issue = getIssue("ITA-INCOME-TIMING-001");
+  const serviceTimingRule = getArticle("ITA-48");
+
+  assert.ok(issue);
+  assert.ok(serviceTimingRule);
+  assert.equal(issue.title, "설계대금을 다음 해에 받아도, 올해 매출일까?");
+  assert.match(issue.case_facts, /2026년 12월 28일에 최종 설계도와 실행도면을 모두 넘겼고/);
+  assert.match(issue.question_blocks[0].answer, /2026년 총수입금액/);
+  assert.match(issue.question_blocks[0].explanation, /용역의 제공을 완료한 날/);
+  assert.match(issue.question_blocks[1].answer, /2027년 매출로 다시 적지 않는다/);
+  assert.match(issue.question_blocks[1].explanation, /미수금 11,000,000원/);
+  assert.match(serviceTimingRule.versions[0]?.text ?? "", /용역의 제공을 완료한 날/);
 });
 
 test("every published issue has a reviewed learning-note override", () => {

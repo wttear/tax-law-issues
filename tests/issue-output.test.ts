@@ -68,3 +68,12 @@ test("the construction-contract note renders the current work-progress rule and 
   assert.match(html, /1,200,000,000원/);
   assert.match(html, /1,500,000,000원/);
 });
+
+test("the business-income timing note renders service completion, receivable recovery, and the decree source", () => {
+  const html = readFileSync("out/issues/ITA-INCOME-TIMING-001/index.html", "utf8");
+
+  assert.match(html, /설계대금을 다음 해에 받아도, 올해 매출일까/);
+  assert.match(html, /2026년 총수입금액/);
+  assert.match(html, /2027년 매출로 다시 적지 않는다/);
+  assert.match(html, /사업소득의 수입시기/);
+});
