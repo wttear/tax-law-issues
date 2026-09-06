@@ -51,3 +51,11 @@ test("corporate-tax learning notes render the concrete split and transaction-tim
   assert.match(relatedPartyHtml, /같은 날 독립 거래 가격이 100,000,000원/);
   assert.match(relatedPartyHtml, /2017두35165/);
 });
+
+test("the nonbusiness-asset note renders its interest calculation rather than a generic instruction", () => {
+  const html = readFileSync("out/issues/CTA-INTEREST-NONBUSINESS-ASSET-001/index.html", "utf8");
+
+  assert.match(html, /지급이자 25,000,000원 중 얼마를 손금불산입으로 볼까/);
+  assert.match(html, /25,000,000원 × 100,000,000원 ÷ 500,000,000원 = 5,000,000원/);
+  assert.match(html, /적수/);
+});
