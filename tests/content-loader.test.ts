@@ -162,6 +162,18 @@ test("a precedent is not attached to an unrelated legal-principle note", () => {
   assert.deepEqual(issue.precedent_ids, []);
 });
 
+test("nonbusiness-asset learning calculates the interest adjustment from the stated annual balances", () => {
+  const issue = getIssue("CTA-INTEREST-NONBUSINESS-ASSET-001");
+
+  assert.ok(issue);
+  assert.match(issue.case_facts, /해당 사업연도 세법상 평균 계산가액은 100,000,000원/);
+  assert.match(issue.question_blocks[0].answer, /업무무관자산/);
+  assert.match(issue.question_blocks[1].question, /지급이자 25,000,000원 중/);
+  assert.match(issue.question_blocks[1].answer, /25,000,000원 × 100,000,000원 ÷ 500,000,000원/);
+  assert.match(issue.question_blocks[1].answer, /5,000,000원/);
+  assert.match(issue.question_blocks[1].explanation, /적수/);
+});
+
 test("every published issue has a reviewed learning-note override", () => {
   const source = JSON.parse(readFileSync("content/learning-notes.json", "utf8")) as { notes: Array<{ issue_id: string }> };
   const publishedIds = getCatalog().issues.map((issue) => issue.issue_id).sort();
