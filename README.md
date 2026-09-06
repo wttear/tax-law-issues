@@ -35,12 +35,12 @@ npm run build
 npm run test:node
 ```
 
-테스트는 50개 콘텐츠·경로, 메인 검색/필터 HTML fallback, 쟁점 읽기 순서, 법령·판례 공식 링크, 접근성 계약을 확인합니다.
+테스트는 현재 공개 콘텐츠·경로, 메인 검색/필터 HTML fallback, 쟁점 읽기 순서, 법령·판례 공식 링크, 접근성 계약을 확인합니다.
 
 ## 콘텐츠와 출처
 
 - `content/issue-selection.json`: 현재 공개 쟁점의 선정 목록
-- `content/issues.json`: 50개 쟁점과 사실관계·질문 블록·조사·회계 연결
+- `content/issues.json`: 현재 공개 쟁점과 사실관계·질문 블록·조사·회계 연결
 - `content/articles.json`: 연결된 현행 조문 원문과 공식 URL
 - `content/precedents.json`: 공식 판결문으로 연결되는 판례 색인
 - `scripts/bootstrap_content.py`: 공개 원천에서 콘텐츠 스냅샷을 갱신하는 보조 스크립트
@@ -53,4 +53,4 @@ npm run test:node
 
 공개 주소: <https://wttear.github.io/tax-law-issues/>
 
-상속세 및 증여세법·개별소비세법·지방세법·조세특례제한법은 이번 50개 범위에서 제외했습니다.
+상속세 및 증여세법·개별소비세법·지방세법·조세특례제한법은 현재 공개 범위에서 제외했습니다.
