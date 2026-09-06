@@ -1,6 +1,6 @@
 # 반복 실무 세법 쟁점 확장 Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (\`- [ ]\`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** 기존 63개 학습 노트에 실제 사업자 신고·증빙·세무조정에서 반복되는 법인세·소득세·부가가치세 쟁점 15개를 정확한 공식 법령 근거와 함께 추가한다.
 
@@ -28,9 +28,9 @@
 - Modify: content/articles.json
 - Test: tests/content-loader.test.ts
 
-- [ ] **Step 1: 국가법령정보센터에서 아래 원문을 현행 시행일 기준으로 확인한다**
+- [x] **Step 1: 국가법령정보센터에서 아래 원문을 현행 시행일 기준으로 확인한다**
 
-  조사 대상은 법인세법 제24조·제27조의2·제28조·제33조 및 관련 시행령, 소득세법의 원천징수·사업소득 필요경비·부동산임대업·양도시기·필요경비 규정 및 관련 시행령, 부가가치세법의 사업자등록·세금계산서·가산세·의제매입세액·과세유형 전환 규정 및 관련 시행령이다.
+  조사 대상은 법인세법 제13·제14·제24·제25·제28·제52조 및 시행령 제44조, 소득세법 제25·제27·제97·제98·제127·제128·제164조 및 시행령 제162·제163조, 부가가치세법 제8·제32·제42·제46·제60·제64조 및 시행령 제112조이다.
 
   각 카드에는 다음 필드를 남긴다.
 
@@ -57,7 +57,7 @@
   }
   ~~~
 
-- [ ] **Step 2: 원문을 해시로 다시 확인한다**
+- [x] **Step 2: 원문을 해시로 다시 확인한다**
 
   Run: 아래 Node 명령으로 새 카드의 text와 source_sha256을 대조한다.
 
@@ -65,15 +65,15 @@
   node -e "const c=require('crypto'); const a=require('./content/articles.json').articles; for (const x of a.filter(x=>x.article_id.startsWith('CTA-')||x.article_id.startsWith('ITA-')||x.article_id.startsWith('VAT-'))) for (const v of x.versions) { if (v.source_sha256) console.log(x.article_id, c.createHash('sha256').update(v.text,'utf8').digest('hex')===v.source_sha256 ? 'ok' : 'mismatch'); }"
   ~~~
 
-  Expected: 이번에 새로 넣은 카드가 모두 \`ok\`이고 기존 카드의 결과는 변경하지 않는다.
+  Expected: 이번에 새로 넣은 카드가 모두 `ok`이고 기존 카드의 결과는 변경하지 않는다.
 
-- [ ] **Step 3: 해당 쟁점의 경계를 실제로 바꾸는 공식 판례만 추가한다**
+- [x] **Step 3: 해당 쟁점의 경계를 실제로 바꾸는 공식 판례만 추가한다**
 
   판례를 찾지 못했거나 조문만으로 결론이 충분하면 precedent_ids는 빈 배열로 둔다. 블로그·요약 페이지로 판시내용을 보충하지 않는다.
 
-- [ ] **Step 4: 법령 카드 변경을 검증한다**
+- [x] **Step 4: 법령 카드 변경을 검증한다**
 
-  Run: \`npm run typecheck\`
+  Run: `npm run typecheck`
 
   Expected: PASS.
 
@@ -83,7 +83,7 @@
 - Modify: tests/content-loader.test.ts
 - Modify: tests/issue-output.test.ts
 
-- [ ] **Step 1: 15개 식별자의 공개 목록 계약을 쓴다**
+- [x] **Step 1: 15개 식별자의 공개 목록 계약을 쓴다**
 
   tests/content-loader.test.ts 끝에 다음 테스트를 추가한다.
 
@@ -117,27 +117,27 @@
   });
   ~~~
 
-- [ ] **Step 2: 새 URL 산출물 계약을 쓴다**
+- [x] **Step 2: 새 URL 산출물 계약을 쓴다**
 
   tests/issue-output.test.ts의 기존 정적 파일 검사에 아래 3개 대표 경로를 넣는다.
 
   ~~~ts
   for (const slug of [
-    "cta-advance-to-officer-001",
-    "ita-capital-gains-timing-001",
-    "vat-deemed-input-001",
+    "CTA-ADVANCE-TO-OFFICER-001",
+    "ITA-CAPITAL-GAINS-TIMING-001",
+    "VAT-DEEMED-INPUT-001",
   ]) {
     assert.ok(existsSync(join("out", "issues", slug, "index.html")), slug);
   }
   ~~~
 
-- [ ] **Step 3: 아직 콘텐츠를 추가하기 전 실패를 확인한다**
+- [x] **Step 3: 아직 콘텐츠를 추가하기 전 실패를 확인한다**
 
-  Run: \`npx tsx --test tests/content-loader.test.ts\`
+  Run: `node --import tsx tests/content-loader.test.ts`
 
-  Expected: 새 15개 issue_id가 없어 \`the practical core expansion\` 테스트가 FAIL한다.
+  Expected: 새 15개 issue_id가 없어 `the practical core expansion` 테스트가 FAIL한다.
 
-- [ ] **Step 4: 테스트 변경을 커밋한다**
+- [x] **Step 4: 테스트 변경을 커밋한다**
 
   ~~~bash
   git add tests/content-loader.test.ts tests/issue-output.test.ts
@@ -151,7 +151,7 @@
 - Modify: content/issue-selection.json
 - Test: tests/content-loader.test.ts
 
-- [ ] **Step 1: 법인세법 인덱스에 다섯 쟁점을 추가한다**
+- [x] **Step 1: 법인세법 인덱스에 다섯 쟁점을 추가한다**
 
   법인세법 issue_ids의 기존 마지막 항목 뒤에 아래 순서로 추가하고, position을 연속된 값으로 둔다.
 
@@ -163,7 +163,7 @@
   CTA-LOSS-CARRYFORWARD-001
   ~~~
 
-- [ ] **Step 2: 소득세법 인덱스에 다섯 쟁점을 추가한다**
+- [x] **Step 2: 소득세법 인덱스에 다섯 쟁점을 추가한다**
 
   ~~~text
   ITA-WITHHOLDING-PAYROLL-001
@@ -173,7 +173,7 @@
   ITA-CAPITAL-GAINS-COST-001
   ~~~
 
-- [ ] **Step 3: 부가가치세법 인덱스에 다섯 쟁점을 추가한다**
+- [x] **Step 3: 부가가치세법 인덱스에 다섯 쟁점을 추가한다**
 
   ~~~text
   VAT-INVOICE-PENALTY-001
@@ -183,13 +183,13 @@
   VAT-BUSINESS-REGISTRATION-001
   ~~~
 
-- [ ] **Step 4: issue-selection.json을 동일한 순서와 기준일로 갱신한다**
+- [x] **Step 4: issue-selection.json을 동일한 순서와 기준일로 갱신한다**
 
   법률별 issue_ids는 issues.json과 한 항목도 다르지 않게 유지한다. selection_note는 수량 충족이 아닌 중복 없는 실무 판단 필요성을 기준으로 삼는 문장으로 둔다.
 
-- [ ] **Step 5: 목록 일치 테스트를 실행한다**
+- [x] **Step 5: 목록 일치 테스트를 실행한다**
 
-  Run: \`npx tsx --test tests/content-loader.test.ts\`
+  Run: `node --import tsx tests/content-loader.test.ts`
 
   Expected: 목록 일치 테스트는 PASS하고, 아직 학습 원고가 없으면 reviewed-note 누락 검증만 FAIL한다.
 
@@ -199,7 +199,7 @@
 - Modify: content/learning-notes.json
 - Test: tests/content-loader.test.ts
 
-- [ ] **Step 1: 법인세법 다섯 원고를 작성한다**
+- [x] **Step 1: 법인세법 다섯 원고를 작성한다**
 
   각 원고는 하나의 완결된 사실관계 문단, 직접 질문과 즉시 이어지는 답, 필요한 증빙과 세무조정만 담는다.
 
@@ -211,7 +211,7 @@
   | CTA-EXECUTIVE-RETIREMENT-001 | 대표이사 퇴직금은 퇴직 직전에 정한 금액도 비용일까? | 사전 규정, 실제 퇴직, 한도 초과의 상여 처리 |
   | CTA-LOSS-CARRYFORWARD-001 | 적자가 난 해의 결손금은 다음 해 이익과 바로 상계할까? | 세무상 결손금, 공제 순서·한도·이월 |
 
-- [ ] **Step 2: 소득세법 다섯 원고를 작성한다**
+- [x] **Step 2: 소득세법 다섯 원고를 작성한다**
 
   | issue_id | 제목 | 반드시 다룰 판단 경계 |
   | --- | --- | --- |
@@ -221,7 +221,7 @@
   | ITA-CAPITAL-GAINS-TIMING-001 | 부동산 잔금을 다음 해에 받으면 양도소득도 다음 해일까? | 대금청산일·등기일·예외적 계약 조건 |
   | ITA-CAPITAL-GAINS-COST-001 | 인테리어비와 중개수수료는 양도차익에서 모두 뺄 수 있을까? | 취득가액·자본적 지출·수익적 지출·증빙 |
 
-- [ ] **Step 3: 부가가치세법 다섯 원고를 작성한다**
+- [x] **Step 3: 부가가치세법 다섯 원고를 작성한다**
 
   | issue_id | 제목 | 반드시 다룰 판단 경계 |
   | --- | --- | --- |
@@ -231,7 +231,7 @@
   | VAT-INVENTORY-TAX-TRANSITION-001 | 일반과세자에서 간이과세자로 바뀌면 재고 부가세는 어떻게 될까? | 전환일, 재고·감가상각자산, 신고서 |
   | VAT-BUSINESS-REGISTRATION-001 | 개업 뒤 사업자등록을 늦게 하면 매입세액도 못 받을까? | 등록 시기, 등록 전 매입세액 예외, 지연 가산세 |
 
-- [ ] **Step 4: 각 원고에 아래의 최소 데이터 계약을 지킨다**
+- [x] **Step 4: 각 원고에 아래의 최소 데이터 계약을 지킨다**
 
   ~~~json
   {
@@ -252,13 +252,13 @@
 
   사례 금액은 80,000,000원처럼 천 단위 구분 기호와 원 단위를 쓰고, 반복 질문·빈 안내글·시험형 문단은 넣지 않는다.
 
-- [ ] **Step 5: 콘텐츠 계약 테스트를 다시 실행한다**
+- [x] **Step 5: 콘텐츠 계약 테스트를 다시 실행한다**
 
-  Run: \`npx tsx --test tests/content-loader.test.ts\`
+  Run: `node --import tsx tests/content-loader.test.ts`
 
   Expected: PASS.
 
-- [ ] **Step 6: 콘텐츠 변경을 커밋한다**
+- [x] **Step 6: 콘텐츠 변경을 커밋한다**
 
   ~~~bash
   git add content/issues.json content/learning-notes.json content/issue-selection.json content/articles.json
@@ -272,7 +272,7 @@
 - Test: tests/content-loader.test.ts
 - Test: tests/issue-output.test.ts
 
-- [ ] **Step 1: README에 78개 공개 노트라는 현재 상태를 명시한다**
+- [x] **Step 1: README에 78개 공개 노트라는 현재 상태를 명시한다**
 
   첫 설명 문단 뒤에 다음 문장을 넣는다.
 
@@ -280,23 +280,23 @@
   현재 공개 목록은 78개 노트이며, 개수 목표가 아니라 실제 판단·증빙·신고에 필요한 쟁점만 확장한다.
   ~~~
 
-- [ ] **Step 2: 전체 검증을 실행한다**
+- [x] **Step 2: 전체 검증을 실행한다**
 
-  Run: \`npm run verify\`
+  Run: `npm run verify`
 
   Expected: TypeScript 검사, 정적 빌드, Node 콘텐츠 테스트와 브라우저 없는 출력 테스트가 모두 PASS한다.
 
-- [ ] **Step 3: 정적 경로 수와 대표 노트 HTML을 확인한다**
+- [x] **Step 3: 정적 경로 수와 대표 노트 HTML을 확인한다**
 
-  Run: \`find out/issues -mindepth 2 -maxdepth 2 -name index.html | wc -l\`
+  Run: `find out/issues -mindepth 2 -maxdepth 2 -name index.html | wc -l`
 
-  Expected: \`78\`.
+  Expected: `78`.
 
-  Run: \`rg -n "대표가 법인 돈을 먼저 가져가면|부동산 잔금을 다음 해에 받으면|식당이 농산물을 사면" out/issues/*/index.html\`
+  Run: `rg -n "대표가 법인 돈을 먼저 가져가면|부동산 잔금을 다음 해에 받으면|식당이 농산물을 사면" out/issues/*/index.html`
 
   Expected: 각 제목이 하나 이상의 정적 HTML 파일에서 확인된다.
 
-- [ ] **Step 4: 최종 문서·검증 변경을 커밋한다**
+- [x] **Step 4: 최종 문서·검증 변경을 커밋한다**
 
   ~~~bash
   git add README.md docs/superpowers/plans/2026-09-07-practical-tax-core-expansion.md
@@ -314,7 +314,7 @@
 
 - [ ] **Step 2: 검토 지적을 반영하고 전체 검증을 재실행한다**
 
-  Run: \`npm run verify\`
+  Run: `npm run verify`
 
   Expected: PASS.
 
@@ -330,6 +330,6 @@
 
 - [ ] **Step 4: GitHub Pages 배포를 확인한다**
 
-  Run: \`gh run list --workflow deploy-pages.yml --branch main --limit 1\`
+  Run: `gh run list --workflow deploy-pages.yml --branch main --limit 1`
 
-  Expected: 새 커밋의 배포 워크플로가 \`completed success\`가 된 뒤 https://wttear.github.io/tax-law-issues/ 에서 78개 노트가 공개된다.
+  Expected: 새 커밋의 배포 워크플로가 `completed success`가 된 뒤 https://wttear.github.io/tax-law-issues/ 에서 78개 노트가 공개된다.
