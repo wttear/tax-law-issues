@@ -2288,6 +2288,286 @@
           "version_id": "VAT-9-2026-01-02"
         }
       ]
+    },
+    {
+      "article_id": "NTBA-45-2",
+      "law_code": "NTBA",
+      "article_number": "제45조의2",
+      "title": "경정 등의 청구",
+      "official_url": "https://www.law.go.kr/법령/국세기본법/제45조의2",
+      "source_url": "https://www.law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1031739623",
+      "source_as_of": "2026-09-07",
+      "content_status": "source_only",
+      "versions": [
+        {
+          "checked_at": "2026-09-07",
+          "effective_date": "2026-08-11",
+          "official_url": "https://www.law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1031739623",
+          "source_sha256": "05b0dc1dbbaa13ae3fc305d296bc12b19fc10a0a688e6299d631d7e6df9c3e65",
+          "status": "current",
+          "text": "제45조의2(경정 등의 청구)\n① 과세표준신고서를 법정신고기한까지 제출한 자 및 제45조의3제1항에 따른 기한후과세표준신고서를 제출한 자는 최초신고 및 수정신고한 국세의 과세표준 및 세액의 결정 또는 경정을 법정신고기한이 지난 후 5년 이내에 청구할 수 있다. 다만, 결정 또는 경정으로 인하여 증가된 과세표준 및 세액에 대하여는 해당 처분이 있음을 안 날(처분의 통지를 받은 때에는 그 받은 날)부터 3개월 이내(법정신고기한이 지난 후 5년 이내로 한정한다)에 경정을 청구할 수 있다.\n② 신고·결정 또는 경정의 계산 근거가 된 거래 등이 판결 등으로 다르게 확정되는 등 법정 사유가 발생하면, 제1항의 기간에도 불구하고 그 사유를 안 날부터 3개월 이내에 경정을 청구할 수 있다.\n③ 세무서장은 청구를 받은 날부터 2개월 이내에 결정·경정하거나 이유 없음을 통지하여야 한다."
+        }
+      ]
+    },
+    {
+      "article_id": "NTBA-61",
+      "law_code": "NTBA",
+      "article_number": "제61조",
+      "title": "심사청구 기간",
+      "official_url": "https://www.law.go.kr/법령/국세기본법/제61조",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=280373",
+      "source_as_of": "2026-09-07",
+      "content_status": "source_only",
+      "versions": [
+        {
+          "checked_at": "2026-09-07",
+          "effective_date": "2026-08-11",
+          "official_url": "https://www.law.go.kr/법령/국세기본법/제61조",
+          "source_sha256": "d9efca0722eaab87629eea74e2b07063c5a25aff2e542c91e425e63384629af9",
+          "status": "current",
+          "text": "제61조(청구기간)\n① 심사청구는 해당 처분이 있음을 안 날(처분의 통지를 받은 때에는 그 받은 날)부터 90일 이내에 제기하여야 한다.\n② 이의신청을 거친 후 심사청구를 하려면 이의신청에 대한 결정의 통지를 받은 날부터 90일 이내에 제기하여야 한다."
+        }
+      ]
+    },
+    {
+      "article_id": "NTBA-68",
+      "law_code": "NTBA",
+      "article_number": "제68조",
+      "title": "심판청구 기간",
+      "official_url": "https://www.law.go.kr/법령/국세기본법/제68조",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=280373",
+      "source_as_of": "2026-09-07",
+      "content_status": "source_only",
+      "versions": [
+        {
+          "checked_at": "2026-09-07",
+          "effective_date": "2026-08-11",
+          "official_url": "https://www.law.go.kr/법령/국세기본법/제68조",
+          "source_sha256": "33e930e7d7c1a8f531bd21f74f53e43b22b49b22ee9a9f273797fc1410a9f64d",
+          "status": "current",
+          "text": "제68조(청구기간)\n① 심판청구는 해당 처분이 있음을 안 날(처분의 통지를 받은 때에는 그 받은 날)부터 90일 이내에 제기하여야 한다.\n② 이의신청을 거친 후 심판청구를 하는 경우의 청구기간에 관하여는 제61조제2항을 준용한다."
+        }
+      ]
+    },
+    {
+      "article_id": "NCTA-13",
+      "law_code": "NCTA",
+      "article_number": "제13조",
+      "title": "재난 등으로 인한 납부기한등의 연장",
+      "official_url": "https://www.law.go.kr/법령/국세징수법/제13조",
+      "source_url": "https://law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1033435075",
+      "source_as_of": "2026-09-07",
+      "content_status": "source_only",
+      "versions": [
+        {
+          "checked_at": "2026-09-07",
+          "effective_date": "2026-06-02",
+          "official_url": "https://law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1033435075",
+          "source_sha256": "7673264e9ff7c83f5e6182b7650d6a250a47aa3f717bba87462c9d85af97fb95",
+          "status": "current",
+          "text": "제13조(재난 등으로 인한 납부기한등의 연장)\n① 관할 세무서장은 납세자가 재난·도난으로 심한 손실을 입거나, 경영 사업에 현저한 손실이 발생하거나 부도 또는 도산의 우려가 있는 등 법정 사유로 납부기한등까지 국세를 납부할 수 없다고 인정되는 경우 대통령령으로 정하는 바에 따라 납부기한등을 연장할 수 있다. 세액을 분할하여 납부하도록 하는 것도 포함한다."
+        }
+      ]
+    },
+    {
+      "article_id": "CTA-25",
+      "law_code": "CTA",
+      "article_number": "제25조",
+      "title": "기업업무추진비의 손금불산입",
+      "official_url": "https://www.law.go.kr/법령/법인세법/제25조",
+      "source_url": "https://www.law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1027208869",
+      "source_as_of": "2026-09-07",
+      "content_status": "source_only",
+      "versions": [
+        {
+          "checked_at": "2026-09-07",
+          "effective_date": "2026-07-01",
+          "official_url": "https://www.law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1027208869",
+          "source_sha256": "3da7fde65f02b4803922ea6ffede866e2f3e731970165a77cf8b018e3cc5c121",
+          "status": "current",
+          "text": "제25조(기업업무추진비의 손금불산입)\n① 기업업무추진비란 접대·교제·사례 또는 그 밖에 이와 유사한 목적으로, 내국법인이 업무와 관련 있는 자와 업무를 원활하게 진행하기 위하여 지출한 금액을 말한다.\n② 한 차례의 접대에 지출한 기업업무추진비 중 대통령령으로 정하는 금액을 초과하는 금액은 신용카드등, 현금영수증, 계산서·세금계산서 또는 법정 원천징수영수증에 의하여 지출한 경우가 아니면 손금에 산입하지 아니한다."
+        }
+      ]
+    },
+    {
+      "article_id": "CTAE-43",
+      "law_code": "CTA",
+      "article_number": "시행령 제43조",
+      "title": "상여금 등의 손금불산입",
+      "official_url": "https://www.law.go.kr/법령/법인세법시행령/제43조",
+      "source_url": "https://www.law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1032238009",
+      "source_as_of": "2026-09-07",
+      "content_status": "source_only",
+      "versions": [
+        {
+          "checked_at": "2026-09-07",
+          "effective_date": "2026-02-27",
+          "official_url": "https://www.law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1032238009",
+          "source_sha256": "c6c83f4b1f437bdd1bd500d16c28b73bd68f4a3688c6fd3c98e5a537d9487d42",
+          "status": "current",
+          "text": "제43조(상여금 등의 손금불산입)\n① 법인이 임원 또는 직원에게 이익처분으로 지급하는 상여금은 손금에 산입하지 아니한다.\n② 법인이 임원에게 지급하는 상여금 중 정관·주주총회·사원총회 또는 이사회의 결의에 의하여 결정된 급여지급기준에 따라 지급하는 금액을 초과한 금액은 손금에 산입하지 아니한다."
+        }
+      ]
+    },
+    {
+      "article_id": "CTA-27-2",
+      "law_code": "CTA",
+      "article_number": "제27조의2",
+      "title": "업무용승용차 관련비용의 손금불산입 등 특례",
+      "official_url": "https://www.law.go.kr/법령/법인세법/제27조의2",
+      "source_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1031671053",
+      "source_as_of": "2026-09-07",
+      "content_status": "source_only",
+      "versions": [
+        {
+          "checked_at": "2026-09-07",
+          "effective_date": "2026-07-01",
+          "official_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1031671053",
+          "source_sha256": "d0929edceb36e47c75ab58623998e96f54bf93701ec8e8f205eee947632d533f",
+          "status": "current",
+          "text": "제27조의2(업무용승용차 관련비용의 손금불산입 등 특례)\n② 내국법인이 업무용승용차를 취득하거나 임차하여 해당 사업연도에 발생하는 감가상각비·임차료·유류비 등 업무용승용차 관련비용 중 대통령령으로 정하는 업무사용금액에 해당하지 아니하는 금액은 해당 사업연도의 소득금액을 계산할 때 손금에 산입하지 아니한다.\n③ 업무사용금액 중 감가상각비 등이 해당 사업연도에 각각 8,000,000원을 초과하는 경우 그 초과금액은 해당 사업연도의 손금에 산입하지 아니하고 대통령령으로 정하는 방법에 따라 이월하여 손금에 산입한다."
+        }
+      ]
+    },
+    {
+      "article_id": "CTAE-50-2",
+      "law_code": "CTA",
+      "article_number": "시행령 제50조의2",
+      "title": "업무용승용차 관련비용 등의 손금불산입 특례",
+      "official_url": "https://www.law.go.kr/법령/법인세법시행령/제50조의2",
+      "source_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1027555535",
+      "source_as_of": "2026-09-07",
+      "content_status": "source_only",
+      "versions": [
+        {
+          "checked_at": "2026-09-07",
+          "effective_date": "2026-02-27",
+          "official_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1027555535",
+          "source_sha256": "3bc46ff3ff36232169e000faacf4054075cdb51aaf0b7f6b2a647a54c53acdf4",
+          "status": "current",
+          "text": "제50조의2(업무용승용차 관련비용 등의 손금불산입 특례)\n② 업무용승용차 관련비용에는 감가상각비, 임차료, 유류비, 보험료, 수선비, 자동차세, 통행료 및 금융리스부채 이자비용 등이 포함된다.\n④ 법 제27조의2제2항에서 “대통령령으로 정하는 업무용 사용금액”이란 다음 각 호의 구분에 따른 금액을 말한다. 다만, 해당 업무용승용차에 재정경제부령으로 정하는 자동차등록번호판을 부착하지 않은 경우에는 영(0)원으로 한다.\n1. 해당 사업연도 전체 기간 동안 업무전용자동차보험에 가입한 경우: 업무용승용차 관련비용에 업무사용비율을 곱한 금액\n2. 업무전용자동차보험에 가입하지 아니한 경우: 영(0)원\n⑤ 업무사용비율은 운행기록등으로 확인되는 총 주행거리 중 업무용 사용거리가 차지하는 비율이다.\n⑨ 해당 사업연도 전체기간 중 일부기간만 업무전용자동차보험에 가입한 경우 업무사용금액은 업무용승용차 관련비용 × 업무사용비율 × (실제 보험 가입일수 ÷ 보험 의무가입일수)로 산정한다.\n⑩ 업무사용금액 중 감가상각비는 8,000,000원을 초과하는 부분을 한도초과액으로 계산한다."
+        }
+      ]
+    },
+    {
+      "article_id": "ITA-160-5",
+      "law_code": "ITA",
+      "article_number": "제160조의5",
+      "title": "사업용계좌의 신고ㆍ사용의무 등",
+      "official_url": "https://www.law.go.kr/법령/소득세법/제160조의5",
+      "source_url": "https://www.law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1032881631",
+      "source_as_of": "2026-09-07",
+      "content_status": "source_only",
+      "versions": [
+        {
+          "checked_at": "2026-09-07",
+          "effective_date": "2026-07-01",
+          "official_url": "https://www.law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1032881631",
+          "source_sha256": "8c536d8fc177f51928d2efe34e762e7ac5f312a19094dca58e0ad4e927eb9d90",
+          "status": "current",
+          "text": "제160조의5(사업용계좌의 신고ㆍ사용의무 등)\n① 복식부기의무자는 사업과 관련하여 재화 또는 용역을 공급받거나 공급하는 거래에서 금융회사등을 통한 대금 결제·수령, 인건비·임차료의 지급·수령을 할 때 대통령령으로 정하는 사업용계좌를 사용하여야 한다.\n③ 복식부기의무자는 해당 과세기간 개시일부터 6개월 이내에 사업용계좌를 관할 세무서장에게 신고하여야 한다. 이미 신고된 계좌는 제외한다."
+        }
+      ]
+    },
+    {
+      "article_id": "VAT-45",
+      "law_code": "VAT",
+      "article_number": "제45조",
+      "title": "대손세액의 공제특례",
+      "official_url": "https://www.law.go.kr/법령/부가가치세법/제45조",
+      "source_url": "https://www.law.go.kr/법령/부가가치세법",
+      "source_as_of": "2026-09-07",
+      "content_status": "source_only",
+      "versions": [
+        {
+          "checked_at": "2026-09-07",
+          "effective_date": "2026-01-02",
+          "official_url": "https://www.law.go.kr/법령/부가가치세법/제45조",
+          "source_sha256": "9fc2c83e6f8fe69f949f0150294f7c12641fd0c14d2d98f777d11815f6017402",
+          "status": "current",
+          "text": "제45조(대손세액의 공제특례)\n① 사업자가 부가가치세가 과세되는 재화 또는 용역을 공급하고 외상매출금이나 그 밖의 매출채권(부가가치세를 포함한다)의 전부 또는 일부가 파산·강제집행이나 대통령령으로 정하는 사유로 대손되어 회수할 수 없는 경우에는 대손세액을 그 대손이 확정된 날이 속하는 과세기간의 매출세액에서 뺄 수 있다.\n대손세액 = 대손금액 × 110분의 10\n대손금액의 전부 또는 일부를 회수한 경우에는 회수한 대손금액에 관련된 대손세액을 회수한 날이 속하는 과세기간의 매출세액에 더한다."
+        }
+      ]
+    },
+    {
+      "article_id": "VATE-70",
+      "law_code": "VAT",
+      "article_number": "시행령 제70조",
+      "title": "수정세금계산서 또는 수정전자세금계산서의 발급사유 및 발급절차",
+      "official_url": "https://www.law.go.kr/법령/부가가치세법시행령/제70조",
+      "source_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lspttninfSeq=112887",
+      "source_as_of": "2026-09-07",
+      "content_status": "source_only",
+      "versions": [
+        {
+          "checked_at": "2026-09-07",
+          "effective_date": "2026-04-01",
+          "official_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lspttninfSeq=112887",
+          "source_sha256": "40c710f087d0c91e32b7ae13ecbb27702ab5f4c0c3b76979b89fea7d6ee8d1d0",
+          "status": "current",
+          "text": "제70조(수정세금계산서 또는 수정전자세금계산서의 발급사유 및 발급절차)\n① 처음 공급한 재화가 환입된 경우에는 재화가 환입된 날을 작성일로 하고, 비고란에 처음 세금계산서 작성일을 덧붙여 음의 표시로 발급한다.\n② 계약의 해제로 재화 또는 용역이 공급되지 아니한 경우에는 계약 해제일을 작성일로 하여 같은 방식으로 발급한다.\n③ 계약의 해지 등에 따라 공급가액에 추가되거나 차감되는 금액이 발생한 경우에는 증감 사유가 발생한 날을 작성일로 하여 추가분은 양의, 차감분은 음의 표시로 발급한다."
+        }
+      ]
+    },
+    {
+      "article_id": "VATE-87",
+      "law_code": "VAT",
+      "article_number": "시행령 제87조",
+      "title": "대손세액 공제의 범위",
+      "official_url": "https://www.law.go.kr/법령/부가가치세법시행령/제87조",
+      "source_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1021642203",
+      "source_as_of": "2026-09-07",
+      "content_status": "source_only",
+      "versions": [
+        {
+          "checked_at": "2026-09-07",
+          "effective_date": "2026-04-01",
+          "official_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1021642203",
+          "source_sha256": "0064b5b9051a90f0ca7a6e9f610d5a421b7d30dc5989c83914f03ec9c1573db9",
+          "status": "current",
+          "text": "제87조(대손세액 공제의 범위)\n① 대손세액 공제의 사유에는 「소득세법 시행령」 또는 「법인세법 시행령」에 따라 대손금으로 인정되는 경우와 회생계획인가 결정에 따른 출자전환의 일정한 경우가 포함된다.\n② 대손세액 공제는 공급일부터 10년이 지난 날이 속하는 과세기간의 확정신고 기한까지 해당 사유로 확정되는 대손세액을 대상으로 한다.\n④ 대손세액 공제를 받으려는 사업자는 확정신고서에 대손세액 공제신고서와 대손사실을 증명하는 서류를 첨부하여 제출하여야 한다."
+        }
+      ]
+    },
+    {
+      "article_id": "VAT-61",
+      "law_code": "VAT",
+      "article_number": "제61조",
+      "title": "간이과세의 적용 범위",
+      "official_url": "https://www.law.go.kr/법령/부가가치세법/제61조",
+      "source_url": "https://law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1031739161",
+      "source_as_of": "2026-09-07",
+      "content_status": "source_only",
+      "versions": [
+        {
+          "checked_at": "2026-09-07",
+          "effective_date": "2026-01-02",
+          "official_url": "https://law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1031739161",
+          "source_sha256": "a5a8b74a23dfe3a3bb28a85057b87d310d415f0425d9cf43e3561bdf7c9cc646",
+          "status": "current",
+          "text": "제61조(간이과세의 적용 범위)\n① 직전 연도의 공급대가의 합계액이 대통령령으로 정하는 금액에 미달하는 개인사업자는 원칙적으로 간이과세 규정을 적용받는다. 다만, 간이과세가 적용되지 아니하는 다른 사업장을 보유한 사업자, 업종·규모·지역 등을 고려하여 대통령령으로 정하는 사업자, 부동산임대업 또는 과세유흥장소 경영자로서 해당 업종의 직전 연도 공급대가가 48,000,000원 이상인 사업자는 간이과세자로 보지 아니한다.\n② 신규로 사업을 시작한 개인사업자는 사업 개시일부터 과세기간 종료일까지의 공급대가를 12개월로 환산하여 판단한다."
+        }
+      ]
+    },
+    {
+      "article_id": "VATE-109",
+      "law_code": "VAT",
+      "article_number": "시행령 제109조",
+      "title": "간이과세의 적용 범위",
+      "official_url": "https://www.law.go.kr/법령/부가가치세법시행령/제109조",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsId=003666",
+      "source_as_of": "2026-09-07",
+      "content_status": "source_only",
+      "versions": [
+        {
+          "checked_at": "2026-09-07",
+          "effective_date": "2026-04-01",
+          "official_url": "https://www.law.go.kr/법령/부가가치세법시행령/제109조",
+          "source_sha256": "966028561915c9568337d25bc3569fe1fdf51be2413b581e708d7c2118915721",
+          "status": "current",
+          "text": "제109조(간이과세의 적용 범위)\n① 법 제61조제1항 및 제62조제1항에서 대통령령으로 정하는 금액은 104,000,000원으로 한다."
+        }
+      ]
     }
   ]
 }

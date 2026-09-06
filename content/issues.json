@@ -1,12 +1,12 @@
 {
   "schema_version": 3,
-  "generated_as_of": "2026-09-03",
+  "generated_as_of": "2026-09-07",
   "source_repository": "tax-study",
   "laws": [
     {
       "law_code": "NTBA",
       "law_name": "국세기본법",
-      "issue_count": 10,
+      "issue_count": 13,
       "issue_ids": [
         "NTBA-TAX-LIABILITY-LIFECYCLE-001",
         "NTBA-LEGALITY-001",
@@ -17,13 +17,16 @@
         "NTBA-PENALTY-001",
         "NTBA-AUDIT-RIGHTS-001",
         "NTBA-AUDIT-PROCEDURE-001",
-        "NTBA-ILLEGAL-AUDIT-REMEDY-001"
+        "NTBA-ILLEGAL-AUDIT-REMEDY-001",
+        "NTBA-CORRECTION-CLAIM-001",
+        "NTBA-PRE-ASSESSMENT-REVIEW-001",
+        "NTBA-APPEAL-DEADLINE-001"
       ]
     },
     {
       "law_code": "NCTA",
       "law_name": "국세징수법",
-      "issue_count": 10,
+      "issue_count": 12,
       "issue_ids": [
         "NCTA-DELINQUENCY-001",
         "NCTA-PREDEADLINE-COLLECTION-001",
@@ -34,13 +37,15 @@
         "NCTA-SEIZURE-LIMITS-001",
         "NCTA-THIRD-PARTY-ASSET-001",
         "NCTA-RECEIVABLE-SEIZURE-001",
-        "NCTA-THIRD-DEBTOR-001"
+        "NCTA-THIRD-DEBTOR-001",
+        "NCTA-PAYMENT-EXTENSION-001",
+        "NCTA-SEIZURE-RELEASE-001"
       ]
     },
     {
       "law_code": "CTA",
       "law_name": "법인세법",
-      "issue_count": 10,
+      "issue_count": 13,
       "issue_ids": [
         "CTA-TAX-ADJUSTMENT-MAP-001",
         "CTA-GROSS-INCOME-001",
@@ -51,13 +56,16 @@
         "CTA-INTEREST-NONBUSINESS-ASSET-001",
         "CTA-RELATED-PARTY-001",
         "CTA-INCOME-DISPOSITION-001",
-        "CTA-LONG-TERM-CONTRACT-001"
+        "CTA-LONG-TERM-CONTRACT-001",
+        "CTA-SALES-PROMOTION-001",
+        "CTA-OFFICER-BONUS-001",
+        "CTA-BUSINESS-CAR-001"
       ]
     },
     {
       "law_code": "ITA",
       "law_name": "소득세법",
-      "issue_count": 10,
+      "issue_count": 12,
       "issue_ids": [
         "ITA-TAXATION-MAP-001",
         "ITA-RESIDENCY-SOURCE-001",
@@ -68,13 +76,15 @@
         "ITA-NECESSARY-EXPENSE-001",
         "ITA-RELATED-PARTY-001",
         "ITA-JOINT-BUSINESS-001",
-        "ITA-BOOKS-ESTIMATION-001"
+        "ITA-BOOKS-ESTIMATION-001",
+        "ITA-BUSINESS-ACCOUNT-001",
+        "ITA-WORKER-OR-FREELANCER-001"
       ]
     },
     {
       "law_code": "VAT",
       "law_name": "부가가치세법",
-      "issue_count": 10,
+      "issue_count": 13,
       "issue_ids": [
         "VAT-TAXABILITY-CLASSIFICATION-001",
         "VAT-SUPPLY-001",
@@ -85,7 +95,10 @@
         "VAT-INVOICE-ISSUE-TIME-001",
         "VAT-BUSINESS-INPUT-001",
         "VAT-NONDEDUCTIBLE-INPUT-001",
-        "VAT-COMMON-INPUT-ALLOCATION-001"
+        "VAT-COMMON-INPUT-ALLOCATION-001",
+        "VAT-CORRECTED-INVOICE-001",
+        "VAT-BAD-DEBT-CREDIT-001",
+        "VAT-SIMPLIFIED-TAXPAYER-001"
       ]
     }
   ],
@@ -12210,8 +12223,203 @@
         "practice_depth": "filing_and_reconciliation",
         "topic_id": "VAT-COMMON-INPUT-ALLOCATION-001"
       }
+    },
+    {
+      "issue_id": "NTBA-CORRECTION-CLAIM-001",
+      "law_code": "NTBA",
+      "law_name": "국세기본법",
+      "position": 11,
+      "title": "세금을 더 냈다는 사실을 나중에 알면 돌려받을 수 있을까?",
+      "canonical_title": "경정청구",
+      "level": "beginner",
+      "core_question": "세금을 더 냈다는 사실을 나중에 알면 돌려받을 수 있을까?",
+      "easy_explanation": "과다하게 신고한 세액은 법정 기간 안에 경정청구로 바로잡을 수 있다.",
+      "article_ids": ["NTBA-45-2"],
+      "precedent_ids": [],
+      "case_facts": "갑은 이미 낸 종합소득세가 과다하다는 사실을 뒤늦게 확인했다.",
+      "question_blocks": [{"question": "갑은 경정을 청구할 수 있을까?", "answer": "신고 내용과 기간을 확인해야 한다.", "explanation": "과다 신고와 법정 기한을 함께 판단한다.", "legal_refs": ["국세기본법 제45조의2"], "article_ids": ["NTBA-45-2"]}]
+    },
+    {
+      "issue_id": "NTBA-PRE-ASSESSMENT-REVIEW-001",
+      "law_code": "NTBA",
+      "law_name": "국세기본법",
+      "position": 12,
+      "title": "과세예고를 받으면 고지 전에 반박할 수 있을까?",
+      "canonical_title": "과세전적부심사",
+      "level": "beginner",
+      "core_question": "과세예고를 받으면 고지 전에 반박할 수 있을까?",
+      "easy_explanation": "일정한 과세예고와 조사 결과에는 처분 전에 심사를 청구할 수 있다.",
+      "article_ids": ["NTBA-81-15"],
+      "precedent_ids": [],
+      "case_facts": "을은 세무서로부터 과세예고통지를 받았다.",
+      "question_blocks": [{"question": "을은 고지 전에 다툴 수 있을까?", "answer": "통지의 종류와 기한을 확인해야 한다.", "explanation": "과세전적부심사 제도의 요건을 적용한다.", "legal_refs": ["국세기본법 제81조의15"], "article_ids": ["NTBA-81-15"]}]
+    },
+    {
+      "issue_id": "NTBA-APPEAL-DEADLINE-001",
+      "law_code": "NTBA",
+      "law_name": "국세기본법",
+      "position": 13,
+      "title": "세금 고지서를 받은 뒤 90일은 언제부터 셀까?",
+      "canonical_title": "국세 불복 청구기간",
+      "level": "beginner",
+      "core_question": "세금 고지서를 받은 뒤 불복 90일은 언제부터 셀까?",
+      "easy_explanation": "심사청구와 심판청구는 처분을 안 날 또는 통지를 받은 날부터 기간을 계산한다.",
+      "article_ids": ["NTBA-55", "NTBA-61", "NTBA-68"],
+      "precedent_ids": [],
+      "case_facts": "병은 법인세 고지서를 등기로 받았다.",
+      "question_blocks": [{"question": "병의 불복기한은 언제부터 셀까?", "answer": "통지받은 날을 기준으로 판단한다.", "explanation": "청구 절차별 기간 규정을 확인한다.", "legal_refs": ["국세기본법 제55조·제61조·제68조"], "article_ids": ["NTBA-55", "NTBA-61", "NTBA-68"]}]
+    },
+    {
+      "issue_id": "NCTA-PAYMENT-EXTENSION-001",
+      "law_code": "NCTA",
+      "law_name": "국세징수법",
+      "position": 11,
+      "title": "자금난이면 세금을 나누어 낼 수 있을까?",
+      "canonical_title": "납부기한 연장과 분할납부",
+      "level": "beginner",
+      "core_question": "자금난이면 세금을 나누어 낼 수 있을까?",
+      "easy_explanation": "현저한 손실이나 부도 우려 같은 법정 사유가 확인되면 납부기한 연장 또는 분할납부가 가능할 수 있다.",
+      "article_ids": ["NCTA-13"],
+      "precedent_ids": [],
+      "case_facts": "새봄물산은 매출채권 회수가 늦어 법인세 납부가 어렵다.",
+      "question_blocks": [{"question": "새봄물산은 세금을 나누어 낼 수 있을까?", "answer": "법정 사유와 자료를 확인해야 한다.", "explanation": "연장과 분할납부는 자동으로 적용되지 않는다.", "legal_refs": ["국세징수법 제13조"], "article_ids": ["NCTA-13"]}]
+    },
+    {
+      "issue_id": "NCTA-SEIZURE-RELEASE-001",
+      "law_code": "NCTA",
+      "law_name": "국세징수법",
+      "position": 12,
+      "title": "체납액을 냈는데 압류된 통장은 언제 풀릴까?",
+      "canonical_title": "압류 해제",
+      "level": "beginner",
+      "core_question": "체납액을 냈는데 압류된 통장은 언제 풀릴까?",
+      "easy_explanation": "체납액 전부를 납부하거나 과세가 취소된 경우에는 압류를 즉시 해제해야 한다.",
+      "article_ids": ["NCTA-57"],
+      "precedent_ids": [],
+      "case_facts": "솔빛제조는 압류된 예금과 관련된 체납세액을 납부했다.",
+      "question_blocks": [{"question": "예금 압류는 언제 해제될까?", "answer": "납부 범위와 해제 요건을 확인한다.", "explanation": "전액 납부와 일부 납부는 효과가 다르다.", "legal_refs": ["국세징수법 제57조"], "article_ids": ["NCTA-57"]}]
+    },
+    {
+      "issue_id": "CTA-SALES-PROMOTION-001",
+      "law_code": "CTA",
+      "law_name": "법인세법",
+      "position": 11,
+      "title": "거래처 판촉비는 기업업무추진비일까, 판매비일까?",
+      "canonical_title": "판매촉진비와 기업업무추진비",
+      "level": "intermediate",
+      "core_question": "거래처에 쓴 판촉비는 기업업무추진비일까, 판매비일까?",
+      "easy_explanation": "지출 이름보다 제공한 편익, 판매와의 직접 연결, 상대방, 규모를 본다.",
+      "article_ids": ["CTA-19", "CTA-25"],
+      "precedent_ids": ["SAC-2014GUHAP53445-2015-01-16"],
+      "case_facts": "한빛식품은 거래처에 구매실적 연동 장려금을 지급했다.",
+      "question_blocks": [{"question": "장려금은 판매비일까?", "answer": "거래 구조와 지급 목적을 따져야 한다.", "explanation": "기업업무추진비와 판매부대비용을 구별한다.", "legal_refs": ["법인세법 제19조·제25조"], "article_ids": ["CTA-19", "CTA-25"]}]
+    },
+    {
+      "issue_id": "CTA-OFFICER-BONUS-001",
+      "law_code": "CTA",
+      "law_name": "법인세법",
+      "position": 12,
+      "title": "결산 뒤 대표이사에게 성과급을 주면 비용 처리할 수 있을까?",
+      "canonical_title": "임원 상여금의 손금",
+      "level": "intermediate",
+      "core_question": "결산 뒤 대표이사에게 성과급을 주면 비용 처리할 수 있을까?",
+      "easy_explanation": "임원 상여는 이익처분인지, 사전에 정한 급여 기준에 따른 지급인지가 중요하다.",
+      "article_ids": ["CTA-19", "CTAE-43"],
+      "precedent_ids": [],
+      "case_facts": "온새미디어는 결산 후 대표이사 갑에게 성과급을 지급하려 한다.",
+      "question_blocks": [{"question": "성과급을 비용으로 처리할 수 있을까?", "answer": "사전 기준과 지급 경위를 확인한다.", "explanation": "이익처분 상여와 기준 내 급여를 구별한다.", "legal_refs": ["법인세법 시행령 제43조"], "article_ids": ["CTAE-43"]}]
+    },
+    {
+      "issue_id": "CTA-BUSINESS-CAR-001",
+      "law_code": "CTA",
+      "law_name": "법인세법",
+      "position": 13,
+      "title": "법인 명의 승용차 비용은 모두 비용일까?",
+      "canonical_title": "업무용승용차 관련비용",
+      "level": "intermediate",
+      "core_question": "법인 명의 승용차 비용은 모두 비용일까?",
+      "easy_explanation": "법인 명의라는 이유만으로 전액 손금이 되지 않으며 보험·번호판·운행기록과 한도를 차례로 본다.",
+      "article_ids": ["CTA-27-2", "CTAE-50-2"],
+      "precedent_ids": [],
+      "case_facts": "가온디자인은 대표이사 차량의 리스료와 유류비를 비용 처리했다.",
+      "question_blocks": [{"question": "차량비를 전액 비용 처리할 수 있을까?", "answer": "업무사용금액 요건을 먼저 확인한다.", "explanation": "관련비용과 손금 인정액은 다를 수 있다.", "legal_refs": ["법인세법 제27조의2", "법인세법 시행령 제50조의2"], "article_ids": ["CTA-27-2", "CTAE-50-2"]}]
+    },
+    {
+      "issue_id": "ITA-BUSINESS-ACCOUNT-001",
+      "law_code": "ITA",
+      "law_name": "소득세법",
+      "position": 11,
+      "title": "개인사업자 통장을 사업용계좌로 신고해야 할까?",
+      "canonical_title": "사업용계좌",
+      "level": "beginner",
+      "core_question": "개인사업자 통장을 사업용계좌로 신고해야 할까?",
+      "easy_explanation": "복식부기의무자는 정해진 사업 거래에 사업용계좌를 사용하고 신고해야 한다.",
+      "article_ids": ["ITA-160", "ITA-160-5"],
+      "precedent_ids": [],
+      "case_facts": "병은 인테리어 사업 매출과 개인 생활비를 한 통장에서 관리했다.",
+      "question_blocks": [{"question": "병은 사업용계좌를 신고해야 할까?", "answer": "복식부기의무자 여부와 거래를 확인한다.", "explanation": "사업용계좌는 자금 흐름을 분리하는 도구다.", "legal_refs": ["소득세법 제160조의5"], "article_ids": ["ITA-160-5"]}]
+    },
+    {
+      "issue_id": "ITA-WORKER-OR-FREELANCER-001",
+      "law_code": "ITA",
+      "law_name": "소득세법",
+      "position": 12,
+      "title": "출근하는 프리랜서를 3.3% 사업소득으로 처리해도 될까?",
+      "canonical_title": "근로소득과 사업소득의 구분",
+      "level": "intermediate",
+      "core_question": "출근하는 프리랜서를 3.3% 사업소득으로 처리해도 될까?",
+      "easy_explanation": "계약서의 명칭보다 실제로 지휘·감독 아래 근로를 제공했는지와 독립성을 본다.",
+      "article_ids": ["ITA-19", "ITA-20"],
+      "precedent_ids": [],
+      "case_facts": "새롬상사는 콘텐츠 제작자 을에게 매달 같은 금액을 지급한다.",
+      "question_blocks": [{"question": "을의 소득은 사업소득일까?", "answer": "실제 업무 관계를 확인한다.", "explanation": "근로 제공의 성질과 독립성을 구분한다.", "legal_refs": ["소득세법 제19조·제20조"], "article_ids": ["ITA-19", "ITA-20"]}]
+    },
+    {
+      "issue_id": "VAT-CORRECTED-INVOICE-001",
+      "law_code": "VAT",
+      "law_name": "부가가치세법",
+      "position": 11,
+      "title": "판매 후 반품이 생기면 세금계산서를 어떻게 고칠까?",
+      "canonical_title": "수정세금계산서",
+      "level": "beginner",
+      "core_question": "판매 후 반품이 생기면 세금계산서를 어떻게 고칠까?",
+      "easy_explanation": "반품·계약해제·가격변동은 사유가 발생한 날과 발급 방법을 구별한다.",
+      "article_ids": ["VAT-32", "VATE-70"],
+      "precedent_ids": [],
+      "case_facts": "늘봄가구는 거래처로부터 납품한 의자를 반품받았다.",
+      "question_blocks": [{"question": "반품분 세금계산서는 어떻게 고칠까?", "answer": "환입일을 기준으로 수정한다.", "explanation": "사유별 작성일이 다르다.", "legal_refs": ["부가가치세법 시행령 제70조"], "article_ids": ["VATE-70"]}]
+    },
+    {
+      "issue_id": "VAT-BAD-DEBT-CREDIT-001",
+      "law_code": "VAT",
+      "law_name": "부가가치세법",
+      "position": 12,
+      "title": "외상매출을 못 받으면 이미 낸 부가세를 돌려받을까?",
+      "canonical_title": "대손세액공제",
+      "level": "intermediate",
+      "core_question": "외상매출을 못 받으면 이미 낸 부가세를 돌려받을까?",
+      "easy_explanation": "단순 연체가 아니라 법정 대손 사유가 확정되어야 대손세액을 공제할 수 있다.",
+      "article_ids": ["VAT-45", "VATE-87"],
+      "precedent_ids": [],
+      "case_facts": "푸른상사는 매출채권을 장기간 회수하지 못했다.",
+      "question_blocks": [{"question": "푸른상사는 부가세를 돌려받을 수 있을까?", "answer": "대손 확정 사유를 먼저 확인한다.", "explanation": "회계상 충당금과 VAT 대손세액은 다르다.", "legal_refs": ["부가가치세법 제45조", "부가가치세법 시행령 제87조"], "article_ids": ["VAT-45", "VATE-87"]}]
+    },
+    {
+      "issue_id": "VAT-SIMPLIFIED-TAXPAYER-001",
+      "law_code": "VAT",
+      "law_name": "부가가치세법",
+      "position": 13,
+      "title": "매출이 작으면 자동으로 간이과세자가 될까?",
+      "canonical_title": "간이과세 적용",
+      "level": "beginner",
+      "core_question": "매출이 작으면 자동으로 간이과세자가 될까?",
+      "easy_explanation": "개인사업자 여부, 공급대가, 제외 업종·사업장, 적용 시점을 같이 봐야 한다.",
+      "article_ids": ["VAT-61", "VATE-109"],
+      "precedent_ids": [],
+      "case_facts": "갑은 카페와 상가 임대업을 함께 운영하며 전년도 매출이 줄었다.",
+      "question_blocks": [{"question": "갑은 간이과세자가 될까?", "answer": "공급대가와 제외 사유를 함께 판단한다.", "explanation": "매출만으로 자동 결론을 내릴 수 없다.", "legal_refs": ["부가가치세법 제61조", "부가가치세법 시행령 제109조"], "article_ids": ["VAT-61", "VATE-109"]}]
     }
   ],
-  "article_count": 107,
-  "precedent_count": 57
+  "article_count": 123,
+  "precedent_count": 60
 }

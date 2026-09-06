@@ -16,6 +16,17 @@ test("catalog lists its published laws and issues", () => {
   }
 });
 
+test("the curated selection mirrors every published issue without duplicates", () => {
+  const selection = JSON.parse(readFileSync("content/issue-selection.json", "utf8")) as {
+    laws: Array<{ issue_ids: string[] }>;
+  };
+  const selectedIds = selection.laws.flatMap((law) => law.issue_ids);
+  const publishedIds = getCatalog().issues.map((issue) => issue.issue_id);
+
+  assert.equal(new Set(selectedIds).size, selectedIds.length);
+  assert.deepEqual([...selectedIds].sort(), [...publishedIds].sort());
+});
+
 test("content validation accepts a law with one complete note and one direct question", () => {
   assert.doesNotThrow(() =>
     validateContentSnapshot(
@@ -237,4 +248,25 @@ test("a missing reviewed note cannot silently fall back to legacy learning copy"
       ),
     /missing reviewed note TEST-MISSING-001/,
   );
+});
+
+test("the practical expansion adds only reviewed, source-backed issue notes", () => {
+  const ids = [
+    "NTBA-CORRECTION-CLAIM-001",
+    "NCTA-PAYMENT-EXTENSION-001",
+    "CTA-OFFICER-BONUS-001",
+    "ITA-BUSINESS-ACCOUNT-001",
+    "VAT-CORRECTED-INVOICE-001",
+  ];
+
+  for (const id of ids) assert.ok(getIssue(id));
+  assert.match(getIssue("NTBA-CORRECTION-CLAIM-001")?.question_blocks[0].answer ?? "", /5년/);
+  const businessCar = getIssue("CTA-BUSINESS-CAR-001");
+  assert.match(businessCar?.case_facts ?? "", /해당 사업연도 전체 기간/);
+  assert.match(businessCar?.question_blocks[0].answer ?? "", /13,600,000원/);
+  assert.match(businessCar?.question_blocks[1].answer ?? "", /영\(0\)원/);
+  assert.match(getArticle("NTBA-45-2")?.versions[0]?.text ?? "", /증가된 과세표준 및 세액.*3개월/);
+  assert.match(getArticle("CTA-27-2")?.versions[0]?.text ?? "", /8,000,000원.*이월하여/);
+  assert.match(getArticle("CTAE-50-2")?.versions[0]?.text ?? "", /해당 사업연도 전체 기간/);
+  assert.match(getIssue("VAT-BAD-DEBT-CREDIT-001")?.question_blocks[1].answer ?? "", /110분의 10/);
 });

@@ -86,3 +86,13 @@ test("the common-input note renders direct attribution, final allocation, and sc
   assert.match(html, /160,000원 더 줄여 정산한다/);
   assert.match(html, /공통매입세액 안분 계산/);
 });
+
+test("expanded notes render direct questions, current rules, and no template filler", () => {
+  const correction = readFileSync("out/issues/NTBA-CORRECTION-CLAIM-001/index.html", "utf8");
+  const invoice = readFileSync("out/issues/VAT-CORRECTED-INVOICE-001/index.html", "utf8");
+
+  assert.match(correction, /세금을 더 냈다는 사실을 나중에 알면/);
+  assert.match(correction, /경정 등의 청구/);
+  assert.match(invoice, /반품된 날/);
+  assert.match(invoice, /수정세금계산서/);
+});
