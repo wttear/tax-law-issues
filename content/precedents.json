@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_as_of": "2026-09-03",
+  "generated_as_of": "2026-09-07",
   "precedents": [
     {
       "precedent_id": "latest:2026두30542:2026-08-13",
@@ -1220,6 +1220,27 @@
       "source_as_of": "2026-09-06",
       "source_provenance": [
         "official-law.go.kr/precInfoP.do?precSeq=195089"
+      ]
+    },
+    {
+      "precedent_id": "SAC-2014GUHAP53445-2015-01-16",
+      "case_number": "2014구합53445",
+      "decision_date": "2015-01-16",
+      "court": "서울행정법원",
+      "title": "법인세등부과처분취소",
+      "issue_summary": "제품 구매 조건에 연계한 해외여행 지원비가 판매부대비용인지, 당시 법령상 접대비인지가 문제 됐다.",
+      "holding_summary": "법원은 지출이 수익 실현에 직접 대응하거나 정상적인 판매에 직접 관련된 비용이면 판매부대비용이 될 수 있다고 전제했지만, 이 사건 여행 지원은 특정 구매자와의 관계를 원활하게 하려는 성격, 개인적 소비의 성질, 과다한 규모 등을 이유로 접대비라고 보았다.",
+      "significance": "구매금액 조건이나 판촉이라는 이름만으로 판매비가 되지 않는다. 무엇을 제공했는지, 누구에게 제공했는지, 개별 판매와 직접 대응하는지, 상관행상 정상적인 규모인지를 함께 본다는 경계를 보여 준다. 현행법의 기업업무추진비 규정과 당시 접대비 규정의 문언은 달라 현재 결론을 자동으로 정하는 판결은 아니다.",
+      "distinguishing_facts": [
+        "원고는 일정 금액 이상 임플란트를 구매하는 치과병원·의원에 해외여행 경비를 지원했다.",
+        "법원은 여행 지원이 일반 구매자를 대상으로 한 정상적인 판매 촉진 효과와 직접 대응한다고 보기 어렵고, 개인적 소비를 위한 편익이라는 점을 중요하게 보았다.",
+        "학습 사례의 판매장려금·할인과 달리 이 사건은 여행이라는 개인 소비 편익 및 지출 규모가 문제 됐다."
+      ],
+      "disposition_summary": "원고의 청구를 기각했다.",
+      "official_source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=182835",
+      "source_as_of": "2026-09-07",
+      "source_provenance": [
+        "official-law.go.kr/precInfoP.do?precSeq=182835"
       ]
     }
   ]

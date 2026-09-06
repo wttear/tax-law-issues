@@ -238,3 +238,18 @@ test("a missing reviewed note cannot silently fall back to legacy learning copy"
     /missing reviewed note TEST-MISSING-001/,
   );
 });
+
+test("the practical expansion adds only reviewed, source-backed issue notes", () => {
+  const ids = [
+    "NTBA-CORRECTION-CLAIM-001",
+    "NCTA-PAYMENT-EXTENSION-001",
+    "CTA-OFFICER-BONUS-001",
+    "ITA-BUSINESS-ACCOUNT-001",
+    "VAT-CORRECTED-INVOICE-001",
+  ];
+
+  for (const id of ids) assert.ok(getIssue(id));
+  assert.match(getIssue("NTBA-CORRECTION-CLAIM-001")?.question_blocks[0].answer ?? "", /5년/);
+  assert.match(getIssue("CTA-BUSINESS-CAR-001")?.question_blocks[0].answer ?? "", /업무전용자동차보험/);
+  assert.match(getIssue("VAT-BAD-DEBT-CREDIT-001")?.question_blocks[1].answer ?? "", /110분의 10/);
+});
