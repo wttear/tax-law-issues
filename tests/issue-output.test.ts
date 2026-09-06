@@ -107,3 +107,20 @@ test("the practical core notes are included in the static export", () => {
     assert.match(html, /사실관계 전문/);
   }
 });
+
+test("the practical core notes render their corrected legal boundaries", () => {
+  const cardSale = readFileSync("out/issues/VAT-CARD-SALES-001/index.html", "utf8");
+  const invoicePenalty = readFileSync("out/issues/VAT-INVOICE-PENALTY-001/index.html", "utf8");
+  const donation = readFileSync("out/issues/CTA-DONATION-001/index.html", "utf8");
+  const capitalCost = readFileSync("out/issues/ITA-CAPITAL-GAINS-COST-001/index.html", "utf8");
+  const inventoryTransition = readFileSync("out/issues/VAT-INVENTORY-TAX-TRANSITION-001/index.html", "utf8");
+
+  assert.match(cardSale, /세금계산서 발급의무의 면제 등/);
+  assert.match(cardSale, /제33조 제2항/);
+  assert.match(invoicePenalty, /세금계산서 발급시기/);
+  assert.match(invoicePenalty, /단순 지연 발급/);
+  assert.match(donation, /10년 이내/);
+  assert.match(capitalCost, /소득세법 시행령 제163조 제5항/);
+  assert.match(inventoryTransition, /제112조 제3항 제1호/);
+  assert.match(inventoryTransition, /제112조 제3항 제3호 나목/);
+});

@@ -12609,10 +12609,10 @@
       "level": "beginner",
       "core_question": "같은 거래에서 카드매출전표와 세금계산서가 함께 생기면 매출은 어떻게 관리할까?",
       "easy_explanation": "결제수단이 두 개인 것이 아니라 같은 공급에 대한 증빙이 겹친 경우인지부터 확인한다.",
-      "article_ids": ["VAT-32", "VAT-46"],
+      "article_ids": ["VAT-32", "VAT-33", "VAT-46"],
       "precedent_ids": [],
       "case_facts": "봄빛가구가 거래처의 카드 결제와 세금계산서 요청을 함께 받았다.",
-      "question_blocks": [{"question": "카드매출을 별도 매출로 또 신고할까?", "answer": "같은 공급의 중복 여부를 대사한다.", "explanation": "증빙 발행 내역과 매출 신고는 일치해야 한다.", "legal_refs": ["부가가치세법 제32조·제46조"], "article_ids": ["VAT-32", "VAT-46"]}]
+      "question_blocks": [{"question": "카드매출을 별도 매출로 또 신고할까?", "answer": "같은 공급의 중복 여부와 세금계산서 발급 면제 여부를 함께 확인한다.", "explanation": "증빙 발행 내역과 매출 신고는 일치해야 한다.", "legal_refs": ["부가가치세법 제32조·제33조·제46조"], "article_ids": ["VAT-32", "VAT-33", "VAT-46"]}]
     },
     {
       "issue_id": "VAT-DEEMED-INPUT-001",
@@ -12660,6 +12660,6 @@
       "question_blocks": [{"question": "늦은 등록이면 매입세액은 전부 못 받을까?", "answer": "등록신청일과 공급시기를 대조한다.", "explanation": "가산세와 매입세액공제 예외를 분리한다.", "legal_refs": ["부가가치세법 제8조·제39조·제60조"], "article_ids": ["VAT-8", "VAT-39", "VAT-60"]}]
     }
   ],
-  "article_count": 139,
+  "article_count": 140,
   "precedent_count": 60
 }
